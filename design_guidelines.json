@@ -1,0 +1,210 @@
+{
+  "project_name": "Arcturus Professional Services",
+  "app_type": "hybrid_fullstack",
+  "archetype": "ARCHETYPE 4: SWISS & HIGH-CONTRAST with Editorial Elegance (ARCHETYPE 5 subtle accents)",
+  "design_philosophy": "Confident, spacious, readable, conversion-focused professional editorial B2B website. Replaces vague email list claims with structured B2B delivery modules, crisp transparent scope breakdown, and frictionless direct mailto enquiries to Khushboo.",
+  "theme": {
+    "default": "light",
+    "strategy": "Warm Architectural Crisp Light Mode with Deep Obsidian & Rich Slate Dark Footer and Hero Accents"
+  },
+  "typography": {
+    "font_families": {
+      "headings": "'Lora Variable', 'Playfair Display Variable', Georgia, serif",
+      "body": "'Plus Jakarta Sans Variable', 'Geist Variable', -apple-system, sans-serif",
+      "mono_accent": "'JetBrains Mono Variable', 'IBM Plex Mono', monospace"
+    },
+    "scale": {
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-slate-900 leading-[1.1]",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight text-slate-900",
+      "card_h3": "text-xl sm:text-2xl font-serif font-semibold text-slate-900",
+      "sub_heading": "text-lg sm:text-xl text-slate-600 leading-relaxed font-sans",
+      "body": "text-base sm:text-base text-slate-700 leading-relaxed font-sans",
+      "body_small": "text-sm text-slate-600 leading-normal font-sans",
+      "overline_badge": "text-xs font-mono uppercase tracking-[0.2em] font-semibold text-amber-700 bg-amber-50/80 px-3 py-1 rounded-full border border-amber-200/60"
+    }
+  },
+  "color_palette": {
+    "background_main": "#FAF9F6",
+    "background_card": "#FFFFFF",
+    "background_subtle": "#F3F1EC",
+    "text_primary": "#0F172A",
+    "text_secondary": "#475569",
+    "text_muted": "#64748B",
+    "accent_primary": "#0F2942",
+    "accent_primary_hover": "#1E3A5F",
+    "accent_warm_gold": "#C59B27",
+    "accent_warm_amber": "#92400E",
+    "border_subtle": "#E2DFD8",
+    "border_strong": "#CBD5E1",
+    "footer_bg": "#0B1320",
+    "footer_text": "#E2E8F0"
+  },
+  "visual_enhancers": {
+    "border_radius": "rounded-lg sm:rounded-xl (sharp, bespoke architectural geometry)",
+    "shadows": "shadow-[0_4px_20px_-4px_rgba(15,23,42,0.05),0_1px_2px_rgba(15,23,42,0.04)]",
+    "crystal_glass_nav": "bg-[#FAF9F6]/85 backdrop-blur-xl border-b border-[#E2DFD8]/80 shadow-xs",
+    "editorial_lines": "1px solid #E2DFD8 structural separators with offset bento cards"
+  },
+  "image_urls": {
+    "hero_banner": {
+      "url": "https://images.unsplash.com/photo-1740933084056-078fac872bff?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBjb3Jwb3JhdGUlMjBvZmZpY2UlMjBMb25kb24lMjBtb2Rlcm4lMjBwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzg3OTQyMzg2fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Modern London executive meeting room and collaborative professional space",
+      "category": "Hero / Brand Visual"
+    },
+    "founder_consultation": {
+      "url": "https://images.unsplash.com/photo-1758691737207-e75821e080cb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHdvbWFuJTIwY29uc3VsdGF0aW9uJTIwbWVldGluZyUyMGRlc2t8ZW58MHx8fHwxNzg3OTQyMzg2fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "B2B client consultation and structured executive strategy discussion",
+      "category": "About / Khushboo Profile Section"
+    },
+    "service_consultation_desk": {
+      "url": "https://images.unsplash.com/photo-1758520144437-f068ecaf0d83?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHdvbWFuJTIwY29uc3VsdGF0aW9uJTIwbWVldGluZyUyMGRlc2t8ZW58MHx8fHwxNzg3OTQyMzg2fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Professional structured client onboarding and business support review",
+      "category": "Services Overview Section"
+    },
+    "abstract_architecture_precision": {
+      "url": "https://images.unsplash.com/photo-1498262257252-c282316270bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxtaW5pbWFsJTIwYXJjaGl0ZWN0dXJlJTIwYWJzdHJhY3QlMjBzdHJ1Y3R1cmUlMjBnZW9tZXRyaWMlMjBkZXRhaWx8ZW58MHx8fHwxNzg3OTQyMzkxfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Architectural ribbed geometric curves signifying structured workflows and delivery",
+      "category": "Process & Delivery Methodology"
+    }
+  },
+  "page_hierarchy_and_routes": [
+    {
+      "path": "/",
+      "page_name": "Home",
+      "seo_title": "Arcturus Professional Services | Structured B2B Growth & Executive Support",
+      "seo_description": "Delivering bespoke LinkedIn management, precision email outreach, dedicated business support, and AI video creation for European enterprises and founders.",
+      "key_sections": [
+        "Navigation header with clear route links + primary 'Contact Khushboo' button",
+        "Hero section with bold editorial value proposition, trust badges, and direct mailto CTA",
+        "Service Pillars Bento Grid (LinkedIn, Email Outreach, Business Support, AI Video)",
+        "The Arcturus Difference (Fact-checked, transparent scope, structured timelines, zero fluff)",
+        "How We Work: 4-Step Engagement Architecture",
+        "Direct Contact Banner with prefilled mailto generator and direct email display"
+      ]
+    },
+    {
+      "path": "/about",
+      "page_name": "About",
+      "seo_title": "About Arcturus | Khushboo & Client Engagement Standards",
+      "seo_description": "Learn how Arcturus delivers high-touch, dependable business support and outbound growth for European businesses with strict written communication standards.",
+      "key_sections": [
+        "Positioning & Founder Introduction (Khushboo)",
+        "Core Operating Principles: Clear Written Communication, Realistic Timelines, Transparent Limits",
+        "European B2B Focus & Regional Competencies",
+        "Direct Email Protocol & Working Expectations"
+      ]
+    },
+    {
+      "path": "/services",
+      "page_name": "Services Overview",
+      "seo_title": "Services | LinkedIn, Email Outreach, Business Support & AI Video | Arcturus",
+      "seo_description": "Explore all 4 core service modules delivered by Arcturus Professional Services. Transparent deliverables, structured onboarding, and custom quotes.",
+      "key_sections": [
+        "Services Catalog Grid with quick jump cards",
+        "Comparison breakdown (Scope, turnaround, target requirements)",
+        "Service request flow guide"
+      ]
+    },
+    {
+      "path": "/services/linkedin-management",
+      "page_name": "LinkedIn Management",
+      "seo_title": "B2B LinkedIn Management & Executive Positioning | Arcturus",
+      "seo_description": "Structured LinkedIn outreach, personal profile positioning, thought leadership drafting, and connection nurturing for founders and sales leaders.",
+      "key_sections": [
+        "Service Scope & Overview",
+        "Deliverables & Inclusions (Content calendar, outreach sequences, weekly KPI reporting)",
+        "Pricing on Request badge with transparent custom scope model",
+        "Exclusions & Boundaries (No automated spamming, manual profile ownership)",
+        "Process & Timeline (4-stage roadmap)",
+        "Client Prerequisites & Direct 'Enquire About LinkedIn' CTA"
+      ]
+    },
+    {
+      "path": "/services/email-outreach",
+      "page_name": "Email Outreach",
+      "seo_title": "B2B Email Outreach & Prospect Sourcing | Arcturus",
+      "seo_description": "Tailored, researched B2B outbound email campaigns with domain hygiene, verified prospect targeting, and manual follow-up workflows.",
+      "key_sections": [
+        "Outreach Methodology & Domain Safety Guidance",
+        "Deliverables (Prospect identification, multi-step messaging, A/B copy tests)",
+        "Scope Limits (No scraped low-grade generic bulk blasts)",
+        "Engagement Roadmap & Mailto Enquiry Action"
+      ]
+    },
+    {
+      "path": "/services/business-support",
+      "page_name": "Business Support",
+      "seo_title": "Executive Business & Administrative Support | Arcturus",
+      "seo_description": "Dependable operational and administrative support for busy European business owners. Inbox triage, schedule coordination, data research, and CRM maintenance.",
+      "key_sections": [
+        "Operations & Support Capabilities",
+        "Included Tasks vs Excluded Tasks",
+        "Retainer & Hourly Scope Structure (Pricing on Request)",
+        "SLA & Turnaround Guidelines"
+      ]
+    },
+    {
+      "path": "/services/ai-video-creation",
+      "page_name": "AI Video Creation",
+      "seo_title": "AI Video Creation & Product Explainer Visuals | Arcturus",
+      "seo_description": "High-impact synthetic avatar video explainers, localized B2B demos, and interactive marketing clips for modern European businesses.",
+      "key_sections": [
+        "Video Creation Formats (Product Demos, Multilingual Announcements, Training Clips)",
+        "Production Pipeline (Scripting, Voice Synthesis, Polish, Revision)",
+        "Prerequisites & Media Assets Required",
+        "Enquiry Trigger with sample brief outline"
+      ]
+    },
+    {
+      "path": "/contact",
+      "page_name": "Contact Khushboo",
+      "seo_title": "Contact Khushboo | Arcturus Professional Services",
+      "seo_description": "Get in touch directly with Khushboo at Arcturus for tailored service enquiries, proposal scopes, and availability.",
+      "key_sections": [
+        "Direct Mailto Link (khushboo@arcturusprofessional.com)",
+        "Interactive Email Subject & Scope Builder (pre-populates user's email client)",
+        "Working Hours & 24h Response Expectation Guarantee",
+        "European timezone alignment notes (CET / GMT)"
+      ]
+    }
+  ],
+  "contact_details": {
+    "email": "khushboo@arcturusprofessional.com",
+    "primary_cta_label": "Contact Khushboo",
+    "mailto_templates": {
+      "general": "mailto:khushboo@arcturusprofessional.com?subject=Enquiry%20via%20Arcturus%20Professional%20Website&body=Hi%20Khushboo%2C%0A%0AI%20would%20like%20to%20discuss%20services%20for%20my%20business.%0A%0ACompany%3A%20%0AService%20of%20Interest%3A%20%0ATimeline%3A%20%0A%0ARegards%2C",
+      "linkedin": "mailto:khushboo@arcturusprofessional.com?subject=LinkedIn%20Management%20Enquiry%20-%20Arcturus&body=Hi%20Khushboo%2C%0A%0AI%20am%20interested%20in%20your%20LinkedIn%20Management%20service.%0A%0ACurrent%20Profile%2FCompany%3A%20%0AObjectives%3A%20%0A%0ARegards%2C",
+      "email_outreach": "mailto:khushboo@arcturusprofessional.com?subject=Email%20Outreach%20Enquiry%20-%20Arcturus&body=Hi%20Khushboo%2C%0A%0AI%20would%20like%20to%20enquire%20about%20B2B%20Email%20Outreach.%0A%0ATarget%20Industry%20%2F%20Geography%3A%20%0AEst.%20Volume%3A%20%0A%0ARegards%2C",
+      "business_support": "mailto:khushboo@arcturusprofessional.com?subject=Business%20Support%20Enquiry%20-%20Arcturus&body=Hi%20Khushboo%2C%0A%0AI%20need%20operational%20business%20support.%0A%0AKey%20Tasks%3A%20%0AEst.%20Hours%2FWeek%3A%20%0A%0ARegards%2C",
+      "ai_video": "mailto:khushboo@arcturusprofessional.com?subject=AI%20Video%20Creation%20Enquiry%20-%20Arcturus&body=Hi%20Khushboo%2C%0A%0AI%20am%20interested%20in%20AI%20Video%20Creation.%0A%0AVideo%20Topic%20%2F%20Length%3A%20%0AScript%20Ready%3F%20(Yes%2FNo)%3A%20%0A%0ARegards%2C"
+    }
+  },
+  "seo_and_technical_foundation": {
+    "canonical_base": "https://arcturusprofessional.com",
+    "robots_txt_included": true,
+    "sitemap_xml_included": true,
+    "json_ld_schema": {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Arcturus Professional Services",
+      "email": "khushboo@arcturusprofessional.com",
+      "areaServed": "Europe",
+      "description": "Specialized B2B outreach, LinkedIn growth, administrative support, and AI video creation for European businesses."
+    },
+    "no_unsupported_claims": "Wording vetted: All pricing is clearly designated as 'Pricing on request' with tailored scope parameters. No unverified spam database promises."
+  },
+  "instructions_to_main_agent": [
+    "Use Javascript/React with React Router v7. Files must be .jsx/.js format as requested in the project configuration.",
+    "Implement structured accessible semantic HTML with high APCA contrast (>4.5:1 for body, >7:1 for headings).",
+    "Ensure all interactive items (buttons, mailto triggers, navigation links, filters, modals) have explicit data-testid attributes (e.g. data-testid='nav-link-services', data-testid='cta-contact-khushboo', data-testid='service-card-linkedin').",
+    "Use the crystal glass header with fixed z-50 and top padding on main content to avoid any overlap.",
+    "Integrate Lucide React icons cleanly without generic AI robot emojis.",
+    "Do not implement cookie banners or invasive trackers as per explicit user choice.",
+    "Provide a downloadable PDF preview/mock trigger modal or clean reference sheet on service pages."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
+    "anti_ai_slop": "Avoid generic centered cards, oversaturated gradients, and default template look. Use asymmetric Tetris bento grids, editorial typography, structured 1px border dividers, and high-clarity white/sand surfaces with deep navy accents.",
+    "transitions": "Explicit property transitions only (e.g. transition-colors duration-200, transition-transform duration-200), never transition: all.",
+    "contrast": "Ensure slate-900 on #FAF9F6, slate-700 on white cards, amber-800 on warm amber pill tags."
+  }
+}
