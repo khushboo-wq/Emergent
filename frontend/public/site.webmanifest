@@ -1,0 +1,17 @@
+{
+  "name": "Arcturus Professional Services",
+  "short_name": "Arcturus",
+  "description": "Independent B2B outreach and business support for Ireland, the UK and Europe.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf8f1",
+  "theme_color": "#0f2942",
+  "icons": [
+    {
+      "src": "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/60370bb24cb213f1_Arcturus%20White%20Logo.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

@@ -30,8 +30,10 @@ def test_organization_and_person_schema(pages, path):
     m = re.search(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', html, re.S)
     assert m, f"{path} missing JSON-LD"
     payload = m.group(1)
-    assert '"@type":"Organization"' in payload, f"{path} missing Organization schema"
-    assert '"@type":"Person"' in payload, f"{path} missing Person schema"
+    has_org = '"@type":"Organization"' in payload or bool(re.search(r'"@type":\[[^\]]*"Organization"[^\]]*\]', payload))
+    assert has_org, f"{path} missing Organization schema: {payload[:300]}"
+    has_person = '"@type":"Person"' in payload or bool(re.search(r'"@type":\[[^\]]*"Person"[^\]]*\]', payload))
+    assert has_person, f"{path} missing Person schema: {payload[:300]}"
     assert "Khushboo Tomar" in payload
     assert "New Delhi" in payload
     assert '"Ireland"' in payload and '"United Kingdom"' in payload and '"Europe"' in payload

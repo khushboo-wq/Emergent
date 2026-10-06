@@ -51,6 +51,10 @@ def test_business_support_does_not_offer_crm_management(pages):
     text = pages["/services/business-support"]
     if "CRM" in text:
         # Explicit statements that CRM management is NOT offered are acceptable.
-        assert "do not offer CRM management" in text or "does not offer CRM management" in text, (
-            "Business Support page mentions CRM without disclaiming it as unoffered"
-        )
+        assert (
+            "do not offer CRM management" in text
+            or "does not offer CRM management" in text
+            or "don't offer CRM management" in text
+            or "don&#x27;t offer CRM management" in text
+            or "don&#39;t offer CRM management" in text
+        ), f"Business Support page mentions CRM without disclaiming it as unoffered: {text[text.find('CRM')-80:text.find('CRM')+80]}"

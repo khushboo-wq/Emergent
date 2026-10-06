@@ -38,7 +38,7 @@ export default function Home() {
           <div className="relative min-h-[420px] lg:min-h-[560px]" data-testid="home-hero-visual">
             <div className="absolute -right-16 -top-14 size-72 rounded-full border border-[#c59b27]/25" aria-hidden="true" />
             <div className="premium-panel relative ml-auto h-[420px] w-[92%] overflow-hidden rounded-t-[8rem] rounded-b-[2rem] bg-[#0f2942] sm:h-[500px] lg:h-[560px]">
-              <img src={heroImage} alt="Modern executive meeting room and collaborative professional space" className="h-full w-full object-cover opacity-90 mix-blend-luminosity" onError={(event) => { event.currentTarget.style.display = "none"; }} data-testid="home-hero-image" />
+              <img src={heroImage} alt="Modern executive meeting room representing structured professional support" width="1300" height="900" fetchPriority="high" decoding="async" className="h-full w-full object-cover opacity-90 mix-blend-luminosity" onError={(event) => { event.currentTarget.style.display = "none"; }} data-testid="home-hero-image" />
               <div className="absolute inset-0 bg-[#0b1320]/25" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 right-0 bg-[#0f2942]/95 p-6 sm:p-9">
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#f5d783]" data-testid="home-visual-label">The Arcturus approach</p>

@@ -4,13 +4,11 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { visualEdits } from "@emergentbase/visual-edits/vite";
 import fs from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import type { Plugin } from "vite";
 
-const prerenderRoutes = new Set([
-  "/", "/services", "/services/linkedin-management", "/services/email-outreach",
-  "/services/business-support", "/services/lead-generation", "/services/ai-video-creation",
-  "/services/email-setup", "/about", "/how-i-work", "/contact", "/privacy-policy", "/terms",
-]);
+const seoConfig = JSON.parse(readFileSync(path.resolve(__dirname, "seo.config.json"), "utf8"));
+const prerenderRoutes = new Set<string>(seoConfig.pages.filter((page: { indexable: boolean }) => page.indexable).map((page: { path: string }) => page.path));
 
 function ssrHtmlPlugin(): Plugin {
   return {

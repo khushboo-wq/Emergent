@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { CANONICAL_BASE } from "@/lib/site";
 import { getSeoForPath } from "@/lib/seoData";
 
 interface SeoProps {
@@ -12,7 +11,7 @@ interface SeoProps {
 export default function Seo({ path }: SeoProps) {
   useEffect(() => {
     const seo = getSeoForPath(path);
-    const canonicalUrl = `${CANONICAL_BASE}${seo.path === "/" ? "/" : seo.path}`;
+    const canonicalUrl = seo.canonical;
     document.title = seo.title;
 
     const setMeta = (selector: string, attribute: "name" | "property", key: string, content: string) => {
@@ -25,14 +24,19 @@ export default function Seo({ path }: SeoProps) {
       element.content = content;
     };
     setMeta('meta[name="description"]', "name", "description", seo.description);
+    setMeta('meta[name="robots"]', "name", "robots", seo.indexable ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" : "noindex, follow");
     setMeta('meta[property="og:title"]', "property", "og:title", seo.title);
     setMeta('meta[property="og:description"]', "property", "og:description", seo.description);
     setMeta('meta[property="og:type"]', "property", "og:type", seo.type);
     setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);
     setMeta('meta[property="og:site_name"]', "property", "og:site_name", "Arcturus Professional Services");
+    setMeta('meta[property="og:image"]', "property", "og:image", seo.socialImage);
+    setMeta('meta[property="og:image:alt"]', "property", "og:image:alt", seo.socialImageAlt);
     setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", seo.title);
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", seo.description);
+    setMeta('meta[name="twitter:image"]', "name", "twitter:image", seo.socialImage);
+    setMeta('meta[name="twitter:image:alt"]', "name", "twitter:image:alt", seo.socialImageAlt);
 
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
@@ -41,6 +45,19 @@ export default function Seo({ path }: SeoProps) {
       document.head.appendChild(canonical);
     }
     canonical.href = canonicalUrl;
+
+    const setAlternate = (language: string) => {
+      let alternate = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${language}"]`);
+      if (!alternate) {
+        alternate = document.createElement("link");
+        alternate.rel = "alternate";
+        alternate.hreflang = language;
+        document.head.appendChild(alternate);
+      }
+      alternate.href = canonicalUrl;
+    };
+    setAlternate("en");
+    setAlternate("x-default");
 
     const scriptId = "arcturus-structured-data";
     document.getElementById(scriptId)?.remove();

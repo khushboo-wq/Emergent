@@ -1,64 +1,114 @@
-import { CANONICAL_BASE, CONTACT_EMAIL, getService, orderedServices, servicePageExtras } from "@/lib/site";
+import seoConfigJson from "../../seo.config.json";
+import { CONTACT_EMAIL, getService, orderedServices, servicePageExtras } from "@/lib/site";
 
-export interface SeoData {
+interface SeoPageConfig {
   path: string;
   title: string;
   description: string;
-  type: "website" | "article";
-  schema: Record<string, unknown>;
+  h1: string;
+  canonical: string;
+  indexable: boolean;
+  ogType: "website" | "article" | "profile";
+  schemaTypes: string[];
+  serviceSlug?: string;
+  changeFrequency: string;
+  priority: number;
+  lastModified: string;
 }
 
+interface SeoConfig {
+  site: {
+    name: string;
+    baseUrl: string;
+    language: string;
+    locale: string;
+    author: string;
+    email: string;
+    socialImage: string;
+    socialImageAlt: string;
+    allowedBots: string[];
+  };
+  pages: SeoPageConfig[];
+}
+
+export interface SeoData extends SeoPageConfig {
+  type: "website" | "article" | "profile";
+  schema: Record<string, unknown>;
+  socialImage: string;
+  socialImageAlt: string;
+}
+
+export const seoConfig = seoConfigJson as SeoConfig;
+const { site } = seoConfig;
 const sameAs = ["https://www.linkedin.com/in/khushboo-tomar", "https://www.instagram.com/arcturusprofessional"];
-const person = { "@type": "Person", name: "Khushboo Tomar", jobTitle: "Independent Freelancer", email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs };
-const organization = { "@type": "Organization", name: "Arcturus Professional Services", url: CANONICAL_BASE, founder: person, email: CONTACT_EMAIL, sameAs };
+const personId = `${site.baseUrl}/#khushboo-tomar`;
+const businessId = `${site.baseUrl}/#professional-service`;
+const person = { "@type": "Person", "@id": personId, name: "Khushboo Tomar", jobTitle: "Independent Freelancer", email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs };
+const professionalService = { "@type": ["Organization", "ProfessionalService"], "@id": businessId, name: site.name, url: site.baseUrl, logo: site.socialImage, image: site.socialImage, founder: { "@id": personId }, email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs, contactPoint: { "@type": "ContactPoint", email: CONTACT_EMAIL, contactType: "customer enquiries", availableLanguage: "English" } };
 
-const staticSeo: Record<string, Omit<SeoData, "path">> = {
-  "/": { title: "Freelance LinkedIn & Email Outreach Support | Arcturus", description: "Independent freelancer helping Irish and UK businesses with LinkedIn management, email outreach, lead generation and AI videos. Written-only communication.", type: "website", schema: { "@context": "https://schema.org", "@graph": [organization, person, { "@type": "WebSite", name: "Arcturus Professional Services", url: CANONICAL_BASE }] } },
-  "/services": { title: "Freelance B2B Support Services | Arcturus", description: "Explore six freelance services for Irish and UK businesses: LinkedIn management, email outreach, business support, lead research, AI video and email setup.", type: "website", schema: { "@context": "https://schema.org", "@type": "ItemList", name: "Arcturus Professional Services", itemListElement: orderedServices.map((service, index) => ({ "@type": "ListItem", position: index + 1, url: `${CANONICAL_BASE}/services/${service.slug}`, name: service.title })) } },
-  "/about": { title: "About Khushboo Tomar | Independent Freelancer", description: "Meet Khushboo Tomar, a New Delhi freelancer with 12 years in B2B outreach, lead generation and email deliverability for UK, Irish and European businesses.", type: "website", schema: { "@context": "https://schema.org", "@graph": [organization, person, { "@type": "AboutPage", name: "About Khushboo Tomar", url: `${CANONICAL_BASE}/about`, mainEntity: person }] } },
-  "/how-i-work": { title: "How I Work | Process, Payment & Communication", description: "A clear freelance process with 100% upfront payment, written communication, documented onboarding and regular reporting for every agreed service in writing.", type: "article", schema: { "@context": "https://schema.org", "@type": "WebPage", name: "How I Work", url: `${CANONICAL_BASE}/how-i-work`, about: person } },
-  "/contact": { title: "Contact Arcturus | Written Enquiries Only", description: "Send Khushboo Tomar a written enquiry by secure contact form, email or WhatsApp. I reply in writing and do not offer phone or call-booking appointments.", type: "website", schema: { "@context": "https://schema.org", "@type": "ContactPage", name: "Contact Arcturus Professional Services", url: `${CANONICAL_BASE}/contact`, mainEntity: person } },
-  "/privacy-policy": { title: "Privacy Policy | Arcturus Professional Services", description: "Read how Arcturus Professional Services handles contact enquiries, business information and website data for visitors in Ireland, the UK and Europe clearly.", type: "article", schema: { "@context": "https://schema.org", "@type": "WebPage", name: "Privacy Policy", url: `${CANONICAL_BASE}/privacy-policy` } },
-  "/terms": { title: "Terms of Service | Arcturus Professional Services", description: "Read the standard service terms for Arcturus Professional Services, including written scope, payment, client responsibilities, delivery and limitations.", type: "article", schema: { "@context": "https://schema.org", "@type": "WebPage", name: "Terms of Service", url: `${CANONICAL_BASE}/terms` } },
-};
+export const PRERENDER_ROUTES = seoConfig.pages.filter((page) => page.indexable).map((page) => page.path);
 
-export const PRERENDER_ROUTES = ["/", "/services", ...orderedServices.map((service) => `/services/${service.slug}`), "/about", "/how-i-work", "/contact", "/privacy-policy", "/terms"];
-
-export function getSeoForPath(path: string): SeoData {
-  const cleanPath = path !== "/" ? path.replace(/\/$/, "") : path;
-  const service = cleanPath.startsWith("/services/") ? getService(cleanPath.split("/").pop()) : undefined;
+function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
+  const service = page.serviceSlug ? getService(page.serviceSlug) : undefined;
   if (service) {
     const extras = servicePageExtras[service.slug];
     const priceValue = service.price.match(/[\d.]+/)?.[0] ?? "0";
-    const schema = {
+    return {
       "@context": "https://schema.org",
       "@graph": [
-        { "@type": "Service", name: service.title, description: service.metaDescription, url: `${CANONICAL_BASE}${cleanPath}`, provider: organization, areaServed: ["Ireland", "United Kingdom", "Europe"], offers: { "@type": "Offer", price: priceValue, priceCurrency: "EUR", description: service.price } },
-        { "@type": "FAQPage", mainEntity: extras.faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) },
+        professionalService,
+        { "@type": "Service", "@id": `${page.canonical}#service`, name: service.title, description: page.description, url: page.canonical, provider: { "@id": businessId }, areaServed: ["Ireland", "United Kingdom", "Europe"], offers: { "@type": "Offer", price: priceValue, priceCurrency: "EUR", description: service.price, url: page.canonical, availability: "https://schema.org/InStock" } },
+        { "@type": "FAQPage", "@id": `${page.canonical}#faq`, mainEntity: extras.faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) },
+        { "@type": "BreadcrumbList", "@id": `${page.canonical}#breadcrumbs`, itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${site.baseUrl}/` },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${site.baseUrl}/services` },
+          { "@type": "ListItem", position: 3, name: service.title, item: page.canonical },
+        ] },
       ],
     };
-    return { path: cleanPath, title: service.metaTitle, description: service.metaDescription, type: "website", schema };
   }
-  const entry = staticSeo[cleanPath] ?? staticSeo["/"];
-  return { path: cleanPath, ...entry };
+
+  const webPage = { "@type": page.path === "/about" ? "AboutPage" : page.path === "/contact" ? "ContactPage" : page.path === "/services" ? "CollectionPage" : "WebPage", "@id": `${page.canonical}#webpage`, url: page.canonical, name: page.title, description: page.description, isPartOf: { "@id": `${site.baseUrl}/#website` } };
+  const graph: Record<string, unknown>[] = [webPage];
+  if (page.schemaTypes.includes("ProfessionalService")) graph.unshift(professionalService);
+  if (page.schemaTypes.includes("Person")) graph.push(person);
+  if (page.path === "/") graph.push({ "@type": "WebSite", "@id": `${site.baseUrl}/#website`, name: site.name, url: `${site.baseUrl}/`, publisher: { "@id": businessId }, inLanguage: site.language });
+  if (page.path === "/services") graph.push({ "@type": "ItemList", name: "Arcturus Professional Services", itemListElement: orderedServices.map((entry, index) => ({ "@type": "ListItem", position: index + 1, url: `${site.baseUrl}/services/${entry.slug}`, name: entry.title })) });
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
+export function getSeoForPath(path: string): SeoData {
+  const cleanPath = path !== "/" ? path.replace(/\/$/, "") : path;
+  const page = seoConfig.pages.find((entry) => entry.path === cleanPath) ?? seoConfig.pages[0];
+  return { ...page, type: page.ogType, schema: schemaForPage(page), socialImage: site.socialImage, socialImageAlt: site.socialImageAlt };
 }
 
 export function renderSeoHead(seo: SeoData): string {
-  const canonical = `${CANONICAL_BASE}${seo.path === "/" ? "/" : seo.path}`;
   const escapedSchema = JSON.stringify(seo.schema).replace(/</g, "\\u003c");
   const attr = (value: string) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
   return [
     `<title>${attr(seo.title)}</title>`,
     `<meta name="description" content="${attr(seo.description)}">`,
-    `<link rel="canonical" href="${canonical}">`,
+    `<meta name="author" content="${attr(site.author)}">`,
+    `<meta name="robots" content="${seo.indexable ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" : "noindex, follow"}">`,
+    `<link rel="canonical" href="${seo.canonical}">`,
+    `<link rel="alternate" hreflang="en" href="${seo.canonical}">`,
+    `<link rel="alternate" hreflang="x-default" href="${seo.canonical}">`,
     `<meta property="og:title" content="${attr(seo.title)}">`,
     `<meta property="og:description" content="${attr(seo.description)}">`,
     `<meta property="og:type" content="${seo.type}">`,
-    `<meta property="og:url" content="${canonical}">`,
-    `<meta property="og:site_name" content="Arcturus Professional Services">`,
+    `<meta property="og:url" content="${seo.canonical}">`,
+    `<meta property="og:site_name" content="${attr(site.name)}">`,
+    `<meta property="og:locale" content="${site.locale}">`,
+    `<meta property="og:image" content="${seo.socialImage}">`,
+    `<meta property="og:image:width" content="1024">`,
+    `<meta property="og:image:height" content="1024">`,
+    `<meta property="og:image:alt" content="${attr(seo.socialImageAlt)}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${attr(seo.title)}">`,
     `<meta name="twitter:description" content="${attr(seo.description)}">`,
+    `<meta name="twitter:image" content="${seo.socialImage}">`,
+    `<meta name="twitter:image:alt" content="${attr(seo.socialImageAlt)}">`,
     `<script id="arcturus-structured-data" type="application/ld+json">${escapedSchema}</script>`,
   ].join("\n    ");
 }

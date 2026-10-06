@@ -1,7 +1,5 @@
 export const SITE_NAME = "Arcturus Professional Services";
 export const CONTACT_EMAIL = "khushboo@arcturusprofessional.com";
-export const CANONICAL_BASE = "https://arcturusprofessional.com";
-export const SOURCE_PDF_URL = "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/b7ljm8g9_APS.pdf";
 
 export interface ServiceProcessStep {
   label: string;
@@ -33,8 +31,6 @@ export interface ServiceContent {
   tools?: string[];
   sourceNote?: string;
   relatedServices?: RelatedService[];
-  metaTitle: string;
-  metaDescription: string;
   featured?: boolean;
 }
 
@@ -95,8 +91,6 @@ export const services: ServiceContent[] = [
     price: "€400 / month",
     priceNote: "Monthly managed service.",
     tools: ["LinkedIn", "LinkedIn Sales Navigator", "Hootsuite"],
-    metaTitle: "LinkedIn Management for Businesses | €400/month",
-    metaDescription: "Done-for-you LinkedIn management: profile optimisation, posting, outreach and nurture for UK and Irish businesses. €400/month. Written reporting is included.",
     featured: true,
   },
   {
@@ -143,8 +137,6 @@ export const services: ServiceContent[] = [
       { slug: "lead-generation", title: "Lead Generation", description: "Finding & verifying the right contacts for a focused campaign.", price: "€0.80 / verified business contact" },
       { slug: "email-setup", title: "Email Setup", description: "Professional email and DNS configuration before outreach begins.", price: "€80 one-time" },
     ],
-    metaTitle: "B2B Email Outreach Service | €450/month",
-    metaDescription: "GDPR and PECR-aware B2B cold email campaigns with proper warm-up and reporting for UK and Irish businesses. €450/month. Includes unsubscribe handling too.",
     featured: true,
   },
   {
@@ -189,8 +181,6 @@ export const services: ServiceContent[] = [
     price: "€12 / hour",
     priceNote: "Billed according to actual time spent on agreed work.",
     sourceNote: "Tasks requiring significant additional research or extended time are discussed and agreed before work continues.",
-    metaTitle: "Virtual Business Support Freelancer | €12/hour",
-    metaDescription: "Reliable remote business support for founders and small teams: research, admin, website support and AI-assisted content writing. €12/hour. Written updates.",
     featured: true,
   },
   {
@@ -233,8 +223,6 @@ export const services: ServiceContent[] = [
     priceNote: "Monthly service; Hootsuite subscription is separate.",
     tools: ["Google Gemini", "Google Flow", "Google Veo 3", "Hootsuite"],
     sourceNote: "Changes are made by adjusting the prompt, not through manual editing.",
-    metaTitle: "AI Video Creation for Businesses | €400/month",
-    metaDescription: "Custom AI-generated videos and reels with your branding, logo and end cards. Up to 30 videos per month. €400/month. Basic AI content for social media.",
     featured: true,
   },
   {
@@ -277,8 +265,6 @@ export const services: ServiceContent[] = [
     price: "€0.80 / verified business contact",
     priceNote: "Payable before the completed list is delivered, according to the agreed requirement.",
     tools: ["LinkedIn Sales Navigator", "Apollo", "UseBouncer"],
-    metaTitle: "B2B Lead Generation Service | €0.80 per Contact",
-    metaDescription: "Verified B2B contact research for UK and Irish markets, built with Sales Navigator and transparent data sources. €0.80 per verified contact. Sources explained.",
   },
   {
     slug: "email-setup",
@@ -315,8 +301,6 @@ export const services: ServiceContent[] = [
     priceNote: "Billed once, before setup begins.",
     tools: ["DNS provider", "Email provider"],
     sourceNote: "Required before Email Outreach campaigns can begin if this setup is not already in place.",
-    metaTitle: "Business Email & DNS Setup Service | €80 One-Time",
-    metaDescription: "Professional business email and DNS setup (SPF, DKIM, DMARC) for better deliverability. One-time €80. For UK and Irish businesses needing sound foundations.",
   },
 ];
 

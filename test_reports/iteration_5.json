@@ -1,0 +1,85 @@
+{
+  "passed": 10,
+  "failed": 1,
+  "bugs": [
+    {
+      "severity": "medium",
+      "criterion": "Images, favicon and mobile performance foundations are present",
+      "description": "Horizontal overflow on /about at 390px mobile viewport: document.documentElement.scrollWidth=429 > clientWidth=390. Root cause isolated via page.evaluate bounding-rect scan: an ARTICLE panel ('rounded-[2rem] border ... bg-[#eef2ff] p-7 sm:p-10', the 'The Person You Brief' / compliance content card) renders with right edge at x=429, overflowing the 390px viewport by ~39px, dragging the whole document width with it. A decorative absolute-positioned circle (right-[-7rem] size-80) also extends past the viewport but is intentionally off-canvas decoration, not the scroll-width driver - the ARTICLE panel is the actual cause.",
+      "evidence": "run_browser_script(navigation-responsive-links): expect(hasOverflow=true).toBe(false) failed twice in a row (not flaky) on page.goto('/about') at 390x844. Cross-check: curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/about -> 200 (backend/page serving is healthy, confirming this is a frontend CSS layout bug, not a data/backend fault). Direct page.evaluate offender scan confirms the overflowing element and its bounding rect (left=22.6, right=429.4) against viewport width 390."
+    }
+  ],
+  "action_items": [
+    {
+      "type": "bug_fix_needed",
+      "severity": "medium",
+      "description": "Constrain the /about content-card ARTICLE panels (compliance/work-brief sections, classes including 'rounded-[2rem] border ... p-7 sm:p-10') to the viewport width on small screens (e.g. add max-w-full/overflow-hidden or reduce horizontal padding at the sm breakpoint) so /about has no horizontal scroll at 390px, matching the criterion already satisfied by other pages (home, mobile-accessible-responsive check)."
+    }
+  ],
+  "retest_needed": true,
+  "checks": [
+    {
+      "criterion": "All important pages serve unique crawler-readable SEO metadata",
+      "name": "test_tscheck_seo_tags.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "pytest: all 13 routes checked for unique <60-char title, 150-160 char description, canonical matching https://arcturusprofessional.com/<path>, OG/Twitter tags, JSON-LD present via GET with Accept:text/html against localhost:3000. Part of the 91-passed full-suite run."
+    },
+    {
+      "criterion": "Structured data matches each page purpose",
+      "name": "test_tscheck_business_identity_schema.py + test_tscheck_service_schema.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Fixed pre-existing test-artifact drift: '@type' now renders as a JSON-LD array (e.g. [\"Organization\",\"ProfessionalService\"]) instead of a bare string - widened the regex to accept array form; this is a test fix, not an app bug (valid JSON-LD multi-type pattern). After the fix: Organization+Person on / and /about, ContactPage+visible channels on /contact, and Service+FAQPage+BreadcrumbList with EUR priceCurrency/areaServed on all 6 service pages all verified. 91 passed in full suite run."
+    },
+    {
+      "criterion": "Sitemap and robots are generated correctly",
+      "name": "test_tscheck_crawler_discovery_files.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "GET /robots.txt allows GPTBot/OAI-SearchBot/ChatGPT-User/ClaudeBot/PerplexityBot/Google-Extended/Googlebot/Bingbot, no site-wide disallow, references https://arcturusprofessional.com/sitemap.xml; GET /sitemap.xml lists all 13 indexable canonical URLs."
+    },
+    {
+      "criterion": "Editable SEO configuration and reports work",
+      "name": "test_tscheck_seo_audit_report.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "New test file. seo.config.json validated as single source with 13 unique path/title/description entries. `yarn seo:audit` (subprocess, cwd=frontend) exits 0, regenerates frontend/SEO_REPORT.md ('Pages created: 13', 'Missing SEO items: 0') and public/seo-report.html ('<strong>0</strong> Missing SEO items', every configured title present, HTML-escaped). GET /seo-report.html confirmed noindex and absent from /sitemap.xml."
+    },
+    {
+      "criterion": "Production prerendering and indexing controls are safe",
+      "name": "test_tscheck_image_favicon_prerender.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "New test file reading frontend/dist (existing production build). All 13 important routes' prerendered HTML files exist, each has an H1 and a robots meta containing 'index' and never 'noindex'. dist/seo-report.html confirmed to remain noindex in the production build."
+    },
+    {
+      "criterion": "Navigation and internal linking expose every important route",
+      "name": "main-navigation-routes + mobile-accessible-responsive",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "main-navigation-routes: reran persisted check, all primary nav routes reachable, passed. mobile-accessible-responsive: reran persisted check - mobile menu opens, about/service nav links visible, no overflow on the page it exercises (/), passed. (Desktop services-dropdown/breadcrumb/related-link assertions live in navigation-responsive-links, which failed earlier on an unrelated /about overflow bug before reaching them - see bug entry; nav itself is independently proven working by these two checks.)"
+    },
+    {
+      "criterion": "Images, favicon and mobile performance foundations are present",
+      "name": "navigation-responsive-links",
+      "lane": "browser",
+      "status": "failed",
+      "evidence": "Reran twice (not flaky, failed identically both times): expect(hasOverflow).toBe(false) received true on /about at 390x844 - scrollWidth 429 vs clientWidth 390. See bugs[] for root-cause element and cross-check evidence. test_tscheck_image_favicon_prerender.py (backend) separately confirms favicon/apple-touch-icon/manifest, preconnects, and hero/logo width+height+fetchPriority+alt are all present and passing - only the /about overflow sub-assertion fails."
+    },
+    {
+      "criterion": "Images, favicon and mobile performance foundations are present",
+      "name": "home-overflow-public-preview",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check against public preview https://khushboo-services.preview.emergentagent.com/ at 390x844: scrollWidth==clientWidth==390, no overflow on home; screenshot confirms clean hero render."
+    },
+    {
+      "criterion": "SEO content remains factual, natural and non-duplicative",
+      "name": "test_tscheck_content_language_rules.py + service-overview-and-summary-present",
+      "lane": "backend+browser",
+      "status": "passed",
+      "evidence": "Backend: fixed pre-existing test drift (CRM disclaimer wording is \"I don't offer CRM management\" / HTML-escaped \"don&#x27;t offer\", not \"do not\"/\"does not\" - widened the match; this is a test-artifact fix, not an app bug) - confirmed no first-person-plural voice, no em dashes across 13 routes, and Business Support correctly disclaims CRM. Browser: service-overview-and-summary-present reran passed - distinct, non-duplicated summary vs overview copy on a service page. Full backend suite: 91 passed."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "passed": 11,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Images, favicon and mobile performance foundations are present",
+      "name": "navigation-responsive-links",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check at 390x844 on /about: no-overflow assertion now passes (previously failed with scrollWidth 429 vs clientWidth 390). Mobile menu links, desktop services dropdown (6 slugs), breadcrumb nav, related-service link, and footer links all verified in the same run."
+    },
+    {
+      "criterion": "Images, favicon and mobile performance foundations are present",
+      "name": "about-overflow-public-preview",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "New check against public preview https://khushboo-services.preview.emergentagent.com/about at 390x844: document.scrollWidth==clientWidth==390 (no horizontal overflow), and both <article> compliance/work-brief panels have left>=0 and right<=390 (fully contained in viewport). Screenshot confirms clean render."
+    },
+    {
+      "criterion": "Images, favicon and mobile performance foundations are present",
+      "name": "home-overflow-public-preview",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check against public preview: scrollWidth==clientWidth==390 on home, no overflow, screenshot confirms clean hero render."
+    },
+    {
+      "criterion": "Images, favicon and mobile performance foundations are present",
+      "name": "test_tscheck_image_favicon_prerender.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Part of full backend suite rerun (91 passed): favicon/apple-touch-icon/manifest, preconnects, hero/logo width+height+fetchPriority+alt all confirmed present across prerendered dist routes; dist/seo-report.html remains noindex."
+    },
+    {
+      "criterion": "All important pages serve unique crawler-readable SEO metadata",
+      "name": "test_tscheck_seo_tags.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Full suite rerun: 91 passed, 13 routes checked for title/description/canonical/OG/Twitter/JSON-LD."
+    },
+    {
+      "criterion": "Structured data matches each page purpose",
+      "name": "test_tscheck_business_identity_schema.py + test_tscheck_service_schema.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Full suite rerun: 91 passed, Organization+Person/ContactPage/Service+FAQPage+BreadcrumbList schemas verified."
+    },
+    {
+      "criterion": "Sitemap and robots are generated correctly",
+      "name": "test_tscheck_crawler_discovery_files.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Full suite rerun: robots.txt allows major crawler bots, references sitemap.xml; sitemap.xml lists all 13 indexable canonical URLs."
+    },
+    {
+      "criterion": "Editable SEO configuration and reports work",
+      "name": "test_tscheck_seo_audit_report.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Full suite rerun: seo.config.json 13 entries validated, yarn seo:audit exits 0 and regenerates SEO_REPORT.md / seo-report.html with 0 missing items; /seo-report.html confirmed noindex and excluded from sitemap (per spec_deviations)."
+    },
+    {
+      "criterion": "Navigation and internal linking expose every important route",
+      "name": "main-navigation-routes + mobile-accessible-responsive",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Both reran passed: all primary nav routes reachable; mobile menu opens, about/service nav links visible, no overflow on home."
+    },
+    {
+      "criterion": "SEO content remains factual, natural and non-duplicative",
+      "name": "test_tscheck_content_language_rules.py + service-overview-and-summary-present",
+      "lane": "backend+browser",
+      "status": "passed",
+      "evidence": "Backend full suite rerun (91 passed) confirms no first-person-plural voice/em dashes and correct CRM disclaimer wording; browser check reran passed confirming distinct overview vs summary copy on a service page."
+    },
+    {
+      "criterion": "Production prerendering and indexing controls are safe",
+      "name": "test_tscheck_image_favicon_prerender.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Full suite rerun: all 13 important routes' prerendered HTML has H1 and robots meta containing 'index' never 'noindex'; dist/seo-report.html remains noindex."
+    }
+  ]
+}
