@@ -1,70 +1,79 @@
 import { ChevronDown, Menu, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { CONTACT_EMAIL, orderedServices } from "@/lib/site";
 
-const logoUrl = "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/60370bb24cb213f1_Arcturus%20White%20Logo.jpg";
+const logoUrl = "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/0267e06d60c3c063_Arcturus%20Black%20Logo.jpg";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `commercial-nav-link ${isActive ? "is-active" : ""}`;
+  `luxury-nav-link ${isActive ? "is-active" : ""}`;
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 18);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="site-header commercial-header" data-testid="site-header">
-      <div className="commercial-container commercial-header-inner">
-        <Link to="/" className="commercial-brand" data-testid="nav-logo-link">
-          <span className="commercial-logo-wrap">
-            <img src={logoUrl} alt="Arcturus Professional Services logo" width="52" height="52" fetchPriority="high" decoding="async" />
-          </span>
-          <span className="commercial-brand-text">
-            <strong>ARCTURUS</strong>
-            <small>Professional Services</small>
-          </span>
+    <header className={`site-header luxury-site-header ${scrolled ? "is-scrolled" : ""}`} data-testid="site-header">
+      <div className="luxury-shell luxury-header-inner">
+        <Link to="/" className="luxury-brand" data-testid="nav-logo-link">
+          <img src={logoUrl} alt="Arcturus Professional Services logo" width="44" height="44" fetchPriority="high" decoding="async" />
+          <span><strong>ARCTURUS</strong><small>Professional Services</small></span>
         </Link>
 
-        <nav className="commercial-desktop-nav" aria-label="Primary navigation" data-testid="desktop-navigation">
-          <NavLink to="/" className={navLinkClass} data-testid="nav-link-home">Home</NavLink>
-          <div className="commercial-services-nav">
-            <NavLink to="/services" className={navLinkClass} data-testid="nav-link-services">Services <ChevronDown size={14} /></NavLink>
-            <div className="commercial-services-dropdown">
+        <nav className="luxury-desktop-nav" aria-label="Primary navigation" data-testid="desktop-navigation">
+          <NavLink to="/" className={navLinkClass}>Home</NavLink>
+          <div className="luxury-services-nav">
+            <NavLink to="/services" className={navLinkClass}>Services <ChevronDown size={13} /></NavLink>
+            <div className="luxury-services-menu">
               {orderedServices.map((service) => (
                 <Link key={service.slug} to={`/services/${service.slug}`} data-testid={`nav-service-${service.slug}`}>
-                  <span>{service.title}</span><small>{service.price}</small>
+                  <span>{service.title}</span>
+                  <small>{service.price}</small>
                 </Link>
               ))}
             </div>
           </div>
-          <NavLink to="/about" className={navLinkClass} data-testid="nav-link-about">About</NavLink>
-          <NavLink to="/how-i-work" className={navLinkClass} data-testid="nav-link-how-i-work">How I Work</NavLink>
-          <NavLink to="/contact" className={navLinkClass} data-testid="nav-link-contact">Contact</NavLink>
+          <NavLink to="/about" className={navLinkClass}>About</NavLink>
+          <NavLink to="/how-i-work" className={navLinkClass}>How I work</NavLink>
+          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
 
-        <Link to="/contact" className="commercial-header-cta" data-testid="header-contact-button">Get in touch <MessageCircle size={16} /></Link>
+        <div className="luxury-header-actions">
+          <a className="luxury-header-email" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          <Link to="/contact" className="luxury-header-cta">Get in touch <MessageCircle size={15} /></Link>
+        </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger render={<Button variant="outline" size="icon" className="commercial-mobile-menu" />} data-testid="mobile-menu-button" aria-label="Open navigation">
+          <SheetTrigger render={<Button variant="outline" size="icon" className="luxury-mobile-menu" />} data-testid="mobile-menu-button" aria-label="Open navigation">
             <Menu size={20} />
           </SheetTrigger>
-          <SheetContent side="right" className="commercial-mobile-sheet">
+          <SheetContent side="right" className="luxury-mobile-sheet">
             <SheetHeader>
               <SheetTitle>Arcturus</SheetTitle>
               <p>{CONTACT_EMAIL}</p>
             </SheetHeader>
-            <nav className="commercial-mobile-nav" aria-label="Mobile navigation" data-testid="mobile-navigation">
+            <nav className="luxury-mobile-nav" aria-label="Mobile navigation" data-testid="mobile-navigation">
               <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
               <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
-              <div className="commercial-mobile-services">
-                {orderedServices.map((service) => <Link key={service.slug} to={`/services/${service.slug}`} onClick={() => setOpen(false)}>{service.title}</Link>)}
+              <div className="luxury-mobile-services">
+                {orderedServices.map((service) => (
+                  <Link key={service.slug} to={`/services/${service.slug}`} onClick={() => setOpen(false)}>{service.title}</Link>
+                ))}
               </div>
               <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
-              <NavLink to="/how-i-work" onClick={() => setOpen(false)}>How I Work</NavLink>
+              <NavLink to="/how-i-work" onClick={() => setOpen(false)}>How I work</NavLink>
               <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
             </nav>
-            <Link to="/contact" onClick={() => setOpen(false)} className="commercial-mobile-cta">Get in touch</Link>
+            <Link to="/contact" onClick={() => setOpen(false)} className="luxury-mobile-cta">Get in touch</Link>
           </SheetContent>
         </Sheet>
       </div>
