@@ -42,6 +42,22 @@ Every public page includes a fixed accessible quick-contact dock with official W
 
 PageFrame includes a keyboard-accessible skip-to-content link. Unknown HTML routes now return a rendered, noindex 404 page with useful navigation rather than a soft-404 blank shell. The editable `redirects` object in `frontend/seo.config.json` drives HTTP 301 responses in the Vite server and generates `public/_redirects` for supported static hosts, while the existing client redirects remain as a fallback.
 
+## Premium visual redesign
+The visual layer is editorial, creative and slightly futuristic while preserving all approved content and SEO. The Home stock hero image has been replaced by a lightweight CSS/SVG atmosphere with translucent grids, connection paths, nodes, orbital geometry, glows and transform-led motion. Every service page includes a distinct abstract motif: network nodes, message paths, workflows, data grids, motion frames or configuration layers.
+
+Hemicube is limited to primary H1 display use with Sora Variable as its fallback. Sora handles secondary headings and longer display text, Alesand Extra Bold remains on prices and compact labels, and Plus Jakarta Sans remains the paragraph and form face. This avoids using Hemicube for repeated numerals or dense copy while keeping its brand character.
+
+The site uses translucent navigation, varied service-card silhouettes, layered gradients, restrained glows, refined focus and hover states, glass form surfaces, animated geometry and a digital-line footer. Animation remains transform and opacity led, and the global reduced-motion treatment collapses non-essential animation and transitions.
+
+A compact `Analytics unavailable` control appears before the footer. Its panel shows `Country data unavailable` and `No tracking is connected.` No analytics script, cookie, IP collection, country lookup, tracking pixel or provider is connected.
+
+## Jev smart service matching
+The Services page includes an optional Jev-powered free-text matcher inside the existing Service Fit Guide. A visitor describes a business need, and `POST /api/service-match` uses Jev `jev-latest` to choose exactly one of the six approved service slugs. The result shows the matching service, deterministic factual rationale, Jev confidence, a clarification note below 55% confidence, and links to the service page, preselected contact form, or existing email enquiry.
+
+The backend uses `typesafe-sdk==0.7.1` with one cached `AsyncTypeSafeClient`, the environment-provided integration proxy, the server-only `EMERGENT_LLM_KEY`, two SDK retries, and a one-call semaphore for free-plan concurrency. It returns an error rather than a mocked classification if Jev is unavailable. The six choice criteria are fixed in `backend/routers/service_match.py`; Jev cannot invent a seventh service.
+
+The matcher sends only the short visitor brief to Jev. It stores nothing in MongoDB, sets no cookie, and adds no analytics. The manual six-service selector remains available if the visitor prefers not to use Jev or if the service is temporarily unavailable. A `?service=<slug>` contact URL preselects the matching service after hydration without changing crawler HTML.
+
 ## Design
 Premium editorial corporate design with warm ivory and cream surfaces, deep navy authority panels, cobalt, muted lavender, and muted teal accents. The design uses only solid colours, layered rounded panels, arches, asymmetric grids, realistic soft shadows, and generous whitespace. Hemicube is reserved for prominent headings, Alesand Extra Bold for prices and short labels, and Plus Jakarta Sans for readable paragraphs and forms. Motion uses short page, panel, dropdown, hover, and button transitions with a reduced-motion override.
 

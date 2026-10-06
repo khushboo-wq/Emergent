@@ -1,11 +1,10 @@
-import { ArrowDownRight, ArrowUpRight, CircleDot, Layers3, Mail, MoveRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, CircleDot, Mail, MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { orderedServices } from "@/lib/site";
-
-const heroImage = "https://images.unsplash.com/photo-1740933084056-078fac872bff?auto=format&fit=crop&w=1300&q=80";
+import HeroAtmosphere from "@/components/HeroAtmosphere";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
         title="Arcturus Professional Services | Structured B2B Growth & Executive Support"
         description="Bespoke LinkedIn management, focused email outreach, business support, and AI video creation for European businesses and founders."
       />
-      <section className="relative overflow-hidden border-b border-[#e2dfd8]" data-testid="home-hero">
+      <section className="editorial-hero relative overflow-hidden border-b border-[#e2dfd8]" data-testid="home-hero">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-20 lg:px-10 lg:py-28">
           <div className="relative z-10 max-w-2xl">
             <div className="mb-7 flex items-center gap-3" data-testid="home-hero-eyebrow">
@@ -35,21 +34,7 @@ export default function Home() {
             <p className="mt-7 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[#64748b]" data-testid="home-hero-note"><CircleDot className="size-3 text-[#c59b27]" /> Written enquiries · tailored scope · no account required</p>
           </div>
 
-          <div className="relative min-h-[420px] lg:min-h-[560px]" data-testid="home-hero-visual">
-            <div className="absolute -right-16 -top-14 size-72 rounded-full border border-[#c59b27]/25" aria-hidden="true" />
-            <div className="premium-panel relative ml-auto h-[420px] w-[92%] overflow-hidden rounded-t-[8rem] rounded-b-[2rem] bg-[#0f2942] sm:h-[500px] lg:h-[560px]">
-              <img src={heroImage} alt="Modern executive meeting room representing structured professional support" width="1300" height="900" fetchPriority="high" decoding="async" className="h-full w-full object-cover opacity-90 mix-blend-luminosity" onError={(event) => { event.currentTarget.style.display = "none"; }} data-testid="home-hero-image" />
-              <div className="absolute inset-0 bg-[#0b1320]/25" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 bg-[#0f2942]/95 p-6 sm:p-9">
-                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#f5d783]" data-testid="home-visual-label">The Arcturus approach</p>
-                <p className="mt-3 max-w-sm font-serif text-3xl leading-tight text-white" data-testid="home-visual-statement">Clear scope. Thoughtful delivery. Room to do your best work.</p>
-              </div>
-            </div>
-            <div className="premium-panel absolute -bottom-5 left-0 max-w-[230px] rounded-2xl border border-[#e2dfd8] bg-[#fbf8f1] p-5" data-testid="home-hero-card">
-              <Layers3 className="size-5 text-[#c59b27]" />
-              <p className="mt-3 text-sm font-medium leading-5 text-[#0f2942]">Six focused ways to add capacity.</p>
-            </div>
-          </div>
+          <HeroAtmosphere />
         </div>
       </section>
 

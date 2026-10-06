@@ -6,7 +6,7 @@ const contacts = [
   { label: "WhatsApp", href: "https://wa.me/919911284362", icon: FaWhatsapp, colour: "bg-[#128c7e]", external: true, testId: "quick-contact-whatsapp" },
   { label: "Email", href: getContactHref(), icon: MdOutlineEmail, colour: "bg-[#0f2942]", external: false, testId: "quick-contact-email" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/khushboo-tomar", icon: FaLinkedinIn, colour: "bg-[#0a66c2]", external: true, testId: "quick-contact-linkedin" },
-  { label: "Instagram", href: "https://www.instagram.com/arcturusprofessional", icon: FaInstagram, colour: "bg-[#c13584]", external: true, testId: "quick-contact-instagram" },
+  { label: "Instagram", href: "https://www.instagram.com/arcturusprofessional", icon: FaInstagram, colour: "instagram-contact", external: true, testId: "quick-contact-instagram" },
 ];
 
 export default function ContactDock() {

@@ -17,12 +17,15 @@ load_dotenv(ROOT_DIR / '.env')
 # MongoDB connection
 from lib.db import client, db
 from routers.contact import router as contact_router
+from routers.service_match import router as service_match_router
+from lib.jev import close_jev_client
 
 
 # Startup runs before the yield, shutdown after it. Add your own setup/teardown here.
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     yield
+    await close_jev_client()
     client.close()
 
 
@@ -60,6 +63,7 @@ async def get_status_checks():
     return [StatusCheck(**status_check) for status_check in status_checks]
 
 api_router.include_router(contact_router)
+api_router.include_router(service_match_router)
 
 app.add_middleware(
     CORSMiddleware,

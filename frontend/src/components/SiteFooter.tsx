@@ -8,7 +8,7 @@ const whiteLogoUrl = "https://customer-assets-wrfwihn1.emergentagent.net/job_khu
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#0b1828] pb-20 text-[#e2e8f0] md:pb-0" data-testid="site-footer">
+    <footer className="digital-footer pb-20 text-[#e2e8f0] md:pb-0" data-testid="site-footer">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_1fr_0.9fr] lg:px-10 lg:py-20">
         <div>
           <img src={whiteLogoUrl} alt="Arcturus Professional Services white logo" width="96" height="96" loading="lazy" decoding="async" className="size-24 rounded-2xl object-contain" data-testid="footer-logo-image" />

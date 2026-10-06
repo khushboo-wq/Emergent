@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { CheckCircle2, Send } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import { apiPost, ApiError } from "@/lib/api";
 import { orderedServices } from "@/lib/site";
 
@@ -26,6 +27,7 @@ const initialValues: ContactSubmission = {
 };
 
 export default function ContactForm() {
+  const [searchParams] = useSearchParams();
   const [values, setValues] = useState<ContactSubmission>(initialValues);
   const mutation = useMutation<ContactResponse, ApiError, ContactSubmission>({
     mutationFn: (payload) => apiPost<ContactResponse>("/contact", payload),
@@ -36,6 +38,13 @@ export default function ContactForm() {
     setValues((current) => ({ ...current, [field]: value }));
     if (mutation.isError) mutation.reset();
   };
+
+  useEffect(() => {
+    const requestedService = orderedServices.find((service) => service.slug === searchParams.get("service"));
+    if (requestedService) {
+      setValues((current) => current.service ? current : { ...current, service: requestedService.title });
+    }
+  }, [searchParams]);
 
   if (mutation.isSuccess) {
     return (
