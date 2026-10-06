@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import ContactDock from "@/components/ContactDock";
 import AnalyticsUnavailable from "@/components/AnalyticsUnavailable";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 interface PageFrameProps {
   children: ReactNode;
@@ -17,6 +18,7 @@ export default function PageFrame({ children }: PageFrameProps) {
       <AnalyticsUnavailable />
       <SiteFooter />
       <ContactDock />
+      <FloatingWhatsApp />
     </div>
   );
 }
