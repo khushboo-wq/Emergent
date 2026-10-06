@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Mail, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
