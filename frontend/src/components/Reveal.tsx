@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 
 interface RevealProps {
@@ -30,7 +30,7 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
   }, []);
 
   return (
-    <div ref={ref} className={`luxury-reveal ${visible ? "is-visible" : ""} ${className}`} style={{ "--luxury-delay": `${delay}ms` } as React.CSSProperties}>
+    <div ref={ref} className={`luxury-reveal ${visible ? "is-visible" : ""} ${className}`} style={{ "--luxury-delay": `${delay}ms` } as CSSProperties}>
       {children}
     </div>
   );
