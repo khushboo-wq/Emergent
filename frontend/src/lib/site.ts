@@ -1,10 +1,18 @@
 export const SITE_NAME = "Arcturus Professional Services";
 export const CONTACT_EMAIL = "khushboo@arcturusprofessional.com";
 export const CANONICAL_BASE = "https://arcturusprofessional.com";
+export const SOURCE_PDF_URL = "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/b7ljm8g9_APS.pdf";
 
 export interface ServiceProcessStep {
   label: string;
   detail: string;
+}
+
+export interface RelatedService {
+  slug: string;
+  title: string;
+  description: string;
+  price: string;
 }
 
 export interface ServiceContent {
@@ -20,9 +28,14 @@ export interface ServiceContent {
   process: ServiceProcessStep[];
   timeline: string;
   requirements: string[];
+  price: string;
+  priceNote: string;
+  tools?: string[];
+  sourceNote?: string;
+  relatedServices?: RelatedService[];
   metaTitle: string;
   metaDescription: string;
-  accent: string;
+  featured?: boolean;
 }
 
 export const services: ServiceContent[] = [
@@ -30,172 +43,275 @@ export const services: ServiceContent[] = [
     slug: "linkedin-management",
     navLabel: "LinkedIn Management",
     title: "LinkedIn Management",
-    eyebrow: "01 / Presence & outreach",
-    description:
-      "A structured LinkedIn service for founders and sales teams that need consistent positioning, thoughtful outreach, and a clear weekly rhythm.",
-    overview:
-      "Arcturus can help turn an underused LinkedIn presence into a more considered channel for visibility and conversations. Work is shaped around your voice, your offer, and the audiences you want to reach rather than a one-size-fits-all posting schedule.",
-    audience:
-      "Best suited to founders, consultants, and B2B sales leaders who can provide access, context, and timely feedback.",
+    eyebrow: "01 / Profile & Outreach Management",
+    description: "Build a stronger presence. Reach the right people. Every connection followed through, never left on read.",
+    overview: "Arcturus manages the practical LinkedIn work behind a more consistent professional presence: profile preparation, targeted prospecting, connection outreach, follow-up, content scheduling, and regular reporting.",
+    audience: "Best suited to founders, consultants, and B2B sales leaders who can provide access, context, and timely feedback.",
     inclusions: [
-      "Profile and offer review to establish the starting point",
-      "A practical content calendar with drafted posts or prompts",
-      "Research-led connection and conversation targets",
-      "Personalised outreach sequences for agreed audiences",
-      "A simple weekly activity and learning summary",
+      "Professional review and optimisation of your LinkedIn profile",
+      "Company page creation and setup if your business does not already have one",
+      "Relevant businesses and decision-makers researched using LinkedIn Sales Navigator",
+      "Structured connection requests sent to the agreed target audience",
+      "Relevant InMails, engagement, and group participation where suitable",
+      "Professional follow-ups for accepted connections, without aggressive sales messaging",
+      "One LinkedIn post every day, using an image or video",
+      "Four LinkedIn newsletters per month, one every week",
+      "Content scheduled for 9:00 AM UK/Irish time using Hootsuite",
+      "Regular reporting on outreach activity, connections, replies, and engagement",
     ],
     exclusions: [
-      "Automated mass messaging or indiscriminate connection activity",
-      "Guaranteed lead, meeting, or revenue outcomes",
-      "Taking ownership of personal opinions without your review",
-      "Paid media, sales closing, or CRM implementation",
+      "LinkedIn Sales Navigator and Hootsuite subscriptions are separate and paid directly by the client",
+      "LinkedIn platform limits and account activity can affect outreach volume",
+      "No outcome or revenue guarantee is made for outreach activity",
     ],
     process: [
-      { label: "Align", detail: "Clarify the offer, audience, voice, and practical goals." },
-      { label: "Prepare", detail: "Review the profile and prepare the first content and outreach plan." },
-      { label: "Deliver", detail: "Run the agreed weekly activity with review points built in." },
-      { label: "Learn", detail: "Share observations and refine the next cycle from real responses." },
+      { label: "Define your target", detail: "Agree the businesses, decision-makers, audience, and goals to work towards." },
+      { label: "Build the outreach", detail: "Prepare the profile, content rhythm, targeting, and outreach approach." },
+      { label: "Connect & follow up", detail: "Send agreed connection invitations and manage relevant follow-ups." },
+      { label: "Engage & maintain", detail: "Keep the agreed content and conversation rhythm moving." },
+      { label: "Track & report", detail: "Share activity, connections, replies, and engagement in regular reporting." },
     ],
-    timeline: "Initial setup is typically followed by a recurring weekly delivery rhythm. Exact availability and turnaround are agreed after the first conversation.",
+    timeline: "Initial setup takes 2–3 working days once required access, verification, and business information are available. Outreach is approximately 200 connection invitations per week, depending on account activity, audience targeting, and LinkedIn platform limits.",
     requirements: [
-      "Access to the relevant LinkedIn profile or a reliable point of contact",
-      "A clear description of your offer, audience, and preferred markets",
-      "Timely review of drafts and conversations that need your input",
+      "LinkedIn Sales Navigator",
+      "Any LinkedIn profile verification required before outreach begins",
+      "Hootsuite for content scheduling",
+      "Access and clear business information, audience, and content context",
     ],
-    metaTitle: "B2B LinkedIn Management | Arcturus Professional Services",
-    metaDescription: "Structured LinkedIn positioning, content drafting, and thoughtful outreach for European founders and B2B sales teams.",
-    accent: "gold",
+    price: "€400 / month",
+    priceNote: "Monthly managed service.",
+    tools: ["LinkedIn", "LinkedIn Sales Navigator", "Hootsuite"],
+    metaTitle: "B2B LinkedIn Management & Outreach | Arcturus",
+    metaDescription: "Profile optimisation, daily LinkedIn content, targeted outreach, follow-ups, and reporting for European B2B businesses.",
+    featured: true,
   },
   {
     slug: "email-outreach",
     navLabel: "Email Outreach",
     title: "Email Outreach",
-    eyebrow: "02 / Research & messaging",
-    description:
-      "Focused B2B email outreach built around a defined audience, clear messaging, and a delivery process you can understand.",
-    overview:
-      "A considered email outreach programme starts with who should hear from you and why. Arcturus supports the research, message preparation, and follow-up structure needed to create a more useful outbound workflow without making promises the process cannot support.",
-    audience:
-      "For businesses with a clear B2B offer, a defined market, and the capacity to respond when interest arrives.",
+    eyebrow: "02 / Cold Email Marketing & Deliverability Setup",
+    description: "Reach the right people. Start better conversations with a structured cold email workflow.",
+    overview: "Arcturus supports the preparation and management of a cold email campaign: from technical setup and a required warm-up period through campaign preparation, outreach, follow-ups, and reporting.",
+    audience: "For businesses with a clear B2B offer, an agreed audience, and the capacity to respond when interest arrives.",
     inclusions: [
-      "Target audience and prospect criteria planning",
-      "Research and organisation of an agreed prospect set",
-      "Initial email copy and follow-up message drafts",
-      "Subject line or message angle variations where useful",
-      "A delivery summary with practical observations",
+      "Professional, relevant outreach copy written for your business and audience",
+      "Verified business contacts sourced for your campaign",
+      "Campaign setup, sending, monitoring, and management through Instantly.ai",
+      "Two to three follow-up emails included where appropriate",
+      "Ongoing monitoring and adjustment for campaign performance",
+      "Up to 10,000 unique emails per client campaign",
     ],
     exclusions: [
-      "Generic bulk lists or indiscriminate mass sending",
-      "Legal, privacy, or regulatory advice",
-      "Guaranteed open, reply, meeting, or sales rates",
-      "Domain purchase, mailbox administration, or full CRM build",
+      "Lead lists are not included and are sourced separately according to your requirement",
+      "Email Setup, where required, is priced separately",
+      "Legal, privacy, or regulatory advice is not included",
+      "No open, reply, meeting, sales, or inbox-placement guarantee is made",
     ],
     process: [
-      { label: "Define", detail: "Agree the audience, offer, geography, and qualification signals." },
-      { label: "Research", detail: "Build a focused prospecting brief and identify relevant organisations." },
-      { label: "Draft", detail: "Prepare concise messages and a follow-up sequence for your review." },
-      { label: "Review", detail: "Share delivery notes and use your feedback to sharpen the next cycle." },
+      { label: "Technical setup", detail: "Prepare the agreed email account and campaign setup." },
+      { label: "Warm-up", detail: "Allow a minimum one-month warm-up period before active outreach." },
+      { label: "Campaign preparation", detail: "Prepare the approved copy, audience, and campaign details." },
+      { label: "Outreach", detail: "Run the agreed campaign with monitoring in place." },
+      { label: "Follow-ups", detail: "Send two to three follow-up emails where appropriate." },
+      { label: "Reporting", detail: "Provide regular reporting on metrics relevant to the service." },
     ],
-    timeline: "Timing depends on the size and specificity of the agreed prospecting brief. A delivery schedule is confirmed before work begins.",
+    timeline: "A minimum one-month warm-up period applies before active outreach. The timing of technical setup, campaign preparation, outreach, follow-ups, and reporting is confirmed against the agreed brief.",
     requirements: [
-      "A defined offer and the type of business you want to reach",
-      "Target countries, sectors, job functions, or other useful filters",
-      "An approved sending setup and a named person to handle replies",
+      "An email account and domain for outreach",
+      "Access or login details for the email account",
+      "Basic company information and offer details",
+      "Approval of email content and any target list before sending",
+    ],
+    price: "€450 / month",
+    priceNote: "Monthly service; lead lists and Email Setup are separate.",
+    tools: ["Instantly.ai"],
+    relatedServices: [
+      { slug: "lead-generation", title: "Lead Generation", description: "Finding & verifying the right contacts for a focused campaign.", price: "€0.80 / verified business contact" },
+      { slug: "email-setup", title: "Email Setup", description: "Professional email and DNS configuration before outreach begins.", price: "€80 one-time" },
     ],
     metaTitle: "B2B Email Outreach & Prospect Sourcing | Arcturus",
-    metaDescription: "Research-led B2B email outreach, prospect sourcing, and tailored follow-up workflows for European businesses.",
-    accent: "blue",
+    metaDescription: "Cold email marketing, deliverability setup, tailored outreach copy, follow-ups, and campaign reporting for European businesses.",
+    featured: true,
   },
   {
     slug: "business-support",
     navLabel: "Business Support",
     title: "Business Support",
-    eyebrow: "03 / Operations & capacity",
-    description:
-      "Dependable day-to-day support for business owners who need more order around the work that keeps everything moving.",
-    overview:
-      "Arcturus provides practical support for recurring operational tasks, research, coordination, and administration. The aim is simple: create more capacity for the decisions and client work that need your attention.",
-    audience:
-      "Useful for founders and small teams who need an organised extra pair of hands but not a full-time hire.",
+    eyebrow: "03 / Day-to-Day Admin & Back-Office Support",
+    description: "Practical support for the recurring administrative and back-office work that keeps a business moving.",
+    overview: "Arcturus provides task-based support for routine administration, online research, data entry, spreadsheets, documents, and other agreed back-office needs.",
+    audience: "Useful for founders and small teams who need an organised extra pair of hands without a full-time hire.",
     inclusions: [
-      "Inbox and task-list organisation",
-      "Calendar, meeting, and follow-up coordination",
-      "Business and market research summaries",
-      "Spreadsheet, CRM, or information housekeeping",
-      "Agreed recurring admin and operational support",
+      "Support with routine administrative tasks and business organisation",
+      "Research into businesses, information, competitors, suppliers, or agreed topics",
+      "Accurate data entry, spreadsheet updates, and business information organisation",
+      "Creating, updating, formatting, and organising business documents",
+      "Practical support for recurring or one-off back-office tasks",
+      "Tasks agreed in advance based on business requirements and available time",
     ],
     exclusions: [
-      "Unbounded availability or same-minute response cover",
       "Financial, legal, HR, or specialist professional advice",
-      "Work requiring access that has not been provided or approved",
-      "Tasks outside the agreed brief without a scope conversation",
+      "Unbounded availability or same-minute response cover",
+      "Work requiring access or information that has not been provided",
+      "Significant additional research or extended time without a scope conversation",
     ],
     process: [
-      { label: "Map", detail: "List the recurring tasks, tools, priorities, and handover points." },
-      { label: "Prioritise", detail: "Agree what should happen first and how progress will be visible." },
-      { label: "Support", detail: "Work through the agreed task list with clear written updates." },
-      { label: "Adjust", detail: "Review the rhythm and reshape the support as your needs change." },
+      { label: "Task shared", detail: "Share a clear description of the task and the expected result." },
+      { label: "Work started", detail: "Arcturus begins the agreed task with the relevant information and access." },
+      { label: "Task completed", detail: "The task is completed within the agreed scope and available time." },
+      { label: "Result delivered", detail: "The completed work is delivered in an organised format." },
     ],
-    timeline: "Support can be discussed as an agreed recurring arrangement or a defined project. Turnaround and working hours are confirmed in writing.",
+    timeline: "Turnaround is task-specific and agreed before work begins. Business Support is billed according to the actual time spent on agreed tasks.",
     requirements: [
-      "A written list of current priorities and recurring tasks",
-      "Access to the tools and information needed for the agreed work",
-      "A clear contact for decisions, approvals, and urgent questions",
+      "A clear description of the task",
+      "Relevant files or information",
+      "Instructions or guidelines",
+      "Access to the tools or platforms needed",
     ],
+    price: "€12 / hour",
+    priceNote: "Billed according to actual time spent on agreed work.",
+    sourceNote: "Tasks requiring significant additional research or extended time are discussed and agreed before work continues.",
     metaTitle: "Executive Business & Administrative Support | Arcturus",
-    metaDescription: "Practical operational, research, coordination, and administrative support for European business owners and small teams.",
-    accent: "green",
+    metaDescription: "Day-to-day administration, research, data entry, documents, and back-office support for European business owners and small teams.",
+    featured: true,
   },
   {
     slug: "ai-video-creation",
     navLabel: "AI Video Creation",
     title: "AI Video Creation",
-    eyebrow: "04 / Scripts & visual communication",
-    description:
-      "Clear, useful video content for explainers, product walkthroughs, announcements, and internal communication.",
-    overview:
-      "Arcturus helps turn a message into a concise video concept and production brief. Depending on the agreed format, this may include scripting, synthetic voice or avatar elements, visual direction, and a considered revision round.",
-    audience:
-      "For businesses that need a practical way to explain an offer, share an update, or make internal information easier to absorb.",
+    eyebrow: "04 / Custom AI-Generated Video Content",
+    description: "Fresh content every single day without the production overhead.",
+    overview: "Arcturus creates short-form AI-generated videos for social channels, using your business information, brand assets, content themes, and preferred style as the basis for the prompts and production flow.",
+    audience: "For businesses that need a consistent stream of concise social content for Instagram, TikTok, YouTube, or LinkedIn.",
     inclusions: [
-      "A short brief to clarify the audience, purpose, and key message",
-      "Script or storyboard drafting in an agreed tone",
-      "AI-assisted visual, voice, or avatar production where suitable",
-      "Basic edit direction and an agreed revision stage",
-      "A final file specification agreed before production",
+      "Two short-form AI-generated videos every day",
+      "Content created seven days a week, Monday to Sunday",
+      "Approximately 10-second videos designed for social media viewing",
+      "Your logo, business details, and brand style incorporated where suitable",
+      "Custom content ideas based on your business, services, products, and themes",
+      "Content prepared for Instagram, TikTok, YouTube, and LinkedIn",
+      "Content scheduled through Hootsuite",
     ],
     exclusions: [
-      "Unlimited revisions or open-ended creative development",
-      "Filming, complex live-action production, or location work",
-      "Unlicensed brand, music, voice, or third-party source material",
-      "Guaranteed performance, reach, or conversion outcomes",
+      "Manual filming or manual editing",
+      "Long-form or complex live-action production",
+      "Unlimited changes outside prompt adjustments",
+      "Hootsuite subscription costs are separate and paid directly by the client",
     ],
     process: [
-      { label: "Brief", detail: "Confirm the audience, purpose, format, and assets available." },
-      { label: "Shape", detail: "Turn the raw information into a concise script and visual plan." },
-      { label: "Create", detail: "Produce the agreed version with clear review points." },
-      { label: "Refine", detail: "Apply the included feedback and prepare the agreed final output." },
+      { label: "Idea", detail: "Agree the topics, products, services, and content direction." },
+      { label: "Create", detail: "Generate each video directly from a tailored AI prompt." },
+      { label: "Brand", detail: "Apply the agreed logo, business details, and brand style." },
+      { label: "Schedule", detail: "Schedule the finished content through Hootsuite." },
     ],
-    timeline: "Delivery depends on the format, length, language, and availability of source material. A production schedule is agreed before creation starts.",
+    timeline: "Two videos are produced per day, seven days a week. Videos are approximately 10 seconds long; sample videos can be shared before work begins.",
     requirements: [
-      "A clear topic, audience, intended channel, and approximate length",
-      "Approved brand assets, product information, and any required references",
-      "One decision-maker who can consolidate feedback",
+      "Your logo and branding",
+      "Business information",
+      "Preferred content topics",
+      "Products, services, or offers to feature",
+      "Examples of content styles you like",
     ],
+    price: "€400 / month",
+    priceNote: "Monthly service; Hootsuite subscription is separate.",
+    tools: ["Google Gemini", "Google Flow", "Google Veo 3", "Hootsuite"],
+    sourceNote: "Changes are made by adjusting the prompt, not through manual editing.",
     metaTitle: "AI Video Creation & Product Explainers | Arcturus",
-    metaDescription: "AI-assisted scripts, explainers, product walkthroughs, and internal communication videos for modern European businesses.",
-    accent: "red",
+    metaDescription: "Custom AI-generated short-form videos for social media, with branded content ideas and daily scheduling for European businesses.",
+    featured: true,
+  },
+  {
+    slug: "lead-generation",
+    navLabel: "Lead Generation",
+    title: "Lead Generation",
+    eyebrow: "05 / Finding & Verifying the Right Contacts",
+    description: "Quality over quantity: a clean, verified list of the kind of people you want to reach.",
+    overview: "Arcturus defines the ideal client profile, researches relevant businesses and decision-makers, cleans and verifies contact data, and delivers the result in an organised spreadsheet.",
+    audience: "For businesses that need a focused prospecting list prepared against clear industry, location, company-size, and role criteria.",
+    inclusions: [
+      "Ideal Client Profile covering industry, company size, location, job titles, and other requirements",
+      "Targeted research of relevant businesses and decision-makers",
+      "Relevant business contact details sourced using suitable research tools",
+      "Decision-maker identification within each target business",
+      "Contact data checked and organised before delivery",
+      "Email addresses checked as part of the verification process",
+      "Completed contacts delivered in a clear, easy-to-use spreadsheet",
+    ],
+    exclusions: [
+      "Companies you do not want included must be identified in the brief",
+      "The service does not provide legal, privacy, or regulatory advice",
+      "The first delivery depends on target criteria being confirmed",
+    ],
+    process: [
+      { label: "Define your ICP", detail: "Confirm the industries, locations, company size, roles, and exclusions." },
+      { label: "Research & source", detail: "Find businesses and contacts against the agreed criteria." },
+      { label: "Verify & clean", detail: "Check and organise contact details before delivery." },
+      { label: "Organise & deliver", detail: "Provide the completed contacts in an easy-to-use spreadsheet." },
+    ],
+    timeline: "The first list is normally delivered within 5–7 working days once target criteria are confirmed.",
+    requirements: [
+      "Target industries",
+      "Target locations",
+      "Preferred company size",
+      "Job titles or decision-maker roles",
+      "Companies you do not want included",
+      "Any specific targeting requirements",
+    ],
+    price: "€0.80 / verified business contact",
+    priceNote: "Payable before the completed list is delivered, according to the agreed requirement.",
+    tools: ["LinkedIn Sales Navigator", "Apollo", "UseBouncer"],
+    metaTitle: "B2B Lead Generation & Verified Contacts | Arcturus",
+    metaDescription: "Find and verify relevant B2B contacts by industry, location, company size, and role with organised spreadsheet delivery.",
+  },
+  {
+    slug: "email-setup",
+    navLabel: "Email Setup",
+    title: "Email Setup",
+    eyebrow: "06 / Professional Email & DNS Configuration",
+    description: "A one-time setup that gets your domain outreach-ready.",
+    overview: "Arcturus configures the professional email and domain records needed to establish the technical foundation for an outreach workflow.",
+    audience: "For businesses that need their email and domain configuration prepared before an Email Outreach campaign begins.",
+    inclusions: [
+      "Professional email account configuration",
+      "Domain authentication with SPF, DKIM, and DMARC",
+      "DNS record setup and verification",
+      "A technical foundation for deliverable outreach",
+    ],
+    exclusions: [
+      "Email hosting or domain purchase costs",
+      "Third-party software, platforms, domains, email accounts, or paid tools unless specifically stated otherwise",
+      "Ongoing campaign management, which is covered separately under Email Outreach",
+    ],
+    process: [
+      { label: "Confirm access", detail: "Agree the domain, email account, and DNS access needed for setup." },
+      { label: "Configure", detail: "Set up the professional email account and authentication records." },
+      { label: "Verify", detail: "Check the DNS records and confirm the agreed configuration." },
+      { label: "Hand over", detail: "Confirm the setup is ready for the next agreed service step." },
+    ],
+    timeline: "A setup schedule is confirmed after the required domain and account access are available.",
+    requirements: [
+      "The domain and email account to be configured",
+      "Access to the relevant email and DNS provider",
+      "The account details required to verify the configuration",
+    ],
+    price: "€80 one-time",
+    priceNote: "Billed once, before setup begins.",
+    tools: ["DNS provider", "Email provider"],
+    sourceNote: "Required before Email Outreach campaigns can begin if this setup is not already in place.",
+    metaTitle: "Professional Email & DNS Setup | Arcturus",
+    metaDescription: "Professional email account configuration, SPF, DKIM, DMARC, and DNS record setup for outreach-ready domains.",
   },
 ];
+
+export const featuredServices = services.filter((service) => service.featured);
+export const supportingServices = services.filter((service) => !service.featured);
 
 export function getService(slug: string | undefined) {
   return services.find((service) => service.slug === slug);
 }
 
 export function getContactHref(service?: ServiceContent) {
-  const subject = service
-    ? `${service.title} Enquiry - Arcturus`
-    : "Enquiry via Arcturus Professional Website";
+  const subject = service ? `${service.title} Enquiry - Arcturus` : "Enquiry via Arcturus Professional Website";
   const body = service
     ? `Hi Khushboo,\n\nI would like to discuss ${service.title} for my business.\n\nCompany:\nObjectives:\nTimeline:\n\nRegards,`
     : "Hi Khushboo,\n\nI would like to discuss services for my business.\n\nCompany:\nService of Interest:\nTimeline:\n\nRegards,";

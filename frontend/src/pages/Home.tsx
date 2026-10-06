@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
-import { services, getContactHref } from "@/lib/site";
+import { featuredServices, getContactHref } from "@/lib/site";
 
 const heroImage = "https://images.unsplash.com/photo-1740933084056-078fac872bff?auto=format&fit=crop&w=1300&q=80";
 
@@ -23,7 +23,7 @@ export default function Home() {
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#92400e]">Professional services / Europe</span>
             </div>
             <h1 className="max-w-2xl font-serif text-5xl font-medium leading-[1.06] tracking-[-0.035em] text-[#0f172a] sm:text-6xl lg:text-[5.4rem]" data-testid="home-hero-heading">Make the work behind your growth feel <span className="italic text-[#0f2942]">considered.</span></h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-[#475569] sm:text-xl" data-testid="home-hero-description">Arcturus brings structure to the work that keeps a business moving — from thoughtful outreach and LinkedIn management to reliable support and useful video content.</p>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-[#475569] sm:text-xl" data-testid="home-hero-description">Arcturus brings structure to the work that keeps a business moving, from thoughtful outreach and LinkedIn management to reliable support and useful video content.</p>
             <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center" data-testid="home-hero-actions">
               <Button render={<a href={getContactHref()} />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white shadow-[0_8px_20px_-10px_rgba(15,41,66,0.7)] transition-colors duration-200 hover:bg-[#1e3a5f]" data-testid="home-hero-contact-button">
                 Contact Khushboo <ArrowUpRight className="ml-2 size-4" />
@@ -71,7 +71,7 @@ export default function Home() {
             <Link to="/services" className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0f2942] transition-colors duration-200 hover:text-[#92400e]" data-testid="home-services-view-all-link">View all services <ArrowDownRight className="size-4 transition-transform duration-200 group-hover:translate-y-1" /></Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2" data-testid="home-services-grid">
-            {services.map((service, index) => (
+            {featuredServices.map((service, index) => (
               <Link key={service.slug} to={`/services/${service.slug}`} className={`group flex min-h-[250px] flex-col justify-between border border-[#e2dfd8] bg-white p-6 transition-transform duration-200 hover:-translate-y-1 hover:border-[#c59b27] sm:p-7 ${index === 1 ? "sm:translate-y-10 sm:hover:translate-y-9" : ""}`} data-testid={`service-card-${service.slug}`}>
                 <div className="flex items-start justify-between">
                   <span className="font-mono text-[10px] tracking-[0.16em] text-[#c59b27]" data-testid={`service-card-number-${service.slug}`}>{String(index + 1).padStart(2, "0")}</span>

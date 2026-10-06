@@ -8,6 +8,10 @@ import { CONTACT_EMAIL, getContactHref } from "@/lib/site";
 const navItems = [
   { label: "About", to: "/about", testId: "nav-link-about" },
   { label: "Services", to: "/services", testId: "nav-link-services" },
+  { label: "LinkedIn", to: "/services/linkedin-management", testId: "nav-link-linkedin" },
+  { label: "Email", to: "/services/email-outreach", testId: "nav-link-email" },
+  { label: "Business Support", to: "/services/business-support", testId: "nav-link-business-support" },
+  { label: "AI Video", to: "/services/ai-video-creation", testId: "nav-link-ai-video" },
   { label: "Contact", to: "/contact", testId: "nav-link-contact" },
 ];
 
@@ -24,13 +28,13 @@ export default function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary navigation" data-testid="desktop-navigation">
+        <nav className="hidden items-center gap-4 lg:gap-5 md:flex" aria-label="Primary navigation" data-testid="desktop-navigation">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               data-testid={item.testId}
-              className={({ isActive }) => `relative py-2 text-sm font-medium transition-colors duration-200 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-[#c59b27] after:transition-transform after:duration-200 ${isActive ? "text-[#0f2942] after:scale-x-100" : "text-[#475569] after:scale-x-0 hover:text-[#0f2942] hover:after:scale-x-100"}`}
+              className={({ isActive }) => `relative whitespace-nowrap py-2 text-xs font-semibold transition-colors duration-200 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-[#c59b27] after:transition-transform after:duration-200 ${isActive ? "text-[#0f2942] after:scale-x-100" : "text-[#475569] after:scale-x-0 hover:text-[#0f2942] hover:after:scale-x-100"}`}
             >
               {item.label}
             </NavLink>
