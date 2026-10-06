@@ -1,5 +1,3 @@
-import type { CSSProperties } from "react";
-
 const WHATSAPP_URL = "https://wa.me/919911284362";
 
 export default function FloatingWhatsApp() {
