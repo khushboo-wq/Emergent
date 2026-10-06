@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import ContactDock from "@/components/ContactDock";
 import AnalyticsUnavailable from "@/components/AnalyticsUnavailable";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import SupportChat from "@/components/SupportChat";
 
 interface PageFrameProps {
   children: ReactNode;
@@ -18,6 +19,7 @@ export default function PageFrame({ children }: PageFrameProps) {
       <AnalyticsUnavailable />
       <SiteFooter />
       <ContactDock />
+      <SupportChat />
       <FloatingWhatsApp />
     </div>
   );
