@@ -33,7 +33,7 @@
 
 @theme inline {
     --font-heading: 'Hemicube', 'Plus Jakarta Sans Variable', sans-serif;
-    --font-sans: 'Alesand', 'Plus Jakarta Sans Variable', sans-serif;
+    --font-sans: 'Plus Jakarta Sans Variable', sans-serif;
     --font-serif: 'Hemicube', 'Plus Jakarta Sans Variable', sans-serif;
     --font-mono: 'JetBrains Mono Variable', monospace;
     --color-sidebar-ring: var(--sidebar-ring);
@@ -172,6 +172,11 @@
     font-weight: 700;
   }
   .font-mono {
-    font-family: 'JetBrains Mono Variable', monospace;
+    font-family: 'Alesand', 'Plus Jakarta Sans Variable', sans-serif;
+    font-weight: 800;
+    }
+  .font-highlight {
+    font-family: 'Alesand', 'Plus Jakarta Sans Variable', sans-serif;
+    font-weight: 800;
     }
 }

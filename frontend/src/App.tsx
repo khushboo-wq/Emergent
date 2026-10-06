@@ -4,6 +4,9 @@ import About from "@/pages/About";
 import Services from "@/pages/Services";
 import ServiceDetail from "@/pages/ServiceDetail";
 import Contact from "@/pages/Contact";
+import HowIWork from "@/pages/HowIWork";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import Terms from "@/pages/Terms";
 
 // One <Route> per page in src/pages; BrowserRouter already wraps this in main.tsx.
 export default function App() {
@@ -14,6 +17,9 @@ export default function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/services/:slug" element={<ServiceDetail />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/how-i-work" element={<HowIWork />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<Terms />} />
       <Route path="/home" element={<Navigate to="/" replace />} />
       <Route path="/about-us" element={<Navigate to="/about" replace />} />
       <Route path="/our-services" element={<Navigate to="/services" replace />} />

@@ -38,6 +38,19 @@ export interface ServiceContent {
   featured?: boolean;
 }
 
+export interface ServiceFaq {
+  question: string;
+  answer: string;
+}
+
+export interface ServicePageExtras {
+  summary: string;
+  reporting: string[];
+  faqs: ServiceFaq[];
+  relatedSlugs: string[];
+  lastUpdated: string;
+}
+
 export const services: ServiceContent[] = [
   {
     slug: "linkedin-management",
@@ -54,8 +67,9 @@ export const services: ServiceContent[] = [
       "Structured connection requests sent to the agreed target audience",
       "Relevant InMails, engagement, and group participation where suitable",
       "Professional follow-ups for accepted connections, without aggressive sales messaging",
-      "One LinkedIn post every day, using an image or video",
-      "Four LinkedIn newsletters per month, one every week",
+      "Authority-led posts, lead magnets, and nurture content built around your offer",
+      "A practical funnel from first connection to qualified conversation",
+      "Regular LinkedIn posting with images or video where suitable",
       "Content scheduled for 9:00 AM UK/Irish time using Hootsuite",
       "Regular reporting on outreach activity, connections, replies, and engagement",
     ],
@@ -81,8 +95,8 @@ export const services: ServiceContent[] = [
     price: "€400 / month",
     priceNote: "Monthly managed service.",
     tools: ["LinkedIn", "LinkedIn Sales Navigator", "Hootsuite"],
-    metaTitle: "B2B LinkedIn Management & Outreach | Arcturus",
-    metaDescription: "Profile optimisation, daily LinkedIn content, targeted outreach, follow-ups, and reporting for European B2B businesses.",
+    metaTitle: "LinkedIn Management for Businesses | €400/month",
+    metaDescription: "Done-for-you LinkedIn management: profile optimisation, posting, outreach and nurture for UK and Irish businesses. €400/month. Written reporting is included.",
     featured: true,
   },
   {
@@ -129,8 +143,8 @@ export const services: ServiceContent[] = [
       { slug: "lead-generation", title: "Lead Generation", description: "Finding & verifying the right contacts for a focused campaign.", price: "€0.80 / verified business contact" },
       { slug: "email-setup", title: "Email Setup", description: "Professional email and DNS configuration before outreach begins.", price: "€80 one-time" },
     ],
-    metaTitle: "B2B Email Outreach & Prospect Sourcing | Arcturus",
-    metaDescription: "Cold email marketing, deliverability setup, tailored outreach copy, follow-ups, and campaign reporting for European businesses.",
+    metaTitle: "B2B Email Outreach Service | €450/month",
+    metaDescription: "GDPR and PECR-aware B2B cold email campaigns with proper warm-up and reporting for UK and Irish businesses. €450/month. Includes unsubscribe handling too.",
     featured: true,
   },
   {
@@ -142,7 +156,11 @@ export const services: ServiceContent[] = [
     overview: "Arcturus provides task-based support for routine administration, online research, data entry, spreadsheets, documents, and other agreed back-office needs.",
     audience: "Useful for founders and small teams who need an organised extra pair of hands without a full-time hire.",
     inclusions: [
-      "Support with routine administrative tasks and business organisation",
+      "AI-assisted content writing based on your brief and source material",
+      "Website support, including practical DNS management where agreed",
+      "LinkedIn posting and scheduling support",
+      "YouTube upload and channel support without YouTube SEO services",
+      "Advertising campaign administration and agreed ad management tasks",
       "Research into businesses, information, competitors, suppliers, or agreed topics",
       "Accurate data entry, spreadsheet updates, and business information organisation",
       "Creating, updating, formatting, and organising business documents",
@@ -171,8 +189,8 @@ export const services: ServiceContent[] = [
     price: "€12 / hour",
     priceNote: "Billed according to actual time spent on agreed work.",
     sourceNote: "Tasks requiring significant additional research or extended time are discussed and agreed before work continues.",
-    metaTitle: "Executive Business & Administrative Support | Arcturus",
-    metaDescription: "Day-to-day administration, research, data entry, documents, and back-office support for European business owners and small teams.",
+    metaTitle: "Virtual Business Support Freelancer | €12/hour",
+    metaDescription: "Reliable remote business support for founders and small teams: research, admin, website support and AI-assisted content writing. €12/hour. Written updates.",
     featured: true,
   },
   {
@@ -184,10 +202,9 @@ export const services: ServiceContent[] = [
     overview: "Arcturus creates short-form AI-generated videos for social channels, using your business information, brand assets, content themes, and preferred style as the basis for the prompts and production flow.",
     audience: "For businesses that need a consistent stream of concise social content for Instagram, TikTok, YouTube, or LinkedIn.",
     inclusions: [
-      "Two short-form AI-generated videos every day",
-      "Content created seven days a week, Monday to Sunday",
+      "Up to 30 short-form AI-generated videos per month",
       "Approximately 10-second videos designed for social media viewing",
-      "Your logo, business details, and brand style incorporated where suitable",
+      "Your logo, business details, brand style, and end cards added where suitable",
       "Custom content ideas based on your business, services, products, and themes",
       "Content prepared for Instagram, TikTok, YouTube, and LinkedIn",
       "Content scheduled through Hootsuite",
@@ -204,7 +221,7 @@ export const services: ServiceContent[] = [
       { label: "Brand", detail: "Apply the agreed logo, business details, and brand style." },
       { label: "Schedule", detail: "Schedule the finished content through Hootsuite." },
     ],
-    timeline: "Two videos are produced per day, seven days a week. Videos are approximately 10 seconds long; sample videos can be shared before work begins.",
+    timeline: "Up to 30 videos are produced per month. Videos are normally short-form and approximately 10 seconds long; sample videos can be shared before work begins.",
     requirements: [
       "Your logo and branding",
       "Business information",
@@ -216,8 +233,8 @@ export const services: ServiceContent[] = [
     priceNote: "Monthly service; Hootsuite subscription is separate.",
     tools: ["Google Gemini", "Google Flow", "Google Veo 3", "Hootsuite"],
     sourceNote: "Changes are made by adjusting the prompt, not through manual editing.",
-    metaTitle: "AI Video Creation & Product Explainers | Arcturus",
-    metaDescription: "Custom AI-generated short-form videos for social media, with branded content ideas and daily scheduling for European businesses.",
+    metaTitle: "AI Video Creation for Businesses | €400/month",
+    metaDescription: "Custom AI-generated videos and reels with your branding, logo and end cards. Up to 30 videos per month. €400/month. Basic AI content for social media.",
     featured: true,
   },
   {
@@ -260,8 +277,8 @@ export const services: ServiceContent[] = [
     price: "€0.80 / verified business contact",
     priceNote: "Payable before the completed list is delivered, according to the agreed requirement.",
     tools: ["LinkedIn Sales Navigator", "Apollo", "UseBouncer"],
-    metaTitle: "B2B Lead Generation & Verified Contacts | Arcturus",
-    metaDescription: "Find and verify relevant B2B contacts by industry, location, company size, and role with organised spreadsheet delivery.",
+    metaTitle: "B2B Lead Generation Service | €0.80 per Contact",
+    metaDescription: "Verified B2B contact research for UK and Irish markets, built with Sales Navigator and transparent data sources. €0.80 per verified contact. Sources explained.",
   },
   {
     slug: "email-setup",
@@ -298,13 +315,97 @@ export const services: ServiceContent[] = [
     priceNote: "Billed once, before setup begins.",
     tools: ["DNS provider", "Email provider"],
     sourceNote: "Required before Email Outreach campaigns can begin if this setup is not already in place.",
-    metaTitle: "Professional Email & DNS Setup | Arcturus",
-    metaDescription: "Professional email account configuration, SPF, DKIM, DMARC, and DNS record setup for outreach-ready domains.",
+    metaTitle: "Business Email & DNS Setup Service | €80 One-Time",
+    metaDescription: "Professional business email and DNS setup (SPF, DKIM, DMARC) for better deliverability. One-time €80. For UK and Irish businesses needing sound foundations.",
   },
 ];
 
-export const featuredServices = services.filter((service) => service.featured);
-export const supportingServices = services.filter((service) => !service.featured);
+const SERVICE_ORDER = ["linkedin-management", "email-outreach", "business-support", "lead-generation", "ai-video-creation", "email-setup"];
+export const orderedServices = SERVICE_ORDER.map((slug) => services.find((service) => service.slug === slug)).filter((service): service is ServiceContent => Boolean(service));
+export const featuredServices = orderedServices.slice(0, 5);
+export const supportingServices = orderedServices.slice(5);
+
+export const servicePageExtras: Record<string, ServicePageExtras> = {
+  "linkedin-management": {
+    summary: "I manage LinkedIn profiles, content, targeted outreach, and nurture for UK and Irish businesses that want a consistent B2B presence. The service costs €400 per month, and you provide your own Sales Navigator subscription.",
+    reporting: ["Connection acceptance percentage", "Engagement growth across agreed content", "Qualified conversations created through outreach"],
+    relatedSlugs: ["lead-generation", "business-support"],
+    lastUpdated: "21 February 2026",
+    faqs: [
+      { question: "Do I need LinkedIn Sales Navigator?", answer: "Yes. You provide and pay for your own Sales Navigator subscription so I can research and manage the agreed targeting from your account." },
+      { question: "Will you write the LinkedIn posts?", answer: "Yes. I prepare authority content, lead magnets, nurture posts, and other agreed content in a voice that fits your business. You provide the source knowledge and approve sensitive claims." },
+      { question: "How much outreach is included?", answer: "The working target is around 200 connection invitations per week. Actual volume depends on account activity, targeting, and LinkedIn platform limits." },
+      { question: "Do you guarantee leads or sales?", answer: "No. I report activity, acceptance, engagement, and qualified conversations, but no freelancer can guarantee revenue or platform outcomes." },
+      { question: "Who is this service for?", answer: "It is for founders, consultants, and B2B teams in Ireland, the UK, and Europe that want consistent LinkedIn activity. It works best when the offer and target audience are clear." },
+    ],
+  },
+  "email-outreach": {
+    summary: "I set up and manage B2B cold email campaigns for UK and Irish businesses that need careful targeting, proper warm-up, and clear reporting. The managed service costs €450 per month, with lead research and email setup priced separately when required.",
+    reporting: ["Open percentage", "Reply percentage", "Click-through percentage", "Bounce rate", "Inbox placement observations"],
+    relatedSlugs: ["email-setup", "lead-generation"],
+    lastUpdated: "21 February 2026",
+    faqs: [
+      { question: "Why is there a one-month warm-up period?", answer: "A new outreach domain and mailbox need time to build a more stable sending pattern. I do not rush active campaigns before the minimum warm-up period is complete." },
+      { question: "How do you handle unsubscribes?", answer: "I include a clear opt-out route and maintain suppression records for people who do not want further contact. Requests are handled promptly and are not added back into later campaigns." },
+      { question: "Is the service GDPR and PECR compliant?", answer: "My approach is B2B only and is designed with GDPR and PECR awareness. I do not provide legal advice, so you remain responsible for confirming that your campaign and lawful basis fit your circumstances." },
+      { question: "Are contact lists included?", answer: "No. Verified contact research is available through the separate Lead Generation service at €0.80 per verified business contact." },
+      { question: "What do you report?", answer: "I report open, reply, click-through, and bounce rates, along with inbox placement observations where available. I also explain what the numbers suggest for the next campaign step." },
+      { question: "Can you use my existing email setup?", answer: "Yes, if the domain, authentication, and mailbox are suitable for outreach. If not, I can provide the separate €80 Email Setup service before warm-up begins." },
+    ],
+  },
+  "business-support": {
+    summary: "I provide remote business support for founders and small teams that need reliable help with research, admin, websites, content, and recurring digital tasks. The service costs €12 per hour and is billed for the time spent on agreed work.",
+    reporting: ["Time used against agreed tasks", "Completed work and outstanding dependencies", "Clear written notes for each delivery"],
+    relatedSlugs: ["linkedin-management", "ai-video-creation"],
+    lastUpdated: "21 February 2026",
+    faqs: [
+      { question: "What kind of admin work can you handle?", answer: "I can support research, data entry, document formatting, spreadsheets, routine organisation, and other agreed back-office tasks. I do not offer CRM management." },
+      { question: "Can you help with a business website?", answer: "Yes. I can help with practical website updates and DNS management when access and instructions are provided. Complex development work is scoped separately." },
+      { question: "Do you provide content writing?", answer: "I provide AI-assisted content writing based on your source material, objectives, and preferred tone. You review and approve specialist or regulated claims before publication." },
+      { question: "Can you manage YouTube SEO?", answer: "No. I can support uploads, descriptions supplied in the brief, organisation, and routine channel tasks, but YouTube SEO is not included." },
+      { question: "How is the €12 hourly fee tracked?", answer: "I record time against the tasks agreed in writing and share a clear delivery update. Work that may require significant extra time is discussed before I continue." },
+    ],
+  },
+  "lead-generation": {
+    summary: "I research and verify B2B contacts for businesses targeting Ireland, the UK, and Europe by company size, role, industry, and location. The service costs €0.80 per verified business contact.",
+    reporting: ["Source fields included with delivered records", "Verification status and cleaned contact data", "Delivery count against the agreed target profile"],
+    relatedSlugs: ["email-outreach", "linkedin-management", "email-setup"],
+    lastUpdated: "21 February 2026",
+    faqs: [
+      { question: "How do you define a relevant lead?", answer: "I work from an agreed ideal client profile covering company size, industry, location, job title, and exclusions. A contact must match those criteria before it is included." },
+      { question: "How are email addresses verified?", answer: "I research contacts using transparent business sources and use email verification tools before delivery. Verification reduces obvious errors but cannot guarantee that every mailbox remains active forever." },
+      { question: "Which data sources do you use?", answer: "Typical sources include LinkedIn Sales Navigator, Apollo, company websites, and an email verifier such as UseBouncer. The delivered data is organised so you can understand the available source and verification context." },
+      { question: "How quickly is the first list delivered?", answer: "The first list is normally delivered within five to seven working days after the targeting criteria are confirmed. Large or specialist briefs may need a longer agreed schedule." },
+      { question: "Can I exclude existing clients or competitors?", answer: "Yes. Give me the company names or exclusion rules before research begins, and I will apply them to the brief." },
+    ],
+  },
+  "ai-video-creation": {
+    summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and includes up to 30 short videos.",
+    reporting: ["Monthly output against the 30-video allowance", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
+    relatedSlugs: ["business-support", "linkedin-management"],
+    lastUpdated: "21 February 2026",
+    faqs: [
+      { question: "Is this professional video editing?", answer: "No. This is basic custom AI video creation using generated visuals and prompt-led revisions. It does not include filming, complex manual editing, or live-action production." },
+      { question: "How many videos are included?", answer: "The monthly service includes up to 30 short videos. The final output schedule is agreed from your content themes and available source material." },
+      { question: "Can my branding be added?", answer: "Yes. I can add your logo, business details, brand style, and end cards where the chosen format supports them." },
+      { question: "How are revisions handled?", answer: "Changes are made mainly by adjusting prompts, text, and agreed branding elements. Manual frame-by-frame editing and unlimited revisions are not included." },
+      { question: "Where can I use the videos?", answer: "The videos can be prepared for channels such as LinkedIn, Instagram, TikTok, and YouTube. You are responsible for checking that the final content suits each platform and your own claims." },
+    ],
+  },
+  "email-setup": {
+    summary: "I configure professional business email and DNS authentication for businesses that need a sound technical foundation for deliverability. The one-time service costs €80 and covers SPF, DKIM, DMARC, and DNS verification.",
+    reporting: ["Records configured during setup", "DNS verification status", "Written handover and any outstanding provider actions"],
+    relatedSlugs: ["email-outreach", "lead-generation"],
+    lastUpdated: "21 February 2026",
+    faqs: [
+      { question: "What is included in the €80 setup?", answer: "I configure the agreed business email account and the SPF, DKIM, and DMARC records available through your provider. I also check the DNS records and provide a written handover." },
+      { question: "Does the price include a domain or mailbox?", answer: "No. You purchase and own the domain, mailbox, hosting, and any paid provider subscriptions directly." },
+      { question: "Why are SPF, DKIM, and DMARC important?", answer: "These records help receiving systems understand which services are authorised to send for your domain. Correct setup supports deliverability and reduces simple spoofing risk, but it cannot guarantee inbox placement." },
+      { question: "How long does setup take?", answer: "Timing depends on access to your domain, DNS provider, and mailbox. I confirm the schedule after I can see the required provider settings." },
+      { question: "Is warm-up included?", answer: "No. Email Setup covers the technical configuration only. The minimum one-month warm-up and active campaign management sit within the Email Outreach service." },
+    ],
+  },
+};
 
 export function getService(slug: string | undefined) {
   return services.find((service) => service.slug === slug);

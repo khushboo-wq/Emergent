@@ -1,40 +1,7 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { CONTACT_EMAIL, getContactHref } from "@/lib/site";
+import { CONTACT_EMAIL, orderedServices } from "@/lib/site";
 
 export default function SiteFooter() {
-  return (
-    <footer className="bg-[#0b1320] text-[#e2e8f0]" data-testid="site-footer">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-10 lg:py-20">
-        <div>
-          <div className="flex items-center gap-3" data-testid="footer-brand">
-            <span className="grid size-9 place-items-center rounded-full border border-[#e2e8f0]/25 font-serif text-lg text-[#f5d783]">A</span>
-            <span className="font-mono text-xs tracking-[0.2em] text-[#e2e8f0]">ARCTURUS</span>
-          </div>
-          <p className="mt-6 max-w-sm font-serif text-2xl leading-tight text-white" data-testid="footer-statement">Structured support for businesses that value clarity.</p>
-          <p className="mt-5 max-w-md text-sm leading-6 text-[#94a3b8]" data-testid="footer-description">B2B outreach, operational support, and clear visual communication for European businesses and founders.</p>
-        </div>
-        <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#c59b27]" data-testid="footer-services-label">Explore</p>
-          <div className="mt-5 flex flex-col items-start gap-3 text-sm text-[#cbd5e1]">
-            <Link to="/about" className="transition-colors duration-200 hover:text-white" data-testid="footer-about-link">About Arcturus</Link>
-            <Link to="/services" className="transition-colors duration-200 hover:text-white" data-testid="footer-services-link">All services</Link>
-            <Link to="/contact" className="transition-colors duration-200 hover:text-white" data-testid="footer-contact-link">Contact Khushboo</Link>
-          </div>
-        </div>
-        <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#c59b27]" data-testid="footer-connect-label">Start a conversation</p>
-          <a href={getContactHref()} className="mt-5 flex items-start gap-2 text-sm leading-6 text-white transition-colors duration-200 hover:text-[#f5d783]" data-testid="footer-email-link">
-            <Mail className="mt-1 size-4 shrink-0 text-[#c59b27]" />
-            <span>{CONTACT_EMAIL}</span>
-            <ArrowUpRight className="mt-1 size-4 shrink-0" />
-          </a>
-        </div>
-      </div>
-      <div className="mx-auto flex max-w-7xl flex-col gap-3 border-t border-white/10 px-5 py-6 text-xs text-[#64748b] sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10" data-testid="footer-legal-row">
-        <span data-testid="footer-copyright">© {new Date().getFullYear()} Arcturus Professional Services</span>
-        <span data-testid="footer-note">Independent redesign preview · Written enquiries only</span>
-      </div>
-    </footer>
-  );
+  return <footer className="bg-[#0b1828] text-[#e2e8f0]" data-testid="site-footer"><div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_1fr_0.9fr] lg:px-10 lg:py-20"><div><p className="font-serif text-2xl tracking-[0.12em] text-white" data-testid="footer-brand">ARCTURUS</p><p className="mt-6 max-w-sm font-serif text-3xl leading-tight text-white" data-testid="footer-statement">Independent B2B support, handled personally.</p><p className="mt-5 max-w-md text-sm leading-7 text-[#9fb0c5]" data-testid="footer-description">I support businesses in Ireland, the UK, and Europe from New Delhi, India. Communication is written through email and WhatsApp.</p></div><div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9bc8c0]" data-testid="footer-services-label">Services</p><div className="mt-5 grid gap-3 text-sm text-[#cbd5e1]">{orderedServices.map((service) => <Link key={service.slug} to={`/services/${service.slug}`} className="transition-colors duration-200 hover:text-white" data-testid={`footer-service-${service.slug}`}>{service.title}</Link>)}</div></div><div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9bc8c0]" data-testid="footer-connect-label">Contact</p><div className="mt-5 space-y-4 text-sm text-[#cbd5e1]"><a href={`mailto:${CONTACT_EMAIL}`} className="flex gap-3 hover:text-white" data-testid="footer-email-link"><Mail className="mt-0.5 size-4 shrink-0" />{CONTACT_EMAIL}</a><a href="https://wa.me/919911284362" target="_blank" rel="noreferrer" className="flex gap-3 hover:text-white" data-testid="footer-whatsapp-link"><MessageCircle className="mt-0.5 size-4 shrink-0" />+91 99112 84362</a><p className="flex gap-3" data-testid="footer-location"><MapPin className="mt-0.5 size-4 shrink-0" />New Delhi, India</p><a href="https://www.linkedin.com/in/khushboo-tomar" target="_blank" rel="noreferrer" className="block hover:text-white" data-testid="footer-linkedin-link">LinkedIn: Khushboo Tomar</a><a href="https://www.instagram.com/arcturusprofessional" target="_blank" rel="noreferrer" className="block hover:text-white" data-testid="footer-instagram-link">Instagram: @arcturusprofessional</a></div></div></div><div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-5 py-6 text-xs text-[#7f91a6] sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10" data-testid="footer-legal-row"><span data-testid="footer-copyright">© {new Date().getFullYear()} Arcturus Professional Services</span><div className="flex gap-5"><Link to="/privacy-policy" className="hover:text-white" data-testid="footer-privacy-link">Privacy Policy</Link><Link to="/terms" className="hover:text-white" data-testid="footer-terms-link">Terms</Link></div></div></footer>;
 }

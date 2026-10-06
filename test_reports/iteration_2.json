@@ -1,0 +1,79 @@
+{
+  "passed": 8,
+  "failed": 1,
+  "bugs": [
+    {
+      "severity": "medium",
+      "criterion": "Navigation, responsive layout and internal links work",
+      "description": "On the 390px mobile viewport, the home page hero heading overflows horizontally: document.documentElement.scrollWidth (459px) exceeds clientWidth (390px) by 69px, causing horizontal page scroll. Confirmed with the Hemicube display font on the H1 'Make the work behind your growth feel considered.' which does not wrap/shrink to the viewport. Not a data/backend issue - GET /api/ returned 200 (backend healthy) at the time of the check, confirming this is frontend-only (CSS/font sizing).",
+      "evidence": "page.evaluate -> {scrollWidth:459, clientWidth:390} on http://localhost:3000/ at 390x844; screenshot shows capital-letter hero heading lines clipped at the right edge (e.g. 'THE', 'YOUR', 'GROWTH', 'CONSIDER' cut off). Backend cross-check: curl http://localhost:8001/api/ -> 200."
+    }
+  ],
+  "action_items": [],
+  "retest_needed": true,
+  "checks": [
+    {
+      "criterion": "Every public page is a separate route with crawler-readable HTML",
+      "name": "test_tscheck_crawlable_html",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "httpx GET with Accept: text/html to all 13 routes on :3000 -> 200, each SSR payload had a non-empty <h1> and data-testid=page-frame before hydration (13 parametrized cases passed)."
+    },
+    {
+      "criterion": "Every page has unique complete SEO tags",
+      "name": "test_tscheck_seo_tags",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "All 13 titles unique and <60 chars, descriptions 150-160 chars, canonical matched own path, OG/Twitter tags and JSON-LD present on every route."
+    },
+    {
+      "criterion": "Service pages provide factual citation-ready content and schema",
+      "name": "test_tscheck_service_schema",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "All 6 service pages exposed summary/last-updated/pricing/inclusions/audience/process/reporting/faq/breadcrumb/related-section testids, 5-6 FAQs each, and JSON-LD with Service + priceCurrency:EUR + areaServed + FAQPage."
+    },
+    {
+      "criterion": "Business identity and schemas stay consistent",
+      "name": "test_tscheck_business_identity_schema",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Home and About JSON-LD contained Organization + Person for Khushboo Tomar, New Delhi, Ireland/United Kingdom/Europe, LinkedIn + Instagram sameAs; Contact JSON-LD had ContactPage and visible email/WhatsApp/location/LinkedIn/Instagram testids."
+    },
+    {
+      "criterion": "Contact form sends a written enquiry through the backend",
+      "name": "contact-form-submission",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Filled contact form with tscheck-<timestamp> fixture data on the public preview URL, POST /api/contact returned 202, contact-form-success heading 'Your enquiry is on its way.' rendered."
+    },
+    {
+      "criterion": "Contact form sends a written enquiry through the backend",
+      "name": "test_tscheck_contact_api",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "POST /api/contact with invalid email -> 422; POST /api/contact with 5-char message -> 422 (validation feedback, no email dispatched)."
+    },
+    {
+      "criterion": "AI and search crawler discovery files are complete",
+      "name": "test_tscheck_crawler_discovery_files",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "robots.txt allowed GPTBot/OAI-SearchBot/ChatGPT-User/ClaudeBot/PerplexityBot/Google-Extended/Googlebot and linked sitemap; sitemap.xml listed all 13 page URLs; llms.txt contained identity, region, all 6 services with ASCII EUR prices, URLs, and contact details."
+    },
+    {
+      "criterion": "Navigation, responsive layout and internal links work",
+      "name": "navigation-responsive-links",
+      "lane": "browser",
+      "status": "failed",
+      "evidence": "Mobile hero on / overflows horizontally (scrollWidth 459 vs clientWidth 390). Mobile menu, desktop services dropdown (6 services), breadcrumbs, related-service link, and footer links/services all passed once the overflow check was isolated on /about."
+    },
+    {
+      "criterion": "Content follows the owner's language rules",
+      "name": "test_tscheck_content_language_rules",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "Visible text (comments/scripts stripped) on all 13 routes had zero matches for we/our/us/ourselves and zero em dashes; Business Support page's CRM mention is the explicit 'I do not offer CRM management' disclaimer."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "passed": 12,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    {
+      "type": "test_artifact_maintenance",
+      "severity": "low",
+      "description": "Fixed 3 pre-existing test artifacts that had drifted from the app, not app bugs: (1) backend tests (test_tscheck_seo_tags.py, test_tscheck_service_schema.py, test_tscheck_business_identity_schema.py) used a JSON-LD regex requiring an exact '<script type=\"application/ld+json\">' opening tag; the app now correctly emits 'id=\"arcturus-structured-data\"' before the type attribute (the fix described in seed_facts), so the regex was loosened to match any attribute order - all 71 backend tests now pass. (2) contact-prefilled-enquiry.mjs asserted the query-string mailto pattern against the wrong testid (contact-email-link, which is intentionally the plain visible email address) instead of contact-email-button (the actual prefilled-draft CTA) - corrected and now passes. (3) Removed leftover .backup scratch files from the checks directory."
+    }
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Navigation, responsive layout and internal links work",
+      "name": "navigation-responsive-links",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check: mobile menu, desktop services dropdown (6 services), service breadcrumbs, related-service link, and footer links/services all usable; no overflow."
+    },
+    {
+      "criterion": "Navigation, responsive layout and internal links work",
+      "name": "mobile-accessible-responsive",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted mobile accessibility/responsive check - no overflow or inert controls at mobile viewport."
+    },
+    {
+      "criterion": "Navigation, responsive layout and internal links work",
+      "name": "home-overflow-public-preview",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "page.evaluate on https://khushboo-services.preview.emergentagent.com/ at 390x844 -> scrollWidth==clientWidth==390; no horizontal overflow, screenshot confirms clean hero render."
+    },
+    {
+      "criterion": "SEO JSON-LD stays singular after hydration",
+      "name": "seo-foundation-correct",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "On hydrated /services/linkedin-management, locator('script[type=\"application/ld+json\"]') resolves to exactly 1 element (no strict-mode violation, confirming the client SEO effect now replaces the static tag by id='arcturus-structured-data' instead of duplicating it); payload contains Service schema with 'LinkedIn Management'; /robots.txt and /sitemap.xml both 200."
+    },
+    {
+      "criterion": "SEO JSON-LD stays singular after hydration",
+      "name": "pytest backend/tests (service/business-identity/seo schema)",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "71 passed in 1.92s after loosening the JSON-LD regex to allow the id attribute; confirms route-specific Service+FAQPage schema (priceCurrency=EUR, areaServed) on all 6 service pages and Organization/Person/ContactPage schema on home/about/contact are served correctly in crawler HTML."
+    },
+    {
+      "criterion": "Contact email and service overview compatibility works",
+      "name": "contact-prefilled-enquiry",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "On /contact: contact-email-link href='mailto:khushboo@arcturusprofessional.com' (plain, visible address) and contact-email-button href matches /^mailto:khushboo@arcturusprofessional\\.com\\?subject=Enquiry\\+via\\+Arcturus.../ with body= param present - prefilled draft action confirmed."
+    },
+    {
+      "criterion": "Contact email and service overview compatibility works",
+      "name": "service-overview-and-summary-present",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "On /services/linkedin-management: service-summary is a visible 2-sentence summary ('I manage LinkedIn profiles...' / pricing sentence); service-overview-copy is a distinct, longer prose overview ('Arcturus manages the practical LinkedIn work...') - both present and non-identical."
+    },
+    {
+      "criterion": "Regression: contact form submission",
+      "name": "contact-form-submission",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check - tscheck-<timestamp> fixture submitted, POST /api/contact 202, success heading rendered."
+    },
+    {
+      "criterion": "Regression: home value proposition CTA",
+      "name": "home-value-proposition-cta",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    },
+    {
+      "criterion": "Regression: main navigation routes",
+      "name": "main-navigation-routes",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    },
+    {
+      "criterion": "Regression: services overview catalogue",
+      "name": "services-overview-catalogue",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    },
+    {
+      "criterion": "Regression: static MVP has no auth gates",
+      "name": "static-mvp-no-gates",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    }
+  ]
+}

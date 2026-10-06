@@ -1,0 +1,99 @@
+{
+  "passed": 9,
+  "failed": 3,
+  "bugs": [],
+  "action_items": [
+    {
+      "type": "stale_test_artifact",
+      "severity": "low",
+      "description": "3 pre-existing browser checks unrelated to this retest's criterion (navigation/overflow) are stale against the current app and fail on selector/content mismatches, not against anything in this briefing's acceptance_matrix: (1) contact-prefilled-enquiry expects a 'contact-email-button' testid and a mailto href with ?subject=...&body=... query string - neither exists on /contact today (only 'contact-email-link' with a plain mailto href). (2) seo-foundation-correct's single script[type=application/ld+json] locator now matches 2 identical JSON-LD <script> tags per service page (duplicate structured data - functionally harmless but duplicated), causing a Playwright strict-mode violation. (3) service-detail-pages-scannable expects a 'service-overview-copy' testid that does not exist (current testid is 'service-summary'). These were not part of iteration_2's tracked checks, predate this fix, and are out of scope for the overflow criterion being retested; recommend the test suite owner either update these 3 check scripts to match current testids or have engineering dedupe the JSON-LD script tag, then re-run."
+    }
+  ],
+  "retest_needed": true,
+  "checks": [
+    {
+      "criterion": "Navigation, responsive layout and internal links work",
+      "name": "navigation-responsive-links",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran on 390x844: mobile menu, desktop services dropdown (6 services), service breadcrumbs, related-service link, and footer links/services all usable; no overflow detected in this flow."
+    },
+    {
+      "criterion": "Navigation, responsive layout and internal links work",
+      "name": "mobile-accessible-responsive",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted mobile accessibility/responsive check - passed with no overflow or inert controls at mobile viewport."
+    },
+    {
+      "criterion": "Navigation, responsive layout and internal links work",
+      "name": "home-overflow-public-preview",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "page.evaluate on https://khushboo-services.preview.emergentagent.com/ at 390x844 -> {scrollWidth:390, clientWidth:390}; matches briefing's expected post-fix measurement exactly. Screenshot shows hero heading wraps within viewport with no clipped letters and no horizontal scrollbar."
+    },
+    {
+      "criterion": "Regression: backend suite",
+      "name": "pytest backend/tests",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "71 passed in 1.62s covering crawlable HTML, SEO tags, service schema, business identity schema, contact API validation, crawler discovery files, and content language rules."
+    },
+    {
+      "criterion": "Regression: contact form submission",
+      "name": "contact-form-submission",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check - tscheck-<timestamp> fixture submitted, POST /api/contact 202, success heading rendered."
+    },
+    {
+      "criterion": "Regression: home value proposition CTA",
+      "name": "home-value-proposition-cta",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    },
+    {
+      "criterion": "Regression: main navigation routes",
+      "name": "main-navigation-routes",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    },
+    {
+      "criterion": "Regression: services overview catalogue",
+      "name": "services-overview-catalogue",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    },
+    {
+      "criterion": "Regression: static MVP has no auth gates",
+      "name": "static-mvp-no-gates",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Reran persisted check with no failures."
+    },
+    {
+      "criterion": "Out-of-scope stale artifact: contact mailto prefill",
+      "name": "contact-prefilled-enquiry",
+      "lane": "browser",
+      "status": "test_error",
+      "evidence": "Check expects testid 'contact-email-button' and a mailto href containing '?subject=...'; current /contact only has 'contact-email-link' with href='mailto:khushboo@arcturusprofessional.com' (no query string, no separate button testid). Not part of this retest's acceptance_matrix; pre-existing staleness unrelated to the overflow fix."
+    },
+    {
+      "criterion": "Out-of-scope stale artifact: SEO JSON-LD singular locator",
+      "name": "seo-foundation-correct",
+      "lane": "browser",
+      "status": "test_error",
+      "evidence": "locator('script[type=\"application/ld+json\"]') resolves to 2 identical elements on /services/linkedin-management (strict-mode violation). Confirmed via page.evaluate: both scripts contain identical Service/LinkedIn Management JSON-LD. Not part of this retest's acceptance_matrix."
+    },
+    {
+      "criterion": "Out-of-scope stale artifact: service detail testid name",
+      "name": "service-detail-pages-scannable",
+      "lane": "browser",
+      "status": "test_error",
+      "evidence": "Check expects testid 'service-overview-copy'; current service detail pages expose 'service-summary' instead (plus service-audience-copy, service-process-copy-N, etc). Not part of this retest's acceptance_matrix."
+    }
+  ]
+}

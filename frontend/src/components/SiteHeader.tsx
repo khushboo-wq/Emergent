@@ -1,80 +1,23 @@
-import { Link, NavLink } from "react-router-dom";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { CONTACT_EMAIL, getContactHref } from "@/lib/site";
+import { CONTACT_EMAIL, orderedServices } from "@/lib/site";
 
-const navItems = [
-  { label: "About", to: "/about", testId: "nav-link-about" },
-  { label: "Services", to: "/services", testId: "nav-link-services" },
-  { label: "LinkedIn", to: "/services/linkedin-management", testId: "nav-link-linkedin" },
-  { label: "Email", to: "/services/email-outreach", testId: "nav-link-email" },
-  { label: "Business Support", to: "/services/business-support", testId: "nav-link-business-support" },
-  { label: "AI Video", to: "/services/ai-video-creation", testId: "nav-link-ai-video" },
-  { label: "Contact", to: "/contact", testId: "nav-link-contact" },
-];
+const logoUrl = "https://static.wixstatic.com/media/526783_62c5cf5ead7f43a3854f72016f2db7fd~mv2.png/v1/fill/w_120,h_110,al_c,q_90/arc%20white.png";
+const navLinkClass = ({ isActive }: { isActive: boolean }) => `relative whitespace-nowrap py-2 text-xs font-semibold transition-colors duration-200 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-[#4263aa] after:transition-transform after:duration-200 ${isActive ? "text-[#0f2942] after:scale-x-100" : "text-[#475569] after:scale-x-0 hover:text-[#0f2942] hover:after:scale-x-100"}`;
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
-  return (
-    <header className="sticky top-0 z-50 border-b border-[#e2dfd8]/85 bg-[#faf9f6]/90 backdrop-blur-xl" data-testid="site-header">
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
-        <Link to="/" className="group flex items-center gap-3" data-testid="nav-logo-link">
-          <span className="grid size-9 place-items-center rounded-full bg-[#0f2942] text-sm font-semibold text-white transition-transform duration-200 group-hover:rotate-6" aria-hidden="true">A</span>
-          <span className="flex flex-col leading-none" data-testid="nav-brand-name">
-            <span className="font-mono text-[10px] font-semibold tracking-[0.22em] text-[#c59b27]">ARCTURUS</span>
-            <span className="mt-1 font-sans text-[11px] text-[#475569]">Professional Services</span>
-          </span>
-        </Link>
-
-        <nav className="hidden items-center gap-4 lg:gap-5 md:flex" aria-label="Primary navigation" data-testid="desktop-navigation">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              data-testid={item.testId}
-              className={({ isActive }) => `relative whitespace-nowrap py-2 text-xs font-semibold transition-colors duration-200 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-[#c59b27] after:transition-transform after:duration-200 ${isActive ? "text-[#0f2942] after:scale-x-100" : "text-[#475569] after:scale-x-0 hover:text-[#0f2942] hover:after:scale-x-100"}`}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="hidden md:block">
-          <Button render={<a href={getContactHref()} />} size="lg" className="h-10 rounded-md bg-[#0f2942] px-4 text-xs font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-[#1e3a5f]" data-testid="header-contact-button">
-            Contact Khushboo <ArrowUpRight className="ml-1 size-4" />
-          </Button>
-        </div>
-
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger render={<Button variant="outline" size="icon" className="size-10 border-[#e2dfd8] md:hidden" />} data-testid="mobile-menu-button" aria-label="Open navigation">
-            <Menu className="size-5" />
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[min(88vw,360px)] border-l-[#e2dfd8] bg-[#faf9f6] px-6">
-            <SheetHeader className="border-b border-[#e2dfd8] pb-5 text-left">
-              <SheetTitle className="font-serif text-2xl font-medium text-[#0f172a]" data-testid="mobile-menu-title">Arcturus</SheetTitle>
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748b]" data-testid="mobile-menu-email">{CONTACT_EMAIL}</p>
-            </SheetHeader>
-            <nav className="mt-8 flex flex-col gap-2" aria-label="Mobile navigation" data-testid="mobile-navigation">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setOpen(false)}
-                  data-testid={`mobile-${item.testId}`}
-                  className="border-b border-[#e2dfd8] py-4 font-serif text-2xl text-[#0f2942] transition-colors duration-200 hover:text-[#c59b27]"
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </nav>
-            <Button render={<a href={getContactHref()} />} className="mt-8 h-12 w-full bg-[#0f2942] text-white hover:bg-[#1e3a5f]" data-testid="mobile-contact-button">
-              Contact Khushboo <ArrowUpRight className="ml-2 size-4" />
-            </Button>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </header>
-  );
+  return <header className="sticky top-0 z-50 border-b border-[#e2dfd8]/85 bg-[#faf9f6]/95 backdrop-blur-xl" data-testid="site-header"><div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
+    <Link to="/" className="group flex items-center gap-3" data-testid="nav-logo-link"><img src={logoUrl} alt="Arcturus Professional Services black logo" className="size-11 object-contain brightness-0" data-testid="nav-logo-image" /><span className="hidden flex-col leading-none sm:flex" data-testid="nav-brand-name"><span className="font-serif text-sm tracking-[0.12em] text-[#0f2942]">ARCTURUS</span><span className="mt-1 text-[10px] text-[#64748b]">Professional Services</span></span></Link>
+    <nav className="hidden items-center gap-6 md:flex" aria-label="Primary navigation" data-testid="desktop-navigation">
+      <NavLink to="/" className={navLinkClass} data-testid="nav-link-home">Home</NavLink>
+      <div className="group relative" data-testid="services-dropdown"><div className="flex items-center gap-1"><NavLink to="/services" className={navLinkClass} data-testid="nav-link-services">Services</NavLink><ChevronDown className="size-3 text-[#64748b]" /></div><div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4 opacity-0 transition-[opacity,visibility] duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"><div className="rounded-xl border border-[#e2dfd8] bg-white p-2 shadow-[0_22px_55px_-28px_rgba(15,41,66,0.6)]">{orderedServices.map((service) => <Link key={service.slug} to={`/services/${service.slug}`} className="flex items-center justify-between rounded-lg px-4 py-3 text-sm text-[#475569] transition-colors duration-200 hover:bg-[#eef2ff] hover:text-[#0f2942]" data-testid={`nav-service-${service.slug}`}><span>{service.title}</span><span className="font-mono text-[9px] text-[#4263aa]">{service.price}</span></Link>)}</div></div></div>
+      <NavLink to="/about" className={navLinkClass} data-testid="nav-link-about">About</NavLink><NavLink to="/how-i-work" className={navLinkClass} data-testid="nav-link-how-i-work">How I Work</NavLink><NavLink to="/contact" className={navLinkClass} data-testid="nav-link-contact">Contact</NavLink>
+    </nav>
+    <Link to="/contact" className="hidden h-10 items-center rounded-md bg-[#0f2942] px-4 text-xs font-semibold text-white transition-colors duration-200 hover:bg-[#243f5c] lg:inline-flex" data-testid="header-contact-button">Written enquiry</Link>
+    <Sheet open={open} onOpenChange={setOpen}><SheetTrigger render={<Button variant="outline" size="icon" className="size-10 border-[#e2dfd8] md:hidden" />} data-testid="mobile-menu-button" aria-label="Open navigation"><Menu className="size-5" /></SheetTrigger><SheetContent side="right" className="w-[min(90vw,390px)] overflow-y-auto border-l-[#e2dfd8] bg-[#faf9f6] px-6"><SheetHeader className="border-b border-[#e2dfd8] pb-5 text-left"><SheetTitle className="font-serif text-2xl text-[#0f172a]" data-testid="mobile-menu-title">Arcturus</SheetTitle><p className="text-[11px] text-[#64748b]" data-testid="mobile-menu-email">{CONTACT_EMAIL}</p></SheetHeader><nav className="mt-6 flex flex-col" aria-label="Mobile navigation" data-testid="mobile-navigation"><NavLink to="/" onClick={() => setOpen(false)} className="border-b border-[#e2dfd8] py-3 font-serif text-xl text-[#0f2942]" data-testid="mobile-nav-link-home">Home</NavLink><Link to="/services" onClick={() => setOpen(false)} className="py-3 font-serif text-xl text-[#0f2942]" data-testid="mobile-nav-link-services">Services</Link><div className="mb-2 grid gap-1 border-b border-[#e2dfd8] pb-3 pl-3">{orderedServices.map((service) => <Link key={service.slug} to={`/services/${service.slug}`} onClick={() => setOpen(false)} className="py-2 text-sm text-[#64748b]" data-testid={`mobile-nav-service-${service.slug}`}>{service.title}</Link>)}</div><NavLink to="/about" onClick={() => setOpen(false)} className="border-b border-[#e2dfd8] py-3 font-serif text-xl text-[#0f2942]" data-testid="mobile-nav-link-about">About</NavLink><NavLink to="/how-i-work" onClick={() => setOpen(false)} className="border-b border-[#e2dfd8] py-3 font-serif text-xl text-[#0f2942]" data-testid="mobile-nav-link-how-i-work">How I Work</NavLink><NavLink to="/contact" onClick={() => setOpen(false)} className="border-b border-[#e2dfd8] py-3 font-serif text-xl text-[#0f2942]" data-testid="mobile-nav-link-contact">Contact</NavLink></nav><Link to="/contact" onClick={() => setOpen(false)} className="mt-7 inline-flex h-12 w-full items-center justify-center rounded-md bg-[#0f2942] text-sm font-semibold text-white" data-testid="mobile-contact-button">Send a written enquiry</Link></SheetContent></Sheet>
+  </div></header>;
 }

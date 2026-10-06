@@ -3,6 +3,39 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { visualEdits } from "@emergentbase/visual-edits/vite";
+import fs from "node:fs/promises";
+import type { Plugin } from "vite";
+
+const prerenderRoutes = new Set([
+  "/", "/services", "/services/linkedin-management", "/services/email-outreach",
+  "/services/business-support", "/services/lead-generation", "/services/ai-video-creation",
+  "/services/email-setup", "/about", "/how-i-work", "/contact", "/privacy-policy", "/terms",
+]);
+
+function ssrHtmlPlugin(): Plugin {
+  return {
+    name: "arcturus-route-html",
+    apply: "serve",
+    configureServer(server) {
+      server.middlewares.use(async (request, response, next) => {
+          const pathname = (request.url ?? "/").split("?")[0].replace(/\/$/, "") || "/";
+          if (request.method !== "GET" || !prerenderRoutes.has(pathname) || !request.headers.accept?.includes("text/html")) return next();
+          try {
+            const template = await fs.readFile(path.resolve(__dirname, "index.html"), "utf8");
+            const transformed = await server.transformIndexHtml(pathname, template);
+            const module = await server.ssrLoadModule("/src/entry-server.tsx");
+            const { html, head } = module.render(pathname);
+            response.statusCode = 200;
+            response.setHeader("Content-Type", "text/html; charset=utf-8");
+            response.end(transformed.replace("<!--app-head-->", head).replace("<!--app-html-->", html));
+          } catch (error) {
+            server.ssrFixStacktrace(error as Error);
+            next(error);
+          }
+      });
+    },
+  };
+}
 
 // Supervisor exports DISABLE_HOT_RELOAD=true when the platform sets ENABLE_RELOAD=false.
 const hotReloadDisabled = process.env.DISABLE_HOT_RELOAD === "true";
@@ -22,6 +55,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    ssrHtmlPlugin(),
     ...(visualEditsDisabled ? [] : [visualEdits()]),
   ],
   resolve: {
