@@ -1,122 +1,169 @@
-import { ArrowDownRight, ArrowUpRight, CircleDot, Mail, MoveRight } from "lucide-react";
+import { ArrowRight, Check, Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
-import { Button } from "@/components/ui/button";
 import { orderedServices } from "@/lib/site";
-import HeroAtmosphere from "@/components/HeroAtmosphere";
+
+const process = [
+  ["01", "Tell me what you need", "Share the task, goal, audience, or problem in writing."],
+  ["02", "I confirm the scope", "You get a clear outline of what I will handle and what I need from you."],
+  ["03", "The work gets done", "I work through the agreed tasks and keep communication clear."],
+  ["04", "You get the result", "Completed work, useful updates, and a written handover where needed."],
+];
 
 export default function Home() {
   return (
     <PageFrame>
       <Seo
         path="/"
-        title="Arcturus Professional Services | Structured B2B Growth & Executive Support"
-        description="Bespoke LinkedIn management, focused email outreach, business support, and AI video creation for European businesses and founders."
+        title="Arcturus Professional Services | Independent Business Support"
+        description="Independent LinkedIn management, email outreach, lead generation, business support, email setup and AI video creation for businesses."
       />
-      <section className="editorial-hero relative overflow-hidden border-b border-[#e2dfd8]" data-testid="home-hero">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-20 lg:px-10 lg:py-28">
-          <div className="relative z-10 max-w-2xl">
-            <div className="mb-7 flex items-center gap-3" data-testid="home-hero-eyebrow">
-              <span className="h-px w-10 bg-[#c59b27]" aria-hidden="true" />
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#92400e]">Professional services / Europe</span>
+
+      <section className="commercial-hero" data-testid="home-hero">
+        <div className="commercial-container commercial-hero-grid">
+          <div className="commercial-hero-copy">
+            <div className="commercial-kicker"><span /> Independent Freelancer</div>
+            <h1 data-testid="home-hero-heading">Practical support for the work behind your business.</h1>
+            <p data-testid="home-hero-description">
+              LinkedIn, email outreach, lead generation, business support and more, handled personally by Khushboo.
+            </p>
+            <div className="commercial-actions" data-testid="home-hero-actions">
+              <Link to="/contact" className="commercial-btn commercial-btn-primary">Get in touch <ArrowRight size={17} /></Link>
+              <Link to="/services" className="commercial-btn commercial-btn-secondary">View services</Link>
             </div>
-            <h1 className="max-w-2xl break-words font-serif text-[2.15rem] font-medium leading-[1.12] tracking-[-0.035em] text-[#0f172a] sm:text-6xl sm:leading-[1.06] lg:text-[5.4rem]" data-testid="home-hero-heading">Make the work behind your growth feel <span className="text-[#0f2942]">considered.</span></h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-[#475569] sm:text-xl" data-testid="home-hero-description">I bring structure to the work that keeps a business moving, from thoughtful outreach and LinkedIn management to reliable support and useful video content.</p>
-            <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center" data-testid="home-hero-actions">
-              <Button render={<Link to="/contact" />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white shadow-[0_12px_28px_-16px_rgba(15,41,66,0.8)] transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="home-hero-contact-button">
-                Contact Khushboo <ArrowUpRight className="ml-2 size-4" />
-              </Button>
-              <Link to="/services" className="group inline-flex items-center gap-2 px-1 text-sm font-semibold text-[#0f2942] transition-colors duration-200 hover:text-[#92400e]" data-testid="home-hero-services-link">
-                Explore services <MoveRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
+            <div className="commercial-trust-row">
+              <span><Check size={16} /> Direct communication</span>
+              <span><Check size={16} /> Written updates</span>
+              <span><Check size={16} /> Personalised support</span>
             </div>
-            <p className="mt-7 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[#64748b]" data-testid="home-hero-note"><CircleDot className="size-3 text-[#c59b27]" /> Written enquiries · tailored scope · no account required</p>
           </div>
 
-          <HeroAtmosphere />
+          <div className="commercial-hero-card" aria-label="Arcturus service overview">
+            <div className="hero-card-top">
+              <span className="hero-card-label">ARCTURUS</span>
+              <span className="hero-card-dot" />
+            </div>
+            <div className="hero-card-title">One person.<br /><strong>Clear work.</strong></div>
+            <div className="hero-card-list">
+              <div><span>01</span> LinkedIn Management</div>
+              <div><span>02</span> Email Outreach</div>
+              <div><span>03</span> Business Support</div>
+              <div><span>04</span> Lead Generation</div>
+            </div>
+            <div className="hero-card-bottom">New Delhi · Working with businesses in the UK, Ireland & Europe</div>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.68fr_1.32fr] lg:items-center lg:gap-24 lg:px-10" data-testid="home-about-section"><div className="relative min-h-[300px] rounded-t-[8rem] rounded-b-[2rem] bg-[#ece8f4]"><div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-[#0f2942] p-6 text-white shadow-[0_20px_45px_-28px_rgba(15,41,66,0.75)]"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#9bc8c0]">Independent by design</p><p className="mt-3 font-serif text-2xl leading-tight text-white">One freelancer. One written thread. No hand-offs.</p></div></div><div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#765b9a]">About Khushboo</p><h2 className="mt-4 max-w-2xl break-words font-serif text-4xl leading-tight text-[#0f172a] sm:text-5xl" data-testid="home-about-heading">You always deal with the person doing the work.</h2><p className="mt-6 max-w-2xl text-base leading-8 text-[#475569]" data-testid="home-about-copy">I have worked in B2B outreach since 2014 and support businesses in Ireland, the UK, and Europe from New Delhi. I keep communication on email and WhatsApp so each decision, instruction, and report stays documented.</p><Link to="/about" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0f2942] transition-[color,transform] duration-200 hover:translate-x-1 hover:text-[#4263aa]" data-testid="home-about-link">More about how I work <MoveRight className="size-4" /></Link></div></section>
-
-      <section className="border-b border-[#e2dfd8] bg-[#f3f1ec]" data-testid="home-trust-strip">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748b]" data-testid="home-trust-label">Built for businesses that need</p>
-          <div className="flex flex-wrap gap-x-7 gap-y-2 text-sm font-medium text-[#0f2942]" data-testid="home-trust-list">
-            <span data-testid="home-trust-item-clarity">Clarity before activity</span><span className="text-[#c59b27]" aria-hidden="true">/</span><span data-testid="home-trust-item-rhythm">A dependable rhythm</span><span className="text-[#c59b27]" aria-hidden="true">/</span><span data-testid="home-trust-item-context">Context-aware delivery</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10" data-testid="home-services-section">
-        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+      <section className="commercial-intro" data-testid="home-intro-section">
+        <div className="commercial-container commercial-intro-grid">
           <div>
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#92400e]" data-testid="home-services-eyebrow">How I can help</p>
-            <h2 className="mt-4 max-w-sm font-serif text-4xl font-medium leading-tight tracking-[-0.02em] text-[#0f172a] sm:text-5xl" data-testid="home-services-heading">Support that respects the shape of your business.</h2>
-            <p className="mt-6 max-w-sm text-base leading-7 text-[#64748b]" data-testid="home-services-description">Start with one need or bring a broader brief. Every engagement begins with a conversation about scope, priorities, and what good looks like.</p>
-            <Link to="/services" className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0f2942] transition-colors duration-200 hover:text-[#92400e]" data-testid="home-services-view-all-link">View all services <ArrowDownRight className="size-4 transition-transform duration-200 group-hover:translate-y-1" /></Link>
+            <p className="commercial-section-label">What I do</p>
+            <h2>Reliable help without the agency layers.</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2" data-testid="home-services-grid">
+          <div>
+            <p>
+              I work directly with founders and small businesses on the practical tasks that are easy to postpone and difficult to keep on top of.
+            </p>
+            <p>
+              You get one point of contact, clear written communication, and support built around the actual work you need done.
+            </p>
+            <Link to="/about" className="commercial-text-link">More about how I work <ArrowRight size={16} /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="commercial-services" data-testid="home-services-section">
+        <div className="commercial-container">
+          <div className="commercial-section-heading">
+            <div>
+              <p className="commercial-section-label">Services</p>
+              <h2>Choose the support you need.</h2>
+            </div>
+            <Link to="/services" className="commercial-text-link">View all services <ArrowRight size={16} /></Link>
+          </div>
+
+          <div className="commercial-service-grid" data-testid="home-services-grid">
             {orderedServices.map((service, index) => (
-              <Link key={service.slug} to={`/services/${service.slug}`} className={`premium-panel premium-lift group flex min-h-[260px] flex-col justify-between rounded-2xl border border-[#e2dfd8] p-6 sm:p-7 ${index % 3 === 0 ? "bg-[#eef2ff]" : index % 3 === 1 ? "bg-[#ece8f4]" : "bg-[#e8f2ef]"} ${index === 1 ? "sm:translate-y-10 sm:hover:translate-y-9" : ""}`} data-testid={`service-card-${service.slug}`}>
-                <div className="flex items-start justify-between">
-                  <span className="font-mono text-[10px] tracking-[0.16em] text-[#c59b27]" data-testid={`service-card-number-${service.slug}`}>{String(index + 1).padStart(2, "0")}</span>
-                  <ArrowUpRight className="size-5 text-[#94a3b8] transition-colors duration-200 group-hover:text-[#0f2942]" aria-hidden="true" />
+              <Link
+                key={service.slug}
+                to={`/services/${service.slug}`}
+                className="commercial-service-card"
+                data-testid={`service-card-${service.slug}`}
+              >
+                <div className="commercial-service-number">0{index + 1}</div>
+                <div className="commercial-service-content">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
                 </div>
-                <div>
-                  <h3 className="font-serif text-2xl font-medium text-[#0f172a]" data-testid={`service-card-title-${service.slug}`}>{service.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#64748b]" data-testid={`service-card-description-${service.slug}`}>{service.description}</p>
-                </div>
+                <div className="commercial-card-link">Explore <ArrowRight size={16} /></div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#0f2942] text-white" data-testid="home-difference-section">
-        <div className="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-10">
+      <section className="commercial-feature-band" data-testid="home-difference-section">
+        <div className="commercial-container commercial-feature-grid">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#f5d783]" data-testid="home-difference-eyebrow">The difference</p>
-            <h2 className="mt-4 max-w-md font-serif text-4xl font-medium leading-tight tracking-[-0.02em] text-white sm:text-5xl" data-testid="home-difference-heading">No theatre. Just a better way to get the work done.</h2>
+            <p className="commercial-section-label light">Why Arcturus</p>
+            <h2>Simple, personal and clear from the start.</h2>
           </div>
-          <div className="grid gap-0 divide-y divide-white/15 border-y border-white/15 sm:grid-cols-2 sm:divide-x sm:divide-y-0" data-testid="home-difference-list">
-            {[
-              ["01", "Fact-checked briefs", "The right context comes before the first draft or outreach list."],
-              ["02", "Transparent scope", "You know what is included, what is not, and what needs your input."],
-              ["03", "Written clarity", "Progress, questions, and decisions stay easy to find and act on."],
-              ["04", "Realistic rhythm", "Timelines are agreed around the work rather than promised for effect."],
-            ].map(([number, title, copy]) => (
-              <div key={number} className="py-7 first:pt-7 sm:px-8 sm:first:pl-0 sm:[&:nth-child(2)]:pr-0 sm:[&:nth-child(3)]:pl-0" data-testid={`difference-item-${number}`}>
-                <span className="font-mono text-[10px] text-[#f5d783]" data-testid={`difference-number-${number}`}>{number}</span>
-                <h3 className="mt-5 font-serif text-2xl text-white" data-testid={`difference-title-${number}`}>{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#b9c5d4]" data-testid={`difference-copy-${number}`}>{copy}</p>
+          <div className="commercial-feature-points">
+            <div><strong>01</strong><span><b>One point of contact</b> You work directly with the person handling your work.</span></div>
+            <div><strong>02</strong><span><b>Written communication</b> Instructions, questions and updates stay documented.</span></div>
+            <div><strong>03</strong><span><b>Clear scope</b> You know what is included before the work begins.</span></div>
+            <div><strong>04</strong><span><b>Practical delivery</b> The focus stays on completing useful work, not adding layers.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="commercial-process" data-testid="home-process-section">
+        <div className="commercial-container">
+          <div className="commercial-section-heading">
+            <div>
+              <p className="commercial-section-label">How I work</p>
+              <h2>A straightforward process.</h2>
+            </div>
+            <p className="commercial-heading-note">No complicated onboarding. We start with the work.</p>
+          </div>
+          <div className="commercial-process-grid">
+            {process.map(([number, title, copy]) => (
+              <div key={number} className="commercial-process-card">
+                <span>{number}</span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10" data-testid="home-process-section">
-        <div className="flex flex-col justify-between gap-6 border-b border-[#e2dfd8] pb-8 sm:flex-row sm:items-end">
-          <div className="min-w-0"><p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#92400e]" data-testid="home-process-eyebrow">How I work</p><h2 className="mt-4 break-words font-serif text-4xl font-medium tracking-[-0.02em] text-[#0f172a] sm:text-5xl" data-testid="home-process-heading">A simple engagement architecture.</h2></div>
-          <p className="max-w-xs text-sm leading-6 text-[#64748b]" data-testid="home-process-description">The detail changes by service. The principle stays the same: agree the shape, then deliver against it.</p>
-        </div>
-        <div className="grid gap-0 md:grid-cols-4" data-testid="home-process-grid">
-          {["Understand", "Shape", "Deliver", "Review"].map((step, index) => (
-            <div key={step} className="border-b border-[#e2dfd8] py-7 md:border-b-0 md:border-r md:px-6 md:first:pl-0 md:last:border-r-0" data-testid={`process-step-${index + 1}`}>
-              <span className="font-mono text-[10px] text-[#c59b27]" data-testid={`process-step-number-${index + 1}`}>0{index + 1}</span>
-              <h3 className="mt-6 font-serif text-2xl text-[#0f2942]" data-testid={`process-step-title-${index + 1}`}>{step}</h3>
-              <p className="mt-3 text-sm leading-6 text-[#64748b]" data-testid={`process-step-copy-${index + 1}`}>{["I start with your offer, audience, and the outcome you need.", "I turn the conversation into a clear brief and realistic plan.", "I keep the agreed work moving with useful updates and review points.", "I use the results to improve the next cycle or close the brief well."][index]}</p>
-            </div>
-          ))}
+      <section className="commercial-about" data-testid="home-about-section">
+        <div className="commercial-container commercial-about-grid">
+          <div className="commercial-about-panel">
+            <div className="commercial-about-badge">KHUSHBOO</div>
+            <div className="commercial-about-stat"><strong>Independent Freelancer</strong><span>New Delhi, India</span></div>
+          </div>
+          <div>
+            <p className="commercial-section-label">About me</p>
+            <h2>You deal with the person doing the work.</h2>
+            <p>I support businesses in Ireland, the UK and Europe from New Delhi. My approach is simple: understand the brief, do the agreed work properly, and keep communication clear.</p>
+            <Link to="/about" className="commercial-btn commercial-btn-secondary">Read more <ArrowRight size={17} /></Link>
+          </div>
         </div>
       </section>
 
-      <section className="mx-5 mb-20 overflow-hidden rounded-xl bg-[#f3f1ec] sm:mx-8 sm:mb-28 lg:mx-auto lg:max-w-7xl lg:px-10" data-testid="home-contact-banner">
-        <div className="grid gap-10 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-[1fr_auto] lg:items-end lg:px-14 lg:py-16">
-          <div className="min-w-0"><Mail className="size-6 text-[#c59b27]" /><h2 className="mt-5 max-w-xl break-words font-serif text-4xl font-medium leading-tight tracking-[-0.02em] text-[#0f172a] sm:text-5xl" data-testid="home-contact-heading">Have a brief in mind? Start with a written conversation.</h2><p className="mt-5 max-w-lg text-sm leading-6 text-[#64748b]" data-testid="home-contact-description">Tell Khushboo what you are trying to move forward, what support you need, and when you would like to begin.</p></div>
-          <Button render={<Link to="/contact" />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="home-contact-button">Contact Khushboo <ArrowUpRight className="ml-2 size-4" /></Button>
+      <section className="commercial-contact" data-testid="home-contact-banner">
+        <div className="commercial-container commercial-contact-inner">
+          <div>
+            <div className="commercial-contact-icon"><Mail size={21} /></div>
+            <p className="commercial-section-label">Have something in mind?</p>
+            <h2>Tell me what you need help with.</h2>
+            <p>Send a written enquiry with your business, requirements and timeline. I will review it and get back to you.</p>
+          </div>
+          <Link to="/contact" className="commercial-btn commercial-btn-primary">Start a conversation <ArrowRight size={17} /></Link>
         </div>
       </section>
     </PageFrame>
