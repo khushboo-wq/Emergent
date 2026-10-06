@@ -8,7 +8,8 @@ import { readFileSync } from "node:fs";
 import type { Plugin } from "vite";
 
 const seoConfig = JSON.parse(readFileSync(path.resolve(__dirname, "seo.config.json"), "utf8"));
-const prerenderRoutes = new Set<string>(seoConfig.pages.filter((page: { indexable: boolean }) => page.indexable).map((page: { path: string }) => page.path));
+const prerenderRoutes = new Set<string>(seoConfig.pages.map((page: { path: string }) => page.path));
+const redirectRules = new Map<string, string>(Object.entries(seoConfig.redirects));
 
 function ssrHtmlPlugin(): Plugin {
   return {
@@ -17,13 +18,21 @@ function ssrHtmlPlugin(): Plugin {
     configureServer(server) {
       server.middlewares.use(async (request, response, next) => {
           const pathname = (request.url ?? "/").split("?")[0].replace(/\/$/, "") || "/";
-          if (request.method !== "GET" || !prerenderRoutes.has(pathname) || !request.headers.accept?.includes("text/html")) return next();
+          if (request.method !== "GET" || !request.headers.accept?.includes("text/html")) return next();
+          const redirectTarget = redirectRules.get(pathname);
+          if (redirectTarget) {
+            response.statusCode = 301;
+            response.setHeader("Location", redirectTarget);
+            response.end();
+            return;
+          }
+          if (pathname.split("/").pop()?.includes(".")) return next();
           try {
             const template = await fs.readFile(path.resolve(__dirname, "index.html"), "utf8");
             const transformed = await server.transformIndexHtml(pathname, template);
             const module = await server.ssrLoadModule("/src/entry-server.tsx");
             const { html, head } = module.render(pathname);
-            response.statusCode = 200;
+            response.statusCode = prerenderRoutes.has(pathname) ? 200 : 404;
             response.setHeader("Content-Type", "text/html; charset=utf-8");
             response.end(transformed.replace("<!--app-head-->", head).replace("<!--app-html-->", html));
           } catch (error) {
@@ -86,6 +95,8 @@ export default defineConfig({
       "react-day-picker",
       "react-dom/client",
       "react-is",
+      "react-icons/fa6",
+      "react-icons/md",
       "react-router-dom",
       "recharts",
       "sonner",

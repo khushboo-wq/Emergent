@@ -28,17 +28,23 @@ def seo_config():
 
 
 def test_seo_config_is_single_source_with_13_unique_pages(seo_config):
+    # 13 indexable pages plus one intentionally noindex /404 entry (excluded from the
+    # sitemap and the 13-page SEO report by design).
     pages = seo_config["pages"]
-    assert len(pages) == 13, f"expected 13 configured pages, got {len(pages)}"
+    indexable_pages = [p for p in pages if p.get("indexable")]
+    noindex_pages = [p for p in pages if not p.get("indexable")]
+    assert len(pages) == 14, f"expected 14 configured pages (13 indexable + /404), got {len(pages)}"
+    assert len(indexable_pages) == 13, f"expected 13 indexable pages, got {len(indexable_pages)}"
+    assert [p["path"] for p in noindex_pages] == ["/404"], "expected exactly one noindex /404 page"
     for field in EXPECTED_FIELDS:
         for page in pages:
             assert field in page, f"page {page.get('path')} missing required field '{field}'"
     paths = [p["path"] for p in pages]
     titles = [p["title"] for p in pages]
     descriptions = [p["description"] for p in pages]
-    assert len(set(paths)) == 13, "page paths must be unique"
-    assert len(set(titles)) == 13, "titles must be unique"
-    assert len(set(descriptions)) == 13, "descriptions must be unique"
+    assert len(set(paths)) == 14, "page paths must be unique"
+    assert len(set(titles)) == 14, "titles must be unique"
+    assert len(set(descriptions)) == 14, "descriptions must be unique"
 
 
 def test_yarn_seo_audit_runs_clean_with_zero_missing_items():
@@ -63,8 +69,12 @@ def test_yarn_seo_audit_runs_clean_with_zero_missing_items():
     with open(report_html_path) as f:
         report_html = f.read()
     assert re.search(r"<strong>0</strong>\s*Missing SEO items", report_html), "report html does not show 0 missing items"
-    # Every page path appears in the report table (HTML-escape ampersands to match rendering).
+    # Every indexable page path appears in the report table (HTML-escape ampersands to
+    # match rendering). The /404 page is intentionally noindex and excluded from this
+    # 13-page report by design.
     for page in json.load(open(os.path.join(FRONTEND_DIR, "seo.config.json")))["pages"]:
+        if page["path"] == "/404":
+            continue
         escaped_title = page["title"].replace("&", "&amp;")
         assert escaped_title in report_html, f"report html missing title for {page['path']}"
 

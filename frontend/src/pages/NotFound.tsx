@@ -1,0 +1,8 @@
+import { ArrowLeft, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import PageFrame from "@/components/PageFrame";
+import Seo from "@/components/Seo";
+
+export default function NotFound() {
+  return <PageFrame><Seo path="/404" /><section className="mx-auto max-w-5xl px-5 py-24 text-center sm:px-8 sm:py-32" data-testid="not-found-page"><p className="font-highlight text-7xl text-[#4263aa]" data-testid="not-found-code">404</p><h1 className="mt-7 font-serif text-5xl text-[#0f172a] sm:text-6xl" data-testid="not-found-heading">Page not found</h1><p className="mx-auto mt-6 max-w-xl text-base leading-8 text-[#64748b]" data-testid="not-found-copy">The page may have moved or the address may be incorrect. Use the links below to continue through the website.</p><h2 className="mt-12 font-serif text-2xl text-[#0f2942]" data-testid="not-found-next-step-heading">Choose your next step</h2><div className="mt-6 flex flex-wrap justify-center gap-3"><Link to="/" className="inline-flex h-11 items-center gap-2 rounded-md bg-[#0f2942] px-5 text-sm font-semibold text-white" data-testid="not-found-home-link"><ArrowLeft className="size-4" />Back home</Link><Link to="/services" className="inline-flex h-11 items-center rounded-md border border-[#0f2942] px-5 text-sm font-semibold text-[#0f2942]" data-testid="not-found-services-link">Explore services</Link><Link to="/contact" className="inline-flex h-11 items-center gap-2 rounded-md border border-[#0f2942] px-5 text-sm font-semibold text-[#0f2942]" data-testid="not-found-contact-link"><Mail className="size-4" />Contact me</Link></div></section></PageFrame>;
+}

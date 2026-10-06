@@ -7,7 +7,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
 const template = await readFile(join(dist, "index.html"), "utf8");
 const config = JSON.parse(await readFile(join(root, "seo.config.json"), "utf8"));
-const routes = config.pages.filter((page) => page.indexable).map((page) => page.path);
+const routes = config.pages.map((page) => page.path);
 
 for (const route of routes) {
   const { html, head } = render(route);
@@ -21,11 +21,12 @@ for (const route of routes) {
   if (imageTags.some((tag) => !/\balt=/.test(tag))) throw new Error(`${route}: image without alt text`);
   if (!head.includes(`<link rel="canonical" href="${configured.canonical}">`)) throw new Error(`${route}: canonical mismatch`);
   if (!head.includes(`<meta name="description" content=`)) throw new Error(`${route}: meta description missing`);
-  if (!head.includes(`name="robots" content="index, follow`)) throw new Error(`${route}: important page is not indexable`);
+  if (configured.indexable && !head.includes(`name="robots" content="index, follow`)) throw new Error(`${route}: important page is not indexable`);
+  if (!configured.indexable && !head.includes(`name="robots" content="noindex, follow`)) throw new Error(`${route}: utility page should be noindex`);
   if (!head.includes(`property="og:title"`) || !head.includes(`property="og:image"`) || !head.includes(`name="twitter:title"`) || !head.includes(`name="twitter:image"`)) throw new Error(`${route}: social metadata missing`);
   if (!head.includes(`application/ld+json`)) throw new Error(`${route}: JSON-LD missing`);
   if (configured.serviceSlug && (!head.includes(`BreadcrumbList`) || !head.includes(`FAQPage`) || !head.includes(`\"@type\":\"Service\"`))) throw new Error(`${route}: service schema incomplete`);
-  const target = route === "/" ? join(dist, "index.html") : join(dist, route.slice(1), "index.html");
+  const target = route === "/" ? join(dist, "index.html") : route === "/404" ? join(dist, "404.html") : join(dist, route.slice(1), "index.html");
   await mkdir(dirname(target), { recursive: true });
   await writeFile(target, output);
 }

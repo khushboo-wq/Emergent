@@ -27,6 +27,7 @@ for (const page of pages) {
 const sitemapUrls = pages.map((page) => `  <url>\n    <loc>${page.canonical}</loc>\n    <lastmod>${page.lastModified}</lastmod>\n    <changefreq>${page.changeFrequency}</changefreq>\n    <priority>${page.priority.toFixed(1)}</priority>\n  </url>`).join("\n");
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls}\n</urlset>\n`;
 const robots = [...config.site.allowedBots.map((bot) => `User-agent: ${bot}\nAllow: /\n`), "User-agent: *\nAllow: /\n", `Sitemap: ${config.site.baseUrl}/sitemap.xml\n`].join("\n");
+const redirects = Object.entries(config.redirects).map(([source, target]) => `${source} ${target} 301!`).join("\n") + "\n";
 
 const escape = (value) => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const tableRows = auditRows.map((page) => `<tr><td><strong>${escape(page.path)}</strong></td><td>${escape(page.title)}</td><td>${escape(page.description)}</td><td>${escape(page.h1)}</td><td><a href="${escape(page.canonical)}">${escape(page.canonical)}</a></td><td><span class="status good">Indexable</span></td><td>${escape(page.schemaTypes.join(", "))}</td><td>${page.missing.length ? `<span class="status bad">${escape(page.missing.join("; "))}</span>` : `<span class="status good">Complete</span>`}</td></tr>`).join("\n");
@@ -36,7 +37,8 @@ const reportMarkdown = `# Arcturus Technical SEO Report\n\nGenerated from \`seo.
 
 await writeFile(join(root, "public", "sitemap.xml"), sitemap);
 await writeFile(join(root, "public", "robots.txt"), robots);
+await writeFile(join(root, "public", "_redirects"), redirects);
 await writeFile(join(root, "public", "seo-report.html"), reportHtml);
 await writeFile(join(root, "SEO_REPORT.md"), reportMarkdown);
-console.log(`SEO audit complete: ${pages.length} pages, ${issueCount} missing items.`);
+console.log(`SEO audit complete: ${pages.length} indexable pages, ${Object.keys(config.redirects).length} redirects, ${issueCount} missing items.`);
 if (issueCount) process.exit(1);

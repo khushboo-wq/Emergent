@@ -10,6 +10,18 @@
     "socialImageAlt": "Arcturus Professional Services black logo on a light background",
     "allowedBots": ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "PerplexityBot", "Google-Extended", "Googlebot", "Bingbot"]
   },
+  "redirects": {
+    "/home": "/",
+    "/about-us": "/about",
+    "/our-services": "/services",
+    "/contact-us": "/contact",
+    "/linkedin-management": "/services/linkedin-management",
+    "/email-outreach": "/services/email-outreach",
+    "/business-support": "/services/business-support",
+    "/lead-generation": "/services/lead-generation",
+    "/ai-video-creation": "/services/ai-video-creation",
+    "/email-setup": "/services/email-setup"
+  },
   "pages": [
     {
       "path": "/",
@@ -184,6 +196,19 @@
       "schemaTypes": ["WebPage"],
       "changeFrequency": "yearly",
       "priority": 0.3,
+      "lastModified": "2026-02-21"
+    },
+    {
+      "path": "/404",
+      "title": "Page Not Found | Arcturus Professional Services",
+      "description": "The requested Arcturus page could not be found. Return home, explore freelance services, or send Khushboo Tomar a written business enquiry instead.",
+      "h1": "Page not found",
+      "canonical": "https://arcturusprofessional.com/404",
+      "indexable": false,
+      "ogType": "website",
+      "schemaTypes": ["WebPage"],
+      "changeFrequency": "yearly",
+      "priority": 0.0,
       "lastModified": "2026-02-21"
     }
   ]

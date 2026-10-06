@@ -1,0 +1,72 @@
+{
+  "passed": 14,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Floating quick-contact buttons work across public pages",
+      "name": "quick-contact-dock-desktop-hover",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Desktop (1280x800) /: all four controls present; WhatsApp/LinkedIn/Instagram hrefs match approved destinations with target=_blank; Email href is mailto:khushboo@arcturusprofessional.com. Hovering WhatsApp and keyboard-focusing LinkedIn each reveal the matching -label testid. Screenshots confirm expansion."
+    },
+    {
+      "criterion": "Quick-contact dock is mobile safe",
+      "name": "quick-contact-dock-mobile-safe",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "At 390x844 on /, /contact, /services/linkedin-management and the 404 page: zero horizontal overflow (scrollWidth==clientWidth), all 4 controls rendered within 0..390px x-bounds, and the dock does not visually overlap the 404 page's final 'Contact me' link."
+    },
+    {
+      "criterion": "Footer contact links use recognisable icons and hover feedback",
+      "name": "footer-contact-icons-hover",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Footer email/WhatsApp/LinkedIn/Instagram links each render exactly one <svg> icon, retain approved hrefs/text, and carry hover:bg-white/10 Tailwind utility class confirmed on the WhatsApp link; screenshots captured pre/post hover."
+    },
+    {
+      "criterion": "Keyboard skip navigation works",
+      "name": "skip-navigation-focus-order",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "First Tab press from page load focuses data-testid=skip-navigation-link; focused element's bounding box has y>=0 confirming visible repositioning; pressing Enter moves to #main-content (location.hash became '#main-content')."
+    },
+    {
+      "criterion": "Legacy URLs return permanent redirects",
+      "name": "test_tscheck_legacy_redirects.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "httpx GET with Accept:text/html to http://localhost:3000 for /about-us, /our-services, /contact-us, and all 6 root-level service paths returned 301 with correct Location header matching seo.config.json redirects (10/10 rules verified); public/_redirects file content cross-checked against the same source."
+    },
+    {
+      "criterion": "Unknown routes return a real crawler-safe 404",
+      "name": "test_tscheck_not_found_page.py + not-found-page-crawler-safe",
+      "lane": "backend+browser",
+      "status": "passed",
+      "evidence": "Backend: GET /tscheck-unknown-route-xyz123 -> 404, body contains 'Page not found', exactly one <h1>, Home/Services/Contact links, robots meta 'noindex,follow', canonical ending in /404, no Organization schema. Browser: rendered 404 page verified visually with working Home link navigating back to a page showing the quick-contact dock."
+    },
+    {
+      "criterion": "Existing SEO and enquiry flows remain intact",
+      "name": "seo-foundation-correct + contact-form-submission + full backend SEO suite",
+      "lane": "browser+backend",
+      "status": "passed",
+      "evidence": "Reran persisted seo-foundation-correct and contact-form-submission checks: both passed (contact form fill->submit->success screenshot). Full backend suite (104 tests) passed, including seo tags/schema/sitemap/robots and seo-audit-report tests updated for the new 14-entry config (13 indexable + noindex /404) reporting 0 missing items for the 13-page report."
+    },
+    {
+      "criterion": "Deferred items remain intentionally excluded",
+      "name": "manual-code-audit",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "grep across frontend/src for analytics/gtag/cookie-banner/search-console/case-study/testimonial/payment-processing/account-system/phone-call/call-booking turned up only legitimate copy explicitly stating 'no phone calls or call-booking appointments' and upfront-payment *terms* text (not a payment processor integration); no analytics scripts, cookie banners, or fabricated testimonials found."
+    },
+    {
+      "criterion": "Public ingress parity check",
+      "name": "public-preview-dock-and-redirect",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Against https://khushboo-services.preview.emergentagent.com: quick-contact dock visible on / with correct hrefs, and /contact at 390x844 shows zero horizontal overflow with the dock visible."
+    }
+  ]
+}

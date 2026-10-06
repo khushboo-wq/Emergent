@@ -7,6 +7,7 @@ import Contact from "@/pages/Contact";
 import HowIWork from "@/pages/HowIWork";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
+import NotFound from "@/pages/NotFound";
 
 // One <Route> per page in src/pages; BrowserRouter already wraps this in main.tsx.
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
       <Route path="/ai-video-creation" element={<Navigate to="/services/ai-video-creation" replace />} />
       <Route path="/lead-generation" element={<Navigate to="/services/lead-generation" replace />} />
       <Route path="/email-setup" element={<Navigate to="/services/email-setup" replace />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

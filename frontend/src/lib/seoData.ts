@@ -28,6 +28,7 @@ interface SeoConfig {
     socialImageAlt: string;
     allowedBots: string[];
   };
+  redirects: Record<string, string>;
   pages: SeoPageConfig[];
 }
 
@@ -46,7 +47,7 @@ const businessId = `${site.baseUrl}/#professional-service`;
 const person = { "@type": "Person", "@id": personId, name: "Khushboo Tomar", jobTitle: "Independent Freelancer", email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs };
 const professionalService = { "@type": ["Organization", "ProfessionalService"], "@id": businessId, name: site.name, url: site.baseUrl, logo: site.socialImage, image: site.socialImage, founder: { "@id": personId }, email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs, contactPoint: { "@type": "ContactPoint", email: CONTACT_EMAIL, contactType: "customer enquiries", availableLanguage: "English" } };
 
-export const PRERENDER_ROUTES = seoConfig.pages.filter((page) => page.indexable).map((page) => page.path);
+export const PRERENDER_ROUTES = seoConfig.pages.map((page) => page.path);
 
 function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
   const service = page.serviceSlug ? getService(page.serviceSlug) : undefined;
@@ -79,7 +80,7 @@ function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
 
 export function getSeoForPath(path: string): SeoData {
   const cleanPath = path !== "/" ? path.replace(/\/$/, "") : path;
-  const page = seoConfig.pages.find((entry) => entry.path === cleanPath) ?? seoConfig.pages[0];
+  const page = seoConfig.pages.find((entry) => entry.path === cleanPath) ?? seoConfig.pages.find((entry) => entry.path === "/404") ?? seoConfig.pages[0];
   return { ...page, type: page.ogType, schema: schemaForPage(page), socialImage: site.socialImage, socialImageAlt: site.socialImageAlt };
 }
 

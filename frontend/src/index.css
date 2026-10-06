@@ -247,6 +247,13 @@
   overflow-wrap: anywhere;
 }
 
+@media (max-width: 767px) {
+  [data-testid="not-found-page"] {
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

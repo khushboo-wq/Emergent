@@ -37,6 +37,11 @@ Vite serves route-specific SSR HTML in development, and the production build pre
 
 The browser-readable SEO checklist is available at `/seo-report.html` and is intentionally noindex because it is a utility report, not a customer page. Important public pages remain indexable and are generated into the sitemap automatically.
 
+## Completion additions
+Every public page includes a fixed accessible quick-contact dock with official WhatsApp, email, LinkedIn, and Instagram icons. On desktop each solid-colour button expands on hover or keyboard focus to reveal its label; on mobile the controls remain compact and include accessible labels. The footer uses the same recognisable social icons with targeted hover feedback. No tracking is attached to these links.
+
+PageFrame includes a keyboard-accessible skip-to-content link. Unknown HTML routes now return a rendered, noindex 404 page with useful navigation rather than a soft-404 blank shell. The editable `redirects` object in `frontend/seo.config.json` drives HTTP 301 responses in the Vite server and generates `public/_redirects` for supported static hosts, while the existing client redirects remain as a fallback.
+
 ## Design
 Premium editorial corporate design with warm ivory and cream surfaces, deep navy authority panels, cobalt, muted lavender, and muted teal accents. The design uses only solid colours, layered rounded panels, arches, asymmetric grids, realistic soft shadows, and generous whitespace. Hemicube is reserved for prominent headings, Alesand Extra Bold for prices and short labels, and Plus Jakarta Sans for readable paragraphs and forms. Motion uses short page, panel, dropdown, hover, and button transitions with a reduced-motion override.
 
