@@ -105,7 +105,7 @@ export default function SupportChat() {
     <>
       {open && (
         <section
-          className="fixed bottom-[7.9rem] right-4 z-[70] flex w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-[#e1e4e8] bg-white shadow-[0_28px_70px_-28px_rgba(32,36,43,.42)]"
+          className="fixed bottom-[9.8rem] right-4 z-[70] flex w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-[#e1e4e8] bg-white shadow-[0_28px_70px_-28px_rgba(32,36,43,.42)]"
           aria-label="Arcturus AI Support chat"
           data-testid="ai-support-panel"
         >
@@ -177,7 +177,7 @@ export default function SupportChat() {
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
-        className="fixed bottom-[7.9rem] right-5 z-[71] flex items-center gap-2 rounded-full bg-[#20242b] px-3 py-2 text-white shadow-[0_18px_38px_-20px_rgba(32,36,43,.7)] transition hover:-translate-y-0.5 hover:bg-[#2d333b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f58220] md:right-6"
+        className="fixed bottom-[9.8rem] right-5 z-[71] flex items-center gap-2 rounded-full bg-[#20242b] px-3 py-2 text-white shadow-[0_18px_38px_-20px_rgba(32,36,43,.7)] transition hover:-translate-y-0.5 hover:bg-[#2d333b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f58220] md:right-6"
         aria-label={open ? "Close AI Support" : "Open AI Support"}
         data-testid="ai-support-button"
       >
