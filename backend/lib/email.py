@@ -13,8 +13,7 @@ load_dotenv()
 logger = logging.getLogger(__name__)
 
 EMAIL_BASE_URL = "https://integrations.emergentagent.com"
-EMAIL_KEY = os.environ["EMERGENT_EMAIL_KEY"]
-EMAIL_FROM_NAME = os.environ["EMAIL_FROM_NAME"]
+EMAIL_FROM_NAME = os.environ.get("EMAIL_FROM_NAME", "Arcturus Professional Services")
 EMAIL_REPLY_TO = os.environ.get("EMAIL_REPLY_TO")
 
 _SHORTENERS = ("bit.ly", "tinyurl.com", "t.co", "is.gd", "cutt.ly", "goo.gl", "rebrand.ly")
@@ -106,6 +105,9 @@ def _assert_safe_email(subject: str, html: str) -> None:
 
 async def send_email(*, to: str, subject: str, html: str) -> str | None:
     _assert_safe_email(subject, html)
+    email_key = os.getenv("EMERGENT_EMAIL_KEY")
+    if not email_key:
+        raise HTTPException(status_code=503, detail="Email service is not configured yet")
     payload = {"to": [to], "subject": subject, "html": html, "from_name": EMAIL_FROM_NAME}
     if EMAIL_REPLY_TO:
         payload["contact_email"] = EMAIL_REPLY_TO
@@ -113,7 +115,7 @@ async def send_email(*, to: str, subject: str, html: str) -> str | None:
         async with httpx.AsyncClient(timeout=30) as client:
             response = await client.post(
                 f"{EMAIL_BASE_URL}/api/v1/email/send",
-                headers={"X-Email-Key": EMAIL_KEY},
+                headers={"X-Email-Key": email_key},
                 json=payload,
             )
         response.raise_for_status()
