@@ -2401,3 +2401,686 @@ body {
     animation: none !important;
   }
 }
+
+
+/* -------------------------------------------------------------------------- */
+/* Luxury polish for inner pages                                               */
+/* -------------------------------------------------------------------------- */
+
+.arcturus-luxury [data-testid="services-hero"],
+.arcturus-luxury [data-testid="about-hero"],
+.arcturus-luxury [data-testid="contact-hero"],
+.arcturus-luxury [data-testid="work-hero"],
+.arcturus-luxury [data-testid="service-detail-hero"] {
+  border: 0 !important;
+  background:
+    radial-gradient(circle at 86% 14%, rgba(221, 214, 234, 0.54), transparent 23rem),
+    radial-gradient(circle at 15% 88%, rgba(232, 216, 214, 0.5), transparent 22rem),
+    var(--luxury-ivory) !important;
+}
+
+.arcturus-luxury [data-testid="services-hero"]::before,
+.arcturus-luxury [data-testid="about-hero"]::before,
+.arcturus-luxury [data-testid="contact-hero"]::before,
+.arcturus-luxury [data-testid="work-hero"]::before,
+.arcturus-luxury [data-testid="service-detail-hero"]::before {
+  display: none !important;
+}
+
+.arcturus-luxury [data-testid="services-hero"] > .absolute,
+.arcturus-luxury [data-testid="about-hero"] > .absolute,
+.arcturus-luxury [data-testid="contact-hero"] > .absolute,
+.arcturus-luxury [data-testid="work-hero"] > .absolute {
+  border-color: rgba(45, 34, 56, 0.12) !important;
+  opacity: 0.8;
+}
+
+.arcturus-luxury [data-testid="services-hero"] > div.mx-auto,
+.arcturus-luxury [data-testid="about-hero"] > div.mx-auto,
+.arcturus-luxury [data-testid="contact-hero"] > div.mx-auto,
+.arcturus-luxury [data-testid="work-hero"] > div.mx-auto {
+  max-width: 1240px;
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
+.arcturus-luxury [data-testid="services-eyebrow"],
+.arcturus-luxury [data-testid="about-eyebrow"],
+.arcturus-luxury [data-testid="contact-hero"] p:first-child,
+.arcturus-luxury [data-testid="work-hero"] p:first-child,
+.arcturus-luxury [data-testid="service-detail-eyebrow"] {
+  color: var(--luxury-plum-soft) !important;
+  font-family: "Alesand", "Hemicube", sans-serif;
+}
+
+.arcturus-luxury [data-testid="services-heading"],
+.arcturus-luxury [data-testid="about-heading"],
+.arcturus-luxury [data-testid="contact-heading"],
+.arcturus-luxury [data-testid="work-heading"],
+.arcturus-luxury [data-testid="service-detail-heading"] {
+  max-width: 980px !important;
+  margin-top: 18px !important;
+  font-family: "Hemicube", "Sora Variable", sans-serif !important;
+  font-size: clamp(50px, 7vw, 96px) !important;
+  line-height: 0.93 !important;
+  letter-spacing: -0.055em !important;
+  color: var(--luxury-ink) !important;
+}
+
+.arcturus-luxury [data-testid="services-intro"],
+.arcturus-luxury [data-testid="about-intro"],
+.arcturus-luxury [data-testid="contact-intro"],
+.arcturus-luxury [data-testid="work-intro"] {
+  max-width: 690px !important;
+  color: rgba(23, 21, 27, 0.6) !important;
+  font-size: 15px !important;
+  line-height: 1.85 !important;
+}
+
+.arcturus-luxury [data-testid="services-catalog"] {
+  max-width: 1240px !important;
+  padding-top: 28px !important;
+  padding-bottom: 110px !important;
+}
+
+.arcturus-luxury [data-testid="services-catalog"] > div {
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  border-top: 1px solid var(--luxury-line);
+}
+
+.arcturus-luxury [data-testid^="services-overview-card-"] {
+  display: grid !important;
+  grid-template-columns: 62px minmax(0, 1fr) auto 34px !important;
+  align-items: center !important;
+  min-height: 145px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--luxury-line) !important;
+  border-radius: 0 !important;
+  padding: 22px 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: background 220ms ease, padding 220ms ease !important;
+}
+
+.arcturus-luxury [data-testid^="services-overview-card-"]:hover {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  background: rgba(232, 216, 214, 0.44) !important;
+  transform: none !important;
+}
+
+.arcturus-luxury [data-testid^="services-overview-card-"] > div:first-child {
+  display: contents;
+}
+
+.arcturus-luxury [data-testid^="services-overview-card-"] > div:last-child {
+  grid-column: 2 / 4;
+  grid-row: 1;
+}
+
+.arcturus-luxury [data-testid^="services-overview-card-"] > div:last-child > div:last-child {
+  display: contents;
+}
+
+.arcturus-luxury [data-testid^="services-overview-number-"] {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  padding-top: 5px;
+  color: var(--luxury-plum-soft) !important;
+  font-family: "Alesand", sans-serif;
+}
+
+.arcturus-luxury [data-testid^="services-overview-eyebrow-"] {
+  color: var(--luxury-plum-soft) !important;
+  font-family: "Alesand", sans-serif;
+}
+
+.arcturus-luxury [data-testid^="services-overview-title-"] {
+  margin-top: 10px !important;
+  font-family: "Alesand", "Hemicube", sans-serif !important;
+  font-size: clamp(29px, 4vw, 48px) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.045em;
+  color: var(--luxury-ink) !important;
+}
+
+.arcturus-luxury [data-testid^="services-overview-description-"] {
+  max-width: 660px !important;
+  margin-top: 10px !important;
+  color: rgba(23, 21, 27, 0.5) !important;
+}
+
+.arcturus-luxury [data-testid^="services-overview-price-"] {
+  grid-column: 3;
+  grid-row: 1;
+  color: var(--luxury-plum-soft) !important;
+}
+
+.arcturus-luxury [data-testid^="services-overview-card-"] .group-hover\:-translate-y-0\.5,
+.arcturus-luxury [data-testid^="services-overview-card-"] .group-hover\:translate-x-0\.5 {
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.arcturus-luxury [data-testid="services-start-section"] {
+  background: var(--luxury-plum) !important;
+  color: var(--luxury-paper) !important;
+}
+
+.arcturus-luxury [data-testid="services-start-section"] > div {
+  max-width: 1240px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.arcturus-luxury [data-testid="services-start-section"] h2 {
+  max-width: 800px !important;
+  font-family: "Alesand", "Hemicube", sans-serif !important;
+  font-size: clamp(48px, 6.2vw, 84px) !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.arcturus-luxury [data-testid="services-start-section"] p {
+  color: rgba(251, 248, 243, 0.62) !important;
+}
+
+.arcturus-luxury [data-testid="services-start-section"] a {
+  border-radius: 999px !important;
+  background: var(--luxury-paper) !important;
+  color: var(--luxury-plum) !important;
+}
+
+.arcturus-luxury [data-testid="services-fit-section"] {
+  max-width: 1240px !important;
+  padding-top: 82px !important;
+  padding-bottom: 45px !important;
+}
+
+.arcturus-luxury [data-testid="about-background-section"] {
+  max-width: 1240px !important;
+  padding-top: 112px !important;
+  padding-bottom: 112px !important;
+}
+
+.arcturus-luxury [data-testid="about-background-section"] > div:first-child {
+  border-radius: 44px 44px 12px 44px !important;
+  background: linear-gradient(145deg, #2d2238, #6a556f 52%, #d9c4c4) !important;
+  box-shadow: 0 44px 80px -48px rgba(45, 34, 56, 0.62) !important;
+}
+
+.arcturus-luxury [data-testid="about-founder-image"] {
+  filter: grayscale(1) contrast(1.02) !important;
+  opacity: 0.35 !important;
+  mix-blend-mode: screen;
+}
+
+.arcturus-luxury [data-testid="about-background-section"] h2,
+.arcturus-luxury [data-testid="about-services-heading"],
+.arcturus-luxury [data-testid="about-work-heading"],
+.arcturus-luxury [data-testid="about-compliance-heading"],
+.arcturus-luxury [data-testid="about-boundaries-heading"],
+.arcturus-luxury [data-testid="about-tools-heading"],
+.arcturus-luxury [data-testid="about-contact-heading"] {
+  font-family: "Alesand", "Hemicube", sans-serif !important;
+  letter-spacing: -0.045em !important;
+}
+
+.arcturus-luxury [data-testid="about-background-section"] p,
+.arcturus-luxury [data-testid="about-services-section"] p,
+.arcturus-luxury [data-testid="about-work-compliance"] p,
+.arcturus-luxury [data-testid="about-boundaries-tools"] p {
+  color: rgba(23, 21, 27, 0.62) !important;
+}
+
+.arcturus-luxury [data-testid="about-services-section"] {
+  background: var(--luxury-paper) !important;
+}
+
+.arcturus-luxury [data-testid="about-services-section"] > div {
+  max-width: 1240px;
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.arcturus-luxury [data-testid^="about-service-"] {
+  border: 0 !important;
+  border-top: 1px solid var(--luxury-line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 22px 3px !important;
+  box-shadow: none !important;
+  transition: background 180ms ease, padding 180ms ease;
+}
+
+.arcturus-luxury [data-testid^="about-service-"]:last-child {
+  border-bottom: 1px solid var(--luxury-line) !important;
+}
+
+.arcturus-luxury [data-testid^="about-service-"]:hover {
+  padding-left: 14px !important;
+  background: rgba(232, 216, 214, 0.36) !important;
+  transform: none !important;
+}
+
+.arcturus-luxury [data-testid^="about-service-"] h3 {
+  font-family: "Alesand", "Hemicube", sans-serif !important;
+  color: var(--luxury-ink) !important;
+}
+
+.arcturus-luxury [data-testid="about-work-compliance"] {
+  max-width: 1240px !important;
+  padding-top: 105px !important;
+  padding-bottom: 105px !important;
+}
+
+.arcturus-luxury [data-testid="about-work-compliance"] article,
+.arcturus-luxury [data-testid="about-boundaries-tools"] article {
+  border-radius: 34px !important;
+  border: 1px solid rgba(45, 34, 56, 0.1) !important;
+  box-shadow: none !important;
+}
+
+.arcturus-luxury [data-testid="about-work-compliance"] article:first-child {
+  background: #efe8f2 !important;
+}
+
+.arcturus-luxury [data-testid="about-work-compliance"] article:last-child {
+  background: #e9dfeb !important;
+}
+
+.arcturus-luxury [data-testid="about-boundaries-tools"] {
+  background: var(--luxury-plum) !important;
+}
+
+.arcturus-luxury [data-testid="about-boundaries-tools"] > div {
+  max-width: 1240px;
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.arcturus-luxury [data-testid="about-boundaries-tools"] article {
+  border: 0 !important;
+  padding: 8px 0 !important;
+  background: transparent !important;
+}
+
+.arcturus-luxury [data-testid="about-boundaries-tools"] p {
+  color: rgba(251, 248, 243, 0.62) !important;
+}
+
+.arcturus-luxury [data-testid="about-contact-section"] {
+  max-width: 1240px !important;
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+  border: 1px solid var(--luxury-line) !important;
+  border-radius: 34px !important;
+  background: var(--luxury-paper) !important;
+  box-shadow: 0 30px 70px -52px rgba(45, 34, 56, 0.48) !important;
+}
+
+.arcturus-luxury [data-testid="contact-main"],
+.arcturus-luxury [data-testid="work-timeline"],
+.arcturus-luxury [data-testid="work-communication"] {
+  max-width: 1240px !important;
+}
+
+.arcturus-luxury [data-testid="contact-main"] {
+  padding-top: 105px !important;
+  padding-bottom: 115px !important;
+}
+
+.arcturus-luxury [data-testid="contact-main"] aside > div:first-child {
+  border-radius: 38px !important;
+  background: var(--luxury-plum) !important;
+  box-shadow: 0 35px 70px -48px rgba(45, 34, 56, 0.74) !important;
+}
+
+.arcturus-luxury [data-testid="contact-main"] aside > div:nth-child(2) {
+  border-radius: 24px !important;
+  background: #eadfe9 !important;
+}
+
+.arcturus-luxury [data-testid="contact-main"] aside h2,
+.arcturus-luxury [data-testid="contact-main"] + h2 {
+  font-family: "Alesand", "Hemicube", sans-serif !important;
+}
+
+.arcturus-luxury [data-testid="contact-form"] {
+  border: 0 !important;
+  border-top: 1px solid var(--luxury-line) !important;
+  border-radius: 0 !important;
+  padding: 30px 0 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.arcturus-luxury [data-testid^="contact-"][data-testid$="-input"],
+.arcturus-luxury [data-testid="contact-service-select"] {
+  border-color: rgba(45, 34, 56, 0.16) !important;
+  border-radius: 12px !important;
+  background: rgba(255,255,255,0.54) !important;
+  color: var(--luxury-ink) !important;
+}
+
+.arcturus-luxury [data-testid^="contact-"][data-testid$="-input"]:focus,
+.arcturus-luxury [data-testid="contact-service-select"]:focus {
+  border-color: var(--luxury-plum-soft) !important;
+  box-shadow: 0 0 0 3px rgba(102, 81, 111, 0.13) !important;
+}
+
+.arcturus-luxury [data-testid="contact-form-submit-button"] {
+  border-radius: 999px !important;
+  background: var(--luxury-plum) !important;
+}
+
+.arcturus-luxury [data-testid="contact-form-submit-button"]:hover {
+  background: #221a2c !important;
+}
+
+.arcturus-luxury [data-testid="work-timeline"] {
+  padding-top: 105px !important;
+  padding-bottom: 105px !important;
+}
+
+.arcturus-luxury [data-testid="work-timeline"] > div {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0 !important;
+  border-top: 1px solid var(--luxury-line);
+}
+
+.arcturus-luxury [data-testid^="work-step-"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-right: 1px solid var(--luxury-line) !important;
+  padding: 29px 28px 34px 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.arcturus-luxury [data-testid^="work-step-"]:not(:first-child) {
+  padding-left: 28px !important;
+}
+
+.arcturus-luxury [data-testid^="work-step-"]:last-child {
+  border-right: 0 !important;
+}
+
+.arcturus-luxury [data-testid^="work-step-"] h3,
+.arcturus-luxury [data-testid="work-terms"] h2,
+.arcturus-luxury [data-testid="work-communication"] h2 {
+  font-family: "Alesand", "Hemicube", sans-serif !important;
+  letter-spacing: -0.04em !important;
+}
+
+.arcturus-luxury [data-testid^="work-step-"] p,
+.arcturus-luxury [data-testid="work-terms"] p,
+.arcturus-luxury [data-testid="work-communication"] p {
+  color: rgba(23, 21, 27, 0.58) !important;
+}
+
+.arcturus-luxury [data-testid="work-terms"] {
+  background: #eadfe9 !important;
+}
+
+.arcturus-luxury [data-testid="work-terms"] > div {
+  max-width: 1240px;
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.arcturus-luxury [data-testid="work-communication"] {
+  padding-top: 105px !important;
+  padding-bottom: 105px !important;
+}
+
+.arcturus-luxury [data-testid="work-communication"] > div:first-child {
+  background: var(--luxury-plum) !important;
+}
+
+.arcturus-luxury [data-testid="work-communication"] > div:last-child {
+  background: #e8dee7 !important;
+  border-color: transparent !important;
+}
+
+.arcturus-luxury [data-testid="work-contact-link"] {
+  border-radius: 999px !important;
+  background: var(--luxury-plum) !important;
+}
+
+.arcturus-luxury [data-testid="service-breadcrumbs"] {
+  max-width: 1240px !important;
+  padding-top: 28px !important;
+  color: rgba(23, 21, 27, 0.45) !important;
+}
+
+.arcturus-luxury [data-testid="service-detail-hero"] > div {
+  max-width: 1240px;
+  padding-top: 70px;
+  padding-bottom: 95px;
+}
+
+.arcturus-luxury [data-testid="service-summary"] {
+  color: rgba(23, 21, 27, 0.66) !important;
+}
+
+.arcturus-luxury [data-testid="service-overview-copy"] {
+  color: rgba(23, 21, 27, 0.5) !important;
+}
+
+.arcturus-luxury [data-testid="service-price-hero"] {
+  border-radius: 32px !important;
+  background: var(--luxury-plum) !important;
+  box-shadow: 0 35px 75px -50px rgba(45, 34, 56, 0.72) !important;
+}
+
+.arcturus-luxury [data-testid="service-page-content"] {
+  max-width: 1240px !important;
+}
+
+.arcturus-luxury [data-testid="service-included-section"],
+.arcturus-luxury [data-testid="service-audience-section"],
+.arcturus-luxury [data-testid="service-process-section"],
+.arcturus-luxury [data-testid="service-pricing-reporting-section"],
+.arcturus-luxury [data-testid="service-faq-section"] {
+  border-color: var(--luxury-line) !important;
+}
+
+.arcturus-luxury [data-testid="service-inclusions-heading"],
+.arcturus-luxury [data-testid="service-audience-heading"],
+.arcturus-luxury [data-testid="service-process-heading"],
+.arcturus-luxury [data-testid="service-pricing-heading"],
+.arcturus-luxury [data-testid="service-reporting-heading"],
+.arcturus-luxury [data-testid="service-faq-heading"],
+.arcturus-luxury [data-testid="service-related-heading"] {
+  font-family: "Alesand", "Hemicube", sans-serif !important;
+  letter-spacing: -0.04em !important;
+}
+
+.arcturus-luxury [data-testid^="service-inclusion-"],
+.arcturus-luxury [data-testid^="service-faq-"] {
+  border: 0 !important;
+  border-bottom: 1px solid var(--luxury-line) !important;
+  border-radius: 0 !important;
+  padding: 19px 2px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.arcturus-luxury [data-testid^="service-inclusion-"]:hover,
+.arcturus-luxury [data-testid^="service-faq-"]:hover {
+  background: rgba(232, 216, 214, 0.34) !important;
+  transform: none !important;
+}
+
+.arcturus-luxury [data-testid="service-audience-section"] > div:last-child,
+.arcturus-luxury [data-testid="service-pricing-reporting-section"] > div:first-child {
+  border-radius: 32px !important;
+  background: #eadfe9 !important;
+}
+
+.arcturus-luxury [data-testid^="service-process-step-"] {
+  border: 0 !important;
+  border-top: 1px solid var(--luxury-line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 23px 0 !important;
+}
+
+.arcturus-luxury [data-testid^="service-process-step-"] + div {
+  border-top: 1px solid var(--luxury-line) !important;
+}
+
+.arcturus-luxury [data-testid="service-pricing-reporting-section"] > div:first-child {
+  background: var(--luxury-plum) !important;
+  color: var(--luxury-paper) !important;
+}
+
+.arcturus-luxury [data-testid="service-bottom-cta"] {
+  max-width: 1240px !important;
+  border-radius: 34px !important;
+  background: var(--luxury-ink) !important;
+  box-shadow: 0 35px 80px -55px rgba(23, 21, 27, 0.75) !important;
+}
+
+.luxury-contact-dock {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  transform: translateY(-50%);
+}
+
+.luxury-contact-dock a {
+  display: flex;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: 1px solid rgba(251,248,243,0.55);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 18px 35px -23px rgba(23,21,27,0.72);
+  transition: width 180ms ease, transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.luxury-contact-dock a:hover {
+  width: 145px;
+  transform: translateX(-3px);
+  filter: saturate(0.96);
+  box-shadow: 0 22px 40px -22px rgba(23,21,27,0.8);
+}
+
+.luxury-contact-dock a:nth-child(1) { background: #6b8d68 !important; }
+.luxury-contact-dock a:nth-child(2) { background: var(--luxury-plum) !important; }
+.luxury-contact-dock a:nth-child(3) { background: #3c587d !important; }
+.luxury-contact-dock a:nth-child(4) { background: #8f637c !important; }
+
+.luxury-contact-dock a > span:first-child {
+  width: 48px;
+  min-width: 48px;
+}
+
+.luxury-contact-dock a > span:last-child {
+  display: block;
+  padding-right: 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.luxury-contact-dock a:hover > span:last-child,
+.luxury-contact-dock a:focus-visible > span:last-child {
+  opacity: 1;
+}
+
+@media (max-width: 820px) {
+  .arcturus-luxury [data-testid="services-hero"] > div.mx-auto,
+  .arcturus-luxury [data-testid="about-hero"] > div.mx-auto,
+  .arcturus-luxury [data-testid="contact-hero"] > div.mx-auto,
+  .arcturus-luxury [data-testid="work-hero"] > div.mx-auto {
+    padding-top: 72px;
+    padding-bottom: 76px;
+  }
+
+  .arcturus-luxury [data-testid="services-heading"],
+  .arcturus-luxury [data-testid="about-heading"],
+  .arcturus-luxury [data-testid="contact-heading"],
+  .arcturus-luxury [data-testid="work-heading"],
+  .arcturus-luxury [data-testid="service-detail-heading"] {
+    font-size: clamp(46px, 10vw, 74px) !important;
+  }
+
+  .arcturus-luxury [data-testid^="services-overview-card-"] {
+    grid-template-columns: 40px minmax(0, 1fr) 32px !important;
+  }
+
+  .arcturus-luxury [data-testid^="services-overview-card-"] > div:last-child {
+    grid-column: 2 / 3;
+  }
+
+  .arcturus-luxury [data-testid^="services-overview-price-"] {
+    display: none;
+  }
+
+  .luxury-contact-dock {
+    right: 12px;
+  }
+}
+
+@media (max-width: 620px) {
+  .luxury-contact-dock {
+    right: 10px;
+  }
+
+  .luxury-contact-dock a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .luxury-contact-dock a > span:first-child {
+    width: 44px;
+    min-width: 44px;
+  }
+
+  .luxury-contact-dock a:hover {
+    width: 44px;
+    transform: none;
+  }
+
+  .arcturus-luxury [data-testid="services-catalog"] {
+    padding-bottom: 76px !important;
+  }
+
+  .arcturus-luxury [data-testid^="services-overview-card-"] {
+    grid-template-columns: 28px minmax(0, 1fr) 30px !important;
+    min-height: 125px !important;
+  }
+
+  .arcturus-luxury [data-testid^="services-overview-title-"] {
+    font-size: 29px !important;
+  }
+
+  .arcturus-luxury [data-testid="work-timeline"] > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .arcturus-luxury [data-testid^="work-step-"],
+  .arcturus-luxury [data-testid^="work-step-"]:not(:first-child) {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--luxury-line) !important;
+    padding: 24px 0 !important;
+  }
+
+  .arcturus-luxury [data-testid^="work-step-"]:last-child {
+    border-bottom: 0 !important;
+  }
+}
