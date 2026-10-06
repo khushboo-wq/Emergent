@@ -1,122 +1,113 @@
-import { ArrowDownRight, ArrowUpRight, CircleDot, Mail, MoveRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
-import { Button } from "@/components/ui/button";
 import { orderedServices } from "@/lib/site";
-import HeroAtmosphere from "@/components/HeroAtmosphere";
 
 export default function Home() {
   return (
     <PageFrame>
-      <Seo
-        path="/"
-        title="Arcturus Professional Services | Structured B2B Growth & Executive Support"
-        description="Bespoke LinkedIn management, focused email outreach, business support, and AI video creation for European businesses and founders."
-      />
-      <section className="editorial-hero relative overflow-hidden border-b border-[#e2dfd8]" data-testid="home-hero">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-20 lg:px-10 lg:py-28">
-          <div className="relative z-10 max-w-2xl">
-            <div className="mb-7 flex items-center gap-3" data-testid="home-hero-eyebrow">
-              <span className="h-px w-10 bg-[#c59b27]" aria-hidden="true" />
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#92400e]">Professional services / Europe</span>
+      <Seo path="/" title="Arcturus Professional Services | Structured B2B Growth & Executive Support" description="Bespoke LinkedIn management, focused email outreach, business support, and AI video creation for European businesses and founders." />
+
+      <section className="vb-hero" data-testid="home-hero">
+        <div className="vb-hero-inner">
+          <div className="vb-hero-copy">
+            <span className="vb-kicker">Professional services / Europe</span>
+            <h1>Make the work behind your growth feel <strong>considered.</strong></h1>
+            <p>I bring structure to the work that keeps a business moving, from thoughtful outreach and LinkedIn management to reliable support and useful video content.</p>
+            <div className="vb-actions">
+              <Link to="/contact" className="vb-button vb-button-orange">Contact Khushboo <ArrowRight className="size-4" /></Link>
+              <Link to="/services" className="vb-button vb-button-light">Explore services <ArrowRight className="size-4" /></Link>
             </div>
-            <h1 className="max-w-2xl break-words font-serif text-[2.15rem] font-medium leading-[1.12] tracking-[-0.035em] text-[#0f172a] sm:text-6xl sm:leading-[1.06] lg:text-[5.4rem]" data-testid="home-hero-heading">Make the work behind your growth feel <span className="text-[#0f2942]">considered.</span></h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-[#475569] sm:text-xl" data-testid="home-hero-description">I bring structure to the work that keeps a business moving, from thoughtful outreach and LinkedIn management to reliable support and useful video content.</p>
-            <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center" data-testid="home-hero-actions">
-              <Button render={<Link to="/contact" />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white shadow-[0_12px_28px_-16px_rgba(15,41,66,0.8)] transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="home-hero-contact-button">
-                Contact Khushboo <ArrowUpRight className="ml-2 size-4" />
-              </Button>
-              <Link to="/services" className="group inline-flex items-center gap-2 px-1 text-sm font-semibold text-[#0f2942] transition-colors duration-200 hover:text-[#92400e]" data-testid="home-hero-services-link">
-                Explore services <MoveRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
+            <div className="vb-hero-points">
+              <span><CheckCircle2 className="size-4" /> Written communication</span>
+              <span><CheckCircle2 className="size-4" /> Personalised support</span>
+              <span><CheckCircle2 className="size-4" /> Direct accountability</span>
             </div>
-            <p className="mt-7 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[#64748b]" data-testid="home-hero-note"><CircleDot className="size-3 text-[#c59b27]" /> Written enquiries · tailored scope · no account required</p>
           </div>
-
-          <HeroAtmosphere />
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.68fr_1.32fr] lg:items-center lg:gap-24 lg:px-10" data-testid="home-about-section"><div className="relative min-h-[300px] rounded-t-[8rem] rounded-b-[2rem] bg-[#ece8f4]"><div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-[#0f2942] p-6 text-white shadow-[0_20px_45px_-28px_rgba(15,41,66,0.75)]"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#9bc8c0]">Independent by design</p><p className="mt-3 font-serif text-2xl leading-tight text-white">One freelancer. One written thread. No hand-offs.</p></div></div><div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#765b9a]">About Khushboo</p><h2 className="mt-4 max-w-2xl break-words font-serif text-4xl leading-tight text-[#0f172a] sm:text-5xl" data-testid="home-about-heading">You always deal with the person doing the work.</h2><p className="mt-6 max-w-2xl text-base leading-8 text-[#475569]" data-testid="home-about-copy">I have worked in B2B outreach since 2014 and support businesses in Ireland, the UK, and Europe from New Delhi. I keep communication on email and WhatsApp so each decision, instruction, and report stays documented.</p><Link to="/about" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0f2942] transition-[color,transform] duration-200 hover:translate-x-1 hover:text-[#4263aa]" data-testid="home-about-link">More about how I work <MoveRight className="size-4" /></Link></div></section>
-
-      <section className="border-b border-[#e2dfd8] bg-[#f3f1ec]" data-testid="home-trust-strip">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748b]" data-testid="home-trust-label">Built for businesses that need</p>
-          <div className="flex flex-wrap gap-x-7 gap-y-2 text-sm font-medium text-[#0f2942]" data-testid="home-trust-list">
-            <span data-testid="home-trust-item-clarity">Clarity before activity</span><span className="text-[#c59b27]" aria-hidden="true">/</span><span data-testid="home-trust-item-rhythm">A dependable rhythm</span><span className="text-[#c59b27]" aria-hidden="true">/</span><span data-testid="home-trust-item-context">Context-aware delivery</span>
+          <div className="vb-hero-art" aria-hidden="true">
+            <div className="vb-art-card vb-art-main"><span>ARCTURUS</span><strong>Business support<br />that moves with you.</strong><small>Independent freelancer · New Delhi</small></div>
+            <div className="vb-art-card vb-art-float"><span>06</span><small>Focused services</small></div>
+            <div className="vb-art-line vb-art-line-one" />
+            <div className="vb-art-line vb-art-line-two" />
+            <div className="vb-art-dot vb-dot-one" /><div className="vb-art-dot vb-dot-two" /><div className="vb-art-dot vb-dot-three" />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10" data-testid="home-services-section">
-        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+      <section className="vb-quick-links" data-testid="home-trust-strip">
+        <div className="vb-container vb-quick-grid">
+          <Link to="/services/linkedin-management"><span>01</span><strong>LinkedIn Management</strong><ArrowRight className="size-4" /></Link>
+          <Link to="/services/email-outreach"><span>02</span><strong>Email Outreach</strong><ArrowRight className="size-4" /></Link>
+          <Link to="/services/business-support"><span>03</span><strong>Business Support</strong><ArrowRight className="size-4" /></Link>
+          <Link to="/services/lead-generation"><span>04</span><strong>Lead Generation</strong><ArrowRight className="size-4" /></Link>
+        </div>
+      </section>
+
+      <section className="vb-section vb-intro" data-testid="home-about-section">
+        <div className="vb-container vb-two-col">
+          <div className="vb-section-label"><span>About Khushboo</span><em>Independent by design</em></div>
           <div>
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#92400e]" data-testid="home-services-eyebrow">How I can help</p>
-            <h2 className="mt-4 max-w-sm font-serif text-4xl font-medium leading-tight tracking-[-0.02em] text-[#0f172a] sm:text-5xl" data-testid="home-services-heading">Support that respects the shape of your business.</h2>
-            <p className="mt-6 max-w-sm text-base leading-7 text-[#64748b]" data-testid="home-services-description">Start with one need or bring a broader brief. Every engagement begins with a conversation about scope, priorities, and what good looks like.</p>
-            <Link to="/services" className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0f2942] transition-colors duration-200 hover:text-[#92400e]" data-testid="home-services-view-all-link">View all services <ArrowDownRight className="size-4 transition-transform duration-200 group-hover:translate-y-1" /></Link>
+            <h2>You always deal with the person doing the work.</h2>
+            <p>I have worked in B2B outreach since 2014 and support businesses in Ireland, the UK, and Europe from New Delhi. I keep communication on email and WhatsApp so each decision, instruction, and report stays documented.</p>
+            <Link to="/about" className="vb-text-link">More about how I work <ArrowRight className="size-4" /></Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2" data-testid="home-services-grid">
+        </div>
+      </section>
+
+      <section className="vb-section vb-services" data-testid="home-services-section">
+        <div className="vb-container">
+          <div className="vb-section-heading">
+            <div><span className="vb-kicker vb-kicker-dark">How I can help</span><h2>Support that respects the shape of your business.</h2></div>
+            <p>Start with one need or bring a broader brief. Every engagement begins with a conversation about scope, priorities, and what good looks like.</p>
+          </div>
+          <div className="vb-service-grid">
             {orderedServices.map((service, index) => (
-              <Link key={service.slug} to={`/services/${service.slug}`} className={`premium-panel premium-lift group flex min-h-[260px] flex-col justify-between rounded-2xl border border-[#e2dfd8] p-6 sm:p-7 ${index % 3 === 0 ? "bg-[#eef2ff]" : index % 3 === 1 ? "bg-[#ece8f4]" : "bg-[#e8f2ef]"} ${index === 1 ? "sm:translate-y-10 sm:hover:translate-y-9" : ""}`} data-testid={`service-card-${service.slug}`}>
-                <div className="flex items-start justify-between">
-                  <span className="font-mono text-[10px] tracking-[0.16em] text-[#c59b27]" data-testid={`service-card-number-${service.slug}`}>{String(index + 1).padStart(2, "0")}</span>
-                  <ArrowUpRight className="size-5 text-[#94a3b8] transition-colors duration-200 group-hover:text-[#0f2942]" aria-hidden="true" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-2xl font-medium text-[#0f172a]" data-testid={`service-card-title-${service.slug}`}>{service.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#64748b]" data-testid={`service-card-description-${service.slug}`}>{service.description}</p>
-                </div>
+              <Link key={service.slug} to={`/services/${service.slug}`} className={`vb-service-card vb-service-card-${index + 1}`} data-testid={`service-card-${service.slug}`}>
+                <div className="vb-service-top"><span>0{index + 1}</span><ArrowRight className="size-5" /></div>
+                <div><small>{service.eyebrow}</small><h3>{service.title}</h3><p>{service.description}</p></div>
+                <div className="vb-service-bottom"><strong>{service.price}</strong><span>View service</span></div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#0f2942] text-white" data-testid="home-difference-section">
-        <div className="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-10">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#f5d783]" data-testid="home-difference-eyebrow">The difference</p>
-            <h2 className="mt-4 max-w-md font-serif text-4xl font-medium leading-tight tracking-[-0.02em] text-white sm:text-5xl" data-testid="home-difference-heading">No theatre. Just a better way to get the work done.</h2>
-          </div>
-          <div className="grid gap-0 divide-y divide-white/15 border-y border-white/15 sm:grid-cols-2 sm:divide-x sm:divide-y-0" data-testid="home-difference-list">
+      <section className="vb-feature-band" data-testid="home-difference-section">
+        <div className="vb-container vb-feature-grid">
+          <div><span className="vb-kicker vb-kicker-orange">The difference</span><h2>No theatre. Just a better way to get the work done.</h2></div>
+          <div className="vb-feature-list">
             {[
-              ["01", "Fact-checked briefs", "The right context comes before the first draft or outreach list."],
-              ["02", "Transparent scope", "You know what is included, what is not, and what needs your input."],
-              ["03", "Written clarity", "Progress, questions, and decisions stay easy to find and act on."],
-              ["04", "Realistic rhythm", "Timelines are agreed around the work rather than promised for effect."],
-            ].map(([number, title, copy]) => (
-              <div key={number} className="py-7 first:pt-7 sm:px-8 sm:first:pl-0 sm:[&:nth-child(2)]:pr-0 sm:[&:nth-child(3)]:pl-0" data-testid={`difference-item-${number}`}>
-                <span className="font-mono text-[10px] text-[#f5d783]" data-testid={`difference-number-${number}`}>{number}</span>
-                <h3 className="mt-5 font-serif text-2xl text-white" data-testid={`difference-title-${number}`}>{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#b9c5d4]" data-testid={`difference-copy-${number}`}>{copy}</p>
-              </div>
-            ))}
+              ["01","Fact-checked briefs","The right context comes before the first draft or outreach list."],
+              ["02","Transparent scope","You know what is included, what is not, and what needs your input."],
+              ["03","Written clarity","Progress, questions, and decisions stay easy to find and act on."],
+              ["04","Realistic rhythm","Timelines are agreed around the work rather than promised for effect."]
+            ].map(([n,t,c]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{c}</p></article>)}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10" data-testid="home-process-section">
-        <div className="flex flex-col justify-between gap-6 border-b border-[#e2dfd8] pb-8 sm:flex-row sm:items-end">
-          <div className="min-w-0"><p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#92400e]" data-testid="home-process-eyebrow">How I work</p><h2 className="mt-4 break-words font-serif text-4xl font-medium tracking-[-0.02em] text-[#0f172a] sm:text-5xl" data-testid="home-process-heading">A simple engagement architecture.</h2></div>
-          <p className="max-w-xs text-sm leading-6 text-[#64748b]" data-testid="home-process-description">The detail changes by service. The principle stays the same: agree the shape, then deliver against it.</p>
-        </div>
-        <div className="grid gap-0 md:grid-cols-4" data-testid="home-process-grid">
-          {["Understand", "Shape", "Deliver", "Review"].map((step, index) => (
-            <div key={step} className="border-b border-[#e2dfd8] py-7 md:border-b-0 md:border-r md:px-6 md:first:pl-0 md:last:border-r-0" data-testid={`process-step-${index + 1}`}>
-              <span className="font-mono text-[10px] text-[#c59b27]" data-testid={`process-step-number-${index + 1}`}>0{index + 1}</span>
-              <h3 className="mt-6 font-serif text-2xl text-[#0f2942]" data-testid={`process-step-title-${index + 1}`}>{step}</h3>
-              <p className="mt-3 text-sm leading-6 text-[#64748b]" data-testid={`process-step-copy-${index + 1}`}>{["I start with your offer, audience, and the outcome you need.", "I turn the conversation into a clear brief and realistic plan.", "I keep the agreed work moving with useful updates and review points.", "I use the results to improve the next cycle or close the brief well."][index]}</p>
-            </div>
-          ))}
+      <section className="vb-section vb-process" data-testid="home-process-section">
+        <div className="vb-container">
+          <div className="vb-section-heading">
+            <div><span className="vb-kicker">How I work</span><h2>A simple engagement architecture.</h2></div>
+            <p>The detail changes by service. The principle stays the same: agree the shape, then deliver against it.</p>
+          </div>
+          <div className="vb-process-grid">
+            {[
+              ["01","Understand","I start with your offer, audience, and the outcome you need."],
+              ["02","Shape","I turn the conversation into a clear brief and realistic plan."],
+              ["03","Deliver","I keep the agreed work moving with useful updates and review points."],
+              ["04","Review","I use the results to improve the next cycle or close the brief well."]
+            ].map(([n,t,c]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{c}</p></article>)}
+          </div>
         </div>
       </section>
 
-      <section className="mx-5 mb-20 overflow-hidden rounded-xl bg-[#f3f1ec] sm:mx-8 sm:mb-28 lg:mx-auto lg:max-w-7xl lg:px-10" data-testid="home-contact-banner">
-        <div className="grid gap-10 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-[1fr_auto] lg:items-end lg:px-14 lg:py-16">
-          <div className="min-w-0"><Mail className="size-6 text-[#c59b27]" /><h2 className="mt-5 max-w-xl break-words font-serif text-4xl font-medium leading-tight tracking-[-0.02em] text-[#0f172a] sm:text-5xl" data-testid="home-contact-heading">Have a brief in mind? Start with a written conversation.</h2><p className="mt-5 max-w-lg text-sm leading-6 text-[#64748b]" data-testid="home-contact-description">Tell Khushboo what you are trying to move forward, what support you need, and when you would like to begin.</p></div>
-          <Button render={<Link to="/contact" />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="home-contact-button">Contact Khushboo <ArrowUpRight className="ml-2 size-4" /></Button>
+      <section className="vb-cta" data-testid="home-contact-banner">
+        <div className="vb-container vb-cta-inner">
+          <div><span className="vb-kicker vb-kicker-orange">Start a conversation</span><h2>Have a brief in mind? Start with a written conversation.</h2><p>Tell Khushboo what you are trying to move forward, what support you need, and when you would like to begin.</p></div>
+          <Link to="/contact" className="vb-button vb-button-orange">Contact Khushboo <ArrowRight className="size-4" /></Link>
         </div>
       </section>
     </PageFrame>
