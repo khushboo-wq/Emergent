@@ -27,11 +27,21 @@ export default function Home() {
             </div>
             <div className="commercial-trust-row"><span><Check size={16} /> Direct communication</span><span><Check size={16} /> Written updates</span><span><Check size={16} /> Personalised support</span></div>
           </div>
-          <div className="commercial-hero-card" aria-label="Arcturus service overview">
-            <div className="hero-card-top"><span>ARCTURUS</span><span className="hero-card-dot" /></div>
-            <div className="hero-card-title">One person.<br /><strong>Clear work.</strong></div>
-            <div className="hero-card-list"><div><span>01</span> LinkedIn Management</div><div><span>02</span> Email Outreach</div><div><span>03</span> Business Support</div><div><span>04</span> Lead Generation</div></div>
-            <div className="hero-card-bottom">New Delhi · Working with businesses in the UK, Ireland & Europe</div>
+          <div className="commercial-hero-card motion-stage" aria-label="Arcturus service overview">
+            <div className="motion-grid" />
+            <div className="motion-orbit motion-orbit-one" />
+            <div className="motion-orbit motion-orbit-two" />
+            <div className="motion-glow motion-glow-one" />
+            <div className="motion-glow motion-glow-two" />
+            <span className="motion-dot motion-dot-one" /><span className="motion-dot motion-dot-two" /><span className="motion-dot motion-dot-three" />
+            <div className="hero-floating-card hero-floating-card-top"><span className="floating-icon">↗</span><div><small>BUSINESS VISIBILITY</small><strong>Growing steadily</strong></div></div>
+            <div className="hero-floating-card hero-floating-card-bottom"><span className="floating-icon">✓</span><div><small>WORKFLOW</small><strong>Clear & organised</strong></div></div>
+            <div className="hero-core">
+              <div className="hero-core-ring" />
+              <div className="hero-core-logo">A</div>
+              <div className="hero-core-copy"><span>ARCTURUS</span><strong>Professional<br />Services</strong></div>
+            </div>
+            <div className="hero-card-mini-label">INDEPENDENT · PERSONAL · DIRECT</div>
           </div>
         </div>
       </section>
