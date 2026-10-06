@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
-import { featuredServices, getContactHref } from "@/lib/site";
+import { orderedServices } from "@/lib/site";
 
 const heroImage = "https://images.unsplash.com/photo-1740933084056-078fac872bff?auto=format&fit=crop&w=1300&q=80";
 
@@ -25,7 +25,7 @@ export default function Home() {
             <h1 className="max-w-2xl break-words font-serif text-[2.15rem] font-medium leading-[1.12] tracking-[-0.035em] text-[#0f172a] sm:text-6xl sm:leading-[1.06] lg:text-[5.4rem]" data-testid="home-hero-heading">Make the work behind your growth feel <span className="text-[#0f2942]">considered.</span></h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-[#475569] sm:text-xl" data-testid="home-hero-description">I bring structure to the work that keeps a business moving, from thoughtful outreach and LinkedIn management to reliable support and useful video content.</p>
             <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center" data-testid="home-hero-actions">
-              <Button render={<a href={getContactHref()} />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white shadow-[0_8px_20px_-10px_rgba(15,41,66,0.7)] transition-colors duration-200 hover:bg-[#1e3a5f]" data-testid="home-hero-contact-button">
+              <Button render={<Link to="/contact" />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white shadow-[0_12px_28px_-16px_rgba(15,41,66,0.8)] transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="home-hero-contact-button">
                 Contact Khushboo <ArrowUpRight className="ml-2 size-4" />
               </Button>
               <Link to="/services" className="group inline-flex items-center gap-2 px-1 text-sm font-semibold text-[#0f2942] transition-colors duration-200 hover:text-[#92400e]" data-testid="home-hero-services-link">
@@ -37,21 +37,23 @@ export default function Home() {
 
           <div className="relative min-h-[420px] lg:min-h-[560px]" data-testid="home-hero-visual">
             <div className="absolute -right-16 -top-14 size-72 rounded-full border border-[#c59b27]/25" aria-hidden="true" />
-            <div className="relative ml-auto h-[420px] w-[92%] overflow-hidden rounded-xl bg-[#0f2942] sm:h-[500px] lg:h-[560px]">
+            <div className="premium-panel relative ml-auto h-[420px] w-[92%] overflow-hidden rounded-t-[8rem] rounded-b-[2rem] bg-[#0f2942] sm:h-[500px] lg:h-[560px]">
               <img src={heroImage} alt="Modern executive meeting room and collaborative professional space" className="h-full w-full object-cover opacity-90 mix-blend-luminosity" onError={(event) => { event.currentTarget.style.display = "none"; }} data-testid="home-hero-image" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1320]/90 via-[#0b1320]/10 to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-9">
+              <div className="absolute inset-0 bg-[#0b1320]/25" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 right-0 bg-[#0f2942]/95 p-6 sm:p-9">
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#f5d783]" data-testid="home-visual-label">The Arcturus approach</p>
                 <p className="mt-3 max-w-sm font-serif text-3xl leading-tight text-white" data-testid="home-visual-statement">Clear scope. Thoughtful delivery. Room to do your best work.</p>
               </div>
             </div>
-            <div className="absolute -bottom-5 left-0 max-w-[210px] border border-[#e2dfd8] bg-[#faf9f6] p-4 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.08)]" data-testid="home-hero-card">
+            <div className="premium-panel absolute -bottom-5 left-0 max-w-[230px] rounded-2xl border border-[#e2dfd8] bg-[#fbf8f1] p-5" data-testid="home-hero-card">
               <Layers3 className="size-5 text-[#c59b27]" />
-              <p className="mt-3 text-sm font-medium leading-5 text-[#0f2942]">Four focused ways to add capacity.</p>
+              <p className="mt-3 text-sm font-medium leading-5 text-[#0f2942]">Six focused ways to add capacity.</p>
             </div>
           </div>
         </div>
       </section>
+
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.68fr_1.32fr] lg:items-center lg:gap-24 lg:px-10" data-testid="home-about-section"><div className="relative min-h-[300px] rounded-t-[8rem] rounded-b-[2rem] bg-[#ece8f4]"><div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-[#0f2942] p-6 text-white shadow-[0_20px_45px_-28px_rgba(15,41,66,0.75)]"><p className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#9bc8c0]">Independent by design</p><p className="mt-3 font-serif text-2xl leading-tight text-white">One freelancer. One written thread. No hand-offs.</p></div></div><div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#765b9a]">About Khushboo</p><h2 className="mt-4 max-w-2xl break-words font-serif text-4xl leading-tight text-[#0f172a] sm:text-5xl" data-testid="home-about-heading">You always deal with the person doing the work.</h2><p className="mt-6 max-w-2xl text-base leading-8 text-[#475569]" data-testid="home-about-copy">I have worked in B2B outreach since 2014 and support businesses in Ireland, the UK, and Europe from New Delhi. I keep communication on email and WhatsApp so each decision, instruction, and report stays documented.</p><Link to="/about" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0f2942] transition-[color,transform] duration-200 hover:translate-x-1 hover:text-[#4263aa]" data-testid="home-about-link">More about how I work <MoveRight className="size-4" /></Link></div></section>
 
       <section className="border-b border-[#e2dfd8] bg-[#f3f1ec]" data-testid="home-trust-strip">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
@@ -71,8 +73,8 @@ export default function Home() {
             <Link to="/services" className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0f2942] transition-colors duration-200 hover:text-[#92400e]" data-testid="home-services-view-all-link">View all services <ArrowDownRight className="size-4 transition-transform duration-200 group-hover:translate-y-1" /></Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2" data-testid="home-services-grid">
-            {featuredServices.map((service, index) => (
-              <Link key={service.slug} to={`/services/${service.slug}`} className={`group flex min-h-[250px] flex-col justify-between border border-[#e2dfd8] bg-white p-6 transition-transform duration-200 hover:-translate-y-1 hover:border-[#c59b27] sm:p-7 ${index === 1 ? "sm:translate-y-10 sm:hover:translate-y-9" : ""}`} data-testid={`service-card-${service.slug}`}>
+            {orderedServices.map((service, index) => (
+              <Link key={service.slug} to={`/services/${service.slug}`} className={`premium-panel premium-lift group flex min-h-[260px] flex-col justify-between rounded-2xl border border-[#e2dfd8] p-6 sm:p-7 ${index % 3 === 0 ? "bg-[#eef2ff]" : index % 3 === 1 ? "bg-[#ece8f4]" : "bg-[#e8f2ef]"} ${index === 1 ? "sm:translate-y-10 sm:hover:translate-y-9" : ""}`} data-testid={`service-card-${service.slug}`}>
                 <div className="flex items-start justify-between">
                   <span className="font-mono text-[10px] tracking-[0.16em] text-[#c59b27]" data-testid={`service-card-number-${service.slug}`}>{String(index + 1).padStart(2, "0")}</span>
                   <ArrowUpRight className="size-5 text-[#94a3b8] transition-colors duration-200 group-hover:text-[#0f2942]" aria-hidden="true" />
@@ -129,7 +131,7 @@ export default function Home() {
       <section className="mx-5 mb-20 overflow-hidden rounded-xl bg-[#f3f1ec] sm:mx-8 sm:mb-28 lg:mx-auto lg:max-w-7xl lg:px-10" data-testid="home-contact-banner">
         <div className="grid gap-10 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-[1fr_auto] lg:items-end lg:px-14 lg:py-16">
           <div className="min-w-0"><Mail className="size-6 text-[#c59b27]" /><h2 className="mt-5 max-w-xl break-words font-serif text-4xl font-medium leading-tight tracking-[-0.02em] text-[#0f172a] sm:text-5xl" data-testid="home-contact-heading">Have a brief in mind? Start with a written conversation.</h2><p className="mt-5 max-w-lg text-sm leading-6 text-[#64748b]" data-testid="home-contact-description">Tell Khushboo what you are trying to move forward, what support you need, and when you would like to begin.</p></div>
-          <Button render={<a href={getContactHref()} />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white hover:bg-[#1e3a5f]" data-testid="home-contact-button">Contact Khushboo <ArrowUpRight className="ml-2 size-4" /></Button>
+          <Button render={<Link to="/contact" />} className="h-12 rounded-md bg-[#0f2942] px-5 text-sm text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="home-contact-button">Contact Khushboo <ArrowUpRight className="ml-2 size-4" /></Button>
         </div>
       </section>
     </PageFrame>
