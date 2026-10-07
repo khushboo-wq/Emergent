@@ -196,12 +196,9 @@ export const services: ServiceContent[] = [
     overview: "I create short-form AI-generated videos for social channels, using your business information, brand assets, content themes, and preferred style as the basis for the prompts and production flow.",
     audience: "For businesses that need a consistent stream of concise social content for Instagram, TikTok, YouTube, or LinkedIn.",
     inclusions: [
-      "2 short-form AI-generated videos per day, 7 days a week, based on the agreed content plan",
-      "Approximately 10-second videos designed for social media viewing",
       "Your logo, business details, brand style, and end cards added where suitable",
       "Custom content ideas based on your business, services, products, and themes",
       "Content prepared for Instagram, TikTok, YouTube, and LinkedIn",
-      "Content scheduled through Hootsuite",
     ],
     exclusions: [
       "Manual filming or manual editing",
@@ -215,7 +212,7 @@ export const services: ServiceContent[] = [
       { label: "Brand", detail: "Apply the agreed logo, business details, and brand style." },
       { label: "Schedule", detail: "Schedule the finished content through Hootsuite." },
     ],
-    timeline: "The agreed schedule is 2 short-form videos per day, 7 days a week, based on the content plan and brief. Videos are approximately 10 seconds long; sample videos can be shared before work begins.",
+    timeline: "A content schedule is agreed in writing based on your business, platforms, and approved content direction.",
     requirements: [
       "Your logo and branding",
       "Business information",
@@ -225,7 +222,6 @@ export const services: ServiceContent[] = [
     ],
     price: "€400 / month",
     priceNote: "Monthly service; Hootsuite subscription is separate.",
-    tools: ["Google Gemini", "Google Flow", "Google Veo 3", "Hootsuite"],
     sourceNote: "Changes are made by adjusting the prompt, not through manual editing.",
     featured: true,
   },
@@ -379,17 +375,16 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     ],
   },
   "ai-video-creation": {
-    summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and follows a schedule of 2 videos per day, 7 days a week, based on the agreed brief and content direction.",
-    reporting: ["Video output against the agreed 2-per-day schedule", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
+    summary: "I create custom AI-generated videos and reels for businesses that need branded social content without professional video editing. The service costs €400 per month and follows the agreed brief and content direction.",
+    reporting: ["Video output against the agreed content direction", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€400 / month, paid upfront. Hootsuite subscription costs are separate and paid directly by the client.",
-    commercialHighlights: ["2 videos per day, 7 days a week, based on the agreed content schedule and brief.", "Short-form videos are approximately 10 seconds and include agreed branding, business details and end cards where suitable.", "Content can be prepared for Instagram, TikTok, YouTube and LinkedIn and scheduled through Hootsuite.", "Prompt-based revisions are included; this is not manual professional video editing or live-action production."],
+    paymentTerms: "€400 / month, paid upfront."
+    commercialHighlights: ["Custom short-form AI-generated content based on the agreed brief and content direction.", "Branding, business details and end cards can be included where suitable.", "Content can be prepared for the agreed social platforms.", "Prompt-based revisions are included; this is not manual professional video editing or live-action production."],
     workingNote: "Video output follows the agreed prompt, content direction and platform requirements.",
     faqs: [
       { question: "What kind of videos are these?", answer: "Basic to custom AI-generated videos and reels, not professional video editing." },
       { question: "Can you add my branding?", answer: "Yes: logo, business details and end cards." },
-      { question: "How many videos do I get?", answer: "The agreed schedule is 2 videos per day, 7 days a week, based on the content plan and brief." },
       { question: "What do you need from me?", answer: "A short written brief, your logo and the message you want each video to carry." },
       { question: "Can you make videos for any industry?", answer: "I'll confirm in writing after seeing your brief." },
     ],
