@@ -68,3 +68,19 @@ main h1 em.arc-em-in{animation:arcEmIn .9s cubic-bezier(.2,.8,.2,1) forwards,arc
 .luxury-footer-word svg{display:block;width:100%;height:auto;overflow:visible}
 .luxury-footer-word text{font-family:"Hemicube Head","Hemicube",sans-serif;font-size:150px;fill:url(#none);fill:rgba(198,194,240,.16);animation:arcWordGlow 8s ease-in-out infinite}
 @keyframes arcWordGlow{0%,100%{fill:rgba(198,194,240,.12)}50%{fill:rgba(198,194,240,.26)}}
+
+/* Abstract 3D render backgrounds (self-hosted /bg/*.webp) */
+.luxury-hero,.services-hero-rich,.about-hero-rich,.service-detail-hero-rich{background:linear-gradient(90deg,rgba(246,241,233,.92) 0%,rgba(246,241,233,.7) 42%,rgba(246,241,233,0) 70%),url("/bg/bg-hero.webp") right center/cover no-repeat !important;animation:arcBgDrift 26s ease-in-out infinite !important}
+.luxury-intro-section,.luxury-process-section,.payment-section,.why-work-section,.luxury-resources-section,.process-method-section,.communication-section,[data-testid="about-journey-section"],[data-testid="services-catalog"]{background:linear-gradient(180deg,rgba(245,241,255,.55),rgba(245,241,255,.35)),url("/bg/bg-light-lavender.webp") center/cover no-repeat !important;animation:arcBgDrift 30s ease-in-out infinite !important}
+.luxury-services-section,.luxury-about-section,.tools-platforms-section,.recommendations-section,.luxury-facts-section,[data-testid="about-facts"],[data-testid="about-work-compliance"],[data-testid="service-page-content"]{background:linear-gradient(180deg,rgba(238,250,247,.55),rgba(238,250,247,.35)),url("/bg/bg-light-mint.webp") center/cover no-repeat !important;animation:arcBgDrift 34s ease-in-out infinite !important}
+.luxury-statement-section,.reporting-section,.luxury-contact-section,.process-highlight-strip,[data-testid="about-services-section"],.arcturus-pillars-section,.service-visual-summary{background:linear-gradient(180deg,rgba(11,29,51,.35),rgba(11,29,51,.25)),url("/bg/bg-dark-navy.webp") center/cover no-repeat !important;animation:arcBgDrift 28s ease-in-out infinite !important}
+@keyframes arcBgDrift{0%,100%{background-position:center,50% 50%}50%{background-position:center,56% 42%}}
+.luxury-hero,.services-hero-rich,.about-hero-rich,.service-detail-hero-rich{animation-name:arcBgDriftHero !important}
+@keyframes arcBgDriftHero{0%,100%{background-position:0 0,100% 50%}50%{background-position:0 0,94% 40%}}
+@media (max-width:860px){
+  .luxury-hero,.services-hero-rich,.about-hero-rich,.service-detail-hero-rich{background:linear-gradient(180deg,rgba(246,241,233,.88),rgba(246,241,233,.78)),url("/bg/bg-hero.webp") 70% top/cover no-repeat !important}
+}
+@media (prefers-reduced-motion:reduce){.luxury-hero,.luxury-intro-section,.luxury-services-section,.luxury-statement-section{animation:none !important}}
+.luxury-about-visual{background:none !important;box-shadow:none !important;min-height:0 !important;padding:0 !important;overflow:visible !important;border:0 !important}
+.luxury-about-visual::before,.luxury-about-visual::after{content:none !important}
+.luxury-about-visual .arc-showcase{margin:0 auto}

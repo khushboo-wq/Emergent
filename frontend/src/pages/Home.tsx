@@ -202,11 +202,7 @@ export default function Home() {
       <section className="luxury-about-section">
         <div className="luxury-shell luxury-about-grid">
           <Reveal className="luxury-about-visual">
-            <div className="luxury-about-monogram">K</div>
-            <div className="luxury-about-meta">
-              <span>KHUSHBOO</span>
-              <small>Independent Freelancer · New Delhi</small>
-            </div>
+            <HeroShowcase kicker="Solo freelancer" index="New Delhi" title="Khushboo Tomar" subtitle="Independent solo freelancer behind Arcturus Professional Services." slug="email-outreach" chips={["12+ years B2B","UK · Ireland · Europe","One point of contact"]} />
           </Reveal>
           <Reveal delay={110}>
             <p className="luxury-section-kicker">About me</p>
