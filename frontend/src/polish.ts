@@ -99,9 +99,29 @@ function startReveal() {
   new MutationObserver(scan).observe(document.getElementById('root')!, { childList: true, subtree: true })
 }
 
+/* ---------- Lift tiny text (anything under ~15px) so nothing reads small ---------- */
+function liftTinyText() {
+  const root = document.getElementById('root'); if (!root) return
+  const scan = () => {
+    root.querySelectorAll<HTMLElement>('main *, footer *').forEach((el) => {
+      if (el.dataset.arcSz || el.closest('svg,.arc-grain,.luxury-footer-word,.luxury-marquee')) return
+      if (![...el.childNodes].some((n) => n.nodeType === 3 && (n.nodeValue || '').trim())) return
+      const fs = parseFloat(getComputedStyle(el).fontSize)
+      el.dataset.arcSz = '1'
+      if (fs < 11.6) el.style.fontSize = '13px'
+      else if (fs < 15) el.style.fontSize = '16px'
+    })
+  }
+  let t = 0
+  const run = () => { window.clearTimeout(t); t = window.setTimeout(scan, 200) }
+  run()
+  new MutationObserver(run).observe(root, { childList: true, subtree: true })
+}
+
 export function startPolish() {
   if (typeof window === 'undefined') return
   startSmoothScroll()
   startHighlighter()
   startReveal()
+  liftTinyText()
 }

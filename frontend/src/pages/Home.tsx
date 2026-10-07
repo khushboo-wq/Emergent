@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Mail } from "lucide-react";
+import IsoIllustration from "@/components/IsoIllustration";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
@@ -149,6 +150,7 @@ export default function Home() {
         <div className="luxury-shell luxury-statement-grid">
           <Reveal>
             <p className="luxury-section-kicker luxury-kicker-light">Why Arcturus</p>
+            <IsoIllustration slug="lead-generation" className="iso-big" />
             <p className="luxury-statement-index">02 / 04</p>
           </Reveal>
           <Reveal delay={120}>
