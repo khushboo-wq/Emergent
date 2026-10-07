@@ -226,36 +226,6 @@
       "lastModified": "2026-10-07"
     },
     {
-      "path": "/privacy-policy",
-      "title": "Privacy Policy | Arcturus Professional Services",
-      "description": "Read how Arcturus Professional Services handles contact enquiries, business information and website data for visitors in Ireland, the UK and Europe clearly.",
-      "h1": "Privacy Policy",
-      "canonical": "https://arcturusprofessional.com/privacy-policy",
-      "indexable": true,
-      "ogType": "article",
-      "schemaTypes": [
-        "WebPage"
-      ],
-      "changeFrequency": "yearly",
-      "priority": 0.3,
-      "lastModified": "2026-10-07"
-    },
-    {
-      "path": "/terms",
-      "title": "Terms of Service | Arcturus Professional Services",
-      "description": "Read the standard service terms for Arcturus Professional Services, including written scope, payment, client responsibilities, delivery and limitations.",
-      "h1": "Terms of Service",
-      "canonical": "https://arcturusprofessional.com/terms",
-      "indexable": true,
-      "ogType": "article",
-      "schemaTypes": [
-        "WebPage"
-      ],
-      "changeFrequency": "yearly",
-      "priority": 0.3,
-      "lastModified": "2026-10-07"
-    },
-    {
       "path": "/404",
       "title": "Page Not Found | Arcturus Professional Services",
       "description": "The requested Arcturus page could not be found. Return home, explore freelance services, or send Khushboo Tomar a written business enquiry instead.",
@@ -269,6 +239,73 @@
       "changeFrequency": "yearly",
       "priority": 0,
       "lastModified": "2026-02-21"
+    },
+    {
+      "path": "/resources",
+      "title": "LinkedIn Management Resources | Arcturus",
+      "description": "Practical LinkedIn guides for B2B businesses covering management, profile optimisation, outreach, targeting, follow-ups and reporting for growing teams.",
+      "h1": "Useful LinkedIn guidance for B2B businesses.",
+      "canonical": "https://arcturusprofessional.com/resources",
+      "indexable": true,
+      "ogType": "website",
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList"
+      ],
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/linkedin-management-services-guide",
+      "title": "LinkedIn Management Services: What a Business Needs",
+      "description": "A practical guide to LinkedIn management services for founders and small B2B businesses. Learn what good management covers, what to expect and what to review.",
+      "h1": "LinkedIn Management Services: What a Business Actually Needs",
+      "canonical": "https://arcturusprofessional.com/resources/linkedin-management-services-guide",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "linkedin-management-services-guide",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/linkedin-profile-optimization",
+      "title": "LinkedIn Profile Optimisation for B2B Founders",
+      "description": "Learn how to optimise a LinkedIn profile for B2B visibility, credibility and outreach, from positioning and headlines to proof and clear calls to action.",
+      "h1": "LinkedIn Profile Optimisation for B2B Founders",
+      "canonical": "https://arcturusprofessional.com/resources/linkedin-profile-optimization",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "linkedin-profile-optimization",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/linkedin-outreach-for-b2b-businesses",
+      "title": "LinkedIn Outreach for B2B Businesses | Practical Guide",
+      "description": "A practical LinkedIn outreach framework for B2B businesses covering target research, connection requests, follow-ups, relationship building and reporting.",
+      "h1": "LinkedIn Outreach for B2B Businesses: A Practical Framework",
+      "canonical": "https://arcturusprofessional.com/resources/linkedin-outreach-for-b2b-businesses",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "linkedin-outreach-for-b2b-businesses",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
     }
   ]
 }
