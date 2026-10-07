@@ -46,7 +46,7 @@ main h1 em.arc-em-in{animation:arcEmIn .9s cubic-bezier(.2,.8,.2,1) forwards,arc
 @media (max-width:1560px){.luxury-header-email{display:none !important}}
 .luxury-brand .arc-logo-text strong{letter-spacing:.2em}
 /* footer watermark + brand words in Hemicube */
-.luxury-footer-word,.luxury-art-word,.arc-logo-text strong,.luxury-footer-kicker{font-family:"Hemicube Head","Hemicube",sans-serif !important}
+.luxury-footer-word,.luxury-art-word,.arc-logo-text strong{font-family:"Hemicube Head","Hemicube",sans-serif !important}
 .luxury-footer-word{letter-spacing:.04em !important;font-weight:400 !important}
 
 /* Header nav + service tabs in Hemicube */

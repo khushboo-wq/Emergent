@@ -176,6 +176,25 @@ function splitHeadlines() {
   new MutationObserver(() => run()).observe(document.getElementById('root')!, { childList: true, subtree: true })
 }
 
+/* ---------- Shrink any heading / tab label that would overflow its box (wide display fonts) ---------- */
+function fitText() {
+  const SEL = 'main h1, main h2, main h3, .luxury-footer h2, .arc-showcase-title, .service-tab-title, .luxury-nav-link, .luxury-mobile-nav a, .arc-logo-text strong'
+  const fit = () => document.querySelectorAll<HTMLElement>(SEL).forEach((el) => {
+    el.style.fontSize = ''
+    let size = parseFloat(getComputedStyle(el).fontSize)
+    let guard = 0
+    const words = (el.textContent || '').split(/\s+/).filter(Boolean)
+    const tooWide = () => el.scrollWidth > el.clientWidth + 1 || (words.length && !el.closest('.service-tabs, nav') && el.getBoundingClientRect().right > window.innerWidth)
+    while (tooWide() && size > 11 && guard++ < 30) { size -= 1; el.style.setProperty('font-size', size + 'px', 'important') }
+  })
+  let t = 0
+  const run = () => { window.clearTimeout(t); t = window.setTimeout(fit, 150) }
+  ;(document as Document & { fonts?: FontFaceSet }).fonts?.ready.then(run)
+  run()
+  window.addEventListener('resize', run)
+  new MutationObserver(run).observe(document.getElementById('root')!, { childList: true, subtree: true })
+}
+
 export function startPolish() {
   if (typeof window === 'undefined') return
   startSmoothScroll()
@@ -184,4 +203,5 @@ export function startPolish() {
   liftTinyText()
   startSpotlight()
   splitHeadlines()
+  fitText()
 }

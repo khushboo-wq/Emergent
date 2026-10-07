@@ -58,3 +58,19 @@
   .luxury-facts-grid{grid-template-columns:1fr !important}
   main h1{font-size:clamp(2rem,9.4vw,2.6rem) !important}
 }
+
+/* Hemicube is very wide: labels use the body font, headings sized to fit */
+.luxury-section-kicker,.luxury-eyebrow,.luxury-footer-kicker,.luxury-footer-label,main [class*="uppercase"]:not(h1):not(h2):not(h3){font-family:"Plus Jakarta Sans Variable","Alesand",system-ui,sans-serif !important}
+@media (max-width:860px){
+  main h1{font-size:clamp(1.75rem,8vw,2.3rem) !important;letter-spacing:-.01em !important;line-height:1.12 !important}
+  main h2{font-size:clamp(1.45rem,6.4vw,1.9rem) !important;letter-spacing:-.01em !important;line-height:1.15 !important}
+  main h3{font-size:1.15rem !important;letter-spacing:0 !important}
+  .luxury-footer-cta h2{font-size:clamp(1.5rem,6.6vw,2rem) !important;letter-spacing:-.01em !important}
+  .arc-showcase-title,.arc-profile-name{font-size:clamp(1.35rem,6vw,1.8rem) !important;letter-spacing:-.01em !important}
+  main h1,main h2,main h3,.luxury-footer h2{overflow-wrap:break-word !important}
+  .arc-logo-text strong{font-size:.95rem !important;letter-spacing:.1em !important}
+  .arc-logo-text small{letter-spacing:.14em !important}
+  .service-tab-title{font-size:.74rem !important;letter-spacing:0 !important;line-height:1.25 !important;white-space:normal !important}
+  .service-tab{min-width:170px !important;max-width:200px}
+  .luxury-mobile-nav a{font-size:1.15rem !important;letter-spacing:.02em !important;overflow-wrap:break-word}
+}

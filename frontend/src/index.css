@@ -7,6 +7,7 @@
 @font-face {
   font-family: "Hemicube";
   src: url("https://static.wixstatic.com/ufonts/526783_d9b7b97796e94626a5ab91e24c6a4523/woff2/file.woff2") format("woff2");
+  unicode-range: U+0000-002F, U+003A-10FFFF;
   font-display: swap;
   font-weight: 700;
   font-style: normal;
