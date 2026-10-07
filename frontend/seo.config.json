@@ -408,7 +408,7 @@
     {
       "path": "/resources/business-email-dns-setup-guide",
       "title": "Business Email Setup: SPF, DKIM and DMARC",
-      "description": "Learn how business email setup works, including SPF, DKIM and DMARC, DNS verification and the technical foundation needed before B2B outreach.",
+      "description": "Learn how business email setup works, including SPF, DKIM and DMARC, DNS verification and the technical foundation required for B2B outreach campaigns.",
       "h1": "Business Email Setup: SPF, DKIM and DMARC Explained",
       "canonical": "https://arcturusprofessional.com/resources/business-email-dns-setup-guide",
       "indexable": true,
