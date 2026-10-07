@@ -4,8 +4,8 @@ import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { CONTACT_EMAIL, getService, servicePageExtras } from "@/lib/site";
 import ServiceMotif from "@/components/ServiceMotif";
+import AmbientScene from "@/components/AmbientScene";
 import { resources } from "@/lib/resources";
-import ServiceTabs from "@/components/ServiceTabs";
 
 const WHATSAPP_URL = "https://wa.me/919911284362";
 
@@ -23,8 +23,7 @@ export default function ServiceDetail() {
       <nav className="mx-auto flex max-w-7xl items-center gap-2 px-5 pt-8 text-xs text-[#64748b] sm:px-8 lg:px-10" aria-label="Breadcrumb" data-testid="service-breadcrumbs">
         <Link to="/" className="hover:text-[#0f2942]" data-testid="breadcrumb-home-link">Home</Link><ChevronRight className="size-3" /><Link to="/services" className="hover:text-[#0f2942]" data-testid="breadcrumb-services-link">Services</Link><ChevronRight className="size-3" /><span aria-current="page" data-testid="breadcrumb-current">{service.title}</span>
       </nav>
-      <ServiceTabs />
-      <section className="border-b border-[#e2dfd8]" data-service={service.slug} data-testid="service-detail-hero">
+      <section className="border-b border-[#e2dfd8] service-detail-hero-rich" data-service={service.slug} data-testid="service-detail-hero"><AmbientScene type={service.slug === "lead-generation" ? "analytics" : service.slug === "email-setup" ? "architecture" : service.slug === "email-outreach" ? "workflow" : service.slug === "ai-video-creation" ? "contact" : "office"} className="service-detail-ambient-scene" />
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20 lg:px-10 lg:py-24">
           <div className="min-w-0"><p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4263aa]" data-testid="service-detail-eyebrow">{service.eyebrow}</p><h1 className="mt-5 max-w-3xl break-words font-serif text-[2.4rem] leading-[1.08] tracking-[0.02em] text-[#0f172a] sm:text-6xl lg:text-7xl" data-testid="service-detail-heading">{service.slug === "linkedin-management" ? "LinkedIn Management Services" : service.title}</h1><p className="mt-7 max-w-3xl text-lg leading-8 text-[#475569]" data-testid="service-summary">{extras.summary}</p>
           {service.slug === "linkedin-management" ? <p className="mt-4 max-w-3xl text-sm leading-7 text-[#64748b]" data-testid="linkedin-keyword-context">These LinkedIn management services cover the practical work behind a consistent B2B presence: profile optimisation, professional content, targeted prospecting, connection outreach, follow-ups and reporting.</p> : null}<p className="mt-4 max-w-3xl text-sm leading-7 text-[#64748b]" data-testid="service-overview-copy">{service.overview}</p><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.15em] text-[#64748b]" data-testid="service-last-updated">Last updated: {extras.lastUpdated}</p></div>

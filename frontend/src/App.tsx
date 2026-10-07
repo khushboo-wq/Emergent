@@ -8,6 +8,7 @@ import HowIWork from "@/pages/HowIWork";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Resources from "@/pages/Resources";
 import ResourceDetail from "@/pages/ResourceDetail";
+import ReportingCompliance from "@/pages/ReportingCompliance";
 import Terms from "@/pages/Terms";
 import NotFound from "@/pages/NotFound";
 
@@ -22,6 +23,7 @@ export default function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/resources/:slug" element={<ResourceDetail />} />
+      <Route path="/reporting-compliance" element={<ReportingCompliance />} />
       <Route path="/how-i-work" element={<HowIWork />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />

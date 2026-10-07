@@ -68,7 +68,7 @@ export const services: ServiceContent[] = [
       "Professional follow-ups for accepted connections, without aggressive sales messaging",
       "Authority-led posts, lead magnets, and nurture content built around your offer",
       "A practical funnel from first connection to qualified conversation",
-      "Regular LinkedIn posting with images or video where suitable",
+      "Daily LinkedIn content with images or video where suitable",
       "Weekly LinkedIn newsletter support, with content scheduled for 9:00 AM UK/Irish time using Hootsuite",
       "Regular reporting on outreach activity, connections, replies, and engagement",
     ],
@@ -308,7 +308,7 @@ export const services: ServiceContent[] = [
   },
 ];
 
-const SERVICE_ORDER = ["linkedin-management", "email-outreach", "business-support", "lead-generation", "ai-video-creation", "email-setup"];
+const SERVICE_ORDER = ["linkedin-management", "email-outreach", "lead-generation", "email-setup", "business-support", "ai-video-creation"];
 export const orderedServices = SERVICE_ORDER.map((slug) => services.find((service) => service.slug === slug)).filter((service): service is ServiceContent => Boolean(service));
 export const featuredServices = orderedServices.slice(0, 5);
 export const supportingServices = orderedServices.slice(5);

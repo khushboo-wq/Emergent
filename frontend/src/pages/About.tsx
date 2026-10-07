@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { orderedServices } from "@/lib/site";
+import AmbientScene from "@/components/AmbientScene";
 
 export default function About() {
   return <PageFrame><Seo path="/about" />
-    <section className="relative overflow-hidden border-b border-[#ddd8cd]" data-testid="about-hero"><div className="absolute right-[-7rem] top-12 size-80 rounded-full border border-[#4263aa]/20" aria-hidden="true" /><div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.18fr_0.82fr] lg:items-end lg:gap-20 lg:px-10 lg:py-28"><div className="relative z-10 min-w-0"><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#4263aa]" data-testid="about-eyebrow">Independent, direct, documented</p><h1 className="mt-5 break-words font-serif text-[2.4rem] leading-[1.08] text-[#0f172a] sm:text-6xl lg:text-7xl" data-testid="about-heading">About Khushboo Tomar, B2B outreach freelancer</h1><div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[#475569]" data-testid="about-intro"><p>I&apos;m Khushboo Tomar, an independent freelancer based in New Delhi. I run LinkedIn management, B2B email outreach and lead generation for businesses in Ireland, the UK and across Europe.</p><p>I work alone, so you always deal with the person doing the work. No account managers, no hand-offs, no outsourcing of core tasks.</p></div></div><div className="relative z-10 rounded-t-[8rem] rounded-b-[2rem] bg-[#0f2942] p-7 text-white shadow-[0_30px_75px_-42px_rgba(15,41,66,0.78)]" data-testid="about-personal-panel"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">One point of contact</p><p className="mt-5 font-serif text-3xl leading-tight text-white">The person you brief is the person who does the work.</p></div></div></section>
+    <section className="relative overflow-hidden border-b border-[#ddd8cd] about-hero-rich" data-testid="about-hero"><AmbientScene type="architecture" className="about-ambient-scene" /><div className="absolute right-[-7rem] top-12 size-80 rounded-full border border-[#4263aa]/20" aria-hidden="true" /><div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.18fr_0.82fr] lg:items-end lg:gap-20 lg:px-10 lg:py-28"><div className="relative z-10 min-w-0"><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#4263aa]" data-testid="about-eyebrow">Independent, direct, documented</p><h1 className="mt-5 break-words font-serif text-[2.4rem] leading-[1.08] text-[#0f172a] sm:text-6xl lg:text-7xl" data-testid="about-heading">About Khushboo Tomar, B2B outreach freelancer</h1><div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-[#475569]" data-testid="about-intro"><p>I&apos;m Khushboo Tomar, an independent freelancer based in New Delhi. I run LinkedIn management, B2B email outreach and lead generation for businesses in Ireland, the UK and across Europe.</p><p>I work alone, so you always deal with the person doing the work. No account managers, no hand-offs, no outsourcing of core tasks.</p></div></div><div className="relative z-10 rounded-t-[8rem] rounded-b-[2rem] bg-[#0f2942] p-7 text-white shadow-[0_30px_75px_-42px_rgba(15,41,66,0.78)]" data-testid="about-personal-panel"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">One point of contact</p><p className="mt-5 font-serif text-3xl leading-tight text-white">The person you brief is the person who does the work.</p></div></div></section>
 
     <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10" data-testid="about-facts">
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -81,6 +82,17 @@ export default function About() {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+
+    <section className="recommendations-section" data-testid="about-recommendations">
+      <div className="luxury-shell recommendations-grid">
+        <div>
+          <p className="luxury-section-kicker">LinkedIn recommendations</p>
+          <h2>See what professional connections have to say about working with me.</h2>
+          <p>Recommendations are kept on LinkedIn so the feedback remains attached to the professional profile rather than copied into a marketing page.</p>
+        </div>
+        <a href="https://www.linkedin.com/in/khushboo-tomar" target="_blank" rel="noreferrer" className="luxury-button luxury-button-dark">View LinkedIn profile <ArrowUpRight size={16} /></a>
       </div>
     </section>
 

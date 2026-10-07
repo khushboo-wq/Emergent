@@ -4,12 +4,13 @@ import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
 import { resources } from "@/lib/resources";
+import AmbientScene from "@/components/AmbientScene";
 
 export default function Resources() {
   return (
     <PageFrame>
       <Seo path="/resources" />
-      <section className="luxury-hero" data-testid="resources-hero">
+      <section className="luxury-hero resources-hero-rich" data-testid="resources-hero"><AmbientScene type="office" className="resources-ambient-scene" />
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy">
             <p className="luxury-eyebrow"><span>03</span> Practical resources · B2B</p>

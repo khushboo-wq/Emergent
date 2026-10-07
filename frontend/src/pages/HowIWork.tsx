@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
+import AmbientScene from "@/components/AmbientScene";
 
 const onboarding = [
   ["01", "Day 1–2", "Requirements, invoice, advance payment and access are confirmed."],
@@ -30,7 +31,8 @@ export default function HowIWork() {
     <PageFrame>
       <Seo path="/how-i-work" />
 
-      <section className="luxury-hero luxury-process-hero" data-testid="work-hero">
+      <section className="luxury-hero luxury-process-hero work-hero-rich" data-testid="work-hero">
+        <AmbientScene type="workflow" className="work-ambient-scene" />
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy">
             <p className="luxury-eyebrow"><span>02</span> Process · payment · communication</p>
@@ -66,7 +68,46 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="luxury-process-section">
+      <nav className="work-section-tabs" aria-label="How I work sections">
+        <a href="#starting-project">01 Starting a project</a>
+        <a href="#onboarding-timeline">02 Onboarding</a>
+        <a href="#working-method">03 Process</a>
+        <a href="#payment">04 Payment</a>
+        <a href="#communication">05 Communication</a>
+        <a href="#reporting">06 Reporting</a>
+        <a href="#tools">07 Tools</a>
+        <a href="#why-me">08 Why work with me</a>
+      </nav>
+
+      <section className="process-start-section" id="starting-project" data-testid="starting-project">
+        <div className="luxury-shell">
+          <Reveal className="luxury-section-heading">
+            <div>
+              <p className="luxury-section-kicker">Starting a project</p>
+              <h2>From a short brief to an agreed scope.</h2>
+            </div>
+            <p className="luxury-heading-note">Written is enough. The aim is to make the next step obvious before work begins.</p>
+          </Reveal>
+          <div className="start-project-grid">
+            {[
+              ["01", "Tell me what you need", "Share the task, goal, audience, business context or problem in writing."],
+              ["02", "Share the information", "Send the files, access, examples, instructions or source material needed for the agreed work."],
+              ["03", "Agree the scope", "I confirm what I will handle, what I need from you, the payment arrangement and any relevant timing."],
+              ["04", "Work begins", "Once payment, access and requirements are ready, the agreed work starts and communication stays documented."],
+            ].map(([number, title, copy], index) => (
+              <Reveal key={number} delay={index * 60}>
+                <article className="start-project-card">
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{copy}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="luxury-process-section" id="onboarding-timeline">
         <div className="luxury-shell">
           <Reveal className="luxury-section-heading">
             <div>
@@ -89,7 +130,7 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="process-method-section">
+      <section className="process-method-section" id="working-method">
         <div className="luxury-shell">
           <Reveal className="luxury-section-heading">
             <div>
@@ -111,7 +152,7 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="payment-section">
+      <section className="payment-section" id="payment">
         <div className="luxury-shell payment-layout">
           <Reveal>
             <p className="luxury-section-kicker">Payment</p>
@@ -132,13 +173,13 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="communication-section">
+      <section className="communication-section" id="communication">
         <div className="luxury-shell communication-grid">
           <Reveal className="communication-dark">
             <MessageSquareText />
             <p className="luxury-section-kicker luxury-kicker-light">Direct communication</p>
             <h2>Clear communication. Clear expectations.</h2>
-            <p>Email is the primary written channel. LinkedIn can be used for professional project-related communication and WhatsApp is available when quick clarification or coordination is required.</p>
+            <p>Email is the primary written channel. LinkedIn can be used for professional project-related communication and WhatsApp is available when quick clarification or coordination is required. No unnecessary meetings or long meetings are needed because requirements, approvals, updates and deliveries remain documented in writing.</p>
             <div className="communication-tags">
               <span>Email</span><span>LinkedIn</span><span>WhatsApp</span><span>Written updates</span>
             </div>
@@ -160,7 +201,7 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="reporting-section">
+      <section className="reporting-section" id="reporting">
         <div className="luxury-shell reporting-grid">
           <Reveal>
             <FileCheck2 />
@@ -176,7 +217,7 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="tools-platforms-section" data-testid="work-tools-section">
+      <section className="tools-platforms-section" id="tools" data-testid="work-tools-section">
         <div className="luxury-shell">
           <Reveal className="luxury-section-heading">
             <div>
@@ -205,7 +246,7 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="why-work-section">
+      <section className="why-work-section" id="why-me">
         <div className="luxury-shell">
           <Reveal>
             <p className="luxury-section-kicker">Why work with me</p>
