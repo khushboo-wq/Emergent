@@ -28,7 +28,7 @@ export default function Home() {
           <Reveal className="luxury-hero-copy" delay={40}>
             <p className="luxury-eyebrow"><span>01</span> Independent freelancer · New Delhi</p>
             <h1 data-testid="home-hero-heading">
-              LinkedIn, email outreach and business support,
+              B2B outreach and business support,
               <em> handled personally.</em>
             </h1>
             <p className="luxury-hero-lead" data-testid="home-hero-description">
