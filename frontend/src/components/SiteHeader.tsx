@@ -1,9 +1,10 @@
-import { ChevronDown, Menu, MessageCircle } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { CONTACT_EMAIL, orderedServices } from "@/lib/site";
+import { CONTACT_EMAIL } from "@/lib/site";
+import ServiceTabs from "@/components/ServiceTabs";
 
 const logoUrl = "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/0267e06d60c3c063_Arcturus%20Black%20Logo.jpg";
 
@@ -31,19 +32,10 @@ export default function SiteHeader() {
 
         <nav className="luxury-desktop-nav" aria-label="Primary navigation" data-testid="desktop-navigation">
           <NavLink to="/" className={navLinkClass}>Home</NavLink>
-          <div className="luxury-services-nav">
-            <NavLink to="/services" className={navLinkClass}>Services <ChevronDown size={13} /></NavLink>
-            <div className="luxury-services-menu">
-              {orderedServices.map((service) => (
-                <Link key={service.slug} to={`/services/${service.slug}`} data-testid={`nav-service-${service.slug}`}>
-                  <span>{service.title}</span>
-                  <small>{service.price}</small>
-                </Link>
-              ))}
-            </div>
-          </div>
+          <NavLink to="/services" className={navLinkClass}>Services</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/how-i-work" className={navLinkClass}>How I work</NavLink>
+          <NavLink to="/reporting-compliance" className={navLinkClass}>Reporting & Compliance</NavLink>
           <NavLink to="/resources" className={navLinkClass}>Resources</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
@@ -65,13 +57,9 @@ export default function SiteHeader() {
             <nav className="luxury-mobile-nav" aria-label="Mobile navigation" data-testid="mobile-navigation">
               <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
               <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
-              <div className="luxury-mobile-services">
-                {orderedServices.map((service) => (
-                  <Link key={service.slug} to={`/services/${service.slug}`} onClick={() => setOpen(false)}>{service.title}</Link>
-                ))}
-              </div>
               <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
               <NavLink to="/how-i-work" onClick={() => setOpen(false)}>How I work</NavLink>
+              <NavLink to="/reporting-compliance" onClick={() => setOpen(false)}>Reporting & Compliance</NavLink>
               <NavLink to="/resources" onClick={() => setOpen(false)}>Resources</NavLink>
               <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
             </nav>
