@@ -89,6 +89,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="luxury-facts-section" aria-label="Arcturus at a glance">
+        <div className="luxury-shell luxury-facts-grid">
+          <div><strong>12+</strong><span>years across email marketing, B2B outreach and lead research</span></div>
+          <div><strong>06</strong><span>focused services with published pricing</span></div>
+          <div><strong>UK · IE · EU</strong><span>businesses supported directly from New Delhi</span></div>
+          <div><strong>01</strong><span>person from brief to delivery</span></div>
+        </div>
+      </section>
+
       <section className="luxury-services-section">
         <div className="luxury-shell">
           <Reveal className="luxury-section-heading">
