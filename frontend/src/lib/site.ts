@@ -314,7 +314,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     summary: "I manage LinkedIn profiles, content, targeted outreach, and nurture for UK and Irish businesses that want a consistent B2B presence. The service costs €400 per month, and you provide your own Sales Navigator subscription.",
     reporting: ["Connection acceptance percentage", "Engagement growth across agreed content", "Qualified conversations created through outreach"],
     relatedSlugs: ["lead-generation", "business-support"],
-    lastUpdated: "21 February 2026",
+    lastUpdated: "7 October 2026",
     faqs: [
       { question: "What does LinkedIn management include?", answer: "Profile optimisation, regular posting, connection outreach, follow-ups, lead magnets, nurture sequences and authority content, depending on what your goals need." },
       { question: "Do I need Sales Navigator?", answer: "Yes. You provide your own LinkedIn Sales Navigator subscription, and I use it for targeting and research." },
@@ -327,7 +327,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     summary: "I set up and manage B2B cold email campaigns for UK and Irish businesses that need careful targeting, proper warm-up, and clear reporting. The managed service costs €450 per month, with lead research and email setup priced separately when required.",
     reporting: ["Open percentage", "Reply percentage", "Click-through percentage", "Bounce rate", "Inbox placement observations"],
     relatedSlugs: ["email-setup", "lead-generation"],
-    lastUpdated: "21 February 2026",
+    lastUpdated: "7 October 2026",
     faqs: [
       { question: "What's included?", answer: "Campaign setup, copywriting, sending, follow-ups, and monthly reporting." },
       { question: "Why do new domains need warm-up?", answer: "Warm-up builds sender reputation so emails have a better chance of reaching inboxes. New domains are warmed for one month before scaling." },
@@ -340,7 +340,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     summary: "I provide remote business support for founders and small teams that need reliable help with research, admin, websites, content, and recurring digital tasks. The service costs €12 per hour and is billed for the time spent on agreed work.",
     reporting: ["Time used against agreed tasks", "Completed work and outstanding dependencies", "Clear written notes for each delivery"],
     relatedSlugs: ["linkedin-management", "ai-video-creation"],
-    lastUpdated: "21 February 2026",
+    lastUpdated: "7 October 2026",
     faqs: [
       { question: "What can you help with?", answer: "Research, AI-assisted content writing, website support including DNS management, LinkedIn posting, YouTube support without SEO, and ad management." },
       { question: "How are hours tracked?", answer: "I share a written summary of tasks and hours so you always see what you paid for." },
@@ -353,7 +353,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     summary: "I research and verify B2B contacts for businesses targeting Ireland, the UK, and Europe by company size, role, industry, and location. The service costs €0.80 per verified business contact.",
     reporting: ["Source fields included with delivered records", "Verification status and cleaned contact data", "Delivery count against the agreed target profile"],
     relatedSlugs: ["email-outreach", "linkedin-management", "email-setup"],
-    lastUpdated: "21 February 2026",
+    lastUpdated: "7 October 2026",
     faqs: [
       { question: "What counts as a verified contact?", answer: "A business contact I've researched and checked, with name, role, company and email." },
       { question: "Where does the data come from?", answer: "I explain my data sources in writing so you know exactly how the list was built." },
@@ -366,7 +366,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and includes up to 30 short videos.",
     reporting: ["Monthly output against the 30-video allowance", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
-    lastUpdated: "21 February 2026",
+    lastUpdated: "7 October 2026",
     faqs: [
       { question: "What kind of videos are these?", answer: "Basic to custom AI-generated videos and reels, not professional video editing." },
       { question: "Can you add my branding?", answer: "Yes: logo, business details and end cards." },
@@ -379,7 +379,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     summary: "I configure professional business email and DNS authentication for businesses that need a sound technical foundation for deliverability. The one-time service costs €80 and covers SPF, DKIM, DMARC, and DNS verification.",
     reporting: ["Records configured during setup", "DNS verification status", "Written handover and any outstanding provider actions"],
     relatedSlugs: ["email-outreach", "lead-generation"],
-    lastUpdated: "21 February 2026",
+    lastUpdated: "7 October 2026",
     faqs: [
       { question: "What's included?", answer: "Business email and DNS configuration so your domain is ready for sending, including authentication records." },
       { question: "Why does it matter?", answer: "Correct setup helps emails have a better chance of reaching inboxes instead of spam." },
