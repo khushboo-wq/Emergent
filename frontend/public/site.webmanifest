@@ -4,11 +4,11 @@
   "description": "Independent B2B outreach and business support for Ireland, the UK and Europe.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fbf8f1",
-  "theme_color": "#0f2942",
+  "background_color": "#f6f1e9",
+  "theme_color": "#2d2238",
   "icons": [
     {
-      "src": "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/60370bb24cb213f1_Arcturus%20White%20Logo.jpg",
+      "src": "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/0267e06d60c3c063_Arcturus%20Black%20Logo.jpg",
       "sizes": "1024x1024",
       "type": "image/jpeg",
       "purpose": "any"
