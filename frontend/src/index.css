@@ -887,7 +887,7 @@ body {
   border: 0;
   background: rgba(246, 241, 233, 0.54);
   box-shadow: none;
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(22px);
   transition: background 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
 }
 
@@ -5665,7 +5665,7 @@ h4 {
   height: 100%;
   overflow: visible;
   border-radius: 36px;
-  box-shadow: 0 45px 110px -65px rgba(31,24,41,.55);
+  box-shadow: 0 45px 110px -65px rgba(31,24,41,.55), inset 0 1px 0 rgba(255,255,255,.08);
 }
 
 .ambient-scene-glow {
@@ -5675,7 +5675,7 @@ h4 {
   right: 8%;
   top: 6%;
   border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--scene-accent) 42%, transparent), transparent 68%);
+  background: var(--scene-accent);
   filter: blur(14px);
   animation: ambientGlow 8s ease-in-out infinite;
 }
