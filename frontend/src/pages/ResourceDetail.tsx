@@ -4,6 +4,7 @@ import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
 import { getResource, resources } from "@/lib/resources";
+import { getService } from "@/lib/site";
 
 export default function ResourceDetail() {
   const { slug } = useParams();
@@ -20,6 +21,8 @@ export default function ResourceDetail() {
       </PageFrame>
     );
   }
+
+  const relatedService = getService(resource.serviceSlug);
 
   return (
     <PageFrame key={resource.slug}>
@@ -52,9 +55,9 @@ export default function ResourceDetail() {
           <aside className="resource-sidebar">
             <div className="resource-sidebar-card">
               <p className="luxury-section-kicker">Related service</p>
-              <h2>LinkedIn Management Services</h2>
-              <p>Profile management, content, targeted outreach, follow-ups, scheduling and reporting handled directly.</p>
-              <Link to="/services/linkedin-management" className="luxury-button luxury-button-dark">View the service <ArrowRight size={16} /></Link>
+              <h2>{relatedService?.title ?? "Arcturus service"}</h2>
+              <p>{relatedService?.description ?? "Direct, practical business support handled personally."}</p>
+              {relatedService ? <Link to={`/services/${relatedService.slug}`} className="luxury-button luxury-button-dark">View the service <ArrowRight size={16} /></Link> : null}
             </div>
             <div className="resource-sidebar-card resource-sidebar-dark">
               <MessageCircle size={19} />
