@@ -336,6 +336,91 @@
       "changeFrequency": "yearly",
       "priority": 0,
       "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/b2b-email-outreach-guide",
+      "title": "B2B Email Outreach: Practical Guide for Small Businesses",
+      "description": "A practical B2B email outreach guide covering targeting, verified contacts, warm-up, copy, follow-ups and campaign reporting for small B2B businesses.",
+      "h1": "B2B Email Outreach: A Practical Guide for Small Businesses",
+      "canonical": "https://arcturusprofessional.com/resources/b2b-email-outreach-guide",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "b2b-email-outreach-guide",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/b2b-lead-generation-guide",
+      "title": "B2B Lead Generation: Build a Useful Prospect List",
+      "description": "A practical B2B lead generation guide covering ICP definition, Sales Navigator research, decision-makers, verification and spreadsheet delivery for sales teams.",
+      "h1": "B2B Lead Generation: How to Build a Useful Prospect List",
+      "canonical": "https://arcturusprofessional.com/resources/b2b-lead-generation-guide",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "b2b-lead-generation-guide",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/business-support-for-founders-guide",
+      "title": "Business Support for Founders | Practical Guide",
+      "description": "A practical guide to business support for founders and small teams, covering admin, research, spreadsheets, documents, websites and recurring digital tasks.",
+      "h1": "Business Support for Founders: What to Delegate First",
+      "canonical": "https://arcturusprofessional.com/resources/business-support-for-founders-guide",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "business-support-for-founders-guide",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/ai-video-content-for-business-guide",
+      "title": "AI Video Content for Business | Practical Guide",
+      "description": "A practical guide to AI video content for businesses covering ideas, branding, prompts, short-form content, scheduling and realistic production scope.",
+      "h1": "AI Video Content for Business: A Practical Approach",
+      "canonical": "https://arcturusprofessional.com/resources/ai-video-content-for-business-guide",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "ai-video-content-for-business-guide",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/resources/business-email-dns-setup-guide",
+      "title": "Business Email Setup: SPF, DKIM and DMARC",
+      "description": "Learn how business email setup works, including SPF, DKIM and DMARC, DNS verification and the technical foundation required for B2B outreach campaigns.",
+      "h1": "Business Email Setup: SPF, DKIM and DMARC Explained",
+      "canonical": "https://arcturusprofessional.com/resources/business-email-dns-setup-guide",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "business-email-dns-setup-guide",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-07"
     }
   ]
 }
