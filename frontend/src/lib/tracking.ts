@@ -27,9 +27,12 @@ export function trackPageView(path: string, title: string) {
   });
 }
 
+const DEFAULT_GTM_ID = "GTM-56HXSJD6";
+
 export function getGtmId() {
-  const id = import.meta.env.VITE_GTM_ID?.trim();
-  return id && /^GTM-[A-Z0-9]+$/i.test(id) ? id : null;
+  const configured = import.meta.env.VITE_GTM_ID?.trim();
+  const id = configured || DEFAULT_GTM_ID;
+  return /^GTM-[A-Z0-9]+$/i.test(id) ? id : null;
 }
 
 export function loadGoogleTagManager(containerId: string) {
