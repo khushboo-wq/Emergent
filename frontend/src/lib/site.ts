@@ -54,7 +54,7 @@ export const services: ServiceContent[] = [
     navLabel: "LinkedIn Management",
     title: "LinkedIn Management",
     eyebrow: "01 / Profile & Outreach Management",
-    description: "Build a stronger presence. Reach the right people. Every connection followed through, never left on read.",
+    description: "Profile management, daily content, targeted outreach, follow-ups and weekly newsletter support for a consistent B2B LinkedIn presence.",
     overview: "I manage the practical LinkedIn work behind a more consistent professional presence: profile preparation, targeted prospecting, connection outreach, follow-up, content scheduling, and regular reporting.",
     audience: "Best suited to founders, consultants, and B2B sales leaders who can provide access, context, and timely feedback.",
     inclusions: [
@@ -100,7 +100,7 @@ export const services: ServiceContent[] = [
     navLabel: "Email Outreach",
     title: "Email Outreach",
     eyebrow: "02 / Cold Email Marketing & Deliverability Setup",
-    description: "Reach the right people. Start better conversations with a structured cold email workflow.",
+    description: "B2B email outreach with warm-up, campaign management, follow-ups, verified contacts and reporting.",
     overview: "I prepare and manage each cold email campaign from technical setup and the required warm-up period through campaign preparation, outreach, follow-ups, and reporting.",
     audience: "For businesses with a clear B2B offer, an agreed audience, and the capacity to respond when interest arrives.",
     inclusions: [
@@ -147,7 +147,7 @@ export const services: ServiceContent[] = [
     navLabel: "Business Support",
     title: "Business Support",
     eyebrow: "03 / Day-to-Day Admin & Back-Office Support",
-    description: "Practical support for the recurring administrative and back-office work that keeps a business moving.",
+    description: "Task-based business support across administration, online research, spreadsheets, documents and back-office work.",
     overview: "I provide task-based support for routine administration, online research, content, website support, and other agreed back-office needs.",
     audience: "Useful for founders and small teams who need an organised extra pair of hands without a full-time hire.",
     inclusions: [
@@ -192,7 +192,7 @@ export const services: ServiceContent[] = [
     navLabel: "AI Video Creation",
     title: "AI Video Creation",
     eyebrow: "04 / Custom AI-Generated Video Content",
-    description: "Fresh content every single day without the production overhead.",
+    description: "Basic to custom AI video content: 2 short videos per day, 7 days a week, with branding and scheduling.",
     overview: "I create short-form AI-generated videos for social channels, using your business information, brand assets, content themes, and preferred style as the basis for the prompts and production flow.",
     audience: "For businesses that need a consistent stream of concise social content for Instagram, TikTok, YouTube, or LinkedIn.",
     inclusions: [
@@ -235,7 +235,7 @@ export const services: ServiceContent[] = [
     navLabel: "Lead Generation",
     title: "Lead Generation",
     eyebrow: "05 / Finding & Verifying the Right Contacts",
-    description: "Quality over quantity: a clean, verified list of the kind of people you want to reach.",
+    description: "B2B lead research and verification against your ICP, decision-maker roles, locations and company criteria.",
     overview: "I define the ideal client profile with you, research relevant businesses and decision-makers, clean and verify contact data, and deliver the result in an organised spreadsheet.",
     audience: "For businesses that need a focused prospecting list prepared against clear industry, location, company-size, and role criteria.",
     inclusions: [
@@ -277,7 +277,7 @@ export const services: ServiceContent[] = [
     navLabel: "Email Setup",
     title: "Email Setup",
     eyebrow: "06 / Professional Email & DNS Configuration",
-    description: "A one-time setup that gets your domain outreach-ready.",
+    description: "One-time professional email and DNS configuration including SPF, DKIM, DMARC and verification.",
     overview: "I configure the professional email and domain records needed to establish the technical foundation for an outreach workflow.",
     audience: "For businesses that need their email and domain configuration prepared before an Email Outreach campaign begins.",
     inclusions: [
