@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
+import AmbientScene from "@/components/AmbientScene";
 
 const reporting = [
   ["Email", "Open %, reply %, click-through %, bounce rate, plus inbox-placement observations where available."],
@@ -31,7 +32,8 @@ export default function ReportingCompliance() {
   return (
     <PageFrame>
       <Seo path="/reporting-compliance" />
-      <section className="luxury-hero" data-testid="reporting-hero">
+      <section className="luxury-hero reporting-hero-rich" data-testid="reporting-hero">
+        <AmbientScene type="analytics" className="reporting-ambient-scene" />
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy">
             <p className="luxury-eyebrow"><span>05</span> Reporting · compliance · tools</p>
