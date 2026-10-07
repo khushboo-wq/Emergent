@@ -7,7 +7,7 @@
     "author": "Khushboo Tomar",
     "email": "khushboo@arcturusprofessional.com",
     "socialImage": "https://arcturusprofessional.com/og-image.png",
-    "socialImageAlt": "Arcturus Professional Services logo with the headline B2B growth work, handled personally",
+    "socialImageAlt": "Arcturus Professional Services logo with the headline B2B growth work, managed personally",
     "allowedBots": [
       "GPTBot",
       "OAI-SearchBot",
@@ -36,7 +36,7 @@
       "path": "/",
       "title": "B2B LinkedIn & Email Outreach Freelancer | Arcturus",
       "description": "Independent freelancer for UK and Irish businesses providing LinkedIn management, email outreach, lead generation, business support, email setup and AI content.",
-      "h1": "B2B growth work, handled personally.",
+      "h1": "B2B growth work, managed personally.",
       "canonical": "https://arcturusprofessional.com/",
       "indexable": true,
       "ogType": "website",
@@ -70,7 +70,7 @@
     {
       "path": "/services/linkedin-management",
       "title": "LinkedIn Management Services for Businesses | Arcturus",
-      "description": "LinkedIn management services for UK and Irish businesses: profile optimisation, content, targeted outreach, follow-ups and reporting, handled by Khushboo.",
+      "description": "LinkedIn management services for UK and Irish businesses: profile optimisation, content, targeted outreach, follow-ups and reporting, managed by Khushboo.",
       "h1": "LinkedIn Management Services",
       "canonical": "https://arcturusprofessional.com/services/linkedin-management",
       "indexable": true,

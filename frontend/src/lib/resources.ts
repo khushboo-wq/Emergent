@@ -81,7 +81,7 @@ export const resources: Resource[] = [
         heading: "What to expect from a managed service",
         paragraphs: [
           "LinkedIn is a relationship channel, so a sensible service should be measured over time rather than as a one-week sales promise. Good management creates a consistent presence, improves the quality of targeting and keeps follow-up from being forgotten.",
-          "At Arcturus, the LinkedIn management service is handled directly by Khushboo. The work includes profile management, professional content, targeted outreach, follow-ups, group engagement, company page setup where needed, Hootsuite scheduling and written performance reporting.",
+          "At Arcturus, the LinkedIn management service is managed directly by Khushboo. The work includes profile management, professional content, targeted outreach, follow-ups, group engagement, company page setup where needed, Hootsuite scheduling and written performance reporting.",
         ],
       },
       {
@@ -444,7 +444,7 @@ export const resources: Resource[] = [
         heading: "Keep the scope realistic",
         paragraphs: [
           "AI-generated short-form content is not the same thing as filming a commercial. There is still a need for review, prompt adjustment and approval, but the workflow is intentionally lightweight.",
-          "Arcturus provides the agreed 2-short-form-videos-per-day schedule, 7 days a week, at €400 per month, with Hootsuite scheduling handled as part of the agreed workflow.",
+          "Arcturus provides the agreed 2-short-form-videos-per-day schedule, 7 days a week, at €400 per month, with Hootsuite scheduling managed as part of the agreed workflow.",
         ],
       },
       {

@@ -12,12 +12,14 @@ import ReportingCompliance from "@/pages/ReportingCompliance";
 import Terms from "@/pages/Terms";
 import NotFound from "@/pages/NotFound";
 import RouteScrollManager from "@/components/RouteScrollManager";
+import ScrollButtons from "@/components/ScrollButtons";
 
 // One <Route> per page in src/pages; BrowserRouter already wraps this in main.tsx.
 export default function App() {
   return (
     <>
     <RouteScrollManager />
+    <ScrollButtons />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />

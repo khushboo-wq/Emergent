@@ -56,12 +56,12 @@ export default function ResourceDetail() {
             <div className="resource-sidebar-card">
               <p className="luxury-section-kicker">Related service</p>
               <h2>{relatedService?.title ?? "Arcturus service"}</h2>
-              <p>{relatedService?.description ?? "Direct, practical business support handled personally."}</p>
+              <p>{relatedService?.description ?? "Direct, practical business support managed personally."}</p>
               {relatedService ? <Link to={`/services/${relatedService.slug}`} className="luxury-button luxury-button-dark">View the service <ArrowRight size={16} /></Link> : null}
             </div>
             <div className="resource-sidebar-card resource-sidebar-dark">
               <MessageCircle size={19} />
-              <p>Need this work handled instead of added to your to-do list?</p>
+              <p>Need this work managed instead of added to your to-do list?</p>
               <Link to="/contact" className="luxury-button luxury-button-light">Start a written enquiry</Link>
             </div>
           </aside>

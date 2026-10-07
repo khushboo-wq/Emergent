@@ -2,12 +2,11 @@ import { ArrowUpRight, Check, ChevronRight, MessageSquareText } from "lucide-rea
 import { Link, useParams } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
-import { CONTACT_EMAIL, getService, servicePageExtras } from "@/lib/site";
+import { CONTACT_EMAIL, getService, servicePageExtras, WHATSAPP_LINK } from "@/lib/site";
 import IsoIllustration from "@/components/IsoIllustration";
 import AmbientScene from "@/components/AmbientScene";
 import { resources } from "@/lib/resources";
 
-const WHATSAPP_URL = "https://wa.me/919911284362";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -103,7 +102,7 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-      <section className="mx-5 mb-20 rounded-[2rem] bg-[#0f2942] px-6 py-12 text-white sm:mx-8 sm:mb-28 sm:px-10 lg:mx-auto lg:max-w-7xl lg:px-14" data-testid="service-bottom-cta"><MessageSquareText className="size-6 text-[#9bc8c0]" /><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Written enquiries only</p><div className="mt-4 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><h2 className="max-w-2xl font-serif text-4xl leading-tight text-white sm:text-5xl" data-testid="service-bottom-cta-heading">Tell me what you need to move forward.</h2><div className="flex flex-wrap gap-3"><Link to="/contact" className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-5 text-sm font-semibold text-[#0f2942] hover:bg-[#dce6ff]" data-testid="service-contact-form-link">Use the contact form <ArrowUpRight className="size-4" /></Link><a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-email-link">Email</a><a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-whatsapp-link">WhatsApp</a></div></div></section>
+      <section className="mx-5 mb-20 rounded-[2rem] bg-[#0f2942] px-6 py-12 text-white sm:mx-8 sm:mb-28 sm:px-10 lg:mx-auto lg:max-w-7xl lg:px-14" data-testid="service-bottom-cta"><MessageSquareText className="size-6 text-[#9bc8c0]" /><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Written enquiries only</p><div className="mt-4 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><h2 className="max-w-2xl font-serif text-4xl leading-tight text-white sm:text-5xl" data-testid="service-bottom-cta-heading">Tell me what you need to move forward.</h2><div className="flex flex-wrap gap-3"><Link to="/contact" className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-5 text-sm font-semibold text-[#0f2942] hover:bg-[#dce6ff]" data-testid="service-contact-form-link">Use the contact form <ArrowUpRight className="size-4" /></Link><a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-email-link">Email</a><a href={WHATSAPP_LINK + encodeURIComponent(service.title)} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-whatsapp-link">WhatsApp</a></div></div></section>
     </PageFrame>
   );
 }

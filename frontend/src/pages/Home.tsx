@@ -1,5 +1,4 @@
 import { ArrowRight, Check, Mail } from "lucide-react";
-import PortraitCard from "@/components/PortraitCard";
 import HeroShowcase from "@/components/HeroShowcase";
 import IsoIllustration from "@/components/IsoIllustration";
 import { Link } from "react-router-dom";
@@ -35,7 +34,7 @@ export default function Home() {
             <p className="luxury-eyebrow"><span>01</span> Independent freelancer · New Delhi</p>
             <h1 data-testid="home-hero-heading">
               B2B growth work,
-              <em> handled personally.</em>
+              <em> managed personally.</em>
             </h1>
             <p className="luxury-hero-lead" data-testid="home-hero-description">
               LinkedIn management, email outreach, lead generation, business support, email setup and AI content for founders and small teams across the UK, Ireland and Europe. Managed directly by Khushboo.
@@ -52,7 +51,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="luxury-hero-art-wrap" delay={150}>
-            <HeroShowcase kicker="Arcturus" index="01 / 06" title="Arcturus Professional Services" subtitle="B2B growth work, handled personally by Khushboo Tomar." slug="linkedin-management" chips={["LinkedIn","Email outreach","Lead generation","Business support","AI video","Email setup"]} note="A direct, considered way to keep the work behind your business moving." />
+            <HeroShowcase kicker="Arcturus" index="01 / 06" title="Arcturus Professional Services" subtitle="B2B growth work, managed personally by Khushboo Tomar." slug="linkedin-management" chips={["LinkedIn","Email outreach","Lead generation","Business support","AI video","Email setup"]} note="A direct, considered way to keep the work behind your business moving." />
           </Reveal>
         </div>
       </section>
@@ -203,7 +202,11 @@ export default function Home() {
       <section className="luxury-about-section">
         <div className="luxury-shell luxury-about-grid">
           <Reveal className="luxury-about-visual">
-            <PortraitCard compact />
+            <div className="luxury-about-monogram">K</div>
+            <div className="luxury-about-meta">
+              <span>KHUSHBOO</span>
+              <small>Independent Freelancer · New Delhi</small>
+            </div>
           </Reveal>
           <Reveal delay={110}>
             <p className="luxury-section-kicker">About me</p>

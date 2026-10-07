@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
-import { CONTACT_EMAIL, getContactHref } from "@/lib/site";
+import { CONTACT_EMAIL, getContactHref, WHATSAPP_LINK } from "@/lib/site";
 import AmbientScene from "@/components/AmbientScene";
 
 export default function Contact() {
@@ -47,7 +47,7 @@ export default function Contact() {
             <h2 className="break-words font-serif text-3xl text-white">Contact details</h2>
             <div className="mt-7 space-y-5 text-sm">
               <a href={"mailto:" + CONTACT_EMAIL} className="flex gap-3 text-[#dce6ff] transition-colors duration-200 hover:text-white" data-testid="contact-email-link"><Mail className="size-5 shrink-0" /><span className="break-all">{CONTACT_EMAIL}</span></a>
-              <a href="https://wa.me/919911284362" target="_blank" rel="noreferrer" className="flex gap-3 text-[#dce6ff] transition-colors duration-200 hover:text-white" data-testid="contact-whatsapp-link"><MessageCircle className="size-5 shrink-0" />+91 99112 84362</a>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex gap-3 text-[#dce6ff] transition-colors duration-200 hover:text-white" data-testid="contact-whatsapp-link"><MessageCircle className="size-5 shrink-0" />+91 99112 84362</a>
               <p className="flex gap-3 text-[#dce6ff]" data-testid="contact-location"><MapPin className="size-5 shrink-0" />New Delhi, India</p>
             </div>
             <a href={getContactHref()} className="mt-7 inline-flex items-center gap-2 rounded-md bg-white px-4 py-3 text-sm font-semibold text-[#0f2942] transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#dce6ff]" data-testid="contact-email-button">Open a prefilled email draft <ArrowUpRight className="size-4" /></a>

@@ -1,9 +1,9 @@
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
-import { CONTACT_EMAIL, getContactHref } from "@/lib/site";
+import { CONTACT_EMAIL, getContactHref, WHATSAPP_LINK } from "@/lib/site";
 
 const contacts = [
-  { label: "WhatsApp", href: "https://wa.me/919911284362", icon: FaWhatsapp, colour: "bg-[#128c7e]", external: true, testId: "quick-contact-whatsapp" },
+  { label: "WhatsApp", href: WHATSAPP_LINK, icon: FaWhatsapp, colour: "bg-[#128c7e]", external: true, testId: "quick-contact-whatsapp" },
   { label: "Email", href: getContactHref(), icon: MdOutlineEmail, colour: "bg-[#0f2942]", external: false, testId: "quick-contact-email" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/khushboo-tomar", icon: FaLinkedinIn, colour: "bg-[#0a66c2]", external: true, testId: "quick-contact-linkedin" },
   { label: "Instagram", href: "https://www.instagram.com/arcturusprofessional", icon: FaInstagram, colour: "instagram-contact", external: true, testId: "quick-contact-instagram" },

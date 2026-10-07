@@ -1,5 +1,7 @@
 export const SITE_NAME = "Arcturus Professional Services";
 export const CONTACT_EMAIL = "khushboo@arcturusprofessional.com";
+export const WHATSAPP_MESSAGE = "Hi Khushboo, I found Arcturus Professional Services on your website and I'd like to discuss support for my business. Service I'm interested in: ";
+export const WHATSAPP_LINK = `https://wa.me/919911284362?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export interface ServiceProcessStep {
   label: string;
