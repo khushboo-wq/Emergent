@@ -3408,8 +3408,8 @@ body {
 .luxury-statement-section { position: relative; }
 
 .luxury-hero-art { transform: perspective(1000px) rotateY(calc(var(--px, 0) * -7deg)) rotateX(calc(var(--py, 0) * 5deg)); transition: transform 300ms ease-out; }
-.luxury-hero h1 { animation: arcMask 1.1s cubic-bezier(0.2, 0.7, 0.1, 1) both; }
-@keyframes arcMask { from { clip-path: inset(0 0 100% 0); translate: 0 46px; } to { clip-path: inset(0 0 -8% 0); translate: 0 0; } }
+.luxury-hero h1 { animation: arcMask 1.1s cubic-bezier(0.2, 0.7, 0.1, 1) backwards; }
+@keyframes arcMask { from { clip-path: inset(0 -20% 100% -20%); translate: 0 46px; } to { clip-path: inset(-20% -20% -20% -20%); translate: 0 0; } }
 
 .luxury-button { translate: calc(var(--bx, 0) * 1px) calc(var(--by, 0) * 1px); }
 .luxury-service-row:hover {
@@ -3430,4 +3430,102 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .luxury-hero h1, .luxury-service-list > *, .luxury-process-item, .luxury-statement-section { animation: none !important; }
   .luxury-hero-art { transform: none; }
+}
+
+/* ========================================================================== */
+/* Fit for the wide Hemicube font, premium cards, living text, all pages      */
+/* ========================================================================== */
+.arcturus-luxury main h1, .arcturus-luxury main h2, .arcturus-luxury main h3 { overflow-wrap: anywhere; letter-spacing: 0.005em; max-width: 100%; }
+.arcturus-luxury main h1 { font-size: clamp(30px, 4.3vw, 64px); line-height: 1.08; }
+.luxury-hero-copy h1 { font-size: clamp(30px, 3.9vw, 58px); line-height: 1.1; letter-spacing: 0.005em; max-width: 100%; }
+.luxury-hero-copy h1 em { letter-spacing: 0.01em; line-height: 1.12; }
+.arcturus-luxury main h2 { font-size: clamp(24px, 2.9vw, 44px); line-height: 1.12; }
+.arcturus-luxury main h3 { line-height: 1.15; }
+.luxury-service-main h3 { font-size: clamp(20px, 1.9vw, 28px); letter-spacing: 0.005em; }
+.luxury-process-item h3 { font-size: clamp(18px, 1.6vw, 22px); letter-spacing: 0.005em; }
+
+/* Text that is alive: accent words carry a slow colour sweep */
+@keyframes arcSweep { to { background-position: 200% 0; } }
+.arcturus-luxury main em, .luxury-statement-grid h2 span {
+  background: linear-gradient(100deg, #2f4f95 0%, #6a55c8 30%, #1f8f8a 55%, #2f4f95 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: arcSweep 7s linear infinite;
+}
+.luxury-statement-section em, .luxury-statement-grid h2 span {
+  background-image: linear-gradient(100deg, #b9b4f0 0%, #ffffff 35%, #7fd6cf 60%, #b9b4f0 100%);
+  background-size: 200% 100%;
+}
+.arcturus-luxury main [class*="tracking-[0.2em]"], .luxury-eyebrow, .luxury-section-kicker { animation: arcBreathe 6s ease-in-out infinite alternate; }
+@keyframes arcBreathe { from { letter-spacing: 0.16em; opacity: 0.85; } to { letter-spacing: 0.24em; opacity: 1; } }
+
+@supports (animation-timeline: view()) {
+  .arcturus-luxury main h2, .arcturus-luxury main h1:not(.luxury-hero-copy h1) {
+    animation: arcHeading linear both; animation-timeline: view(); animation-range: entry 0% entry 55%;
+  }
+}
+@keyframes arcHeading { from { opacity: 0; translate: 0 36px; filter: blur(6px); } to { opacity: 1; translate: 0 0; filter: blur(0); } }
+
+/* Premium service cards: gradient hairline, light sweep, dark editorial variants */
+.luxury-service-row {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(247, 244, 252, 0.8)) padding-box,
+    linear-gradient(135deg, var(--svc, #2f4f95), rgba(198, 194, 240, 0.5) 45%, var(--svc, #2f4f95)) border-box;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 24px 44px -34px rgba(15, 41, 66, 0.5);
+}
+.luxury-service-row:hover {
+  background:
+    radial-gradient(300px circle at var(--gx, 50%) var(--gy, 0%), rgba(255, 255, 255, 0.95), transparent 65%) padding-box,
+    linear-gradient(160deg, #fff, color-mix(in srgb, var(--svc, #2f4f95) 9%, #f8f6fc)) padding-box,
+    linear-gradient(135deg, var(--svc, #2f4f95), #c6c2f0, var(--svc, #2f4f95)) border-box;
+}
+.luxury-service-main h3::after {
+  content: ""; display: block; width: 34px; height: 3px; margin-top: 14px; border-radius: 3px;
+  background: var(--svc, #2f4f95); transition: width 400ms ease;
+}
+.luxury-service-row:hover .luxury-service-main h3::after { width: 96px; }
+.luxury-service-price { font-size: 17px; }
+
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-row,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-row {
+  background:
+    radial-gradient(420px circle at 85% 10%, rgba(106, 85, 200, 0.45), transparent 60%) padding-box,
+    linear-gradient(155deg, #0f2942, #14355e 60%, #1a3f78) padding-box,
+    linear-gradient(135deg, #6a55c8, #1f8f8a, #6a55c8) border-box;
+  box-shadow: 0 30px 60px -30px rgba(15, 41, 66, 0.9);
+}
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-row:hover,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-row:hover {
+  background:
+    radial-gradient(420px circle at var(--gx, 80%) var(--gy, 10%), rgba(140, 120, 240, 0.6), transparent 60%) padding-box,
+    linear-gradient(155deg, #0f2942, #14355e 60%, #1a3f78) padding-box,
+    linear-gradient(135deg, #8a78ee, #3cc4bb, #8a78ee) border-box;
+}
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-main h3,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-main h3 { color: #fbf8f3; }
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-main p,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-main p { color: rgba(251, 248, 243, 0.8); }
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-number,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-number { color: #0f2942; background: #c6c2f0; }
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-price,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-price { color: #c6c2f0; border-top-color: rgba(198, 194, 240, 0.3); }
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-row::after,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-row::after { --svc: #c6c2f0; opacity: 0.5; }
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-main h3::after,
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-main h3::after { background: #7fd6cf; }
+
+/* Inner pages follow the same system: soft panels, hairline borders, rising on hover */
+.arcturus-luxury main [class*="rounded-2xl"], .arcturus-luxury main [class*="rounded-3xl"], .arcturus-luxury main [class*="rounded-[2"] {
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.arcturus-luxury main a[class*="rounded-2xl"]:hover, .arcturus-luxury main article[class*="rounded"]:hover, .arcturus-luxury main li[class*="rounded-2xl"]:hover {
+  transform: translateY(-5px); box-shadow: 0 26px 46px -28px rgba(47, 79, 149, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arcturus-luxury main em, .luxury-statement-grid h2 span, .luxury-eyebrow, .luxury-section-kicker,
+  .arcturus-luxury main h1, .arcturus-luxury main h2, .arcturus-luxury main [class*="tracking-[0.2em]"] { animation: none !important; }
+  .arcturus-luxury main em { -webkit-text-fill-color: initial; color: #2f4f95; background: none; }
 }
