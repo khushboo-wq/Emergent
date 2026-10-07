@@ -4969,3 +4969,32 @@ body {
     font-size: 25px;
   }
 }
+
+
+/* Distinct service-card signatures */
+[data-testid="services-overview-card-linkedin-management"] { --card-accent: #3b66d2; }
+[data-testid="services-overview-card-email-outreach"] { --card-accent: #8b67cf; }
+[data-testid="services-overview-card-business-support"] { --card-accent: #2f968d; }
+[data-testid="services-overview-card-lead-generation"] { --card-accent: #bf8956; }
+[data-testid="services-overview-card-ai-video-creation"] { --card-accent: #9567d9; }
+[data-testid="services-overview-card-email-setup"] { --card-accent: #3d82ad; }
+
+[data-testid^="services-overview-card-"] {
+  border-top: 4px solid color-mix(in srgb, var(--card-accent) 82%, white);
+  transition: transform 260ms cubic-bezier(0.22,1,0.36,1), box-shadow 260ms ease, border-color 260ms ease;
+}
+
+[data-testid^="services-overview-card-"]:hover {
+  border-color: color-mix(in srgb, var(--card-accent) 65%, white);
+  box-shadow: 0 32px 70px -44px color-mix(in srgb, var(--card-accent) 45%, transparent);
+}
+
+[data-testid^="services-overview-card-"] [data-testid^="services-overview-number-"] {
+  color: var(--card-accent) !important;
+}
+
+[data-testid^="services-overview-card-"] [data-testid^="services-overview-price-"] {
+  border-color: color-mix(in srgb, var(--card-accent) 30%, white);
+  background: color-mix(in srgb, var(--card-accent) 9%, white);
+  color: color-mix(in srgb, var(--card-accent) 78%, #172033) !important;
+}
