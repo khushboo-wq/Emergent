@@ -308,7 +308,7 @@ export const services: ServiceContent[] = [
   },
 ];
 
-const SERVICE_ORDER = ["linkedin-management", "email-outreach", "business-support", "lead-generation", "ai-video-creation", "email-setup"];
+const SERVICE_ORDER = ["linkedin-management", "email-outreach", "lead-generation", "email-setup", "business-support", "ai-video-creation"];
 export const orderedServices = SERVICE_ORDER.map((slug) => services.find((service) => service.slug === slug)).filter((service): service is ServiceContent => Boolean(service));
 export const featuredServices = orderedServices.slice(0, 5);
 export const supportingServices = orderedServices.slice(5);
