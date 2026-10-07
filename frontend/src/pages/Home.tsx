@@ -13,7 +13,7 @@ const process = [
   ["04", "You get the result", "Completed work, useful updates, and a written handover where needed."],
 ];
 
-const heroServices = ["LinkedIn", "Email Outreach", "Business Support", "Lead Generation", "AI Content"];
+const heroServices = ["LinkedIn", "Email Outreach", "Business Support", "Lead Generation", "AI Video Creation", "Email Setup"];
 
 export default function Home() {
   return (
