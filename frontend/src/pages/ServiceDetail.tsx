@@ -5,6 +5,7 @@ import Seo from "@/components/Seo";
 import { CONTACT_EMAIL, getService, servicePageExtras } from "@/lib/site";
 import ServiceMotif from "@/components/ServiceMotif";
 import { resources } from "@/lib/resources";
+import ServiceTabs from "@/components/ServiceTabs";
 
 const WHATSAPP_URL = "https://wa.me/919911284362";
 
@@ -22,6 +23,7 @@ export default function ServiceDetail() {
       <nav className="mx-auto flex max-w-7xl items-center gap-2 px-5 pt-8 text-xs text-[#64748b] sm:px-8 lg:px-10" aria-label="Breadcrumb" data-testid="service-breadcrumbs">
         <Link to="/" className="hover:text-[#0f2942]" data-testid="breadcrumb-home-link">Home</Link><ChevronRight className="size-3" /><Link to="/services" className="hover:text-[#0f2942]" data-testid="breadcrumb-services-link">Services</Link><ChevronRight className="size-3" /><span aria-current="page" data-testid="breadcrumb-current">{service.title}</span>
       </nav>
+      <ServiceTabs />
       <section className="border-b border-[#e2dfd8]" data-service={service.slug} data-testid="service-detail-hero">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20 lg:px-10 lg:py-24">
           <div className="min-w-0"><p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4263aa]" data-testid="service-detail-eyebrow">{service.eyebrow}</p><h1 className="mt-5 max-w-3xl break-words font-serif text-[2.4rem] leading-[1.08] tracking-[0.02em] text-[#0f172a] sm:text-6xl lg:text-7xl" data-testid="service-detail-heading">{service.slug === "linkedin-management" ? "LinkedIn Management Services" : service.title}</h1><p className="mt-7 max-w-3xl text-lg leading-8 text-[#475569]" data-testid="service-summary">{extras.summary}</p>
@@ -34,6 +36,38 @@ export default function ServiceDetail() {
         <section className="grid gap-10 border-b border-[#e2dfd8] pb-16 lg:grid-cols-[0.58fr_1fr] lg:gap-20" data-testid="service-included-section"><div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#4263aa]">Service scope</p><h2 className="mt-4 break-words font-serif text-4xl leading-tight text-[#0f172a]" data-testid="service-inclusions-heading">What&apos;s included</h2></div><ul className="grid gap-4 sm:grid-cols-2">{service.inclusions.map((item, index) => <li key={item} className="premium-lift flex gap-3 rounded-2xl border border-[#e2dfd8] bg-white p-5 text-sm leading-6 text-[#475569] shadow-[0_12px_30px_-25px_rgba(15,41,66,0.55)]" data-testid={`service-inclusion-${index + 1}`}><Check className="mt-1 size-4 shrink-0 text-[#2c7a73]" />{item}</li>)}</ul></section>
 
         <section className="grid gap-10 border-b border-[#e2dfd8] py-16 lg:grid-cols-2 lg:gap-20" data-testid="service-audience-section"><div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#765b9a]">Best fit</p><h2 className="mt-4 break-words font-serif text-4xl text-[#0f172a]" data-testid="service-audience-heading">Who it&apos;s for</h2><p className="mt-6 text-base leading-8 text-[#475569]" data-testid="service-audience-copy">{service.audience}</p><h3 className="mt-9 border-t border-[#ddd8cd] pt-7 font-serif text-2xl text-[#0f2942]" data-testid="service-exclusions-heading">Scope boundaries</h3><ul className="mt-5 space-y-3">{service.exclusions.map((item, index) => <li key={item} className="flex gap-3 text-sm leading-6 text-[#64748b]" data-testid={`service-exclusion-${index + 1}`}><span className="mt-3 h-px w-4 shrink-0 bg-[#765b9a]" />{item}</li>)}</ul></div><div className="premium-panel rounded-[2rem] bg-[#ece8f4] p-7 sm:p-9"><h3 className="font-serif text-2xl text-[#0f2942]" data-testid="service-requirements-heading">What I need from you</h3><ul className="mt-6 space-y-4">{service.requirements.map((item, index) => <li key={item} className="flex gap-3 text-sm leading-6 text-[#475569]" data-testid={`service-requirement-${index + 1}`}><span className="mt-3 h-px w-4 shrink-0 bg-[#765b9a]" />{item}</li>)}</ul>{service.tools ? <><h3 className="mt-9 border-t border-[#765b9a]/20 pt-7 font-serif text-2xl text-[#0f2942]" data-testid="service-tools-heading">Tools and platforms</h3><p className="mt-4 text-sm leading-6 text-[#64748b]" data-testid="service-tools-copy">{service.tools.join(" · ")}</p></> : null}</div></section>
+
+        <section className="service-commercial-panel" data-testid="service-commercial-section">
+          <div className="service-commercial-intro">
+            <p className="luxury-section-kicker">Commercial clarity</p>
+            <h2>What you should know before we start.</h2>
+            <p>Scope, payment, timing and client responsibilities are visible before work begins.</p>
+          </div>
+          <div className="service-commercial-grid">
+            <article className="service-commercial-card service-commercial-price">
+              <span className="service-commercial-label">Price</span>
+              <strong>{service.price}</strong>
+              <p>{service.priceNote}</p>
+            </article>
+            <article className="service-commercial-card">
+              <span className="service-commercial-label">Payment</span>
+              <strong>Advance payment</strong>
+              <p>{extras.paymentTerms}</p>
+            </article>
+            <article className="service-commercial-card">
+              <span className="service-commercial-label">Client setup</span>
+              <strong>Ready before work starts</strong>
+              <p>{service.requirements.join(" · ")}</p>
+            </article>
+            <article className="service-commercial-card service-commercial-wide">
+              <span className="service-commercial-label">Important details</span>
+              <ul>
+                {extras.commercialHighlights.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+              {extras.workingNote ? <p className="service-commercial-note">{extras.workingNote}</p> : null}
+            </article>
+          </div>
+        </section>
 
         <section className="border-b border-[#e2dfd8] py-16" data-testid="service-process-section"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#4263aa]">Process</p><h2 className="mt-4 font-serif text-4xl text-[#0f172a]" data-testid="service-process-heading">How it works</h2><div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{service.process.map((step, index) => <div key={step.label} className="rounded-t-[2rem] border border-[#e2dfd8] bg-[#f6f2e9] p-6" data-testid={`service-process-step-${index + 1}`}><span className="font-mono text-[10px] text-[#4263aa]">0{index + 1}</span><h3 className="mt-5 font-serif text-2xl text-[#0f2942]" data-testid={`service-process-title-${index + 1}`}>{step.label}</h3><p className="mt-3 text-sm leading-6 text-[#64748b]" data-testid={`service-process-copy-${index + 1}`}>{step.detail}</p></div>)}</div><p className="mt-8 max-w-3xl text-sm leading-7 text-[#475569]" data-testid="service-timeline-copy"><strong className="text-[#0f2942]">Timing:</strong> {service.timeline}</p></section>
 
