@@ -472,14 +472,14 @@ export const resources: Resource[] = [
         heading: "Why business email setup matters",
         paragraphs: [
           "A professional mailbox is only one part of a reliable sending setup. The domain also needs the right authentication records so receiving systems can check that legitimate services are authorised to send mail for the domain.",
-          "SPF, DKIM and DMARC are the core authentication records commonly involved in this setup. UK National Cyber Security Centre guidance recommends implementing these controls and monitoring them as part of email anti-spoofing. citeturn985339search0turn985339search1",
+          "SPF, DKIM and DMARC are the core authentication records commonly involved in this setup. UK National Cyber Security Centre guidance recommends implementing these controls and monitoring them as part of email anti-spoofing. ",
         ],
       },
       {
         heading: "SPF: which senders are authorised",
         paragraphs: [
           "SPF is a DNS record that lists the IP addresses or services authorised to send email for a domain. The exact record depends on every legitimate sending service used by the business.",
-          "Do not copy an SPF example blindly. The authorised services need to be based on the systems that actually send mail for the domain. citeturn985339search1",
+          "Do not copy an SPF example blindly. The authorised services need to be based on the systems that actually send mail for the domain. ",
         ],
       },
       {
@@ -491,7 +491,7 @@ export const resources: Resource[] = [
       {
         heading: "DMARC: telling receivers what to do",
         paragraphs: [
-          "DMARC tells receiving systems how to handle messages that do not pass authentication checks and can provide reporting on authentication results. A sensible rollout starts by monitoring the domain, fixing legitimate senders, and then tightening the policy when the business is confident the configuration is correct. citeturn985339search0",
+          "DMARC tells receiving systems how to handle messages that do not pass authentication checks and can provide reporting on authentication results. A sensible rollout starts by monitoring the domain, fixing legitimate senders, and then tightening the policy when the business is confident the configuration is correct. ",
         ],
       },
       {
