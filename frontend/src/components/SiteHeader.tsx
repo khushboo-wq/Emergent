@@ -67,6 +67,7 @@ export default function SiteHeader() {
           </SheetContent>
         </Sheet>
       </div>
+      <div className="header-service-rail"><ServiceTabs /></div>
     </header>
   );
 }
