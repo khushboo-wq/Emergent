@@ -306,6 +306,36 @@
       "changeFrequency": "monthly",
       "priority": 0.7,
       "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/privacy-policy",
+      "title": "Privacy Policy | Arcturus Professional Services",
+      "description": "Read how Arcturus Professional Services handles contact enquiries, business information and website data for visitors in Ireland, the UK and Europe.",
+      "h1": "Privacy Policy",
+      "canonical": "https://arcturusprofessional.com/privacy-policy",
+      "indexable": false,
+      "ogType": "article",
+      "schemaTypes": [
+        "WebPage"
+      ],
+      "changeFrequency": "yearly",
+      "priority": 0,
+      "lastModified": "2026-10-07"
+    },
+    {
+      "path": "/terms",
+      "title": "Terms of Service | Arcturus Professional Services",
+      "description": "Read the standard service terms for Arcturus Professional Services, including written scope, payment, client responsibilities and delivery.",
+      "h1": "Terms of Service",
+      "canonical": "https://arcturusprofessional.com/terms",
+      "indexable": false,
+      "ogType": "article",
+      "schemaTypes": [
+        "WebPage"
+      ],
+      "changeFrequency": "yearly",
+      "priority": 0,
+      "lastModified": "2026-10-07"
     }
   ]
 }
