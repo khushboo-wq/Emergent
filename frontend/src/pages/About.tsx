@@ -31,6 +31,34 @@ export default function About() {
 
     <section className="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.78fr_1.22fr] lg:gap-24 lg:px-10" data-testid="about-background-section"><div className="relative min-h-[420px] overflow-hidden rounded-t-[7rem] rounded-b-[2rem] bg-[#2d2238] shadow-[0_25px_60px_-38px_rgba(45,34,56,0.72)]" data-testid="about-founder-image"><div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(205,187,153,0.45),transparent_24%),linear-gradient(145deg,#2d2238,#6a556f_52%,#d9c4c4)]" /><div className="absolute -right-16 top-12 size-72 rounded-full border border-white/25" /><div className="absolute -right-2 top-28 size-56 rounded-full border border-white/15" /><div className="absolute left-8 top-10 text-[9px] font-extrabold uppercase tracking-[0.25em] text-white/65">ARCTURUS / 2014 → NOW</div><div className="absolute left-7 bottom-24 text-[15rem] font-bold leading-none tracking-[-0.08em] text-white/80">K</div><div className="absolute inset-x-0 bottom-0 bg-black/25 p-7 backdrop-blur-md"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#d7c39b]">Experience since 2014</p><p className="mt-2 text-sm text-white/72">B2B outreach, lead research, sales support and email deliverability</p></div></div><div className="self-center"><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#765b9a]">Experience</p><h2 className="mt-4 font-serif text-4xl leading-tight text-[#0f172a] sm:text-5xl" data-testid="about-background-heading">My background</h2><p className="mt-7 text-base leading-8 text-[#475569]" data-testid="about-background-copy">I started my career in 2014 in email marketing and have spent over twelve years in B2B outreach, lead research, sales support and email deliverability. I&apos;ve worked closely with UK businesses, including recruitment firms, sales consultancies and financial services companies.</p><div className="mt-9 grid grid-cols-2 gap-3"><div className="rounded-2xl bg-[#ece8f4] p-5"><p className="font-highlight text-3xl text-[#0f2942]">12+</p><p className="mt-2 text-xs leading-5 text-[#64748b]">years of focused B2B experience</p></div><div className="rounded-2xl bg-[#dcebe8] p-5"><p className="font-highlight text-3xl text-[#0f2942]">2014</p><p className="mt-2 text-xs leading-5 text-[#64748b]">the year I started in email marketing</p></div></div></div></section>
 
+    <section className="about-story-section" data-testid="about-story">
+      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <div className="about-story-head">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#4263aa]">The story behind Arcturus</p>
+            <h2>Why I started freelancing — and why I named it Arcturus.</h2>
+          </div>
+          <p>After years across email marketing, operations, administration, social media, team leadership, B2B research, lead generation and sales outreach, I wanted a way to work more independently while keeping the same standards of communication, research and reliable execution.</p>
+        </div>
+
+        <div className="about-story-grid">
+          <article><span>01</span><strong>The experience</strong><p>Years of working across different teams and business functions gave me a practical understanding of what businesses actually need to keep moving.</p></article>
+          <article><span>02</span><strong>The decision</strong><p>I wanted the freedom to choose my work, focus on useful projects and create direct working relationships without unnecessary layers.</p></article>
+          <article><span>03</span><strong>The purpose</strong><p>I started freelancing to provide practical support that creates real impact, with a focus on clarity, consistency and dependable execution.</p></article>
+          <article><span>04</span><strong>The creation</strong><p>Arcturus became the professional identity that represents trust, quality and long-term relationships with clients.</p></article>
+          <article><span>05</span><strong>Why the name?</strong><p>Arcturus represents guidance and direction — a name chosen to reflect the way I want the service to feel: dependable, clear and purposeful.</p></article>
+        </div>
+
+        <div className="about-journey">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#d7c39b]">The journey in one line</p>
+            <h3>Email Marketing → Operations → Administration → Social Media → Team Leadership → B2B Research → Lead Generation → Sales & Outreach → Arcturus</h3>
+          </div>
+          <span>12+ years, distilled into one dependable service.</span>
+        </div>
+      </div>
+    </section>
+
     <section className="bg-[#f1eee6]" data-testid="about-services-section"><div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="grid gap-10 lg:grid-cols-[0.58fr_1fr] lg:gap-20"><div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#4263aa]">Specialist support</p><h2 className="mt-4 font-serif text-4xl text-[#0f172a] sm:text-5xl" data-testid="about-services-heading">What I do</h2><p className="mt-6 max-w-sm text-base leading-7 text-[#64748b]">Six clearly priced services, each handled directly and documented in writing.</p></div><div className="grid gap-3 sm:grid-cols-2">{orderedServices.map((service, index) => <Link key={service.slug} to={`/services/${service.slug}`} className="premium-panel premium-lift rounded-2xl border border-[#ddd8cd] bg-[#fbf8f1] p-5" data-testid={`about-service-${service.slug}`}><div className="flex items-center justify-between gap-4"><span className="font-mono text-[9px] text-[#4263aa]">0{index + 1}</span><ArrowUpRight className="size-4 text-[#64748b]" /></div><h3 className="mt-5 font-serif text-xl text-[#0f2942]">{service.title}</h3><p className="mt-2 text-sm leading-6 text-[#64748b]">{["Profile, posting, outreach and nurture", "Setup, warm-up, campaigns and reporting", "Research, content, website support and admin", "Verified B2B contacts for your target market", "Branded short videos and reels", "Domain and DNS setup for better deliverability"][index]}</p></Link>)}</div></div></div></section>
 
     <section className="mx-auto grid max-w-7xl gap-6 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2 lg:px-10" data-testid="about-work-compliance"><article className="rounded-[2rem] border border-[#d7dee9] bg-[#eef2ff] p-7 sm:p-10"><FileText className="size-7 text-[#4263aa]" /><h2 className="mt-6 font-serif text-4xl text-[#0f172a]" data-testid="about-work-heading">How I work</h2><p className="mt-6 text-base leading-8 text-[#475569]">Everything runs in writing, over WhatsApp, email or LinkedIn. I don&apos;t take calls. This keeps every decision, report and instruction documented, so nothing gets lost or misunderstood. You get clear written updates and regular reporting.</p><p className="mt-5 text-base leading-8 text-[#475569]">Payment is 100% upfront for the month, and my pricing is flat and published on each service page.</p></article><article className="rounded-[2rem] border border-[#c9ddd8] bg-[#e8f2ef] p-7 sm:p-10"><LockKeyhole className="size-7 text-[#2c7a73]" /><h2 className="mt-6 font-serif text-4xl text-[#0f172a]" data-testid="about-compliance-heading">How I handle data and compliance</h2><p className="mt-6 text-base leading-8 text-[#475569]">I use a B2B-only, GDPR and PECR-aware approach. I work with business-professional data, handle unsubscribe requests properly, and keep your data confidential. You always keep control of your own accounts and settings. This is not legal advice, and each client remains responsible for confirming the lawful basis and requirements that apply to their activity.</p></article></section>
@@ -44,6 +72,24 @@ export default function About() {
         <div className="premium-proof-copy">
           <p>LinkedIn recommendations are available as genuine client feedback on my professional profile.</p>
           <a href="https://www.linkedin.com/in/khushboo-tomar" target="_blank" rel="noreferrer" className="luxury-inline-link">View LinkedIn profile <ArrowUpRight className="size-4" /></a>
+        </div>
+      </div>
+    </section>
+
+    <section className="about-why-section" data-testid="about-why-work">
+      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <div className="about-why-head">
+          <div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9bc8c0]">Why work with me</p><h2>No agency layers. No account managers. Just direct, accountable work.</h2></div>
+          <p>I keep the working relationship simple, personal and visible, so you always know who is doing the work and how it is being handled.</p>
+        </div>
+        <div className="about-why-grid">
+          <article><strong>Direct Freelancer Support</strong><p>I personally handle the work, with no outsourcing of core tasks.</p></article>
+          <article><strong>Confidential & Responsible Data Handling</strong><p>Client information is treated as strictly confidential and not shared with third parties.</p></article>
+          <article><strong>Independent & Detail-Focused</strong><p>Reliable delivery without unnecessary management overhead.</p></article>
+          <article><strong>Personal Attention & Accountability</strong><p>A direct working relationship with clear ownership of the work delivered.</p></article>
+          <article><strong>UK & Irish Working Hours</strong><p>Monday to Friday, aligned with UK and Irish working hours.</p></article>
+          <article><strong>Clear Written Communication</strong><p>Email, WhatsApp and LinkedIn keep requirements, approvals and updates clear.</p></article>
+          <article><strong>LinkedIn Recommendations</strong><p>Genuine recommendations are available on my professional profile.</p></article>
         </div>
       </div>
     </section>
