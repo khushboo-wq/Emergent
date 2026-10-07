@@ -5175,3 +5175,110 @@ strong, b {
     grid-template-columns: 1fr;
   }
 }
+
+
+.contact-facts-strip {
+  border-top: 1px solid var(--luxury-line);
+  border-bottom: 1px solid var(--luxury-line);
+  background: #fbf8f1;
+}
+
+.contact-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.contact-facts-grid > div {
+  min-height: 118px;
+  padding: 24px 24px 22px 0;
+  border-right: 1px solid var(--luxury-line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-facts-grid > div:not(:first-child) {
+  padding-left: 24px;
+}
+
+.contact-facts-grid > div:last-child {
+  border-right: 0;
+}
+
+.contact-facts-grid strong {
+  color: var(--luxury-plum);
+  font: 800 21px/1 "Alesand", sans-serif;
+  letter-spacing: -.02em;
+}
+
+.contact-facts-grid span {
+  color: rgba(23,21,27,.53);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.luxury-service-price {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 130px;
+  padding: 10px 12px;
+  border: 1px solid rgba(95,78,119,.15);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(239,232,247,.94), rgba(220,235,232,.8));
+  color: var(--luxury-plum);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 12px 24px -22px rgba(56,39,67,.65);
+}
+
+.service-price-panel,
+[data-testid="service-pricing-text"] {
+  position: relative;
+}
+
+.service-price-panel::after {
+  content: "";
+  position: absolute;
+  right: -22px;
+  bottom: -22px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid rgba(216,195,165,.25);
+  transform: translateZ(20px);
+}
+
+@media (max-width: 720px) {
+  .contact-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-facts-grid > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .contact-facts-grid > div:nth-child(3),
+  .contact-facts-grid > div:nth-child(4) {
+    border-top: 1px solid var(--luxury-line);
+  }
+
+  .contact-facts-grid > div:nth-child(3) {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-facts-grid > div,
+  .contact-facts-grid > div:not(:first-child) {
+    min-height: 86px;
+    padding: 17px 0;
+    border-right: 0;
+    border-top: 1px solid var(--luxury-line);
+  }
+
+  .contact-facts-grid > div:first-child {
+    border-top: 0;
+  }
+}
