@@ -7,8 +7,17 @@
     "author": "Khushboo Tomar",
     "email": "khushboo@arcturusprofessional.com",
     "socialImage": "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/60370bb24cb213f1_Arcturus%20White%20Logo.jpg",
-    "socialImageAlt": "Arcturus Professional Services black logo on a light background",
-    "allowedBots": ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "PerplexityBot", "Google-Extended", "Googlebot", "Bingbot"]
+    "socialImageAlt": "Arcturus Professional Services logo",
+    "allowedBots": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "PerplexityBot",
+      "Google-Extended",
+      "Googlebot",
+      "Bingbot"
+    ]
   },
   "redirects": {
     "/home": "/",
@@ -25,29 +34,38 @@
   "pages": [
     {
       "path": "/",
-      "title": "Freelance LinkedIn & Email Outreach Support | Arcturus",
-      "description": "Independent freelancer helping Irish and UK businesses with LinkedIn management, email outreach, lead generation and AI videos. Written-only communication.",
-      "h1": "Make the work behind your growth feel considered.",
+      "title": "B2B LinkedIn & Email Outreach Freelancer | Arcturus",
+      "description": "Independent freelancer for UK and Irish businesses, providing LinkedIn management, email outreach, lead generation, business support and AI content services.",
+      "h1": "LinkedIn, email outreach and business support, handled personally.",
       "canonical": "https://arcturusprofessional.com/",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["ProfessionalService", "Person", "WebSite", "WebPage"],
+      "schemaTypes": [
+        "ProfessionalService",
+        "Person",
+        "WebSite",
+        "WebPage"
+      ],
       "changeFrequency": "monthly",
-      "priority": 1.0,
-      "lastModified": "2026-02-21"
+      "priority": 1,
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/services",
-      "title": "Freelance B2B Support Services | Arcturus",
-      "description": "Explore six freelance services for Irish and UK businesses: LinkedIn management, email outreach, business support, lead research, AI video and email setup.",
-      "h1": "Practical support with clear scope and published pricing.",
+      "title": "B2B Outreach & Business Support Services | Arcturus",
+      "description": "Explore LinkedIn management, email outreach, lead generation, business support, email setup and AI video creation for UK and Irish small businesses directly.",
+      "h1": "B2B outreach and business support, with clear scope and pricing.",
       "canonical": "https://arcturusprofessional.com/services",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["CollectionPage", "ItemList", "ProfessionalService"],
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ProfessionalService"
+      ],
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/services/linkedin-management",
@@ -57,11 +75,15 @@
       "canonical": "https://arcturusprofessional.com/services/linkedin-management",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["Service", "FAQPage", "BreadcrumbList"],
+      "schemaTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
       "serviceSlug": "linkedin-management",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/services/email-outreach",
@@ -71,11 +93,15 @@
       "canonical": "https://arcturusprofessional.com/services/email-outreach",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["Service", "FAQPage", "BreadcrumbList"],
+      "schemaTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
       "serviceSlug": "email-outreach",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/services/business-support",
@@ -85,11 +111,15 @@
       "canonical": "https://arcturusprofessional.com/services/business-support",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["Service", "FAQPage", "BreadcrumbList"],
+      "schemaTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
       "serviceSlug": "business-support",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/services/lead-generation",
@@ -99,11 +129,15 @@
       "canonical": "https://arcturusprofessional.com/services/lead-generation",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["Service", "FAQPage", "BreadcrumbList"],
+      "schemaTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
       "serviceSlug": "lead-generation",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/services/ai-video-creation",
@@ -113,11 +147,15 @@
       "canonical": "https://arcturusprofessional.com/services/ai-video-creation",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["Service", "FAQPage", "BreadcrumbList"],
+      "schemaTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
       "serviceSlug": "ai-video-creation",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/services/email-setup",
@@ -127,50 +165,65 @@
       "canonical": "https://arcturusprofessional.com/services/email-setup",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["Service", "FAQPage", "BreadcrumbList"],
+      "schemaTypes": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
       "serviceSlug": "email-setup",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/about",
-      "title": "About Khushboo Tomar | Independent Freelancer",
-      "description": "Meet Khushboo Tomar, a New Delhi freelancer with 12 years in B2B outreach, lead generation and email deliverability for UK, Irish and European businesses.",
-      "h1": "About Khushboo Tomar",
+      "title": "About Khushboo Tomar | B2B Outreach Freelancer",
+      "description": "Meet Khushboo Tomar, an independent B2B outreach freelancer in New Delhi with 12 years of experience supporting UK, Irish and European businesses directly.",
+      "h1": "About Khushboo Tomar, B2B outreach freelancer",
       "canonical": "https://arcturusprofessional.com/about",
       "indexable": true,
       "ogType": "profile",
-      "schemaTypes": ["AboutPage", "ProfessionalService", "Person"],
+      "schemaTypes": [
+        "AboutPage",
+        "ProfessionalService",
+        "Person"
+      ],
       "changeFrequency": "yearly",
       "priority": 0.8,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/how-i-work",
-      "title": "How I Work | Process, Payment & Communication",
-      "description": "A clear freelance process with 100% upfront payment, written communication, documented onboarding and regular reporting for every agreed service in writing.",
+      "title": "How Arcturus Works | Freelance Business Support",
+      "description": "See how Arcturus handles freelance LinkedIn, email outreach, lead generation and business support through clear written scopes, payment and reporting.",
       "h1": "A clear process, kept in writing.",
       "canonical": "https://arcturusprofessional.com/how-i-work",
       "indexable": true,
       "ogType": "article",
-      "schemaTypes": ["WebPage", "ProfessionalService"],
+      "schemaTypes": [
+        "WebPage",
+        "ProfessionalService"
+      ],
       "changeFrequency": "yearly",
       "priority": 0.7,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/contact",
-      "title": "Contact Arcturus | Written Enquiries Only",
-      "description": "Send Khushboo Tomar a written enquiry by secure contact form, email or WhatsApp. I reply in writing and do not offer phone or call-booking appointments.",
+      "title": "Contact Arcturus | B2B Outreach Freelancer",
+      "description": "Contact Khushboo Tomar for LinkedIn management, email outreach, lead generation, business support, email setup or AI video content for your business today.",
       "h1": "Tell me what you need to move forward.",
       "canonical": "https://arcturusprofessional.com/contact",
       "indexable": true,
       "ogType": "website",
-      "schemaTypes": ["ContactPage", "ProfessionalService", "Person"],
+      "schemaTypes": [
+        "ContactPage",
+        "ProfessionalService",
+        "Person"
+      ],
       "changeFrequency": "yearly",
       "priority": 0.8,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/privacy-policy",
@@ -180,10 +233,12 @@
       "canonical": "https://arcturusprofessional.com/privacy-policy",
       "indexable": true,
       "ogType": "article",
-      "schemaTypes": ["WebPage"],
+      "schemaTypes": [
+        "WebPage"
+      ],
       "changeFrequency": "yearly",
       "priority": 0.3,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/terms",
@@ -193,10 +248,12 @@
       "canonical": "https://arcturusprofessional.com/terms",
       "indexable": true,
       "ogType": "article",
-      "schemaTypes": ["WebPage"],
+      "schemaTypes": [
+        "WebPage"
+      ],
       "changeFrequency": "yearly",
       "priority": 0.3,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-07"
     },
     {
       "path": "/404",
@@ -206,9 +263,11 @@
       "canonical": "https://arcturusprofessional.com/404",
       "indexable": false,
       "ogType": "website",
-      "schemaTypes": ["WebPage"],
+      "schemaTypes": [
+        "WebPage"
+      ],
       "changeFrequency": "yearly",
-      "priority": 0.0,
+      "priority": 0,
       "lastModified": "2026-02-21"
     }
   ]

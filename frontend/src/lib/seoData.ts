@@ -42,10 +42,11 @@ export interface SeoData extends SeoPageConfig {
 export const seoConfig = seoConfigJson as SeoConfig;
 const { site } = seoConfig;
 const sameAs = ["https://www.linkedin.com/in/khushboo-tomar", "https://www.instagram.com/arcturusprofessional"];
+const serviceTypes = ["LinkedIn Management", "Email Outreach", "Lead Generation", "Business Support", "Email Setup", "AI Video Creation"];
 const personId = `${site.baseUrl}/#khushboo-tomar`;
 const businessId = `${site.baseUrl}/#professional-service`;
 const person = { "@type": "Person", "@id": personId, name: "Khushboo Tomar", jobTitle: "Independent Freelancer", email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs };
-const professionalService = { "@type": ["Organization", "ProfessionalService"], "@id": businessId, name: site.name, url: site.baseUrl, logo: site.socialImage, image: site.socialImage, founder: { "@id": personId }, email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs, contactPoint: { "@type": "ContactPoint", email: CONTACT_EMAIL, contactType: "customer enquiries", availableLanguage: "English" } };
+const professionalService = { "@type": ["Organization", "ProfessionalService"], "@id": businessId, name: site.name, url: site.baseUrl, logo: site.socialImage, image: site.socialImage, founder: { "@id": personId }, email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs, contactPoint: { "@type": "ContactPoint", email: CONTACT_EMAIL, telephone: "+91 99112 84362", contactType: "customer enquiries", availableLanguage: "English" }, serviceType: serviceTypes };
 
 export const PRERENDER_ROUTES = seoConfig.pages.map((page) => page.path);
 
@@ -73,7 +74,7 @@ function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
   const graph: Record<string, unknown>[] = [webPage];
   if (page.schemaTypes.includes("ProfessionalService")) graph.unshift(professionalService);
   if (page.schemaTypes.includes("Person")) graph.push(person);
-  if (page.path === "/") graph.push({ "@type": "WebSite", "@id": `${site.baseUrl}/#website`, name: site.name, url: `${site.baseUrl}/`, publisher: { "@id": businessId }, inLanguage: site.language });
+  if (page.path === "/") graph.push({ "@type": "WebSite", "@id": `${site.baseUrl}/#website`, name: site.name, alternateName: "Arcturus", url: `${site.baseUrl}/`, publisher: { "@id": businessId }, inLanguage: site.language });
   if (page.path === "/services") graph.push({ "@type": "ItemList", name: "Arcturus Professional Services", itemListElement: orderedServices.map((entry, index) => ({ "@type": "ListItem", position: index + 1, url: `${site.baseUrl}/services/${entry.slug}`, name: entry.title })) });
   return { "@context": "https://schema.org", "@graph": graph };
 }

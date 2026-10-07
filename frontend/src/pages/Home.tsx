@@ -28,8 +28,8 @@ export default function Home() {
           <Reveal className="luxury-hero-copy" delay={40}>
             <p className="luxury-eyebrow"><span>01</span> Independent freelancer · New Delhi</p>
             <h1 data-testid="home-hero-heading">
-              The work behind your business,
-              <em> handled properly.</em>
+              LinkedIn, email outreach and business support,
+              <em> handled personally.</em>
             </h1>
             <p className="luxury-hero-lead" data-testid="home-hero-description">
               LinkedIn, email outreach, lead generation, business support and AI content, handled directly by Khushboo.
