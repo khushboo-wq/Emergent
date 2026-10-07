@@ -379,7 +379,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Video output against the agreed content direction", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€400 / month, paid upfront."
+    paymentTerms: "€400 / month, paid upfront.",
     commercialHighlights: ["Custom short-form AI-generated content based on the agreed brief and content direction.", "Branding, business details and end cards can be included where suitable.", "Content can be prepared for the agreed social platforms.", "Prompt-based revisions are included; this is not manual professional video editing or live-action production."],
     workingNote: "Video output follows the agreed prompt, content direction and platform requirements.",
     faqs: [
