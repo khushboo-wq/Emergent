@@ -166,13 +166,42 @@ export default function HowIWork() {
             <FileCheck2 />
             <p className="luxury-section-kicker">Reporting</p>
             <h2>Real numbers, reported honestly.</h2>
-            <p>Reporting is specific to the selected service. Depending on the work, this can include open, reply and click-through rates, bounce rate and inbox-placement observations, LinkedIn connection acceptance, engagement growth, verified leads and qualified conversations.</p>
+            <p>Reporting is specific to the selected service. Depending on the work, this can include open, reply and click-through rates, bounce rate and inbox-placement observations, LinkedIn connection acceptance, engagement growth, verified leads and qualified conversations. Regular reporting can include weekly summaries and monthly reports where the selected service requires them.</p>
           </Reveal>
           <Reveal delay={110}>
             <div className="reporting-matrix">
               <span>Open %</span><span>Reply %</span><span>Click-through %</span><span>Bounce rate</span><span>LinkedIn acceptance %</span><span>Engagement growth</span><span>Verified leads delivered</span><span>Qualified conversations</span>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="tools-platforms-section" data-testid="work-tools-section">
+        <div className="luxury-shell">
+          <Reveal className="luxury-section-heading">
+            <div>
+              <p className="luxury-section-kicker">Tools & platforms</p>
+              <h2>The right tool for the right service.</h2>
+            </div>
+            <p className="luxury-heading-note">Subscriptions and paid platforms are separate and remain under the client&apos;s control unless specifically stated otherwise.</p>
+          </Reveal>
+          <div className="tools-platforms-grid">
+            {[
+              ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite"],
+              ["Email Outreach", "Instantly.ai"],
+              ["Lead Generation", "LinkedIn Sales Navigator · Apollo · UseBouncer"],
+              ["AI Video Creation", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
+              ["Email Setup", "DNS provider · Email provider"],
+            ].map(([title, platformList], index) => (
+              <Reveal key={title} delay={index * 45}>
+                <article className="tools-platform-card">
+                  <span>0{index + 1}</span>
+                  <h3>{title}</h3>
+                  <p>{platformList}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
