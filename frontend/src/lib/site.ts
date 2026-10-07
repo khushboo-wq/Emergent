@@ -215,7 +215,7 @@ export const services: ServiceContent[] = [
       { label: "Brand", detail: "Apply the agreed logo, business details, and brand style." },
       { label: "Schedule", detail: "Schedule the finished content through Hootsuite." },
     ],
-    timeline: "Up to 30 videos are produced per month. Videos are normally short-form and approximately 10 seconds long; sample videos can be shared before work begins.",
+    timeline: "The agreed schedule is 2 short-form videos per day, 7 days a week, based on the content plan and brief. Videos are approximately 10 seconds long; sample videos can be shared before work begins.",
     requirements: [
       "Your logo and branding",
       "Business information",
