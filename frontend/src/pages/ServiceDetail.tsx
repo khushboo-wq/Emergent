@@ -44,21 +44,19 @@ export default function ServiceDetail() {
         <section className="border-t border-[#e2dfd8] py-12" data-testid="service-related-section"><h2 className="font-serif text-3xl text-[#0f172a]" data-testid="service-related-heading">Related services</h2><div className="mt-6 flex flex-wrap gap-3">{extras.relatedSlugs.map((relatedSlug) => { const related = getService(relatedSlug); return related ? <Link key={related.slug} to={`/services/${related.slug}`} className="rounded-full border border-[#cbd5e1] bg-white px-4 py-2 text-sm font-semibold text-[#0f2942] hover:border-[#4263aa]" data-testid={`service-related-link-${related.slug}`}>{related.title} <span className="text-[#64748b]">{related.price}</span></Link> : null; })}</div></section>
       </div>
 
-        {service.slug === "linkedin-management" ? (
-          <section className="linkedin-resource-links" data-testid="linkedin-resource-links">
-            <p className="luxury-section-kicker">LinkedIn resources</p>
-            <h2>Go deeper before you decide.</h2>
-            <div className="linkedin-resource-grid">
-              {resources.map((resource) => (
-                <Link key={resource.slug} to={`/resources/${resource.slug}`} className="linkedin-resource-link">
-                  <span>{resource.category}</span>
-                  <strong>{resource.title}</strong>
-                  <small>{resource.readTime}</small>
-                </Link>
-              ))}
-            </div>
-          </section>
-        ) : null}
+        <section className="linkedin-resource-links" data-testid="service-resource-links">
+          <p className="luxury-section-kicker">Helpful resources</p>
+          <h2>Go deeper before you decide.</h2>
+          <div className="linkedin-resource-grid">
+            {resources.filter((resource) => resource.serviceSlug === service.slug).map((resource) => (
+              <Link key={resource.slug} to={`/resources/${resource.slug}`} className="linkedin-resource-link" data-testid={`service-resource-link-${resource.slug}`}>
+                <span>{resource.category}</span>
+                <strong>{resource.title}</strong>
+                <small>{resource.readTime}</small>
+              </Link>
+            ))}
+          </div>
+        </section>
 
       <section className="mx-5 mb-20 rounded-[2rem] bg-[#0f2942] px-6 py-12 text-white sm:mx-8 sm:mb-28 sm:px-10 lg:mx-auto lg:max-w-7xl lg:px-14" data-testid="service-bottom-cta"><MessageSquareText className="size-6 text-[#9bc8c0]" /><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Written enquiries only</p><div className="mt-4 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><h2 className="max-w-2xl font-serif text-4xl leading-tight text-white sm:text-5xl" data-testid="service-bottom-cta-heading">Tell me what you need to move forward.</h2><div className="flex flex-wrap gap-3"><Link to="/contact" className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-5 text-sm font-semibold text-[#0f2942] hover:bg-[#dce6ff]" data-testid="service-contact-form-link">Use the contact form <ArrowUpRight className="size-4" /></Link><a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-email-link">Email</a><a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-whatsapp-link">WhatsApp</a></div></div></section>
     </PageFrame>
