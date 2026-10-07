@@ -29,11 +29,11 @@ export default function Home() {
           <Reveal className="luxury-hero-copy" delay={40}>
             <p className="luxury-eyebrow"><span>01</span> Independent freelancer · New Delhi</p>
             <h1 data-testid="home-hero-heading">
-              B2B outreach and business support,
+              B2B growth work,
               <em> handled personally.</em>
             </h1>
             <p className="luxury-hero-lead" data-testid="home-hero-description">
-              LinkedIn, email outreach, lead generation, business support and AI content, handled directly by Khushboo.
+              LinkedIn management, email outreach, lead generation, business support, email setup and AI content for founders and small teams across the UK, Ireland and Europe. Managed directly by Khushboo.
             </p>
             <div className="luxury-hero-actions">
               <Link to="/services" className="luxury-button luxury-button-dark">Explore services <ArrowRight size={16} /></Link>
@@ -60,7 +60,7 @@ export default function Home() {
               <span className="luxury-art-dot luxury-art-dot-one" />
               <span className="luxury-art-dot luxury-art-dot-two" />
             </div>
-            <div className="luxury-art-note">A considered way to keep the practical work moving.</div>
+            <div className="luxury-art-note">A direct, considered way to keep the work behind your business moving.</div>
           </Reveal>
         </div>
       </section>
@@ -77,12 +77,12 @@ export default function Home() {
         <div className="luxury-shell luxury-two-col">
           <Reveal>
             <p className="luxury-section-kicker">What I do</p>
-            <h2>One person. One point of contact. Work that actually gets finished.</h2>
+            <h2>One person. One point of contact. Less chasing, more finished work.</h2>
           </Reveal>
           <Reveal delay={100}>
             <div className="luxury-intro-copy">
-              <p>I work directly with founders and small businesses on the practical tasks that are easy to postpone and difficult to keep on top of.</p>
-              <p>You do not get passed around a team. You get clear written communication, a defined scope, and the person doing the work.</p>
+              <p>I work directly with founders and small businesses on the practical work that keeps growth moving: outreach, research, admin, content and the tasks that otherwise stay on the list.</p>
+              <p>You do not get passed around a team. You get a clear written scope, direct communication and the person doing the work from brief to delivery.</p>
               <Link to="/about" className="luxury-inline-link">More about how I work <ArrowRight size={16} /></Link>
             </div>
           </Reveal>
@@ -94,7 +94,7 @@ export default function Home() {
           <Reveal className="luxury-section-heading">
             <div>
               <p className="luxury-section-kicker">Services</p>
-              <h2>Support designed around the work.</h2>
+              <h2>Services that fit the work you actually need done.</h2>
             </div>
             <Link to="/services" className="luxury-inline-link">View all services <ArrowRight size={16} /></Link>
           </Reveal>
@@ -124,12 +124,12 @@ export default function Home() {
             <p className="luxury-statement-index">02 / 04</p>
           </Reveal>
           <Reveal delay={120}>
-            <h2>Good support should feel <em>simple.</em></h2>
+            <h2>The best support is <em>clear.</em></h2>
             <div className="luxury-statement-points">
               <p><b>01</b> One point of contact from brief to delivery.</p>
               <p><b>02</b> Written communication that keeps the work clear.</p>
               <p><b>03</b> A practical scope agreed before work begins.</p>
-              <p><b>04</b> No agency layers between you and the person doing the work.</p>
+              <p><b>04</b> No agency layers, hand-offs or unnecessary meetings.</p>
             </div>
           </Reveal>
         </div>
@@ -140,9 +140,9 @@ export default function Home() {
           <Reveal className="luxury-section-heading">
             <div>
               <p className="luxury-section-kicker">How I work</p>
-              <h2>A straightforward process.</h2>
+              <h2>A simple process, kept in writing.</h2>
             </div>
-            <p className="luxury-heading-note">No complicated onboarding. We start with the work.</p>
+            <p className="luxury-heading-note">No long onboarding. We start with the brief.</p>
           </Reveal>
 
           <div className="luxury-process-grid">
@@ -162,12 +162,12 @@ export default function Home() {
           <Reveal className="luxury-section-heading">
             <div>
               <p className="luxury-section-kicker">Resources</p>
-              <h2>Useful LinkedIn guidance, without the fluff.</h2>
+              <h2>Practical guidance for the work behind your growth.</h2>
             </div>
             <Link to="/resources" className="luxury-inline-link">View all resources <ArrowRight size={16} /></Link>
           </Reveal>
           <div className="resource-home-grid">
-            {resources.map((resource, index) => (
+            {resources.filter((resource) => ["linkedin-management-services-guide", "b2b-email-outreach-guide", "b2b-lead-generation-guide"].includes(resource.slug)).map((resource, index) => (
               <Reveal key={resource.slug} delay={index * 55}>
                 <Link to={`/resources/${resource.slug}`} className="resource-home-card">
                   <span>{resource.category}</span>
@@ -194,7 +194,7 @@ export default function Home() {
             <p className="luxury-section-kicker">About me</p>
             <h2>You deal with the person doing the work.</h2>
             <p className="luxury-about-copy">
-              I support businesses in Ireland, the UK and Europe from New Delhi. My approach is simple: understand the brief, do the agreed work properly, and keep communication clear.
+              Based in New Delhi, I support businesses across the UK, Ireland and Europe. I bring 12+ years of experience across email marketing, B2B outreach, lead research and sales support, with a simple working style: understand the brief, do the agreed work properly, and keep communication clear.
             </p>
             <Link to="/about" className="luxury-button luxury-button-dark">More about Khushboo <ArrowRight size={16} /></Link>
           </Reveal>
