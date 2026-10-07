@@ -41,7 +41,7 @@ const PATTERN = new RegExp([
   '[€£]\\s?\\d[\\d,]*(?:\\.\\d+)?(?:\\s?\\/\\s?(?:month|hour))?',
   '50% (?:advance|in advance|on delivery)',
   '50% at the (?:start|end)(?: of the month)?',
-  'Wise',
+  '\\bWise\\b',
   'advance payment',
   '(?:paid )?upfront',
   'one-month warm-up',
@@ -120,10 +120,37 @@ function liftTinyText() {
   new MutationObserver(run).observe(root, { childList: true, subtree: true })
 }
 
+/* ---------- Cursor spotlight everywhere + highlight the hovered block ---------- */
+function startSpotlight() {
+  if (reduce() || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+  const glow = document.createElement('div')
+  glow.className = 'arc-spotlight'
+  glow.setAttribute('aria-hidden', 'true')
+  document.body.appendChild(glow)
+  const SEL = 'a, button, input, select, textarea, article, li, .premium-panel, .luxury-service-row, .luxury-process-item, .onboarding-card, .arc-showcase-card, .arc-profile, [class*="rounded-2xl"], [class*="rounded-["], .footer-info-grid > div, .service-commercial-card, .service-tab'
+  let hot: HTMLElement | null = null
+  let x = 0, y = 0, raf = 0
+  const paint = () => { raf = 0; glow.style.transform = `translate(${x - 260}px, ${y - 260}px)` }
+  window.addEventListener('pointermove', (e) => {
+    x = e.clientX; y = e.clientY
+    glow.style.opacity = '1'
+    if (!raf) raf = requestAnimationFrame(paint)
+    const t = (e.target as HTMLElement).closest?.(SEL) as HTMLElement | null
+    if (t !== hot) { hot?.classList.remove('arc-hot'); hot = t; hot?.classList.add('arc-hot') }
+    if (hot) {
+      const r = hot.getBoundingClientRect()
+      hot.style.setProperty('--hx', `${e.clientX - r.left}px`)
+      hot.style.setProperty('--hy', `${e.clientY - r.top}px`)
+    }
+  }, { passive: true })
+  document.addEventListener('pointerleave', () => { glow.style.opacity = '0'; hot?.classList.remove('arc-hot'); hot = null })
+}
+
 export function startPolish() {
   if (typeof window === 'undefined') return
   startSmoothScroll()
   startHighlighter()
   startReveal()
   liftTinyText()
+  startSpotlight()
 }

@@ -1,0 +1,45 @@
+/* Arcturus motion + cursor highlight layer (loaded last) */
+/* global cursor spotlight */
+.arc-spotlight{position:fixed;left:0;top:0;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:60;opacity:0;transition:opacity .4s;background:radial-gradient(circle,rgba(127,110,230,.30) 0%,rgba(31,143,138,.14) 40%,transparent 68%);mix-blend-mode:normal;will-change:transform}
+.luxury-footer:hover~.arc-spotlight{mix-blend-mode:screen}
+/* hovered block lights up with a cursor-following glow + violet ring */
+.arc-hot{position:relative;box-shadow:0 0 0 1.5px rgba(106,85,200,.55),0 22px 50px -22px rgba(106,85,200,.55) !important;transition:box-shadow .3s,transform .35s cubic-bezier(.2,.8,.2,1)}
+article.arc-hot,.premium-panel.arc-hot,.onboarding-card.arc-hot,.luxury-process-item.arc-hot,.service-commercial-card.arc-hot,.footer-info-grid>div.arc-hot,[class*="rounded-2xl"].arc-hot{transform:translateY(-6px)}
+article.arc-hot::after,.premium-panel.arc-hot::after,.onboarding-card.arc-hot::after,.luxury-process-item.arc-hot::after,.service-commercial-card.arc-hot::after,[class*="rounded-2xl"].arc-hot::after,.footer-info-grid>div.arc-hot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(260px circle at var(--hx,50%) var(--hy,50%),rgba(106,85,200,.18),transparent 70%)}
+li.arc-hot{box-shadow:none !important;color:#2f4f95}
+input.arc-hot,select.arc-hot,textarea.arc-hot{box-shadow:0 0 0 3px rgba(106,85,200,.22) !important}
+
+/* nothing frozen: backgrounds drift, labels shimmer, accents pulse */
+@keyframes arcDrift{0%,100%{background-position:0% 0%,100% 100%,0 0}50%{background-position:12% 18%,86% 78%,14px 14px}}
+.luxury-intro-section,.luxury-facts-section,.payment-section,.why-work-section,.luxury-process-section,.luxury-services-section,.luxury-about-section,.tools-platforms-section,.recommendations-section,.luxury-resources-section,.process-method-section,.communication-section,.luxury-statement-section,.reporting-section,.luxury-contact-section,.process-highlight-strip,.arcturus-pillars-section,.service-visual-summary,[data-testid="about-services-section"]{animation:arcDrift 18s ease-in-out infinite}
+.arcturus-pillars-section,.service-visual-summary,[data-testid="about-services-section"]{background-size:200% 200% !important;animation:arcSlide 14s ease-in-out infinite}
+@keyframes arcSlide{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+main .luxury-section-kicker,main .luxury-eyebrow,main [class*="text-[10px]"][class*="uppercase"],main [class*="text-[9px]"][class*="uppercase"]{background:linear-gradient(90deg,#2f4f95,#6a55c8,#1f8f8a,#2f4f95);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:arcSheen 7s linear infinite}
+.luxury-statement-section .luxury-section-kicker,.reporting-section [class*="uppercase"],.luxury-contact-section .luxury-section-kicker,[class*="bg-[#0f2942]"] [class*="uppercase"]{background-image:linear-gradient(90deg,#c6c2f0,#7fe3d8,#ffffff,#c6c2f0)}
+main h1 em,main h2 em{background:linear-gradient(90deg,#1f8f8a,#2f4f95,#6a55c8,#1f8f8a);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:arcSheen 8s linear infinite;font-style:normal}
+main h2::after{content:"";display:block;width:64px;height:4px;margin-top:.55em;border-radius:4px;background:linear-gradient(90deg,#6a55c8,#1f8f8a,#6a55c8);background-size:200% 100%;animation:arcSheen 4s linear infinite}
+.arc-showcase-title::after,.arc-profile-name::after,[data-testid^="services-overview-card"] h2::after,.service-visual-title::after,.arcturus-pillar h2::after,.luxury-footer-cta h2::after{content:none}
+main .text-center h2::after,main [class*="text-center"] h2::after{margin-inline:auto}
+main svg.lucide{animation:arcIcon 5s ease-in-out infinite}
+@keyframes arcIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px) rotate(-4deg)}}
+.luxury-proof-row span svg,.luxury-service-arrow svg{animation:none}
+mark.arc-mark{background-size:200% 100%;animation:arcMarkIn 1.2s ease both}
+@keyframes arcMarkIn{from{background-size:0% 100%}to{background-size:100% 100%}}
+mark.arc-mark:not(.arc-price){background-repeat:no-repeat;background-position:0 0}
+
+/* contact form fix */
+html body .arcturus-luxury form.premium-panel,html body main form.premium-panel,.premium-panel:has(form){padding:clamp(22px,3vw,40px) !important;background:linear-gradient(150deg,#fff,#f1eeff) !important;border:1px solid rgba(106,85,200,.25) !important;border-radius:30px !important;box-shadow:0 30px 60px -36px rgba(15,41,66,.55) !important}
+main form input,main form select{height:auto !important;min-height:3.25rem;padding:.75rem 1rem !important;line-height:1.4 !important;border-radius:14px !important;background:#fff !important;border:1.5px solid rgba(47,79,149,.25) !important}
+main form textarea{padding:.85rem 1rem !important;border-radius:14px !important;background:#fff !important;border:1.5px solid rgba(47,79,149,.25) !important;min-height:9rem}
+main form input:focus,main form select:focus,main form textarea:focus{border-color:#6a55c8 !important;box-shadow:0 0 0 4px rgba(106,85,200,.18) !important;outline:none}
+main form label{color:#2f4f95 !important}
+main form button[type="submit"]{background:linear-gradient(120deg,#14355e,#6a55c8) !important;color:#fff !important;font-weight:800 !important;font-size:1.05rem !important;padding:.85rem 1.6rem !important;height:auto !important;border-radius:999px !important}
+
+/* unify dark panels to brand navy (no plum/brown) */
+[class*="bg-[#0f2942]"],[class*="bg-[#14355e]"]{background:radial-gradient(500px 300px at 100% 0,rgba(106,85,200,.45),transparent 70%),linear-gradient(140deg,#0f2942,#14355e 55%,#2f4f95) !important}
+.contact-facts-strip{background:linear-gradient(90deg,#fff,#efeaff,#e3f3ef) !important}
+
+@media (prefers-reduced-motion:reduce){.arc-spotlight{display:none}}
+.communication-dark{background:radial-gradient(420px 260px at 100% 0,rgba(106,85,200,.5),transparent 70%),linear-gradient(140deg,#0f2942,#2f4f95) !important}
+.communication-dark h2,.communication-dark p,.communication-dark svg{color:#fff !important}
+.communication-dark p{color:#e4e8ff !important}

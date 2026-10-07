@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { CheckCircle2, Send } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
-import { apiPost, ApiError } from "@/lib/api";
+import { ApiError } from "@/lib/api";
+import { CONTACT_EMAIL } from "@/lib/site";
 import { orderedServices } from "@/lib/site";
 import { pushDataLayer } from "@/lib/tracking";
 
@@ -16,7 +17,28 @@ interface ContactSubmission {
 
 interface ContactResponse {
   status: "success";
-  message: string;
+  mode: "inbox" | "email-app";
+}
+
+// The old Emergent backend (/api/contact) no longer exists on the static site.
+// If a Web3Forms access key is configured (VITE_WEB3FORMS_KEY on Render), the enquiry goes straight to the inbox.
+// Otherwise the visitor's email app opens with every field pre-filled, so no enquiry is lost.
+const WEB3FORMS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || "";
+
+async function sendEnquiry(payload: ContactSubmission): Promise<ContactResponse> {
+  const body = `Name: ${payload.name}\nEmail: ${payload.email}\nCompany: ${payload.company}\nService: ${payload.service}\n\n${payload.message}`;
+  if (WEB3FORMS_KEY) {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject: `New enquiry: ${payload.service} - ${payload.name}`, from_name: "Arcturus website", replyto: payload.email, ...payload }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (response.ok && data.success) return { status: "success", mode: "inbox" };
+  }
+  const subject = encodeURIComponent(`Enquiry: ${payload.service} - ${payload.company}`);
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${encodeURIComponent(body)}`;
+  return { status: "success", mode: "email-app" };
 }
 
 const initialValues: ContactSubmission = {
@@ -31,7 +53,7 @@ export default function ContactForm() {
   const [searchParams] = useSearchParams();
   const [values, setValues] = useState<ContactSubmission>(initialValues);
   const mutation = useMutation<ContactResponse, ApiError, ContactSubmission>({
-    mutationFn: (payload) => apiPost<ContactResponse>("/contact", payload),
+    mutationFn: sendEnquiry,
     onSuccess: () => {
       pushDataLayer("contact_form_success", { service: values.service });
       setValues(initialValues);
@@ -60,9 +82,9 @@ export default function ContactForm() {
     return (
       <div className="rounded-xl border border-[#8ab8a5] bg-[#eef8f1] p-8 sm:p-10" data-testid="contact-form-success">
         <CheckCircle2 className="size-8 text-[#23734b]" />
-        <h2 className="mt-5 font-serif text-3xl text-[#0f2942]" data-testid="contact-form-success-heading">Your enquiry is on its way.</h2>
-        <p className="mt-3 max-w-md text-sm leading-6 text-[#365f4b]" data-testid="contact-form-success-copy">I have received your message and will reply in writing. Thank you for sharing the context.</p>
-        <button type="button" onClick={() => mutation.reset()} className="mt-7 text-sm font-semibold text-[#0f2942] underline decoration-[#c59b27] underline-offset-4" data-testid="contact-form-send-another-button">Send another enquiry</button>
+        <h2 className="mt-5 font-serif text-3xl text-[#0f2942]" data-testid="contact-form-success-heading">{mutation.data?.mode === "inbox" ? "Your enquiry is on its way." : "Your email is ready to send."}</h2>
+        <p className="mt-3 max-w-md text-sm leading-6 text-[#365f4b]" data-testid="contact-form-success-copy">{mutation.data?.mode === "inbox" ? "I have received your message and will reply in writing. Thank you for sharing the context." : `Your email app has opened with your enquiry filled in. Just press send. If it did not open, email ${CONTACT_EMAIL} or message me on WhatsApp.`}</p>
+        <button type="button" onClick={() => mutation.reset()} className="mt-7 text-sm font-semibold text-[#0f2942] underline decoration-[#6a55c8] underline-offset-4" data-testid="contact-form-send-another-button">Send another enquiry</button>
       </div>
     );
   }
@@ -70,11 +92,11 @@ export default function ContactForm() {
   return (
     <form onSubmit={(event) => { event.preventDefault(); pushDataLayer("contact_form_submit", { service: values.service }); mutation.mutate(values); }} className="premium-panel rounded-[2rem] border border-[#d7dee9] bg-white p-6 sm:p-9" data-testid="contact-form">
       <div className="grid gap-6 sm:grid-cols-2">
-        <div><label htmlFor="contact-name" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-name-label">Name</label><input id="contact-name" value={values.name} onChange={(event) => update("name", event.target.value)} required minLength={2} maxLength={100} autoComplete="name" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#c59b27] focus:ring-2 focus:ring-[#c59b27]/20" data-testid="contact-name-input" /></div>
-        <div><label htmlFor="contact-email" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-email-label">Email</label><input id="contact-email" type="email" value={values.email} onChange={(event) => update("email", event.target.value)} required autoComplete="email" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#c59b27] focus:ring-2 focus:ring-[#c59b27]/20" data-testid="contact-email-input" /></div>
-        <div><label htmlFor="contact-company" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-company-label">Company</label><input id="contact-company" value={values.company} onChange={(event) => update("company", event.target.value)} required maxLength={160} autoComplete="organization" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#c59b27] focus:ring-2 focus:ring-[#c59b27]/20" data-testid="contact-company-input" /></div>
-        <div><label htmlFor="contact-service" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-service-label">Service</label><select id="contact-service" value={values.service} onChange={(event) => update("service", event.target.value)} required className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#c59b27] focus:ring-2 focus:ring-[#c59b27]/20" data-testid="contact-service-select"><option value="">Select a service</option>{orderedServices.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}</select></div>
-        <div className="sm:col-span-2"><label htmlFor="contact-message" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-message-label">Message</label><textarea id="contact-message" value={values.message} onChange={(event) => update("message", event.target.value)} required minLength={10} maxLength={5000} rows={6} className="mt-2 w-full resize-y rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 py-3 text-sm leading-6 text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#c59b27] focus:ring-2 focus:ring-[#c59b27]/20" data-testid="contact-message-input" /></div>
+        <div><label htmlFor="contact-name" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-name-label">Name</label><input id="contact-name" value={values.name} onChange={(event) => update("name", event.target.value)} required minLength={2} maxLength={100} autoComplete="name" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-name-input" /></div>
+        <div><label htmlFor="contact-email" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-email-label">Email</label><input id="contact-email" type="email" value={values.email} onChange={(event) => update("email", event.target.value)} required autoComplete="email" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-email-input" /></div>
+        <div><label htmlFor="contact-company" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-company-label">Company</label><input id="contact-company" value={values.company} onChange={(event) => update("company", event.target.value)} required maxLength={160} autoComplete="organization" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-company-input" /></div>
+        <div><label htmlFor="contact-service" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-service-label">Service</label><select id="contact-service" value={values.service} onChange={(event) => update("service", event.target.value)} required className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-service-select"><option value="">Select a service</option>{orderedServices.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}</select></div>
+        <div className="sm:col-span-2"><label htmlFor="contact-message" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-message-label">Message</label><textarea id="contact-message" value={values.message} onChange={(event) => update("message", event.target.value)} required minLength={10} maxLength={5000} rows={6} className="mt-2 w-full resize-y rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 py-3 text-sm leading-6 text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-message-input" /></div>
       </div>
       {mutation.isError ? <p className="mt-5 rounded-md bg-[#fff2f0] px-4 py-3 text-sm leading-6 text-[#a13b2d]" role="alert" data-testid="contact-form-error">{mutation.error.message || "I could not send your enquiry. Please try again."}</p> : null}
       <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><p className="text-xs leading-5 text-[#64748b]" data-testid="contact-form-note">Your details are used only to respond to this enquiry.</p><button type="submit" disabled={mutation.isPending} className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#0f2942] px-5 text-sm font-semibold text-white transition-[background-color,transform,box-shadow,opacity] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg disabled:cursor-wait disabled:opacity-60" data-testid="contact-form-submit-button">{mutation.isPending ? "Sending..." : "Send enquiry"}<Send className="size-4" /></button></div>
