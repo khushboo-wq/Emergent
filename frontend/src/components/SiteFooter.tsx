@@ -23,6 +23,7 @@ export default function SiteFooter() {
           <Link to="/about">About</Link>
           <Link to="/services">Services</Link>
           <Link to="/how-i-work">How I work</Link>
+          <Link to="/resources">Resources</Link>
           <Link to="/contact">Contact</Link>
         </div>
 

@@ -4,6 +4,7 @@ import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
 import { orderedServices } from "@/lib/site";
+import { resources } from "@/lib/resources";
 
 const process = [
   ["01", "Tell me what you need", "Share the task, goal, audience, or problem in writing."],
@@ -150,6 +151,30 @@ export default function Home() {
                 <span>{number}</span>
                 <h3>{title}</h3>
                 <p>{copy}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="luxury-resources-section">
+        <div className="luxury-shell">
+          <Reveal className="luxury-section-heading">
+            <div>
+              <p className="luxury-section-kicker">Resources</p>
+              <h2>Useful LinkedIn guidance, without the fluff.</h2>
+            </div>
+            <Link to="/resources" className="luxury-inline-link">View all resources <ArrowRight size={16} /></Link>
+          </Reveal>
+          <div className="resource-home-grid">
+            {resources.map((resource, index) => (
+              <Reveal key={resource.slug} delay={index * 55}>
+                <Link to={`/resources/${resource.slug}`} className="resource-home-card">
+                  <span>{resource.category}</span>
+                  <h3>{resource.title}</h3>
+                  <p>{resource.excerpt}</p>
+                  <span className="resource-home-link">Read guide <ArrowRight size={15} /></span>
+                </Link>
               </Reveal>
             ))}
           </div>
