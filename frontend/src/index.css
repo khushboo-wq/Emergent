@@ -176,7 +176,7 @@
     letter-spacing: -0.035em;
   }
   h1.font-serif {
-    font-family: 'Hemicube', 'Sora Variable', 'Plus Jakarta Sans Variable', sans-serif;
+    font-family: 'Alesand', 'Sora Variable', 'Plus Jakarta Sans Variable', sans-serif;
     font-weight: 700;
     letter-spacing: -0.045em;
   }
@@ -237,7 +237,7 @@ h1.font-serif {
 }
 
 .font-hemicube {
-  font-family: 'Hemicube', 'Sora Variable', 'Plus Jakarta Sans Variable', sans-serif;
+  font-family: 'Alesand', 'Sora Variable', 'Plus Jakarta Sans Variable', sans-serif;
   font-weight: 700;
 }
 
@@ -928,7 +928,7 @@ body {
 }
 
 .luxury-brand strong {
-  font-family: "Hemicube", "Sora Variable", sans-serif;
+  font-family: "Alesand", "Sora Variable", sans-serif;
   font-size: 12px;
   letter-spacing: 0.14em;
 }
@@ -1178,7 +1178,7 @@ body {
 .luxury-hero-copy h1 {
   max-width: 760px;
   margin: 24px 0 24px;
-  font-family: "Hemicube", "Sora Variable", sans-serif;
+  font-family: "Alesand", "Sora Variable", sans-serif;
   font-size: clamp(54px, 7.1vw, 104px);
   line-height: 0.92;
   letter-spacing: -0.055em;
@@ -1368,7 +1368,7 @@ body {
   left: 8%;
   z-index: 4;
   color: rgba(251, 248, 243, 0.82);
-  font-family: "Hemicube", sans-serif;
+  font-family: "Alesand", sans-serif;
   font-size: 10px;
   letter-spacing: 0.3em;
 }
@@ -1643,7 +1643,7 @@ body {
   position: absolute;
   top: 14px;
   right: -32px;
-  font-family: "Hemicube", sans-serif;
+  font-family: "Alesand", sans-serif;
   font-size: clamp(100px, 20vw, 310px);
   line-height: 0.85;
   letter-spacing: -0.07em;
@@ -1808,7 +1808,7 @@ body {
 }
 
 .luxury-about-meta span {
-  font-family: "Hemicube", sans-serif;
+  font-family: "Alesand", sans-serif;
   font-size: 11px;
   letter-spacing: 0.23em;
 }
@@ -1993,7 +1993,7 @@ body {
 .luxury-footer-word {
   padding: 10px 0 0;
   color: rgba(255,255,255,0.045);
-  font-family: "Hemicube", sans-serif;
+  font-family: "Alesand", sans-serif;
   font-size: clamp(110px, 23vw, 340px);
   line-height: 0.73;
   letter-spacing: -0.08em;
@@ -3669,7 +3669,7 @@ body {
 .resource-article-hero h1 {
   max-width: 1020px;
   margin: 15px 0 24px;
-  font-family: "Hemicube", "Sora Variable", sans-serif;
+  font-family: "Alesand", "Sora Variable", sans-serif;
   font-size: clamp(52px, 7vw, 100px);
   line-height: 0.91;
   letter-spacing: -0.055em;
