@@ -117,7 +117,7 @@ export default function Home() {
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
                   </div>
-                  <span className="luxury-service-price">{service.price}</span>
+                  <span className="luxury-service-price service-card-price">{service.price}</span>
                   <span className="luxury-service-arrow"><ArrowRight size={20} /></span>
                 </Link>
               </Reveal>
