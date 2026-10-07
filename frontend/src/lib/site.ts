@@ -45,6 +45,9 @@ export interface ServicePageExtras {
   faqs: ServiceFaq[];
   relatedSlugs: string[];
   lastUpdated: string;
+  paymentTerms: string;
+  commercialHighlights: string[];
+  workingNote?: string;
 }
 
 export const services: ServiceContent[] = [
@@ -315,6 +318,9 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Connection acceptance percentage", "Engagement growth across agreed content", "Qualified conversations created through outreach"],
     relatedSlugs: ["lead-generation", "business-support"],
     lastUpdated: "7 October 2026",
+    paymentTerms: "€400 / month, paid upfront at the start of each month. The current paid billing month is completed in full.",
+    commercialHighlights: ["Initial setup: 2–3 working days once access, verification and business information are available.", "Outreach is approximately 200 connection invitations per week, depending on account activity, audience targeting and LinkedIn limits.", "LinkedIn Sales Navigator and Hootsuite are separate subscriptions paid directly by the client.", "Weekly LinkedIn newsletter support and regular reporting are included where relevant to the agreed brief."],
+    workingNote: "LinkedIn platform limits and account activity can affect outreach volume. No revenue or outcome guarantee is made.",
     faqs: [
       { question: "What does LinkedIn management include?", answer: "Profile optimisation, regular posting, connection outreach, follow-ups, lead magnets, nurture sequences and authority content, depending on what your goals need." },
       { question: "Do I need Sales Navigator?", answer: "Yes. You provide your own LinkedIn Sales Navigator subscription, and I use it for targeting and research." },
@@ -328,6 +334,9 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Open percentage", "Reply percentage", "Click-through percentage", "Bounce rate", "Inbox placement observations"],
     relatedSlugs: ["email-setup", "lead-generation"],
     lastUpdated: "7 October 2026",
+    paymentTerms: "€450 / month, paid upfront. Email Setup and lead lists are separate where required.",
+    commercialHighlights: ["Minimum one-month warm-up period before active outreach.", "Up to 10,000 unique emails per client campaign.", "Two to three follow-ups included where appropriate.", "Campaigns can send up to 500 emails per day per email account depending on account condition, platform limits and campaign readiness.", "Email Setup is €80 one-time when technical configuration is needed."],
+    workingNote: "No open, reply, meeting, sales or inbox-placement guarantee is made.",
     faqs: [
       { question: "What's included?", answer: "Campaign setup, copywriting, sending, follow-ups, and monthly reporting." },
       { question: "Why do new domains need warm-up?", answer: "Warm-up builds sender reputation so emails have a better chance of reaching inboxes. New domains are warmed for one month before scaling." },
@@ -341,6 +350,9 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Time used against agreed tasks", "Completed work and outstanding dependencies", "Clear written notes for each delivery"],
     relatedSlugs: ["linkedin-management", "ai-video-creation"],
     lastUpdated: "7 October 2026",
+    paymentTerms: "€12 / hour. Hours and scope are agreed in writing before work begins, and payment is made upfront for the agreed work.",
+    commercialHighlights: ["Task-based support covering administration, research, data entry, documents, back-office tasks and agreed website/digital support.", "Tasks requiring significant additional research or extended time are discussed before work continues.", "Work is billed according to actual time spent on agreed tasks."],
+    workingNote: "Business Support is practical task-based support, not a substitute for legal, financial, HR or other specialist advice.",
     faqs: [
       { question: "What can you help with?", answer: "Research, AI-assisted content writing, website support including DNS management, LinkedIn posting, YouTube support without SEO, and ad management." },
       { question: "How are hours tracked?", answer: "I share a written summary of tasks and hours so you always see what you paid for." },
@@ -354,6 +366,9 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Source fields included with delivered records", "Verification status and cleaned contact data", "Delivery count against the agreed target profile"],
     relatedSlugs: ["email-outreach", "linkedin-management", "email-setup"],
     lastUpdated: "7 October 2026",
+    paymentTerms: "€0.80 per verified business contact, payable before the completed list is delivered.",
+    commercialHighlights: ["First list normally delivered within 5–7 working days once target criteria are confirmed.", "Targeting can include industry, location, company size, job titles, exclusions and specific requirements.", "Research workflow uses LinkedIn Sales Navigator, Apollo and UseBouncer as shown in the service materials."],
+    workingNote: "Delivery timing depends on the confirmed target criteria and list size.",
     faqs: [
       { question: "What counts as a verified contact?", answer: "A business contact I've researched and checked, with name, role, company and email." },
       { question: "Where does the data come from?", answer: "I explain my data sources in writing so you know exactly how the list was built." },
@@ -363,10 +378,13 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     ],
   },
   "ai-video-creation": {
-    summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and includes up to 30 short videos.",
+    summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and follows a schedule of 2 videos per day, 7 days a week, based on the agreed brief and content direction.",
     reporting: ["Monthly output against the 30-video allowance", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
     lastUpdated: "7 October 2026",
+    paymentTerms: "€400 / month, paid upfront. Hootsuite subscription costs are separate and paid directly by the client.",
+    commercialHighlights: ["2 videos per day, 7 days a week, based on the agreed content schedule and brief.", "Short-form videos are approximately 10 seconds and include agreed branding, business details and end cards where suitable.", "Content can be prepared for Instagram, TikTok, YouTube and LinkedIn and scheduled through Hootsuite.", "Prompt-based revisions are included; this is not manual professional video editing or live-action production."],
+    workingNote: "Video output follows the agreed prompt, content direction and platform requirements.",
     faqs: [
       { question: "What kind of videos are these?", answer: "Basic to custom AI-generated videos and reels, not professional video editing." },
       { question: "Can you add my branding?", answer: "Yes: logo, business details and end cards." },
@@ -380,6 +398,9 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Records configured during setup", "DNS verification status", "Written handover and any outstanding provider actions"],
     relatedSlugs: ["email-outreach", "lead-generation"],
     lastUpdated: "7 October 2026",
+    paymentTerms: "€80 one-time, paid upfront before setup begins.",
+    commercialHighlights: ["Professional email configuration plus SPF, DKIM and DMARC.", "DNS records are configured and verified against the agreed email provider.", "This setup is separate from the ongoing €450/month Email Outreach service.", "Third-party domains, hosting, email accounts and software are paid separately by the client unless expressly included in writing."],
+    workingNote: "A setup schedule is confirmed after the required domain, email and DNS access are available.",
     faqs: [
       { question: "What's included?", answer: "Business email and DNS configuration so your domain is ready for sending, including authentication records." },
       { question: "Why does it matter?", answer: "Correct setup helps emails have a better chance of reaching inboxes instead of spam." },
