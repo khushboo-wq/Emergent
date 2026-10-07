@@ -28,7 +28,6 @@ export const resources: Resource[] = [
     description: "A practical guide to LinkedIn management services for founders and small B2B businesses. Learn what good management covers, what to expect and where a freelancer can help.",
     category: "LinkedIn Management",
     serviceSlug: "linkedin-management",
-    serviceSlug: "linkedin-management",
     published: "2026-10-07",
     updated: "2026-10-07",
     readTime: "8 min read",
