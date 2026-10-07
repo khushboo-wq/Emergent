@@ -263,7 +263,7 @@ export const services: ServiceContent[] = [
       "Any specific targeting requirements",
     ],
     price: "€250 / 100 verified contacts",
-    priceNote: "Payable before the completed list is delivered, according to the agreed requirement.",
+    priceNote: "50% in advance, remaining 50% when the verified list is delivered.",
     tools: ["LinkedIn Sales Navigator", "Apollo", "UseBouncer"],
   },
   {
@@ -315,7 +315,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Connection acceptance percentage", "Engagement growth across agreed content", "Qualified conversations created through outreach"],
     relatedSlugs: ["lead-generation", "business-support"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€400 / month, paid upfront at the start of each month. The current paid billing month is completed in full.",
+    paymentTerms: "€400 / month. 50% advance at the start of the month, remaining 50% at the end of the month. The current billing month is completed in full.",
     commercialHighlights: ["Initial setup: 2–3 working days once access, verification and business information are available.", "Outreach is approximately 200 connection invitations per week, depending on account activity, audience targeting and LinkedIn limits.", "LinkedIn Sales Navigator and Hootsuite are separate subscriptions paid directly by the client.", "Weekly LinkedIn newsletter support and regular reporting are included where relevant to the agreed brief."],
     workingNote: "LinkedIn platform limits and account activity can affect outreach volume. No revenue or outcome guarantee is made.",
     faqs: [
@@ -323,7 +323,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
       { question: "Do I need Sales Navigator?", answer: "Yes. You provide your own LinkedIn Sales Navigator subscription, and I use it for targeting and research." },
       { question: "Will you post from my account?", answer: "Yes, with your approval of the content direction. You keep control of your account and settings." },
       { question: "How do I know it's working?", answer: "I report on connection acceptance rate, engagement growth, and qualified conversations generated." },
-      { question: "Is this a long contract?", answer: "No. It's a flat monthly price, paid upfront. If you cancel, the current billing month is completed in full." },
+      { question: "Is this a long contract?", answer: "No. It's a flat monthly price: 50% in advance at the start of the month and 50% at the end. If you cancel, the current billing month is completed in full." },
     ],
   },
   "email-outreach": {
@@ -331,7 +331,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Open percentage", "Reply percentage", "Click-through percentage", "Bounce rate", "Inbox placement observations"],
     relatedSlugs: ["email-setup", "lead-generation"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€500 / month, paid upfront. Email Setup and lead lists are separate where required.",
+    paymentTerms: "€500 / month. 50% advance at the start of the month, remaining 50% at the end of the month. Email Setup and lead lists are separate where required.",
     commercialHighlights: ["Minimum one-month warm-up period before active outreach.", "Up to 10,000 unique emails per client campaign.", "Two to three follow-ups included where appropriate.", "Campaigns can send up to 500 emails per day per email account depending on account condition, platform limits and campaign readiness.", "Email Setup is €200 one-time when technical configuration is needed."],
     workingNote: "No open, reply, meeting, sales or inbox-placement guarantee is made.",
     faqs: [
@@ -347,7 +347,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Time used against agreed tasks", "Completed work and outstanding dependencies", "Clear written notes for each delivery"],
     relatedSlugs: ["linkedin-management", "ai-video-creation"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "£30 / hour. Hours and scope are agreed in writing before work begins, and payment is made upfront for the agreed work.",
+    paymentTerms: "£30 / hour. Hours and scope are agreed in writing first. 50% of the agreed hours is paid in advance; the balance is paid on delivery, based on actual time spent.",
     commercialHighlights: ["Task-based support covering administration, research, data entry, documents, back-office tasks and agreed website/digital support.", "Tasks requiring significant additional research or extended time are discussed before work continues.", "Work is billed according to actual time spent on agreed tasks."],
     workingNote: "Business Support is practical task-based support, not a substitute for legal, financial, HR or other specialist advice.",
     faqs: [
@@ -355,7 +355,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
       { question: "How are hours tracked?", answer: "I share a written summary of tasks and hours so you always see what you paid for." },
       { question: "Do you handle CRM management?", answer: "No, I don't offer CRM management." },
       { question: "Can I send tasks any time?", answer: "Yes, in writing. I'll confirm and reply in writing." },
-      { question: "Is there a minimum?", answer: "Hours are agreed in writing before work starts and paid upfront." },
+      { question: "Is there a minimum?", answer: "Hours are agreed in writing before work starts. 50% is paid in advance and the balance on delivery." },
     ],
   },
   "lead-generation": {
@@ -363,7 +363,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Source fields included with delivered records", "Verification status and cleaned contact data", "Delivery count against the agreed target profile"],
     relatedSlugs: ["email-outreach", "linkedin-management", "email-setup"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€250 per 100 verified contacts, payable before the completed list is delivered.",
+    paymentTerms: "€250 per 100 verified contacts. 50% in advance, remaining 50% when the completed list is delivered.",
     commercialHighlights: ["First list normally delivered within 5–7 working days once target criteria are confirmed.", "Targeting can include industry, location, company size, job titles, exclusions and specific requirements.", "Research workflow uses LinkedIn Sales Navigator, Apollo and UseBouncer as shown in the service materials."],
     workingNote: "Delivery timing depends on the confirmed target criteria and list size.",
     faqs: [
@@ -379,7 +379,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Video output against the agreed content direction", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€400 / month, paid upfront.",
+    paymentTerms: "€400 / month. 50% advance at the start of the month, remaining 50% at the end of the month.",
     commercialHighlights: ["Custom short-form AI-generated content based on the agreed brief and content direction.", "Branding, business details and end cards can be included where suitable.", "Content can be prepared for the agreed social platforms.", "Prompt-based revisions are included; this is not manual professional video editing or live-action production."],
     workingNote: "Video output follows the agreed prompt, content direction and platform requirements.",
     faqs: [
@@ -394,7 +394,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Records configured during setup", "DNS verification status", "Written handover and any outstanding provider actions"],
     relatedSlugs: ["email-outreach", "lead-generation"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€200 one-time, paid upfront before setup begins.",
+    paymentTerms: "€200 one-time. 50% in advance before setup begins, remaining 50% on completion.",
     commercialHighlights: ["Professional email configuration plus SPF, DKIM and DMARC.", "DNS records are configured and verified against the agreed email provider.", "This setup is separate from the ongoing €500/month Email Outreach service.", "Third-party domains, hosting, email accounts and software are paid separately by the client unless expressly included in writing."],
     workingNote: "A setup schedule is confirmed after the required domain, email and DNS access are available.",
     faqs: [

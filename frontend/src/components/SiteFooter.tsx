@@ -68,8 +68,8 @@ export default function SiteFooter() {
         <div className="luxury-shell footer-info-grid">
           <div>
             <p className="luxury-footer-label">Payment</p>
-            <strong>Advance payment before work begins.</strong>
-            <span>Monthly services are paid upfront at the start of each month. One-time services are paid upfront. Business Support is based on agreed hours and actual time spent. Lead Generation is paid before the completed verified list is delivered.</span>
+            <strong>50% advance, 50% on delivery.</strong>
+            <span>Work starts after the 50% advance. Monthly services: 50% at the start and 50% at the end of the month. One-time work, Lead Generation and Business Support: the remaining 50% is paid on delivery. Payments via Wise.</span>
           </div>
           <div>
             <p className="luxury-footer-label">Third-party costs</p>

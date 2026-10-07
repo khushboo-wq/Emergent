@@ -21,10 +21,10 @@ const process = [
 ];
 
 const payments = [
-  ["Monthly services", "Payment is made upfront at the start of each month."],
-  ["One-time services", "Payment is made upfront before the work begins."],
-  ["Business Support", "Billed according to actual time spent on agreed work, with hours and scope agreed in advance."],
-  ["Lead Generation", "Payment is made before the completed verified contact list is delivered."],
+  ["Monthly services", "50% advance at the start of the month, remaining 50% at the end of the month."],
+  ["One-time services", "50% advance before the work begins, remaining 50% on delivery."],
+  ["Business Support", "50% of the agreed hours in advance, balance on delivery based on actual time spent."],
+  ["Lead Generation", "50% advance before research begins, remaining 50% when the verified list is delivered."],
 ];
 
 export default function HowIWork() {
@@ -52,7 +52,7 @@ export default function HowIWork() {
 
       <section className="process-highlight-strip">
         <div className="luxury-shell process-highlight-grid">
-          <div><strong>100%</strong><span>Upfront payment before work begins</span></div>
+          <div><strong>50%</strong><span>Advance payment before work begins</span></div>
           <div><strong>01</strong><span>Point of contact from brief to delivery</span></div>
           <div><strong>UK · IE</strong><span>Working hours aligned to UK and Irish time</span></div>
           <div><strong>WRITTEN</strong><span>Email, WhatsApp and LinkedIn communication</span></div>
@@ -221,7 +221,7 @@ export default function HowIWork() {
             {[
               ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite"],
               ["Email Outreach", "Instantly.ai"],
-              ["Lead Generation", "LinkedIn Sales Navigator · Apollo · UseBouncer"],
+              ["Lead Generation", "50% advance before research begins, remaining 50% when the verified list is delivered."],
               ["AI Video Creation", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
               ["Email Setup", "DNS provider · Email provider"],
             ].map(([title, platformList], index) => (

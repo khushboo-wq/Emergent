@@ -56,7 +56,7 @@ export default function Contact() {
           <Reveal className="premium-panel rounded-[2rem] bg-[#ece8f4] p-7" delay={80}>
             <h2 className="font-serif text-2xl text-[#0f2942]">Before you start</h2>
             <div className="mt-5 space-y-3 text-sm leading-7 text-[#475569]">
-              <p><strong>Payment:</strong> services are paid upfront before work begins unless otherwise agreed in writing.</p>
+              <p><strong>Payment:</strong> 50% advance before work begins, remaining 50% on delivery (monthly services: 50% at the start, 50% at the end of the month). Payments via Wise.</p>
               <p><strong>Communication:</strong> work stays documented in writing. No phone calls or call-booking appointments.</p>
               <p><strong>Scope:</strong> send the service you have in mind, what you want done, target audience and timeline.</p>
               <p><strong>Third-party costs:</strong> paid subscriptions and platforms stay with the client unless specifically included.</p>

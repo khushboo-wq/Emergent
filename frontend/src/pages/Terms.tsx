@@ -3,7 +3,7 @@ import Seo from "@/components/Seo";
 
 const sections = [
   ["Scope", "I provide only the services and deliverables agreed in writing. New tasks, added volume, changed targeting, or substantial revisions may require a separate scope and fee."],
-  ["Payment", "Payment is 100% upfront before work starts. Monthly services use flat pricing, while Business Support and Lead Generation follow the stated hourly or per-contact basis."],
+  ["Payment", "A 50% advance is paid before work starts and the remaining 50% on delivery; monthly services are billed 50% at the start and 50% at the end of each month. Payments are made via Wise. Monthly services use flat pricing, while Business Support and Lead Generation follow the stated hourly or per-contact basis."],
   ["Client responsibilities", "You provide accurate instructions, timely approvals, lawful access, source material, and any required third-party subscriptions. You remain responsible for final business claims and legal decisions."],
   ["Delivery and communication", "Communication is written through email or WhatsApp. Delivery timing depends on access, approvals, platform limits, technical dependencies, and any stated warm-up period."],
   ["Cancellations and current billing month", "Standalone services do not renew unless agreed. For an active monthly service, the current paid billing month is completed in full and fees already applied to that period are not partially refunded."],

@@ -26,7 +26,7 @@ export default function HeroShowcase({ kicker, title, subtitle, slug = "linkedin
           {chips.map((chip) => <span key={chip}>{chip}</span>)}
         </div>
       </div>
-      <div className="arc-float arc-float-a" aria-hidden="true"><b>100%</b><small>advance payment</small></div>
+      <div className="arc-float arc-float-a" aria-hidden="true"><b>50%</b><small>advance payment</small></div>
       <div className="arc-float arc-float-b" aria-hidden="true"><b>1</b><small>point of contact</small></div>
       {note ? <p className="arc-showcase-note">{note}</p> : null}
     </div>
