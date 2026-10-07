@@ -4767,3 +4767,205 @@ body {
 
   .luxury-header-actions { display: none; }
 }
+
+
+.about-story-section {
+  background: var(--luxury-paper);
+}
+
+.about-story-head,
+.about-why-head {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: end;
+}
+
+.about-story-head h2,
+.about-why-head h2 {
+  margin-top: 14px;
+  max-width: 700px;
+  font-family: "Alesand", "Sora Variable", sans-serif;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+}
+
+.about-story-head > p,
+.about-why-head > p {
+  max-width: 610px;
+  color: rgba(23,21,27,0.58);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 9px;
+  margin-top: 58px;
+}
+
+.about-story-grid article {
+  min-height: 250px;
+  padding: 22px;
+  border: 1px solid var(--luxury-line);
+  border-radius: 22px 22px 22px 6px;
+  background: linear-gradient(145deg, #fffdf9, #f0ebf7);
+  box-shadow: 0 24px 55px -48px rgba(23,21,27,0.4);
+}
+
+.about-story-grid article:nth-child(2) { background: linear-gradient(145deg, #fffdf9, #e5f1ef); }
+.about-story-grid article:nth-child(3) { background: linear-gradient(145deg, #fffdf9, #e9e3f5); }
+.about-story-grid article:nth-child(4) { background: linear-gradient(145deg, #fffdf9, #f1e5df); }
+.about-story-grid article:nth-child(5) { background: linear-gradient(145deg, #fffdf9, #e1ebf7); }
+
+.about-story-grid span {
+  display: block;
+  color: var(--luxury-plum-soft);
+  font-family: "Alesand", sans-serif;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.about-story-grid strong {
+  display: block;
+  margin-top: 52px;
+  color: var(--luxury-ink);
+  font-family: "Alesand", sans-serif;
+  font-size: 19px;
+  line-height: 1.04;
+}
+
+.about-story-grid p {
+  margin-top: 12px;
+  color: rgba(23,21,27,0.54);
+  font-size: 10px;
+  line-height: 1.72;
+}
+
+.about-journey {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: end;
+  margin-top: 14px;
+  padding: 27px 30px;
+  border-radius: 26px;
+  background: var(--luxury-plum);
+  color: #fff;
+}
+
+.about-journey h3 {
+  margin-top: 9px;
+  max-width: 980px;
+  color: #fff;
+  font-family: "Alesand", sans-serif;
+  font-size: clamp(22px, 2.8vw, 36px);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+}
+
+.about-journey > span {
+  color: rgba(255,255,255,0.63);
+  font-family: "Alesand", sans-serif;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.about-why-section {
+  background: var(--luxury-ink);
+  color: #fff;
+}
+
+.about-why-head > p {
+  color: rgba(255,255,255,0.58);
+}
+
+.about-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 10px;
+  margin-top: 48px;
+}
+
+.about-why-grid article {
+  min-height: 168px;
+  padding: 23px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px 22px 22px 6px;
+  background: rgba(255,255,255,0.035);
+}
+
+.about-why-grid article:nth-child(4n+2) { background: rgba(154,124,205,0.08); }
+.about-why-grid article:nth-child(4n+3) { background: rgba(56,150,141,0.07); }
+.about-why-grid article:nth-child(4n+4) { background: rgba(214,195,155,0.07); }
+
+.about-why-grid strong {
+  display: block;
+  color: #fff;
+  font-family: "Alesand", sans-serif;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.about-why-grid p {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.54);
+  font-size: 10px;
+  line-height: 1.72;
+}
+
+@media (max-width: 980px) {
+  .about-story-head,
+  .about-why-head {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .about-story-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .about-journey {
+    grid-template-columns: 1fr;
+  }
+
+  .about-journey > span {
+    white-space: normal;
+  }
+
+  .about-why-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .about-story-grid,
+  .about-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story-head h2,
+  .about-why-head h2 {
+    font-size: 39px;
+  }
+
+  .about-story-grid article {
+    min-height: 0;
+  }
+
+  .about-story-grid strong {
+    margin-top: 28px;
+  }
+
+  .about-journey {
+    padding: 22px;
+  }
+
+  .about-journey h3 {
+    font-size: 25px;
+  }
+}
