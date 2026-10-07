@@ -99,6 +99,7 @@ export const resources: Resource[] = [
     excerpt: "How to make a LinkedIn profile clearer to the right buyers before you start posting or outreach.",
     description: "Learn how to optimise a LinkedIn profile for B2B visibility, credibility and outreach. This practical guide covers positioning, headline, About, experience, proof and calls to action.",
     category: "LinkedIn Management",
+    serviceSlug: "linkedin-management",
     published: "2026-10-07",
     updated: "2026-10-07",
     readTime: "7 min read",
