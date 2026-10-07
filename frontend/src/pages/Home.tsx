@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
 import { orderedServices } from "@/lib/site";
 import { resources } from "@/lib/resources";
+import AmbientScene from "@/components/AmbientScene";
 
 const process = [
   ["01", "Tell me what you need", "Share the task, goal, audience, or problem in writing."],
@@ -24,7 +25,8 @@ export default function Home() {
         description="Independent LinkedIn management, email outreach, lead generation, business support, email setup and AI video creation for businesses."
       />
 
-      <section className="luxury-hero" data-testid="home-hero">
+      <section className="luxury-hero home-hero-rich" data-testid="home-hero">
+        <AmbientScene type="office" className="home-ambient-scene" />
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy" delay={40}>
             <p className="luxury-eyebrow"><span>01</span> Independent freelancer · New Delhi</p>
