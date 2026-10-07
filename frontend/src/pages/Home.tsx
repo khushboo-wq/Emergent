@@ -67,6 +67,23 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="arcturus-pillars-section" data-testid="home-pillars">
+        <div className="luxury-shell arcturus-pillars-grid">
+          {[
+            ["Connect", "Reach the right businesses and decision-makers with focused outreach and useful content."],
+            ["Communicate", "Keep the message clear, professional and consistent across the channels you actually use."],
+            ["Grow", "Build visibility, conversations and practical momentum without adding an agency layer."],
+            ["Manage", "Keep the research, administration, scheduling and follow-through moving from one point of contact."],
+          ].map(([title, copy], index) => (
+            <Reveal key={title} delay={index * 55} className="arcturus-pillar">
+              <span>0{index + 1}</span>
+              <h2>{title}</h2>
+              <p>{copy}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       <div className="luxury-marquee" aria-hidden="true">
         <div className="luxury-marquee-track">
           {[...heroServices, ...heroServices].map((service, index) => (
