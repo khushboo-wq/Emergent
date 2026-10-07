@@ -35,8 +35,8 @@
     {
       "path": "/",
       "title": "B2B LinkedIn & Email Outreach Freelancer | Arcturus",
-      "description": "Independent freelancer for UK and Irish businesses, providing LinkedIn management, email outreach, lead generation, business support and AI content services.",
-      "h1": "B2B outreach and business support, handled personally.",
+      "description": "Independent freelancer for UK and Irish businesses providing LinkedIn management, email outreach, lead generation, business support, email setup and AI content.",
+      "h1": "B2B growth work, handled personally.",
       "canonical": "https://arcturusprofessional.com/",
       "indexable": true,
       "ogType": "website",
@@ -53,8 +53,8 @@
     {
       "path": "/services",
       "title": "B2B Outreach & Business Support Services | Arcturus",
-      "description": "Explore LinkedIn management, email outreach, lead generation, business support, email setup and AI video creation for UK and Irish small businesses directly.",
-      "h1": "B2B outreach and business support, with clear scope and pricing.",
+      "description": "Explore six directly managed B2B services: LinkedIn management, email outreach, lead generation, email setup, business support and AI video creation for small teams.",
+      "h1": "Practical B2B support, without the agency layer.",
       "canonical": "https://arcturusprofessional.com/services",
       "indexable": true,
       "ogType": "website",
@@ -142,7 +142,7 @@
     {
       "path": "/services/ai-video-creation",
       "title": "AI Video Creation for Businesses | €400/month",
-      "description": "Custom AI-generated videos and reels with your branding, logo and end cards. Up to 30 videos per month. €400/month. Basic AI content for social media.",
+      "description": "Custom AI-generated short videos with your branding, content ideas and scheduling for social media. €400/month, based on an agreed 2-video-per-day schedule.",
       "h1": "AI Video Creation",
       "canonical": "https://arcturusprofessional.com/services/ai-video-creation",
       "indexable": true,
@@ -242,8 +242,8 @@
     },
     {
       "path": "/resources",
-      "title": "LinkedIn Management Resources | Arcturus",
-      "description": "Practical LinkedIn guides for B2B businesses covering management, profile optimisation, outreach, targeting, follow-ups and reporting for growing teams.",
+      "title": "B2B Business Resources | Arcturus Professional Services",
+      "description": "Practical guides on LinkedIn management, email outreach, lead generation, business support, email setup and AI video content for growing B2B businesses.",
       "h1": "Useful LinkedIn guidance for B2B businesses.",
       "canonical": "https://arcturusprofessional.com/resources",
       "indexable": true,
@@ -425,7 +425,7 @@
     {
       "path": "/reporting-compliance",
       "title": "Reporting & Compliance | Arcturus Professional Services",
-      "description": "See how Arcturus reports service activity, handles B2B data responsibly, communicates in writing and keeps client account control clear across each selected service.",
+      "description": "See how Arcturus reports service activity, handles B2B data responsibly, communicates in writing and keeps client account control clear for every service.",
       "h1": "Work you can see, understand and review.",
       "canonical": "https://arcturusprofessional.com/reporting-compliance",
       "indexable": true,
