@@ -53,6 +53,22 @@ export default function HowIWork() {
       </div>
     </section>
 
+    <section className="work-reporting-section" data-testid="work-reporting">
+      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+          <div>
+            <p className="work-card-kicker">Reporting & compliance</p>
+            <h2 className="font-serif text-4xl text-[#0f172a] sm:text-5xl">Real numbers, reported honestly.</h2>
+            <p className="mt-5 max-w-md text-base leading-8 text-[#64748b]">Reporting is built around the service. The aim is to understand what happened, what changed and what should happen next.</p>
+          </div>
+          <div className="work-report-grid">
+            <div><h3>Metrics tracked</h3><ul><li>Email open %, reply % and click-through %</li><li>Bounce rates and inbox placement insights</li><li>LinkedIn connection acceptance %</li><li>Engagement growth</li><li>Verified leads delivered</li><li>Qualified conversations generated</li></ul></div>
+            <div><h3>Compliance approach</h3><ul><li>B2B communication only</li><li>GDPR and PECR aware</li><li>Business-professional data only</li><li>No outsourcing of core work</li><li>Unsubscribe and opt-out handling</li><li>Confidential and secure data handling</li><li>Client retains control of account settings</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section className="mx-auto grid max-w-7xl gap-6 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2 lg:px-10" data-testid="work-communication"><div className="premium-panel rounded-[2rem] bg-[#0f2942] p-8 text-white"><MessageSquareText className="size-7 text-[#9bc8c0]" /><h2 className="mt-6 break-words font-serif text-4xl text-white">Written communication only</h2><p className="mt-5 text-base leading-8 text-[#cbd5e1]">I work through email, LinkedIn and WhatsApp so decisions, access, feedback, approvals and delivery notes stay documented. I do not offer unnecessary meetings, phone calls or call-booking appointments.</p></div><div className="premium-panel rounded-[2rem] border border-[#c9ddd8] bg-[#e8f2ef] p-8"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#2c7a73]">Responsible outreach</p><h2 className="mt-4 break-words font-serif text-4xl text-[#0f172a]">B2B and confidentiality</h2><p className="mt-5 text-base leading-8 text-[#475569]">My outreach work is B2B only and uses a GDPR and PECR-aware approach. I handle client data confidentially and use it only for the agreed service. This is not legal advice, and clients remain responsible for confirming their own lawful basis and policies.</p><Link to="/contact" className="mt-7 inline-flex rounded-md bg-[#0f2942] px-5 py-3 text-sm font-semibold text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="work-contact-link">Send a written enquiry</Link></div></section>
   </PageFrame>;
 }
