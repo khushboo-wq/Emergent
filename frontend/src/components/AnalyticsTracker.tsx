@@ -9,7 +9,9 @@ export default function AnalyticsTracker() {
     const gtmId = getGtmId();
     if (gtmId) loadGoogleTagManager(gtmId);
 
-    trackPageView(`${location.pathname}${location.search}`, document.title);
+    const pageViewTimer = window.setTimeout(() => {
+      trackPageView(`${location.pathname}${location.search}`, document.title);
+    }, 0);
 
     const handleClick = (event: MouseEvent) => {
       const target = event.target as Element | null;
@@ -40,7 +42,10 @@ export default function AnalyticsTracker() {
     };
 
     document.addEventListener("click", handleClick, { capture: true });
-    return () => document.removeEventListener("click", handleClick, { capture: true });
+    return () => {
+      window.clearTimeout(pageViewTimer);
+      document.removeEventListener("click", handleClick, { capture: true });
+    };
   }, [location.pathname, location.search]);
 
   return null;
