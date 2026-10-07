@@ -3180,3 +3180,222 @@ body {
   .luxury-contact-dock a > span:last-child { display: none; }
   body { padding-bottom: 68px; }
 }
+
+/* ========================================================================== */
+/* Arcturus visual upgrade: bolder hero, service cards, richer sections, motion */
+/* CSS only. No text, headings, links, prices or SEO elements are changed.     */
+/* ========================================================================== */
+
+@keyframes arcFloat { from { translate: 0 0; } to { translate: 0 -14px; } }
+@keyframes arcDrift { from { translate: 0 0; } to { translate: -18px 14px; } }
+@keyframes arcSpin { to { rotate: 360deg; } }
+@keyframes arcGlow { from { opacity: 0.55; scale: 1; } to { opacity: 0.95; scale: 1.12; } }
+@keyframes arcSlide { to { background-position: 160px 160px; } }
+
+/* --- Hero: living gradient behind the art, floating card, drifting orb ---- */
+.luxury-hero-art-wrap { position: relative; isolation: isolate; }
+.luxury-hero-art-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -12% -14% -10% -10%;
+  z-index: -1;
+  background:
+    radial-gradient(40% 40% at 28% 30%, rgba(61, 90, 158, 0.55), transparent 70%),
+    radial-gradient(38% 38% at 78% 70%, rgba(106, 85, 200, 0.5), transparent 70%),
+    radial-gradient(30% 30% at 62% 14%, rgba(31, 143, 138, 0.4), transparent 70%);
+  filter: blur(36px);
+  animation: arcGlow 7s ease-in-out infinite alternate;
+}
+.luxury-hero-art { animation: arcFloat 7s ease-in-out infinite alternate; }
+.luxury-art-disc { animation: arcDrift 9s ease-in-out infinite alternate; }
+.luxury-art-ring-one { animation: arcSpin 60s linear infinite; }
+.luxury-art-ring-two { animation: arcSpin 90s linear infinite reverse; }
+.luxury-art-dot { animation: arcGlow 3.2s ease-in-out infinite alternate; }
+.luxury-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(60% 50% at 100% 0%, rgba(198, 194, 240, 0.45), transparent 70%);
+}
+
+/* --- Services: from a plain list to six distinct cards ------------------- */
+.luxury-service-list {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+  border-top: 0;
+}
+.luxury-service-list > * { grid-column: span 6; }
+.luxury-service-list > *:nth-child(6n + 1) { grid-column: span 7; }
+.luxury-service-list > *:nth-child(6n + 2) { grid-column: span 5; }
+.luxury-service-list > *:nth-child(6n + 3) { grid-column: span 5; }
+.luxury-service-list > *:nth-child(6n + 4) { grid-column: span 7; }
+.luxury-service-list > *:nth-child(6n + 5) { grid-column: span 7; }
+.luxury-service-list > *:nth-child(6n + 6) { grid-column: span 5; }
+
+.luxury-service-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "num arrow" "main main" "price price";
+  align-content: space-between;
+  gap: 18px 16px;
+  height: 100%;
+  min-height: 290px;
+  padding: 30px 30px 28px;
+  border: 1px solid color-mix(in srgb, var(--svc, #2f4f95) 22%, transparent);
+  border-radius: 28px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.55)),
+    color-mix(in srgb, var(--svc, #2f4f95) 6%, #f6f1e9);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+.luxury-service-row::before {
+  left: 0; right: 0; top: 0; bottom: auto;
+  width: auto; height: 5px; border-radius: 0;
+  transform: scaleX(0.28); transform-origin: left;
+  background: var(--svc, #2f4f95);
+}
+.luxury-service-row:hover::before,
+.luxury-service-row:focus-visible::before { transform: scaleX(1); }
+.luxury-service-row:hover {
+  transform: translateY(-6px);
+  background-color: color-mix(in srgb, var(--svc, #2f4f95) 10%, #f6f1e9);
+  border-color: color-mix(in srgb, var(--svc, #2f4f95) 55%, transparent);
+  box-shadow: 0 26px 50px -24px color-mix(in srgb, var(--svc, #2f4f95) 55%, transparent);
+}
+.luxury-service-number {
+  grid-area: num;
+  align-self: start;
+  font-family: "Alesand", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  padding: 7px 14px;
+  width: fit-content;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--svc, #2f4f95) 14%, transparent);
+}
+.luxury-service-arrow { grid-area: arrow; align-self: start; background: #fff; }
+.luxury-service-main { grid-area: main; align-self: end; position: relative; z-index: 1; }
+.luxury-service-main h3 { font-size: clamp(26px, 2.6vw, 38px); line-height: 1.05; margin-bottom: 10px; }
+.luxury-service-price {
+  grid-area: price;
+  font-size: 15px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, var(--svc, #2f4f95) 24%, transparent);
+  position: relative;
+  z-index: 1;
+}
+
+/* Abstract motif per service (pure CSS, decorative) */
+.luxury-service-row::after {
+  content: "";
+  position: absolute;
+  right: -6%;
+  top: 8%;
+  width: 62%;
+  height: 58%;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(225deg, #000 0%, transparent 72%);
+  mask-image: linear-gradient(225deg, #000 0%, transparent 72%);
+  transition: opacity 300ms ease;
+}
+.luxury-service-row:hover::after { opacity: 0.9; animation: arcSlide 14s linear infinite; }
+/* 1 LinkedIn: network of dots */
+.luxury-service-list > *:nth-child(6n + 1) .luxury-service-row::after {
+  background: radial-gradient(var(--svc) 2px, transparent 2.6px) 0 0 / 22px 22px;
+}
+/* 2 Email outreach: message thread lines */
+.luxury-service-list > *:nth-child(6n + 2) .luxury-service-row::after {
+  background: repeating-linear-gradient(135deg, var(--svc) 0 1.5px, transparent 1.5px 16px);
+}
+/* 3 Business support: organised grid */
+.luxury-service-list > *:nth-child(6n + 3) .luxury-service-row::after {
+  background:
+    linear-gradient(var(--svc) 1.5px, transparent 1.5px) 0 0 / 26px 26px,
+    linear-gradient(90deg, var(--svc) 1.5px, transparent 1.5px) 0 0 / 26px 26px;
+}
+/* 4 Lead generation: data pathways */
+.luxury-service-list > *:nth-child(6n + 4) .luxury-service-row::after {
+  background: repeating-radial-gradient(circle at 100% 0%, var(--svc) 0 1.5px, transparent 1.5px 24px);
+}
+/* 5 AI video: layered frames */
+.luxury-service-list > *:nth-child(6n + 5) .luxury-service-row::after {
+  background:
+    linear-gradient(var(--svc), var(--svc)) 0 0 / 100% 1.5px no-repeat,
+    repeating-linear-gradient(90deg, var(--svc) 0 2px, transparent 2px 20px);
+  -webkit-mask-image: linear-gradient(200deg, #000 0%, transparent 70%);
+  mask-image: linear-gradient(200deg, #000 0%, transparent 70%);
+}
+/* 6 Email setup: technical dots and rings */
+.luxury-service-list > *:nth-child(6n + 6) .luxury-service-row::after {
+  background:
+    radial-gradient(var(--svc) 2px, transparent 2.6px) 0 0 / 18px 18px,
+    repeating-radial-gradient(circle at 100% 100%, var(--svc) 0 1px, transparent 1px 28px);
+}
+.luxury-service-list > *:nth-child(6n + 3) { --svc: #1f8f8a; }
+.luxury-service-list > *:nth-child(6n + 6) { --svc: #1f8f8a; }
+.luxury-service-list > *:nth-child(6n + 4) { --svc: #2f4f95; }
+.luxury-service-list > *:nth-child(6n + 2),
+.luxury-service-list > *:nth-child(6n + 5) { --svc: #6a55c8; }
+
+/* --- "Why Arcturus": fill the empty left side with an orbit graphic -------- */
+.luxury-statement-grid > *:first-child { position: relative; min-height: 340px; }
+.luxury-statement-grid > *:first-child::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  bottom: -14%;
+  width: min(420px, 90%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 82% 24%, #c6c2f0 0 7px, transparent 8px),
+    radial-gradient(circle at 14% 62%, #1f8f8a 0 5px, transparent 6px),
+    radial-gradient(circle at 56% 96%, #7d86c9 0 6px, transparent 7px),
+    radial-gradient(circle, transparent 0 62%, rgba(198, 194, 240, 0.28) 62.4% 63%, transparent 63.4%),
+    radial-gradient(circle, transparent 0 40%, rgba(198, 194, 240, 0.2) 40.4% 41%, transparent 41.4%);
+  animation: arcSpin 70s linear infinite;
+  pointer-events: none;
+}
+.luxury-statement-section { overflow: hidden; }
+
+/* --- Process: coloured top edge on each step ------------------------------ */
+.luxury-process-item { position: relative; transition: background 260ms ease; }
+.luxury-process-item::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0; height: 3px;
+  background: linear-gradient(90deg, var(--arc-cobalt, #2f4f95), var(--arc-violet, #6a55c8));
+  transform: scaleX(0.2);
+  transform-origin: left;
+  transition: transform 400ms ease;
+}
+.luxury-process-item:hover::before { transform: scaleX(1); }
+.luxury-process-item:hover { background: rgba(47, 79, 149, 0.05); }
+
+/* --- Buttons: confident hover ------------------------------------------- */
+.luxury-button { transition: transform 220ms ease, box-shadow 220ms ease; }
+.luxury-button:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(15, 41, 66, 0.6); }
+
+/* --- Responsive ----------------------------------------------------------- */
+@media (max-width: 960px) {
+  .luxury-service-list > * { grid-column: span 12 !important; }
+  .luxury-service-row { min-height: 240px; padding: 24px; border-radius: 24px; }
+}
+@media (max-width: 820px) {
+  .luxury-statement-grid > *:first-child { min-height: 220px; }
+  .luxury-statement-grid > *:first-child::after { width: 240px; bottom: -30%; opacity: 0.8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luxury-hero-art-wrap::before, .luxury-hero-art, .luxury-art-disc,
+  .luxury-art-ring-one, .luxury-art-ring-two, .luxury-art-dot,
+  .luxury-statement-grid > *:first-child::after,
+  .luxury-service-row:hover::after { animation: none !important; }
+  .luxury-service-row, .luxury-button, .luxury-process-item::before { transition: none; }
+}
