@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { CONTACT_EMAIL, getService, servicePageExtras } from "@/lib/site";
-import ServiceMotif from "@/components/ServiceMotif";
+import IsoIllustration from "@/components/IsoIllustration";
 import AmbientScene from "@/components/AmbientScene";
 import { resources } from "@/lib/resources";
 
@@ -27,7 +27,7 @@ export default function ServiceDetail() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20 lg:px-10 lg:py-24">
           <div className="min-w-0"><p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4263aa]" data-testid="service-detail-eyebrow">{service.eyebrow}</p><h1 className="mt-5 max-w-3xl break-words font-serif text-[2.4rem] leading-[1.08] tracking-[0.02em] text-[#0f172a] sm:text-6xl lg:text-7xl" data-testid="service-detail-heading">{service.slug === "linkedin-management" ? "LinkedIn Management Services" : service.title}</h1><p className="mt-7 max-w-3xl text-lg leading-8 text-[#475569]" data-testid="service-summary">{extras.summary}</p>
           {service.slug === "linkedin-management" ? <p className="mt-4 max-w-3xl text-sm leading-7 text-[#64748b]" data-testid="linkedin-keyword-context">These LinkedIn management services cover the practical work behind a consistent B2B presence: profile optimisation, professional content, targeted prospecting, connection outreach, follow-ups and reporting.</p> : null}<p className="mt-4 max-w-3xl text-sm leading-7 text-[#64748b]" data-testid="service-overview-copy">{service.overview}</p><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.15em] text-[#64748b]" data-testid="service-last-updated">Last updated: {extras.lastUpdated}</p></div>
-          <div className="service-hero-stack"><ServiceMotif slug={service.slug} /><div className="premium-panel premium-lift service-price-panel rounded-[2rem] bg-[#0f2942] p-7 text-white sm:p-9" data-testid="service-price-hero"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Pricing</p><p className="font-highlight mt-5 break-words text-4xl tracking-tight text-white" data-testid="service-pricing">{service.price}</p><p className="mt-3 text-sm leading-6 text-[#cbd5e1]" data-testid="service-pricing-note">{service.priceNote}</p></div></div>
+          <div className="service-hero-stack"><IsoIllustration slug={service.slug} /><div className="premium-panel premium-lift service-price-panel rounded-[2rem] bg-[#0f2942] p-7 text-white sm:p-9" data-testid="service-price-hero"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Pricing</p><p className="font-highlight mt-5 break-words text-4xl tracking-tight text-white" data-testid="service-pricing">{service.price}</p><p className="mt-3 text-sm leading-6 text-[#cbd5e1]" data-testid="service-pricing-note">{service.priceNote}</p></div></div>
         </div>
       </section>
 

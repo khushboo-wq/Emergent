@@ -1,0 +1,114 @@
+/* Arcturus polish layer — loaded after index.css. Additive only. */
+
+/* ---- Highlights: prices and key terms ---- */
+mark.arc-mark{background:linear-gradient(transparent 58%,rgba(198,194,240,.95) 58%);color:inherit;font-weight:800;padding:0 .12em;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .6s}
+mark.arc-price{background:linear-gradient(120deg,#6a55c8,#2f4f95);color:#fff;padding:.04em .5em .08em;border-radius:999px;font-weight:800;letter-spacing:.01em;box-shadow:0 6px 16px -8px rgba(47,79,149,.7)}
+.luxury-service-row mark.arc-price,.service-price-panel mark.arc-price,[class*="bg-[#0f2942]"] mark.arc-price,.luxury-footer mark.arc-price{background:linear-gradient(120deg,#c6c2f0,#9fb4ff);color:#0f2942}
+.luxury-footer mark.arc-mark:not(.arc-price),[class*="bg-[#0f2942]"] mark.arc-mark:not(.arc-price),.luxury-contact-section mark.arc-mark:not(.arc-price){background:linear-gradient(transparent 58%,rgba(106,85,200,.65) 58%);color:#fff}
+
+/* ---- Bold, never-plain body text ---- */
+main p,main li{font-weight:500}
+main p strong,main li strong{font-weight:800;color:#0f2942}
+.luxury-contact-section p,.luxury-footer-cta p{color:#e7ebf7 !important;font-weight:500}
+.luxury-service-price,.luxury-service-row .luxury-service-price{font-weight:800}
+
+/* ---- Header ---- */
+.luxury-site-header{backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);background:rgba(246,241,233,.82)}
+.luxury-site-header.is-scrolled{box-shadow:0 18px 40px -26px rgba(15,41,66,.55)}
+.luxury-site-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#2f4f95,#6a55c8,#1f8f8a,#6a55c8,#2f4f95);background-size:300% 100%;animation:arcSheen 9s linear infinite;opacity:.9}
+.luxury-site-header{position:sticky}
+.luxury-nav-link{font-weight:700;position:relative}
+.luxury-nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#2f4f95,#6a55c8);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.luxury-nav-link:hover::after,.luxury-nav-link.is-active::after{transform:scaleX(1)}
+.luxury-header-cta{background:linear-gradient(120deg,#14355e,#6a55c8,#14355e);background-size:200% 100%;color:#fff;font-weight:800;transition:background-position .6s,transform .3s,box-shadow .3s;box-shadow:0 12px 26px -14px rgba(106,85,200,.9)}
+.luxury-header-cta:hover{background-position:100% 0;transform:translateY(-2px)}
+.luxury-brand strong{letter-spacing:.2em}
+
+/* ---- Service tabs: each its own coloured tab ---- */
+.header-service-rail{background:linear-gradient(90deg,#0b1f35,#14355e 50%,#0b1f35)}
+.service-tab{font-weight:700;border-radius:12px 12px 0 0;border-bottom:3px solid transparent;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s,border-color .35s}
+.service-tab:hover{transform:translateY(-2px);background:rgba(255,255,255,.08);border-bottom-color:var(--service-accent)}
+.service-tab.is-active{background:rgba(255,255,255,.12);border-bottom-color:var(--service-accent)}
+.service-tab-index{color:var(--service-accent);font-weight:800}
+
+/* ---- Footer ---- */
+.luxury-footer{position:relative;overflow:hidden;background:radial-gradient(900px 400px at 15% 0,rgba(106,85,200,.28),transparent 60%),radial-gradient(800px 380px at 90% 30%,rgba(31,143,138,.22),transparent 60%),linear-gradient(180deg,#0b1f35,#07131f)}
+.luxury-footer::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;pointer-events:none;mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.luxury-footer-cta{position:relative}
+.luxury-footer-cta h2{font-weight:800}
+.luxury-footer-cta-button{background:linear-gradient(120deg,#c6c2f0,#9fb4ff,#c6c2f0);background-size:200% 100%;color:#0f2942;font-weight:800;animation:arcSheen 6s linear infinite}
+.luxury-footer-column a,.luxury-footer-column span{font-weight:600;transition:transform .3s,color .3s}
+.luxury-footer-column a:hover{transform:translateX(6px);color:#c6c2f0}
+.luxury-footer-label{font-weight:800;letter-spacing:.2em}
+.footer-info-grid>div{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(198,194,240,.22);border-radius:20px;padding:22px 24px;backdrop-filter:blur(6px);transition:transform .4s,border-color .4s}
+.footer-info-grid>div:hover{transform:translateY(-5px);border-color:rgba(198,194,240,.6)}
+.footer-info-grid strong{font-weight:800;color:#fff;display:block;margin:.4rem 0}
+.luxury-footer-socials a{transition:transform .35s,box-shadow .35s}
+.luxury-footer-socials a:hover{transform:translateY(-4px) rotate(-6deg);box-shadow:0 14px 26px -12px rgba(106,85,200,.9)}
+.luxury-footer-word{background:linear-gradient(90deg,rgba(198,194,240,.05),rgba(198,194,240,.28),rgba(198,194,240,.05));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent !important;-webkit-text-fill-color:transparent;animation:arcSheen 14s linear infinite}
+
+/* ---- Fix: pillar words never break mid-word ---- */
+.arcturus-pillars-grid *{overflow-wrap:normal;word-break:normal;hyphens:none}
+.arcturus-pillars-grid h2{font-size:clamp(1.5rem,2.3vw,2.2rem) !important;letter-spacing:0 !important}
+
+/* ---- Fix: contact dock shouldn't cover hero card ---- */
+.luxury-contact-dock{z-index:40}
+@media (max-width:1100px){.luxury-contact-dock{transform:scale(.88);transform-origin:right bottom}}
+
+/* ---- Scroll text animation (CSS scroll-driven, falls back to IntersectionObserver) ---- */
+@keyframes arcRise{from{opacity:0;transform:translateY(34px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes arcSheen{to{background-position:300% 0}}
+@supports (animation-timeline:view()){
+  main h1,main h2,main h3,main p,main li,.luxury-footer h2,.footer-info-grid>div{animation:arcRise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  main h1{animation-range:entry 0% entry 90%}
+}
+@supports not (animation-timeline:view()){
+  .arc-rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .arc-rv.arc-in{opacity:1;transform:none}
+}
+/* ---- 3D isometric illustrations ---- */
+.iso-illustration{width:100%;max-width:440px;margin-inline:auto;filter:drop-shadow(0 30px 30px rgba(15,41,66,.18));perspective:900px}
+.iso-illustration svg{width:100%;height:auto;display:block;animation:isoTilt 10s ease-in-out infinite;transform-style:preserve-3d}
+.iso-float{animation:isoFloat 5s ease-in-out infinite;animation-delay:var(--iso-delay,0s)}
+.iso-orbit{transform-origin:180px 86px;animation:isoSpin 14s linear infinite}
+.iso-orbit circle:last-child{animation:isoSpin 14s linear infinite reverse}
+.iso-spark{animation:isoFloat 4s ease-in-out infinite}.iso-spark.s2{animation-delay:.8s}.iso-spark.s3{animation-delay:1.6s}
+.iso-shadow{animation:isoShadow 5s ease-in-out infinite;transform-origin:180px 248px}
+.iso-card{max-width:240px;margin:0 0 -1.2rem auto}
+.service-hero-stack .iso-illustration{margin-bottom:-.5rem}
+@keyframes isoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes isoSpin{to{transform:rotate(360deg)}}
+@keyframes isoTilt{0%,100%{transform:rotateY(-6deg) rotateX(2deg)}50%{transform:rotateY(6deg) rotateX(-2deg)}}
+@keyframes isoShadow{0%,100%{transform:scale(1);opacity:.14}50%{transform:scale(.9);opacity:.08}}
+
+/* ---- Card hover polish ---- */
+.premium-lift{transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.premium-lift:hover{transform:translateY(-8px);box-shadow:0 34px 60px -34px rgba(15,41,66,.55)}
+html{scroll-padding-top:120px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .arc-rv{opacity:1;transform:none}
+}
+
+.header-service-rail{max-width:100vw;overflow-x:auto;scrollbar-width:none}.header-service-rail::-webkit-scrollbar{display:none}
+html,body{overflow-x:clip}
+
+/* big-type contexts: highlight as underline, not pill */
+h1 mark.arc-price,h2 mark.arc-price,.service-price-panel mark.arc-price,.font-highlight mark.arc-price,.service-visual-metrics mark.arc-price{background:linear-gradient(transparent 62%,rgba(159,180,255,.75) 62%) !important;color:inherit !important;padding:0 .06em;border-radius:2px;box-shadow:none}
+.service-hero-stack .iso-illustration{max-width:300px}
+
+/* footer + list spacing fixes */
+.footer-info-grid{gap:18px !important}
+.footer-info-grid span,.luxury-footer-brand p,.luxury-footer-brand span{color:#d5daea !important;font-weight:500}
+.luxury-footer-word{font-size:clamp(3rem,15.5vw,15rem) !important;white-space:nowrap;overflow:hidden;line-height:.9;text-align:center}
+.luxury-service-row .luxury-service-price{margin-right:1.2rem;display:inline-block}
+.luxury-service-row{row-gap:.5rem}
+
+/* price panel + dock fixes */
+.service-price-panel .font-highlight{font-size:clamp(1.9rem,2.6vw,2.7rem) !important;line-height:1.15}
+h1 mark.arc-price,h2 mark.arc-price,.service-price-panel mark.arc-price,.font-highlight mark.arc-price,.service-visual-metrics mark.arc-price{white-space:nowrap}
+@media (max-width:768px){
+  .luxury-contact-dock{position:fixed !important;top:auto !important;bottom:12px !important;right:12px !important;left:auto !important;transform:none !important;flex-direction:row !important;gap:8px !important}
+  .luxury-contact-dock a{width:42px !important;height:42px !important}
+}

@@ -3,9 +3,11 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
+import './arc-polish.css'
 import App from './App.tsx'
 import { queryClient } from './lib/queryClient'
 import { startMotion } from './motion'
+import { startPolish } from './polish'
 
 const root = document.getElementById('root')!
 const app = (
@@ -21,4 +23,4 @@ const app = (
 if (root.hasChildNodes()) hydrateRoot(root, app)
 else createRoot(root).render(app)
 
-if (typeof window !== 'undefined') window.addEventListener('load', () => setTimeout(startMotion, 600))
+if (typeof window !== 'undefined') window.addEventListener('load', () => setTimeout(() => { startMotion(); startPolish() }, 600))
