@@ -2460,7 +2460,7 @@ body {
 .arcturus-luxury [data-testid="service-detail-heading"] {
   max-width: 980px !important;
   margin-top: 18px !important;
-  font-family: "Hemicube", "Sora Variable", sans-serif !important;
+  font-family: "Alesand", "Sora Variable", sans-serif !important;
   font-size: clamp(50px, 7vw, 96px) !important;
   line-height: 0.93 !important;
   letter-spacing: -0.055em !important;
