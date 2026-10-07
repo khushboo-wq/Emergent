@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import type { CSSProperties } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { orderedServices } from "@/lib/site";
 
@@ -18,7 +19,7 @@ export default function ServiceTabs() {
               key={service.slug}
               to={"/services/" + service.slug}
               className={"service-tab " + (isActive ? "is-active" : "")}
-              style={{ "--service-accent": accents[index] } as React.CSSProperties}
+              style={{ "--service-accent": accents[index] } as CSSProperties}
               data-testid={"service-tab-" + service.slug}
             >
               <span className="service-tab-index">0{index + 1}</span>
