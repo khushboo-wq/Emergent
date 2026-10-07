@@ -1,4 +1,4 @@
-import { ArrowRight, Check, FileCheck2, LockKeyhole, MessageSquareText, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, FileCheck2, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
