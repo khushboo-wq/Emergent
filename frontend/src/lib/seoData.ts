@@ -1,5 +1,6 @@
 import seoConfigJson from "../../seo.config.json";
 import { CONTACT_EMAIL, getService, orderedServices, servicePageExtras } from "@/lib/site";
+import { getResource, resources } from "@/lib/resources";
 
 interface SeoPageConfig {
   path: string;
@@ -11,6 +12,7 @@ interface SeoPageConfig {
   ogType: "website" | "article" | "profile";
   schemaTypes: string[];
   serviceSlug?: string;
+  resourceSlug?: string;
   changeFrequency: string;
   priority: number;
   lastModified: string;
@@ -52,6 +54,36 @@ export const PRERENDER_ROUTES = seoConfig.pages.map((page) => page.path);
 
 function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
   const service = page.serviceSlug ? getService(page.serviceSlug) : undefined;
+  const resource = page.resourceSlug ? getResource(page.resourceSlug) : undefined;
+  if (resource) {
+    const article = {
+      "@type": "Article",
+      "@id": `${page.canonical}#article`,
+      headline: resource.title,
+      description: page.description,
+      url: page.canonical,
+      datePublished: resource.published,
+      dateModified: resource.updated,
+      author: { "@id": personId },
+      publisher: { "@id": businessId },
+      articleSection: resource.category,
+      keywords: resource.keywords,
+      mainEntityOfPage: { "@id": `${page.canonical}#webpage` }
+    };
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        professionalService,
+        article,
+        { "@type": "WebPage", "@id": `${page.canonical}#webpage`, url: page.canonical, name: page.title, description: page.description, isPartOf: { "@id": `${site.baseUrl}/#website` } },
+        { "@type": "BreadcrumbList", "@id": `${page.canonical}#breadcrumbs`, itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${site.baseUrl}/` },
+          { "@type": "ListItem", position: 2, name: "Resources", item: `${site.baseUrl}/resources` },
+          { "@type": "ListItem", position: 3, name: resource.title, item: page.canonical }
+        ] }
+      ]
+    };
+  }
   if (service) {
     const extras = servicePageExtras[service.slug];
     const priceValue = service.price.match(/[\d.]+/)?.[0] ?? "0";
@@ -70,12 +102,13 @@ function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
     };
   }
 
-  const webPage = { "@type": page.path === "/about" ? "AboutPage" : page.path === "/contact" ? "ContactPage" : page.path === "/services" ? "CollectionPage" : "WebPage", "@id": `${page.canonical}#webpage`, url: page.canonical, name: page.title, description: page.description, isPartOf: { "@id": `${site.baseUrl}/#website` } };
+  const webPage = { "@type": page.path === "/about" ? "AboutPage" : page.path === "/contact" ? "ContactPage" : page.path === "/services" || page.path === "/resources" ? "CollectionPage" : "WebPage", "@id": `${page.canonical}#webpage`, url: page.canonical, name: page.title, description: page.description, isPartOf: { "@id": `${site.baseUrl}/#website` } };
   const graph: Record<string, unknown>[] = [webPage];
   if (page.schemaTypes.includes("ProfessionalService")) graph.unshift(professionalService);
   if (page.schemaTypes.includes("Person")) graph.push(person);
   if (page.path === "/") graph.push({ "@type": "WebSite", "@id": `${site.baseUrl}/#website`, name: site.name, alternateName: "Arcturus", url: `${site.baseUrl}/`, publisher: { "@id": businessId }, inLanguage: site.language });
   if (page.path === "/services") graph.push({ "@type": "ItemList", name: "Arcturus Professional Services", itemListElement: orderedServices.map((entry, index) => ({ "@type": "ListItem", position: index + 1, url: `${site.baseUrl}/services/${entry.slug}`, name: entry.title })) });
+  if (page.path === "/resources") graph.push({ "@type": "ItemList", name: "LinkedIn Management Resources", itemListElement: resources.map((entry, index) => ({ "@type": "ListItem", position: index + 1, url: `${site.baseUrl}/resources/${entry.slug}`, name: entry.title })) });
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
