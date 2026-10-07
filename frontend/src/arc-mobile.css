@@ -1,0 +1,60 @@
+/* Mobile polish layer */
+@media (max-width:860px){
+  /* layout: everything single column, nothing wider than screen */
+  .reporting-grid,.communication-grid,.luxury-two-col,.luxury-statement-grid,.luxury-about-grid,.luxury-contact-inner,.footer-info-grid,.luxury-footer-top,.process-start-grid,.why-work-grid{grid-template-columns:1fr !important;gap:28px !important}
+  .reporting-matrix{grid-template-columns:1fr !important}
+  .reporting-grid>*,.reporting-matrix>*{min-width:0 !important;max-width:100% !important}
+  main section,main article,main .premium-panel{max-width:100%}
+  main *{min-width:0}
+
+  /* readable minimum text sizes */
+  main [class*="text-[9px]"],main [class*="text-[10px]"],main [class*="text-[11px]"],main .text-xs,
+  .service-visual-metrics span,.service-commercial-label,.luxury-section-kicker,.luxury-eyebrow,.luxury-footer-label,
+  .luxury-footer-bottom,.luxury-footer-bottom *,.footer-to-top,.analytics-trigger span,.resource-home-card span,.resource-home-card small,
+  .luxury-inline-link,.resource-home-link,[data-testid="service-breadcrumbs"],[data-testid="service-breadcrumbs"] *{font-size:13px !important}
+  .arc-logo-text small{font-size:9.5px !important;letter-spacing:.24em !important}
+  .luxury-eyebrow{letter-spacing:.1em !important;line-height:1.5 !important;display:block !important}
+  .luxury-eyebrow span{margin-right:.4em}
+  main .luxury-section-kicker{letter-spacing:.12em !important}
+  main p,main li{font-size:1.04rem !important;line-height:1.65 !important}
+
+  /* tap targets */
+  .luxury-mobile-menu{width:46px !important;height:46px !important;border-radius:14px !important}
+  .luxury-inline-link,.resource-home-link,[data-testid="service-breadcrumbs"] a{display:inline-flex;align-items:center;min-height:40px}
+  .work-section-tabs a{min-height:40px;display:inline-flex !important;align-items:center}
+  main a.luxury-button,main .luxury-hero-actions a{min-height:52px;font-size:1.05rem !important}
+
+  /* sections: comfortable mobile spacing */
+  .luxury-shell,.mx-auto.max-w-7xl{padding-left:18px !important;padding-right:18px !important}
+  main section{scroll-margin-top:90px}
+
+  /* floating buttons: slim bottom bar, never over text */
+  .luxury-contact-dock{position:fixed !important;left:50% !important;right:auto !important;top:auto !important;bottom:12px !important;transform:translateX(-50%) !important;display:flex !important;flex-direction:row !important;gap:10px !important;padding:7px 10px !important;border-radius:999px !important;background:rgba(15,41,66,.82) !important;backdrop-filter:blur(14px);box-shadow:0 16px 34px -14px rgba(0,0,0,.6) !important;z-index:65 !important}
+  .luxury-contact-dock a{width:42px !important;height:42px !important;border-radius:50% !important}
+  .arc-scroll-buttons{left:auto !important;right:12px !important;bottom:76px !important}
+  .arc-scroll-buttons button{width:40px !important;height:40px !important}
+  body{padding-bottom:72px}
+  .luxury-footer{padding-bottom:80px !important}
+
+  /* hero: tighter and centered visuals */
+  .luxury-hero-inner{gap:32px !important}
+  .arc-showcase{max-width:100%}
+  .arc-showcase-card{padding:24px 22px 20px !important;border-radius:28px !important}
+  .arc-showcase-iso{max-width:240px !important}
+  .arc-showcase-note{text-align:left !important}
+  main h1{letter-spacing:0 !important}
+
+  /* service tabs rail: swipeable with snap */
+  .service-tabs-inner{scroll-snap-type:x mandatory;overflow-x:auto;scrollbar-width:none;padding-right:18px}
+  .service-tab{scroll-snap-align:start;flex:0 0 auto}
+
+  /* cards & grids */
+  .arcturus-luxury [data-testid^="services-overview-card-"]{padding:24px 22px !important}
+  .service-commercial-grid{grid-template-columns:1fr !important}
+  .luxury-facts-grid{grid-template-columns:1fr 1fr !important}
+  .luxury-footer-word{padding-bottom:6px !important}
+}
+@media (max-width:420px){
+  .luxury-facts-grid{grid-template-columns:1fr !important}
+  main h1{font-size:clamp(2rem,9.4vw,2.6rem) !important}
+}
