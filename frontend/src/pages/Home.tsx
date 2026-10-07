@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Mail } from "lucide-react";
+import PortraitCard from "@/components/PortraitCard";
 import HeroShowcase from "@/components/HeroShowcase";
 import IsoIllustration from "@/components/IsoIllustration";
 import { Link } from "react-router-dom";
@@ -202,11 +203,7 @@ export default function Home() {
       <section className="luxury-about-section">
         <div className="luxury-shell luxury-about-grid">
           <Reveal className="luxury-about-visual">
-            <div className="luxury-about-monogram">K</div>
-            <div className="luxury-about-meta">
-              <span>KHUSHBOO</span>
-              <small>Independent Freelancer · New Delhi</small>
-            </div>
+            <PortraitCard compact />
           </Reveal>
           <Reveal delay={110}>
             <p className="luxury-section-kicker">About me</p>
