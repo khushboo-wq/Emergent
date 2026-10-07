@@ -4722,3 +4722,48 @@ body {
   }
   .service-price-feature::after { top: 15px; right: 15px; }
 }
+
+
+/* Header service menu: six distinct service signatures */
+.luxury-services-menu a {
+  border-left: 3px solid transparent;
+}
+
+.luxury-services-menu a:nth-child(1) { border-left-color: #3b66d2; }
+.luxury-services-menu a:nth-child(2) { border-left-color: #8b67cf; }
+.luxury-services-menu a:nth-child(3) { border-left-color: #2f968d; }
+.luxury-services-menu a:nth-child(4) { border-left-color: #bf8956; }
+.luxury-services-menu a:nth-child(5) { border-left-color: #9567d9; }
+.luxury-services-menu a:nth-child(6) { border-left-color: #3d82ad; }
+
+.luxury-services-menu a:hover {
+  padding-left: 15px;
+}
+
+.luxury-services-menu a:nth-child(1):hover { background: rgba(59,102,210,0.08); }
+.luxury-services-menu a:nth-child(2):hover { background: rgba(139,103,207,0.08); }
+.luxury-services-menu a:nth-child(3):hover { background: rgba(47,150,141,0.08); }
+.luxury-services-menu a:nth-child(4):hover { background: rgba(191,137,86,0.1); }
+.luxury-services-menu a:nth-child(5):hover { background: rgba(149,103,217,0.08); }
+.luxury-services-menu a:nth-child(6):hover { background: rgba(61,130,173,0.08); }
+
+@media (max-width: 680px) {
+  .luxury-header-inner {
+    min-height: 68px;
+  }
+
+  .luxury-brand img {
+    width: 39px;
+    height: 39px;
+  }
+
+  .luxury-brand strong {
+    font-size: 10px;
+  }
+
+  .luxury-brand small {
+    font-size: 8px;
+  }
+
+  .luxury-header-actions { display: none; }
+}
