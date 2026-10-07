@@ -5,12 +5,14 @@ import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
 import { CONTACT_EMAIL, getContactHref } from "@/lib/site";
+import AmbientScene from "@/components/AmbientScene";
 
 export default function Contact() {
   return (
     <PageFrame>
       <Seo path="/contact" />
-      <section className="luxury-hero" data-testid="contact-hero">
+      <section className="luxury-hero contact-hero-rich" data-testid="contact-hero">
+        <AmbientScene type="contact" className="contact-ambient-scene" />
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy">
             <p className="luxury-eyebrow"><span>06</span> Written enquiries · direct support</p>
