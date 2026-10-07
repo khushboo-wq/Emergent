@@ -1,4 +1,5 @@
 import { ArrowRight, BookOpen } from "lucide-react";
+import HeroShowcase from "@/components/HeroShowcase";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
@@ -20,17 +21,7 @@ export default function Resources() {
             </p>
           </Reveal>
           <Reveal className="luxury-hero-art-wrap" delay={120}>
-            <div className="luxury-hero-art" aria-label="Arcturus resources">
-              <div className="luxury-art-arch" />
-              <div className="luxury-art-disc" />
-              <div className="luxury-art-ring luxury-art-ring-one" />
-              <div className="luxury-art-ring luxury-art-ring-two" />
-              <div className="luxury-art-letter">R</div>
-              <div className="luxury-art-word">RESOURCES</div>
-              <div className="luxury-art-caption">B2B · ARCTURUS</div>
-              <div className="luxury-art-side">PRACTICAL · CLEAR · SERVICE-LED</div>
-              <div className="luxury-art-index">03 / 03</div>
-            </div>
+            <HeroShowcase kicker="Arcturus" index="05 / 06" title="Practical guides for B2B growth" subtitle="LinkedIn, email outreach and lead generation, explained plainly." slug="lead-generation" chips={["LinkedIn","Email outreach","Lead generation"]} />
           </Reveal>
         </div>
       </section>

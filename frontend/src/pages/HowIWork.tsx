@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Clock3, FileCheck2, MessageSquareText, ShieldCheck } from "lucide-react";
+import HeroShowcase from "@/components/HeroShowcase";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
@@ -44,17 +45,7 @@ export default function HowIWork() {
             </div>
           </Reveal>
           <Reveal className="luxury-hero-art-wrap" delay={140}>
-            <div className="luxury-hero-art how-it-works-art">
-              <div className="luxury-art-arch" />
-              <div className="luxury-art-disc" />
-              <div className="luxury-art-ring luxury-art-ring-one" />
-              <div className="luxury-art-ring luxury-art-ring-two" />
-              <div className="luxury-art-letter">W</div>
-              <div className="luxury-art-word">WORKFLOW</div>
-              <div className="luxury-art-caption">UNDERSTAND · PLAN · EXECUTE</div>
-              <div className="luxury-art-side">WRITTEN · DIRECT · CLEAR</div>
-              <div className="luxury-art-index">02 / 06</div>
-            </div>
+            <HeroShowcase kicker="Workflow" index="02 / 06" title="Understand · Plan · Execute · Review · Deliver" subtitle="Every step agreed and documented in writing." slug="email-outreach" chips={["Written brief","Scope agreed","Advance payment","Work begins","Delivery"]} />
           </Reveal>
         </div>
       </section>

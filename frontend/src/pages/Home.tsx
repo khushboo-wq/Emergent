@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Mail } from "lucide-react";
+import HeroShowcase from "@/components/HeroShowcase";
 import IsoIllustration from "@/components/IsoIllustration";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
@@ -50,20 +51,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="luxury-hero-art-wrap" delay={150}>
-            <div className="luxury-hero-art" aria-label="Arcturus visual identity">
-              <div className="luxury-art-arch" />
-              <div className="luxury-art-disc" />
-              <div className="luxury-art-ring luxury-art-ring-one" />
-              <div className="luxury-art-ring luxury-art-ring-two" />
-              <div className="luxury-art-letter">A</div>
-              <div className="luxury-art-word">ARCTURUS</div>
-              <div className="luxury-art-caption">PROFESSIONAL SERVICES</div>
-              <div className="luxury-art-side">DIRECT · PERSONAL · WRITTEN</div>
-              <div className="luxury-art-index">01 / 06</div>
-              <span className="luxury-art-dot luxury-art-dot-one" />
-              <span className="luxury-art-dot luxury-art-dot-two" />
-            </div>
-            <div className="luxury-art-note">A direct, considered way to keep the work behind your business moving.</div>
+            <HeroShowcase kicker="Arcturus" index="01 / 06" title="Arcturus Professional Services" subtitle="B2B growth work, handled personally by Khushboo Tomar." slug="linkedin-management" chips={["LinkedIn","Email outreach","Lead generation","Business support","AI video","Email setup"]} note="A direct, considered way to keep the work behind your business moving." />
           </Reveal>
         </div>
       </section>

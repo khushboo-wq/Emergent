@@ -1,4 +1,5 @@
 import { ArrowRight, Check, FileCheck2, MessageSquareText, ShieldCheck } from "lucide-react";
+import HeroShowcase from "@/components/HeroShowcase";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
@@ -47,17 +48,7 @@ export default function ReportingCompliance() {
             </div>
           </Reveal>
           <Reveal className="luxury-hero-art-wrap" delay={120}>
-            <div className="luxury-hero-art">
-              <div className="luxury-art-arch" />
-              <div className="luxury-art-disc" />
-              <div className="luxury-art-ring luxury-art-ring-one" />
-              <div className="luxury-art-ring luxury-art-ring-two" />
-              <div className="luxury-art-letter">R</div>
-              <div className="luxury-art-word">REPORT</div>
-              <div className="luxury-art-caption">CLEAR · HONEST · DOCUMENTED</div>
-              <div className="luxury-art-side">DATA · PROCESS · CONTROL</div>
-              <div className="luxury-art-index">05 / 06</div>
-            </div>
+            <HeroShowcase kicker="Arcturus" index="04 / 06" title="Clear reports. Careful data." subtitle="B2B-only, GDPR and PECR-aware working." slug="email-setup" chips={["Written reports","B2B data","Your accounts, your control"]} />
           </Reveal>
         </div>
       </section>

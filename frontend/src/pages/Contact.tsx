@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, Mail, MapPin, MessageCircle } from "lucide-react";
+import HeroShowcase from "@/components/HeroShowcase";
 import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactForm";
 import PageFrame from "@/components/PageFrame";
@@ -26,17 +27,7 @@ export default function Contact() {
             </div>
           </Reveal>
           <Reveal className="luxury-hero-art-wrap" delay={120}>
-            <div className="luxury-hero-art" aria-label="Arcturus contact">
-              <div className="luxury-art-arch" />
-              <div className="luxury-art-disc" />
-              <div className="luxury-art-ring luxury-art-ring-one" />
-              <div className="luxury-art-ring luxury-art-ring-two" />
-              <div className="luxury-art-letter">C</div>
-              <div className="luxury-art-word">CONTACT</div>
-              <div className="luxury-art-caption">WRITTEN · DIRECT · CLEAR</div>
-              <div className="luxury-art-side">EMAIL · LINKEDIN · WHATSAPP</div>
-              <div className="luxury-art-index">06 / 06</div>
-            </div>
+            <HeroShowcase kicker="Arcturus" index="06 / 06" title="Send the brief in writing" subtitle="Email, WhatsApp or LinkedIn. No calls needed." slug="ai-video-creation" chips={["Email","WhatsApp","LinkedIn","Reply in writing"]} />
           </Reveal>
         </div>
       </section>
