@@ -5086,3 +5086,92 @@ strong, b {
     transition: none !important;
   }
 }
+
+
+.luxury-services-menu {
+  width: 470px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  padding: 10px;
+  border-radius: 24px;
+  background: rgba(251,248,243,.96);
+  box-shadow: 0 28px 70px -38px rgba(23,21,27,.58);
+}
+
+.luxury-services-menu a {
+  position: relative;
+  min-height: 62px;
+  padding: 11px 12px 11px 15px;
+  border: 1px solid rgba(23,21,27,.08);
+  border-radius: 15px;
+  background: rgba(255,255,255,.56);
+  overflow: hidden;
+}
+
+.luxury-services-menu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #5e7bdf, #8b6fc9);
+  opacity: .9;
+}
+
+.luxury-services-menu a:nth-child(2)::before { background: linear-gradient(180deg, #8b6fc9, #d8c3a5); }
+.luxury-services-menu a:nth-child(3)::before { background: linear-gradient(180deg, #4a9c91, #72b6a9); }
+.luxury-services-menu a:nth-child(4)::before { background: linear-gradient(180deg, #c89566, #8a5c37); }
+.luxury-services-menu a:nth-child(5)::before { background: linear-gradient(180deg, #9566d8, #bca8e8); }
+.luxury-services-menu a:nth-child(6)::before { background: linear-gradient(180deg, #3e86b4, #8fc9e7); }
+
+.luxury-services-menu a:hover {
+  background: #fffdf9;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px -25px rgba(47,39,53,.55);
+}
+
+.luxury-services-menu span {
+  color: var(--luxury-deep);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.luxury-services-menu small {
+  color: var(--luxury-plum-soft);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.luxury-header-inner {
+  min-height: 82px;
+}
+
+.luxury-header-email {
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 650;
+}
+
+.luxury-header-cta {
+  min-height: 48px;
+  padding-inline: 19px;
+  font-weight: 800;
+  box-shadow: 0 18px 36px -21px rgba(56,39,67,.82);
+}
+
+@media (max-width: 1050px) {
+  .luxury-services-menu {
+    width: 390px;
+  }
+}
+
+@media (max-width: 720px) {
+  .luxury-services-menu {
+    width: min(90vw, 360px);
+    grid-template-columns: 1fr;
+  }
+}
