@@ -69,7 +69,7 @@ export default function ResourceDetail() {
 
         <section className="luxury-shell resource-related">
           <div>
-            <p className="luxury-section-kicker">More on LinkedIn</p>
+            <p className="luxury-section-kicker">More on {relatedService?.title ?? resource.category}</p>
             <h2>Keep reading.</h2>
           </div>
           <div className="resource-related-list">
