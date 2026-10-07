@@ -28,7 +28,7 @@ export default function Home() {
           <Reveal className="luxury-hero-copy" delay={40}>
             <p className="luxury-eyebrow"><span>01</span> Independent freelancer · New Delhi</p>
             <h1 data-testid="home-hero-heading">
-              LinkedIn, email outreach and business support,
+              B2B outreach and business support,
               <em> handled personally.</em>
             </h1>
             <p className="luxury-hero-lead" data-testid="home-hero-description">
@@ -101,7 +101,7 @@ export default function Home() {
           <div className="luxury-service-list">
             {orderedServices.map((service, index) => (
               <Reveal key={service.slug} delay={index * 45}>
-                <Link to={`/services/${service.slug}`} className="luxury-service-row">
+                <Link to={`/services/${service.slug}`} className="luxury-service-row" data-service-slug={service.slug} data-service-name={service.title}>
                   <span className="luxury-service-number">0{index + 1}</span>
                   <div className="luxury-service-main">
                     <h3>{service.title}</h3>
