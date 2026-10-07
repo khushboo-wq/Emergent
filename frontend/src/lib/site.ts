@@ -378,7 +378,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     ],
   },
   "ai-video-creation": {
-    summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and includes up to 30 short videos.",
+    summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and follows a schedule of 2 videos per day, 7 days a week, based on the agreed brief and content direction.",
     reporting: ["Monthly output against the 30-video allowance", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
     lastUpdated: "7 October 2026",
