@@ -85,6 +85,17 @@ export default function About() {
       </div>
     </section>
 
+    <section className="recommendations-section" data-testid="about-recommendations">
+      <div className="luxury-shell recommendations-grid">
+        <div>
+          <p className="luxury-section-kicker">LinkedIn recommendations</p>
+          <h2>See what professional connections have to say about working with me.</h2>
+          <p>Recommendations are kept on LinkedIn so the feedback remains attached to the professional profile rather than copied into a marketing page.</p>
+        </div>
+        <a href="https://www.linkedin.com/in/khushboo-tomar" target="_blank" rel="noreferrer" className="luxury-button luxury-button-dark">View LinkedIn profile <ArrowUpRight size={16} /></a>
+      </div>
+    </section>
+
     <section className="bg-[#0f2942] text-white" data-testid="about-boundaries-tools"><div className="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-20 lg:px-10"><article><X className="size-7 text-[#b8a9d4]" /><h2 className="mt-6 font-serif text-4xl text-white" data-testid="about-boundaries-heading">What I don&apos;t do</h2><p className="mt-6 text-base leading-8 text-[#cbd5e1]">I don&apos;t offer graphic design, project or calendar management, or YouTube SEO. I&apos;d rather do a few things well than say yes to everything.</p></article><article><Sparkles className="size-7 text-[#9bc8c0]" /><h2 className="mt-6 font-serif text-4xl text-white" data-testid="about-tools-heading">Built with modern tools</h2><p className="mt-6 text-base leading-8 text-[#cbd5e1]">I use AI tools to work faster on research, writing and video, and I build and launch websites with AI platforms such as Emergent. This site is an example.</p></article></div></section>
 
     <section className="mx-5 my-20 rounded-[2rem] border border-[#d7dee9] bg-white px-6 py-12 shadow-[0_28px_65px_-44px_rgba(15,41,66,0.62)] sm:mx-8 sm:my-28 sm:px-10 lg:mx-auto lg:max-w-7xl lg:px-14" data-testid="about-contact-section"><div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><div><Check className="size-6 text-[#2c7a73]" /><h2 className="mt-5 max-w-3xl font-serif text-4xl leading-tight text-[#0f172a] sm:text-5xl" data-testid="about-contact-heading">Send me a short written brief and I&apos;ll reply by email or WhatsApp.</h2></div><Link to="/contact" className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-md bg-[#0f2942] px-6 text-sm font-semibold text-white transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#243f5c] hover:shadow-lg" data-testid="about-contact-button">Contact me <ArrowUpRight className="size-4" /></Link></div></section>
