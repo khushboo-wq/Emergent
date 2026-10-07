@@ -68,7 +68,7 @@ export const services: ServiceContent[] = [
       "Professional follow-ups for accepted connections, without aggressive sales messaging",
       "Authority-led posts, lead magnets, and nurture content built around your offer",
       "A practical funnel from first connection to qualified conversation",
-      "Regular LinkedIn posting with images or video where suitable",
+      "Daily LinkedIn content with images or video where suitable",
       "Weekly LinkedIn newsletter support, with content scheduled for 9:00 AM UK/Irish time using Hootsuite",
       "Regular reporting on outreach activity, connections, replies, and engagement",
     ],
