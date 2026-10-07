@@ -83,6 +83,8 @@ export default function SiteFooter() {
         </div>
       </div>
 
+      <div className="luxury-shell footer-top-row"><a href="#main-content" className="footer-to-top">Back to top <ArrowUpRight size={13} /></a></div>
+
       <div className="luxury-footer-word">ARCTURUS</div>
 
       <div className="luxury-footer-bottom">
