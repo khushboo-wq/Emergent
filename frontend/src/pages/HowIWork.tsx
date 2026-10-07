@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
+import AmbientScene from "@/components/AmbientScene";
 
 const onboarding = [
   ["01", "Day 1–2", "Requirements, invoice, advance payment and access are confirmed."],
@@ -30,7 +31,8 @@ export default function HowIWork() {
     <PageFrame>
       <Seo path="/how-i-work" />
 
-      <section className="luxury-hero luxury-process-hero" data-testid="work-hero">
+      <section className="luxury-hero luxury-process-hero work-hero-rich" data-testid="work-hero">
+        <AmbientScene type="workflow" className="work-ambient-scene" />
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy">
             <p className="luxury-eyebrow"><span>02</span> Process · payment · communication</p>
