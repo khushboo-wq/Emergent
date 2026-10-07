@@ -6,8 +6,8 @@
     "locale": "en_GB",
     "author": "Khushboo Tomar",
     "email": "khushboo@arcturusprofessional.com",
-    "socialImage": "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/0267e06d60c3c063_Arcturus%20Black%20Logo.jpg",
-    "socialImageAlt": "Arcturus Professional Services black logo on a light background",
+    "socialImage": "https://arcturusprofessional.com/og-image.png",
+    "socialImageAlt": "Arcturus Professional Services logo with the headline B2B growth work, handled personally",
     "allowedBots": [
       "GPTBot",
       "OAI-SearchBot",

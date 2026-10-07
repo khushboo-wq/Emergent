@@ -1,0 +1,47 @@
+/* Brand layer: Hemicube headlines (digits fall back automatically), logo, page transitions */
+@font-face{font-family:"Hemicube Head";src:url("https://static.wixstatic.com/ufonts/526783_d9b7b97796e94626a5ab91e24c6a4523/woff2/file.woff2") format("woff2");font-display:swap;unicode-range:U+0000-002F,U+003A-10FFFF}
+:root{--arc-head:"Hemicube Head","Sora Variable","Plus Jakarta Sans Variable",system-ui,sans-serif}
+main h1,main h2,main h3,.luxury-footer-cta h2,.arc-showcase-title,.arc-profile-name,.service-visual-title,.footer-info-grid strong,.luxury-footer-brand p,[data-testid^="services-overview-card"] h2{font-family:var(--arc-head) !important;letter-spacing:.01em !important;overflow-wrap:normal !important;word-break:normal !important;hyphens:none !important;text-wrap:balance}
+main h1{font-size:clamp(2.3rem,5vw,4.6rem) !important;line-height:1.06 !important}
+main h2{font-size:clamp(1.9rem,3.2vw,3rem) !important;line-height:1.12 !important}
+main h3{font-size:clamp(1.2rem,1.5vw,1.55rem) !important;line-height:1.25 !important}
+.arc-showcase-title{font-size:clamp(1.7rem,2.6vw,2.4rem) !important}
+.arc-profile-name{font-size:clamp(1.9rem,3vw,2.7rem) !important}
+@media (max-width:768px){main h1{font-size:clamp(2rem,8.6vw,2.8rem) !important}main h2{font-size:clamp(1.6rem,6.6vw,2.1rem) !important}}
+
+/* Logo */
+.arc-logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+.arc-logo-mark{flex:none;border-radius:14px;box-shadow:0 10px 24px -12px rgba(15,41,66,.6);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.arc-logo:hover .arc-logo-mark,a:hover>.arc-logo .arc-logo-mark{transform:rotate(-6deg) scale(1.06)}
+.arc-logo-star{transform-origin:32px 9px;animation:arcTwinkle 3.2s ease-in-out infinite}
+@keyframes arcTwinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.75;transform:scale(1.25)}}
+.arc-logo-text{display:flex;flex-direction:column;line-height:1}
+.arc-logo-text strong{font-family:var(--arc-head);font-size:1.15rem;letter-spacing:.24em;color:#0f2942;font-weight:800}
+.arc-logo-text small{margin-top:5px;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:#2f4f95;font-weight:800}
+.arc-logo.is-light .arc-logo-text strong{color:#fff}.arc-logo.is-light .arc-logo-text small{color:#c6c2f0}
+.luxury-footer-logo{background:none !important;width:auto !important;height:auto !important;border-radius:0 !important;padding:0 !important}
+.luxury-brand img,.luxury-footer-logo img{display:none}
+
+/* Page transition + headline word reveal */
+@keyframes arcPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+main{animation:arcPageIn .7s cubic-bezier(.2,.8,.2,1) both}
+.arc-word{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.arc-word>span{display:inline-block;transform:translateY(105%);animation:arcWordUp .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * 70ms + 150ms)}
+@keyframes arcWordUp{to{transform:none}}
+@media (prefers-reduced-motion:reduce){main{animation:none}.arc-word>span{transform:none;animation:none}}
+.arc-em-in{display:inline-block;opacity:0;transform:translateY(30px);animation:arcEmIn .9s cubic-bezier(.2,.8,.2,1) forwards,arcSheen 8s linear infinite;animation-delay:calc(var(--i) * 70ms + 150ms),0s}
+@keyframes arcEmIn{to{opacity:1;transform:none}}
+main h1 em{display:inline}
+main h1 em.arc-em-in{display:inline-block}
+.luxury-brand{display:flex !important;flex-direction:row !important;align-items:center !important;gap:0 !important;height:auto !important;width:auto !important}
+.luxury-brand .arc-logo{flex-direction:row !important}
+.luxury-brand .arc-logo-text{display:flex !important;flex-direction:column !important}
+.luxury-brand>.arc-logo>span{position:static !important}
+@media (prefers-reduced-motion:reduce){.arc-em-in{opacity:1;transform:none;animation:none}}
+main h1 em.arc-em-in{animation:arcEmIn .9s cubic-bezier(.2,.8,.2,1) forwards,arcSheen 8s linear infinite !important;animation-delay:calc(var(--i) * 70ms + 150ms),0s !important}
+.luxury-brand .arc-logo{display:inline-flex !important;align-items:center !important;gap:12px !important}
+.luxury-brand .arc-logo-text strong,.luxury-brand .arc-logo-text small{display:block !important}
+.luxury-nav-link{white-space:nowrap !important}
+.luxury-desktop-nav{gap:clamp(10px,1.4vw,24px) !important}
+@media (max-width:1560px){.luxury-header-email{display:none !important}}
+.luxury-brand .arc-logo-text strong{letter-spacing:.2em}

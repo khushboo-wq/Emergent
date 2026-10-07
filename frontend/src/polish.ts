@@ -146,6 +146,36 @@ function startSpotlight() {
   document.addEventListener('pointerleave', () => { glow.style.opacity = '0'; hot?.classList.remove('arc-hot'); hot = null })
 }
 
+/* ---------- Headline word-by-word reveal (h1 on every page) ---------- */
+function splitHeadlines() {
+  if (reduce()) return
+  const run = () => document.querySelectorAll<HTMLElement>('main h1:not([data-arc-split])').forEach((h) => {
+    h.dataset.arcSplit = '1'
+    let i = 0
+    const walk = (node: Node) => {
+      [...node.childNodes].forEach((child) => {
+        if (child.nodeType === 3) {
+          const parts = (child.nodeValue || '').split(/(\s+)/)
+          const frag = document.createDocumentFragment()
+          parts.forEach((part) => {
+            if (!part) return
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return }
+            const outer = document.createElement('span'); outer.className = 'arc-word'
+            const inner = document.createElement('span'); inner.textContent = part; inner.style.setProperty('--i', String(i++))
+            outer.appendChild(inner); frag.appendChild(outer)
+          })
+          child.replaceWith(frag)
+        } else if (child.nodeType === 1 && !(child as Element).classList.contains('arc-word')) {
+          if ((child as Element).tagName === 'EM') { (child as HTMLElement).classList.add('arc-em-in'); (child as HTMLElement).style.setProperty('--i', String(i++)) } else walk(child)
+        }
+      })
+    }
+    walk(h)
+  })
+  run()
+  new MutationObserver(() => run()).observe(document.getElementById('root')!, { childList: true, subtree: true })
+}
+
 export function startPolish() {
   if (typeof window === 'undefined') return
   startSmoothScroll()
@@ -153,4 +183,5 @@ export function startPolish() {
   startReveal()
   liftTinyText()
   startSpotlight()
+  splitHeadlines()
 }

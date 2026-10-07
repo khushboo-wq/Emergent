@@ -2,8 +2,8 @@ import { ArrowUpRight, Clock3, MapPin, MessageCircle, Mail, ShieldCheck } from "
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { CONTACT_EMAIL, orderedServices } from "@/lib/site";
+import BrandLogo from "@/components/BrandLogo";
 
-const logoUrl = "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/0267e06d60c3c063_Arcturus%20Black%20Logo.jpg";
 
 export default function SiteFooter() {
   return (
@@ -22,7 +22,7 @@ export default function SiteFooter() {
       <div className="luxury-shell luxury-footer-top">
         <div className="luxury-footer-brand">
           <Link to="/" className="luxury-footer-logo">
-            <img src={logoUrl} alt="Arcturus Professional Services logo" width="68" height="68" loading="lazy" decoding="async" />
+            <BrandLogo size={60} light />
           </Link>
           <p>Independent B2B support, handled personally.</p>
           <span>Based in New Delhi, working directly with businesses across the UK, Ireland and Europe.</span><span className="footer-experience-line">12+ years across email marketing, B2B outreach, lead research and sales support.</span>

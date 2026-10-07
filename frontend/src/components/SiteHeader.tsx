@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { CONTACT_EMAIL } from "@/lib/site";
 import ServiceTabs from "@/components/ServiceTabs";
+import BrandLogo from "@/components/BrandLogo";
 
-const logoUrl = "https://customer-assets-wrfwihn1.emergentagent.net/job_khushboo-services/artifacts/0267e06d60c3c063_Arcturus%20Black%20Logo.jpg";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `luxury-nav-link ${isActive ? "is-active" : ""}`;
@@ -26,8 +26,7 @@ export default function SiteHeader() {
     <header className={`site-header luxury-site-header ${scrolled ? "is-scrolled" : ""}`} data-testid="site-header">
       <div className="luxury-shell luxury-header-inner">
         <Link to="/" className="luxury-brand" data-testid="nav-logo-link">
-          <img src={logoUrl} alt="Arcturus Professional Services logo" width="44" height="44" fetchPriority="high" decoding="async" />
-          <span><strong>ARCTURUS</strong><small>Professional Services</small></span>
+          <BrandLogo size={46} />
         </Link>
 
         <nav className="luxury-desktop-nav" aria-label="Primary navigation" data-testid="desktop-navigation">
