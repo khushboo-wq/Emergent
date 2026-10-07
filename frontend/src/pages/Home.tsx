@@ -101,7 +101,7 @@ export default function Home() {
           <div className="luxury-service-list">
             {orderedServices.map((service, index) => (
               <Reveal key={service.slug} delay={index * 45}>
-                <Link to={`/services/${service.slug}`} className="luxury-service-row">
+                <Link to={`/services/${service.slug}`} className="luxury-service-row" data-service-slug={service.slug} data-service-name={service.title}>
                   <span className="luxury-service-number">0{index + 1}</span>
                   <div className="luxury-service-main">
                     <h3>{service.title}</h3>
