@@ -6234,3 +6234,46 @@ h4 {
     padding: 8px 11px;
   }
 }
+
+.service-detail-hero-rich,
+.resources-hero-rich {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-detail-hero-rich > :not(.ambient-scene),
+.resources-hero-rich > :not(.ambient-scene) {
+  position: relative;
+  z-index: 2;
+}
+
+.service-detail-ambient-scene {
+  right: -12%;
+  top: -4%;
+  width: min(760px, 60vw);
+  opacity: .25;
+}
+
+.resources-ambient-scene {
+  right: -14%;
+  top: 0;
+  opacity: .3;
+}
+
+.service-detail-hero-rich::after,
+.resources-hero-rich::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(251,248,241,.96) 0%, rgba(251,248,241,.84) 48%, rgba(251,248,241,.18) 84%, rgba(251,248,241,.06) 100%);
+}
+
+@media (max-width: 640px) {
+  .service-detail-ambient-scene,
+  .resources-ambient-scene {
+    opacity: .13 !important;
+    right: -28%;
+  }
+}
