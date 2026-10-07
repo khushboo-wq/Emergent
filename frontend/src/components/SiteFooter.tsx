@@ -25,7 +25,7 @@ export default function SiteFooter() {
             <img src={logoUrl} alt="Arcturus Professional Services logo" width="68" height="68" loading="lazy" decoding="async" />
           </Link>
           <p>Independent B2B support, handled personally.</p>
-          <span>Based in New Delhi, working directly with businesses across the UK, Ireland and Europe.</span>
+          <span>Based in New Delhi, working directly with businesses across the UK, Ireland and Europe.</span><span className="footer-experience-line">12+ years across email marketing, B2B outreach, lead research and sales support.</span>
           <div className="luxury-footer-socials footer-socials-large">
             <a href="https://www.linkedin.com/in/khushboo-tomar" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
             <a href="https://www.instagram.com/arcturusprofessional" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
@@ -59,6 +59,7 @@ export default function SiteFooter() {
           <span><MapPin size={14} />New Delhi, India</span>
           <span><Clock3 size={14} />UK & Irish working hours · Monday–Friday</span>
           <span><ShieldCheck size={14} />B2B · Confidential · Written</span>
+          <span><ArrowUpRight size={14} />Direct freelancer support · no agency hand-offs</span>
         </div>
       </div>
 
@@ -81,6 +82,8 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
+
+      <div className="luxury-shell footer-top-row"><a href="#main-content" className="footer-to-top">Back to top <ArrowUpRight size={13} /></a></div>
 
       <div className="luxury-footer-word">ARCTURUS</div>
 

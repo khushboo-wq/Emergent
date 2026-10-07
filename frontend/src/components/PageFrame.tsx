@@ -16,7 +16,8 @@ export default function PageFrame({ children }: PageFrameProps) {
 
   useEffect(() => {
     if (location.hash) return;
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    document.getElementById("main-content")?.focus({ preventScroll: true });
   }, [location.pathname]);
 
   return (

@@ -69,7 +69,7 @@ export const services: ServiceContent[] = [
       "Authority-led posts, lead magnets, and nurture content built around your offer",
       "A practical funnel from first connection to qualified conversation",
       "Regular LinkedIn posting with images or video where suitable",
-      "Content scheduled for 9:00 AM UK/Irish time using Hootsuite",
+      "Weekly LinkedIn newsletter support, with content scheduled for 9:00 AM UK/Irish time using Hootsuite",
       "Regular reporting on outreach activity, connections, replies, and engagement",
     ],
     exclusions: [
@@ -111,6 +111,7 @@ export const services: ServiceContent[] = [
       "Two to three follow-up emails included where appropriate",
       "Ongoing monitoring and adjustment for campaign performance",
       "Up to 10,000 unique emails per client campaign",
+      "Sending capacity of up to 500 emails per day per email account when the account, warm-up and platform limits allow",
     ],
     exclusions: [
       "Lead lists are not included and are sourced separately according to your requirement",
@@ -195,7 +196,7 @@ export const services: ServiceContent[] = [
     overview: "I create short-form AI-generated videos for social channels, using your business information, brand assets, content themes, and preferred style as the basis for the prompts and production flow.",
     audience: "For businesses that need a consistent stream of concise social content for Instagram, TikTok, YouTube, or LinkedIn.",
     inclusions: [
-      "Up to 30 short-form AI-generated videos per month",
+      "2 short-form AI-generated videos per day, 7 days a week, based on the agreed content plan",
       "Approximately 10-second videos designed for social media viewing",
       "Your logo, business details, brand style, and end cards added where suitable",
       "Custom content ideas based on your business, services, products, and themes",
@@ -214,7 +215,7 @@ export const services: ServiceContent[] = [
       { label: "Brand", detail: "Apply the agreed logo, business details, and brand style." },
       { label: "Schedule", detail: "Schedule the finished content through Hootsuite." },
     ],
-    timeline: "Up to 30 videos are produced per month. Videos are normally short-form and approximately 10 seconds long; sample videos can be shared before work begins.",
+    timeline: "The agreed schedule is 2 short-form videos per day, 7 days a week, based on the content plan and brief. Videos are approximately 10 seconds long; sample videos can be shared before work begins.",
     requirements: [
       "Your logo and branding",
       "Business information",
@@ -379,7 +380,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
   },
   "ai-video-creation": {
     summary: "I create basic custom AI videos and reels for businesses that need regular branded social content without professional video editing. The service costs €400 per month and follows a schedule of 2 videos per day, 7 days a week, based on the agreed brief and content direction.",
-    reporting: ["Monthly output against the 30-video allowance", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
+    reporting: ["Video output against the agreed 2-per-day schedule", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
     lastUpdated: "7 October 2026",
     paymentTerms: "€400 / month, paid upfront. Hootsuite subscription costs are separate and paid directly by the client.",
@@ -388,7 +389,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     faqs: [
       { question: "What kind of videos are these?", answer: "Basic to custom AI-generated videos and reels, not professional video editing." },
       { question: "Can you add my branding?", answer: "Yes: logo, business details and end cards." },
-      { question: "How many videos do I get?", answer: "Up to 30 per month." },
+      { question: "How many videos do I get?", answer: "The agreed schedule is 2 videos per day, 7 days a week, based on the content plan and brief." },
       { question: "What do you need from me?", answer: "A short written brief, your logo and the message you want each video to carry." },
       { question: "Can you make videos for any industry?", answer: "I'll confirm in writing after seeing your brief." },
     ],

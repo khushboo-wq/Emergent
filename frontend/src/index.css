@@ -5282,3 +5282,310 @@ strong, b {
     border-top: 0;
   }
 }
+
+
+/* -------------------------------------------------------------------------- */
+/* Premium content, motion and service navigation pass                         */
+/* -------------------------------------------------------------------------- */
+
+body {
+  font-weight: 520;
+  color: #17151b;
+}
+
+p,
+li,
+span {
+  font-weight: 520;
+}
+
+strong,
+b,
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 760;
+}
+
+.luxury-hero-copy h1,
+.resource-article-hero h1,
+.service-detail-hero h1 {
+  text-wrap: balance;
+}
+
+.luxury-hero-copy h1 em {
+  display: block;
+  font-style: normal;
+  font-weight: 820;
+  color: #315eb5;
+  background: linear-gradient(100deg, #1c7f86 0%, #315eb5 52%, #6e5bc2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.luxury-hero-copy .luxury-hero-lead {
+  font-weight: 560;
+  color: rgba(23,21,27,.72);
+}
+
+.service-tabs {
+  box-shadow: 0 18px 40px -34px rgba(45,34,56,.5);
+}
+
+.service-tabs-inner {
+  perspective: 1200px;
+}
+
+.service-tab {
+  min-height: 66px;
+  transform-style: preserve-3d;
+  font-weight: 700;
+}
+
+.service-tab::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,.5);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.service-tab:hover {
+  transform: translateY(-3px) rotateX(1.6deg);
+}
+
+.service-tab:hover::after,
+.service-tab.is-active::after {
+  opacity: 1;
+}
+
+.service-tab-title {
+  font-weight: 760;
+}
+
+.service-tab-index {
+  font-weight: 800;
+}
+
+.service-tab-arrow {
+  transition: transform 220ms ease;
+}
+
+.service-tab:hover .service-tab-arrow {
+  transform: translate(2px,-2px);
+}
+
+.service-motif {
+  transform: perspective(1100px) rotateX(1deg) rotateY(-3deg);
+  transform-style: preserve-3d;
+  transition: transform 450ms cubic-bezier(.2,.75,.15,1), box-shadow 450ms ease;
+  box-shadow:
+    0 36px 75px -42px rgba(28,44,80,.75),
+    0 15px 34px -26px rgba(129,102,180,.42),
+    inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.service-hero-stack:hover .service-motif {
+  transform: perspective(1100px) rotateX(2deg) rotateY(-5deg) translateY(-4px);
+}
+
+.service-price-panel {
+  transform: translateZ(26px);
+}
+
+.service-commercial-card,
+.payment-card,
+.method-card,
+.why-work-card,
+.tools-platform-card {
+  font-weight: 560;
+}
+
+.service-commercial-price strong,
+.service-pricing-text,
+.service-pricing,
+.payment-card h3,
+.price-highlight {
+  font-weight: 850;
+}
+
+.service-commercial-price {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(213,193,255,.38), transparent 42%),
+    linear-gradient(145deg, #2d2238, #4b3b59 58%, #1e4d68);
+  color: white;
+}
+
+.service-commercial-price p,
+.service-commercial-price .service-commercial-label {
+  color: rgba(255,255,255,.72);
+}
+
+.service-commercial-price strong {
+  display: block;
+  margin-top: 12px;
+  font-family: "Alesand", "Sora Variable", sans-serif;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: .94;
+  letter-spacing: -.045em;
+}
+
+.pricing-highlight,
+.price-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #2d2238, #5d4a74 55%, #286c78);
+  color: #fff;
+  font-family: "Alesand", sans-serif;
+  font-weight: 800;
+  box-shadow: 0 16px 35px -24px rgba(45,34,56,.7);
+}
+
+.tools-platforms-section {
+  padding: 110px 0;
+  background: linear-gradient(145deg, #f3eef6, #fbf8f1 48%, #e8f2f0);
+}
+
+.tools-platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.tools-platform-card {
+  min-height: 190px;
+  padding: 22px;
+  border: 1px solid rgba(45,34,56,.11);
+  border-radius: 24px;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 24px 48px -38px rgba(45,34,56,.45);
+  backdrop-filter: blur(14px);
+  transition: transform 260ms cubic-bezier(.2,.75,.15,1), box-shadow 260ms ease;
+}
+
+.tools-platform-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px -38px rgba(45,34,56,.55);
+}
+
+.tools-platform-card > span {
+  color: #6c58a1;
+  font-family: "Alesand", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.tools-platform-card h3 {
+  margin-top: 48px;
+  color: #2d2238;
+  font-family: "Alesand", "Sora Variable", sans-serif;
+  font-size: 23px;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.tools-platform-card p {
+  margin-top: 10px;
+  color: rgba(23,21,27,.59);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer-experience-line {
+  display: block;
+  margin-top: 12px;
+  color: rgba(255,255,255,.52);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.luxury-footer-column a,
+.luxury-footer-column span {
+  font-weight: 560;
+}
+
+.footer-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 20px;
+  color: rgba(255,255,255,.74);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.footer-to-top:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-top-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.luxury-reveal {
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .luxury-service-row,
+  .service-tab,
+  .tools-platform-card,
+  .service-motif {
+    will-change: transform;
+  }
+}
+
+@media (max-width: 1100px) {
+  .tools-platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .tools-platforms-section {
+    padding: 75px 0;
+  }
+
+  .tools-platforms-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-motif {
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .tools-platforms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-tab {
+    min-height: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luxury-reveal,
+  .service-tab,
+  .service-motif,
+  .tools-platform-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
