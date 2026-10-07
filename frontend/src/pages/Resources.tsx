@@ -12,10 +12,10 @@ export default function Resources() {
       <section className="luxury-hero" data-testid="resources-hero">
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy">
-            <p className="luxury-eyebrow"><span>03</span> Practical resources · LinkedIn</p>
-            <h1 data-testid="resources-heading">Useful LinkedIn guidance for B2B businesses.</h1>
+            <p className="luxury-eyebrow"><span>03</span> Practical resources · B2B</p>
+            <h1 data-testid="resources-heading">Practical guidance for the work behind your business.</h1>
             <p className="luxury-hero-lead" data-testid="resources-intro">
-              Straightforward guides on LinkedIn management, profile optimisation and B2B outreach, based on the practical work behind the service.
+              Straightforward guides on LinkedIn management, email outreach, lead generation, business support, AI video content and email setup, based on the practical work behind each service.
             </p>
           </Reveal>
           <Reveal className="luxury-hero-art-wrap" delay={120}>
@@ -26,8 +26,8 @@ export default function Resources() {
               <div className="luxury-art-ring luxury-art-ring-two" />
               <div className="luxury-art-letter">R</div>
               <div className="luxury-art-word">RESOURCES</div>
-              <div className="luxury-art-caption">LINKEDIN · B2B</div>
-              <div className="luxury-art-side">PRACTICAL · CLEAR · USEFUL</div>
+              <div className="luxury-art-caption">B2B · ARCTURUS</div>
+              <div className="luxury-art-side">PRACTICAL · CLEAR · SERVICE-LED</div>
               <div className="luxury-art-index">03 / 03</div>
             </div>
           </Reveal>
@@ -64,8 +64,8 @@ export default function Resources() {
             <h2>Use the guidance, then get back to the business.</h2>
           </Reveal>
           <Reveal delay={120}>
-            <p>Arcturus provides direct LinkedIn management, outreach, lead generation and related B2B support.</p>
-            <Link to="/services/linkedin-management" className="luxury-button luxury-button-light">See LinkedIn management <ArrowRight size={16} /></Link>
+            <p>Arcturus provides direct LinkedIn management, email outreach, lead generation, business support, email setup and AI content.</p>
+            <Link to="/services" className="luxury-button luxury-button-light">Explore all services <ArrowRight size={16} /></Link>
           </Reveal>
         </div>
       </section>
