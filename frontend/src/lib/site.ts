@@ -28,6 +28,7 @@ export interface ServiceContent {
   requirements: string[];
   price: string;
   priceNote: string;
+  paymentTerms?: string;
   tools?: string[];
   sourceNote?: string;
   relatedServices?: RelatedService[];
@@ -63,9 +64,9 @@ export const services: ServiceContent[] = [
       "Structured connection requests sent to the agreed target audience",
       "Relevant InMails, engagement, and group participation where suitable",
       "Professional follow-ups for accepted connections, without aggressive sales messaging",
-      "Authority-led posts, lead magnets, and nurture content built around your offer",
       "A practical funnel from first connection to qualified conversation",
-      "Regular LinkedIn posting with images or video where suitable",
+      "Daily LinkedIn content prepared and published around the agreed business themes",
+      "One LinkedIn newsletter each week",
       "Content scheduled for 9:00 AM UK/Irish time using Hootsuite",
       "Regular reporting on outreach activity, connections, replies, and engagement",
     ],
@@ -81,7 +82,7 @@ export const services: ServiceContent[] = [
       { label: "Engage & maintain", detail: "Keep the agreed content and conversation rhythm moving." },
       { label: "Track & report", detail: "Share activity, connections, replies, and engagement in regular reporting." },
     ],
-    timeline: "Initial setup takes 2–3 working days once required access, verification, and business information are available. Outreach is approximately 200 connection invitations per week, depending on account activity, audience targeting, and LinkedIn platform limits.",
+    timeline: "Initial setup takes 2–3 working days once required access, verification, and business information are available. Outreach is approximately 200 connection invitations per week, depending on account activity, audience targeting, and LinkedIn platform limits. Content is scheduled through Hootsuite for 9:00 AM UK/Irish time.",
     requirements: [
       "LinkedIn Sales Navigator",
       "Any LinkedIn profile verification required before outreach begins",
@@ -90,6 +91,7 @@ export const services: ServiceContent[] = [
     ],
     price: "€400 / month",
     priceNote: "Monthly managed service.",
+    paymentTerms: "Monthly service. Payment is made upfront at the start of each month before work begins. Sales Navigator and Hootsuite subscriptions are separate and paid directly by the client.",
     tools: ["LinkedIn", "LinkedIn Sales Navigator", "Hootsuite"],
     featured: true,
   },
@@ -123,7 +125,7 @@ export const services: ServiceContent[] = [
       { label: "Follow-ups", detail: "Send two to three follow-up emails where appropriate." },
       { label: "Reporting", detail: "Provide regular reporting on metrics relevant to the service." },
     ],
-    timeline: "A minimum one-month warm-up period applies before active outreach. The timing of technical setup, campaign preparation, outreach, follow-ups, and reporting is confirmed against the agreed brief.",
+    timeline: "A minimum one-month warm-up period applies before active outreach. Active sending begins only after the required warm-up and technical preparation. Up to 10,000 unique emails can be used per client campaign.",
     requirements: [
       "An email account and domain for outreach",
       "Access or login details for the email account",
@@ -132,6 +134,7 @@ export const services: ServiceContent[] = [
     ],
     price: "€450 / month",
     priceNote: "Monthly service; lead lists and Email Setup are separate.",
+    paymentTerms: "Monthly service. Payment is made upfront before the month begins. Lead research and Email Setup are charged separately when required.",
     tools: ["Instantly.ai"],
     relatedServices: [
       { slug: "lead-generation", title: "Lead Generation", description: "Finding & verifying the right contacts for a focused campaign.", price: "€0.80 / verified business contact" },
@@ -180,6 +183,7 @@ export const services: ServiceContent[] = [
     ],
     price: "€12 / hour",
     priceNote: "Billed according to actual time spent on agreed work.",
+    paymentTerms: "Hourly support. Work is agreed in writing and billed according to the actual time spent on the agreed scope.",
     sourceNote: "Tasks requiring significant additional research or extended time are discussed and agreed before work continues.",
     featured: true,
   },
@@ -192,7 +196,7 @@ export const services: ServiceContent[] = [
     overview: "I create short-form AI-generated videos for social channels, using your business information, brand assets, content themes, and preferred style as the basis for the prompts and production flow.",
     audience: "For businesses that need a consistent stream of concise social content for Instagram, TikTok, YouTube, or LinkedIn.",
     inclusions: [
-      "Up to 30 short-form AI-generated videos per month",
+      "2 short-form AI-generated videos per day, 7 days a week",
       "Approximately 10-second videos designed for social media viewing",
       "Your logo, business details, brand style, and end cards added where suitable",
       "Custom content ideas based on your business, services, products, and themes",
@@ -211,7 +215,7 @@ export const services: ServiceContent[] = [
       { label: "Brand", detail: "Apply the agreed logo, business details, and brand style." },
       { label: "Schedule", detail: "Schedule the finished content through Hootsuite." },
     ],
-    timeline: "Up to 30 videos are produced per month. Videos are normally short-form and approximately 10 seconds long; sample videos can be shared before work begins.",
+    timeline: "2 short-form videos are produced per day, 7 days a week. Videos are normally approximately 10 seconds long and designed for social media viewing; sample videos can be shared before work begins.",
     requirements: [
       "Your logo and branding",
       "Business information",
@@ -221,6 +225,7 @@ export const services: ServiceContent[] = [
     ],
     price: "€400 / month",
     priceNote: "Monthly service; Hootsuite subscription is separate.",
+    paymentTerms: "Monthly service. Payment is made upfront before the month begins. Hootsuite subscription costs are separate and paid directly by the client.",
     tools: ["Google Gemini", "Google Flow", "Google Veo 3", "Hootsuite"],
     sourceNote: "Changes are made by adjusting the prompt, not through manual editing.",
     featured: true,
@@ -264,6 +269,7 @@ export const services: ServiceContent[] = [
     ],
     price: "€0.80 / verified business contact",
     priceNote: "Payable before the completed list is delivered, according to the agreed requirement.",
+    paymentTerms: "Lead Generation is charged per verified business contact and paid before the completed list is delivered.",
     tools: ["LinkedIn Sales Navigator", "Apollo", "UseBouncer"],
   },
   {
@@ -299,6 +305,7 @@ export const services: ServiceContent[] = [
     ],
     price: "€80 one-time",
     priceNote: "Billed once, before setup begins.",
+    paymentTerms: "One-time service. Payment is made in full before setup begins.",
     tools: ["DNS provider", "Email provider"],
     sourceNote: "Required before Email Outreach campaigns can begin if this setup is not already in place.",
   },
