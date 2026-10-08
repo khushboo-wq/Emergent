@@ -24,3 +24,13 @@ html body .resource-related-list{display:grid !important;grid-template-columns:r
 /* Resource links: cards always fill the row (no empty right side when only 1-2 guides) */
 html body .linkedin-resource-grid{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important;gap:16px !important}
 html body .linkedin-resource-link{min-height:0 !important;gap:8px !important;justify-content:flex-start !important}
+/* Service hero: text and visual vertically centred (no empty band above the heading) */
+html body main [data-testid="service-detail-hero"]>div:not(#_){align-items:center !important;padding-top:clamp(16px,2vw,32px) !important;padding-bottom:clamp(24px,2.6vw,40px) !important}
+html body main [data-testid="service-detail-hero"] .service-hero-stack{display:grid;gap:12px;align-content:center}
+html body main [data-testid="service-detail-hero"] .service-hero-stack .iso-illustration{max-width:260px !important;margin:0 auto -8px !important}
+html body main [data-testid="service-breadcrumbs"]{padding-top:14px !important}
+/* every hero grid: centred, never bottom-aligned */
+html body main .luxury-hero-inner,html body main [data-testid$="-hero"]>div{align-items:center !important}
+html body main [data-testid="service-detail-hero"]>div:not(#_),html body main [data-testid="about-hero"]>div:not(#_),html body main [data-testid="services-hero"]>div:not(#_){align-items:start !important}
+html body main [data-testid="about-hero"]>div:not(#_),html body main [data-testid="services-hero"]>div:not(#_){padding-top:clamp(16px,2vw,32px) !important}
+.service-price-panel::before,.service-price-panel::after,.premium-panel::before,.premium-panel::after{display:none !important}
