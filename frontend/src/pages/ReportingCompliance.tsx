@@ -1,4 +1,5 @@
 import { ArrowRight, Check, FileCheck2, MessageSquareText, ShieldCheck } from "lucide-react";
+import IsoIllustration from "@/components/IsoIllustration";
 import HeroShowcase from "@/components/HeroShowcase";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
@@ -131,6 +132,7 @@ export default function ReportingCompliance() {
           <Reveal>
             <p className="luxury-section-kicker luxury-kicker-light">Control stays with you</p>
             <p className="luxury-statement-index">05 / 05</p>
+            <IsoIllustration slug="email-setup" className="iso-big" />
           </Reveal>
           <Reveal delay={110}>
             <h2>Direct work should also mean <em>clear ownership.</em></h2>

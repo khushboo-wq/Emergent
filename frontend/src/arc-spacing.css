@@ -1,0 +1,26 @@
+/* Tight vertical rhythm: no double padding, no blank bands between sections */
+html body main .luxury-hero:not(#_){padding-block:clamp(24px,2.6vw,40px) !important;min-height:0 !important}
+html body main .luxury-hero .luxury-hero-inner{padding-block:0 !important;min-height:0 !important}
+html body main section:not(#_){padding-block:clamp(28px,3vw,44px) !important}
+html body main section section:not(#_){padding-block:clamp(20px,2.2vw,32px) !important}
+html body main section .luxury-shell{padding-block:0 !important}
+html body main [data-testid="service-page-content"]{padding-block:clamp(12px,1.6vw,24px) !important}
+html body main .linkedin-resource-links{padding-block:clamp(24px,2.6vw,40px) !important}
+html body main section[class*="mb-20"],html body main section[class*="my-20"],html body main section[class*="mb-28"]{margin-block:clamp(16px,2vw,28px) !important}
+html body main .luxury-section-heading{margin-bottom:1rem !important}
+html body main section>div>*:first-child{margin-top:0}
+html body main [class*="sm:py-24"],html body main [class*="sm:py-28"],html body main [class*="lg:py-28"]{padding-block:clamp(24px,2.6vw,40px) !important}
+.analytics-strip{padding-block:10px !important}
+html body main .service-visual-summary:not(#_){padding-block:20px !important}
+html body main .service-visual-summary-inner{padding-block:0 !important}
+/* statement sections: hide leftover orbit decoration where an illustration now fills the side */
+.luxury-statement-section [class*="orbit"],.luxury-statement-section .statement-orbit{display:none !important}
+/* Keep reading: heading on top, list in two columns (no empty left column) */
+html body .resource-related{display:block !important}
+html body .resource-related-list{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin-top:18px}
+@media (max-width:760px){html body .resource-related-list{grid-template-columns:1fr}}
+/* About final CTA: compact */
+[data-testid="about-contact-section"]{padding-block:24px !important}
+/* Resource links: cards always fill the row (no empty right side when only 1-2 guides) */
+html body .linkedin-resource-grid{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important;gap:16px !important}
+html body .linkedin-resource-link{min-height:0 !important;gap:8px !important;justify-content:flex-start !important}
