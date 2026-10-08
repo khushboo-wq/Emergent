@@ -73,3 +73,12 @@ main [class*="rounded-"][class*="border"]:not([class*="p-"]){padding:22px}
 .pricing-faq p{margin-top:8px}
 @media (max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){.pricing-hero-inner,.pricing-grid,.pricing-info-grid,.pricing-faq-grid{grid-template-columns:1fr}.pricing-card:nth-child(4){background:linear-gradient(165deg,#ffffff,#f1eeff 70%,#e6f4f1)}}
+
+/* About: dark "What I don't do / Built with modern tools" text was dark-on-dark */
+.arcturus-luxury [data-testid="about-boundaries-tools"] p,
+.arcturus-luxury [data-testid="about-boundaries-tools"] li,
+.arcturus-luxury [data-testid="about-boundaries-tools"] span{color:#e4e8ff !important}
+.arcturus-luxury [data-testid="about-boundaries-tools"] strong{color:#fff !important}
+.arcturus-luxury [data-testid="about-boundaries-tools"] h2,.arcturus-luxury [data-testid="about-boundaries-tools"] h3{color:#fff !important}
+/* generic safety: any text inside dark navy blocks stays light */
+main [class*="bg-[#0f2942]"] p:not([class*="text-[#0"]),main [class*="bg-[#0f2942]"] li{color:#e4e8ff !important}
