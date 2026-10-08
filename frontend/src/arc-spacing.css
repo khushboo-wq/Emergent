@@ -34,3 +34,12 @@ html body main .luxury-hero-inner,html body main [data-testid$="-hero"]>div{alig
 html body main [data-testid="service-detail-hero"]>div:not(#_),html body main [data-testid="about-hero"]>div:not(#_),html body main [data-testid="services-hero"]>div:not(#_){align-items:start !important}
 html body main [data-testid="about-hero"]>div:not(#_),html body main [data-testid="services-hero"]>div:not(#_){padding-top:clamp(16px,2vw,32px) !important}
 .service-price-panel::before,.service-price-panel::after,.premium-panel::before,.premium-panel::after{display:none !important}
+html body main [data-testid="service-detail-hero"] .service-hero-stack .iso-illustration{max-width:200px !important;margin:0 auto -14px !important}
+html body main [data-testid="service-detail-hero"] .service-price-panel:not(#_){padding:22px 26px !important}
+html body main [data-testid="service-detail-hero"] [data-testid="service-pricing"]{margin-top:8px !important;font-size:clamp(1.6rem,2.2vw,2.2rem) !important}
+html body main [data-testid="service-detail-hero"] .service-hero-stack:not(#_){min-height:0 !important;height:auto !important;padding:0 !important}
+html body main [data-testid="service-detail-hero"] .service-hero-stack>*{min-height:0 !important;margin-bottom:0 !important}
+html body main [data-testid="service-detail-hero"] .service-hero-stack:not(#_){align-self:start !important;align-content:start !important}
+html body main [data-testid="service-detail-hero"]:not(#_),html body main [data-testid="service-detail-hero"]>div:not(#_){min-height:0 !important;height:auto !important}
+html body main [data-testid="about-contact-section"]:not(#_){padding:28px 32px !important;min-height:0 !important}html body main [data-testid="about-contact-section"] *{min-height:0 !important}
+html body main section[class*="my-20"]:not(#_),html body main section[class*="mb-20"]:not(#_){margin-top:24px !important;margin-bottom:24px !important}html body main [data-testid="about-boundaries-tools"]>div:not(#_){padding-bottom:12px !important}
