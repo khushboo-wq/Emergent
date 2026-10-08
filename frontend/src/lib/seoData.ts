@@ -91,7 +91,7 @@ function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
       "@context": "https://schema.org",
       "@graph": [
         professionalService,
-        { "@type": "Service", "@id": `${page.canonical}#service`, name: service.slug === "linkedin-management" ? "LinkedIn Management Services" : service.title, description: page.description, url: page.canonical, provider: { "@id": businessId }, areaServed: ["Ireland", "United Kingdom", "Europe"], mainEntityOfPage: { "@id": `${page.canonical}#webpage` }, offers: { "@type": "Offer", price: priceValue, priceCurrency: "EUR", description: service.price, url: page.canonical, availability: "https://schema.org/InStock" } },
+        { "@type": "Service", "@id": `${page.canonical}#service`, name: service.slug === "linkedin-management" ? "LinkedIn Management Services" : service.title, description: page.description, url: page.canonical, provider: { "@id": businessId }, areaServed: ["Ireland", "United Kingdom", "Europe"], mainEntityOfPage: { "@id": `${page.canonical}#webpage` }, offers: { "@type": "Offer", price: priceValue, priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: priceValue, priceCurrency: "EUR", unitText: service.price.replace(/^€\s?[\d.,]+\s*\/?\s*/, "") || "service" }, description: service.price, url: page.canonical, availability: "https://schema.org/InStock" } },
         { "@type": "FAQPage", "@id": `${page.canonical}#faq`, mainEntity: extras.faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) },
         { "@type": "BreadcrumbList", "@id": `${page.canonical}#breadcrumbs`, itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${site.baseUrl}/` },

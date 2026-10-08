@@ -48,7 +48,7 @@
       ],
       "changeFrequency": "monthly",
       "priority": 1,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/services",
@@ -65,12 +65,12 @@
       ],
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/services/linkedin-management",
-      "title": "LinkedIn Management Services for Businesses | Arcturus",
-      "description": "LinkedIn management services for UK and Irish businesses: profile optimisation, content, targeted outreach, follow-ups and reporting, managed by Khushboo.",
+      "title": "LinkedIn Management Services | €400/month",
+      "description": "LinkedIn management for UK and Irish businesses: profile optimisation, content, targeted outreach, follow-ups and written reporting. €400 per month, flat.",
       "h1": "LinkedIn Management Services",
       "canonical": "https://arcturusprofessional.com/services/linkedin-management",
       "indexable": true,
@@ -83,12 +83,12 @@
       "serviceSlug": "linkedin-management",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/services/email-outreach",
-      "title": "B2B Email Outreach Service | €450/month",
-      "description": "GDPR and PECR-aware B2B cold email campaigns with proper warm-up and reporting for UK and Irish businesses. €450/month. Includes unsubscribe handling too.",
+      "title": "B2B Email Outreach Service | €500/month",
+      "description": "GDPR and PECR-aware B2B cold email campaigns with one-month warm-up, follow-ups and written reporting for UK and Irish businesses. €500 per month, flat fee.",
       "h1": "Email Outreach",
       "canonical": "https://arcturusprofessional.com/services/email-outreach",
       "indexable": true,
@@ -101,12 +101,12 @@
       "serviceSlug": "email-outreach",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/services/business-support",
-      "title": "Virtual Business Support Freelancer | €12/hour",
-      "description": "Reliable remote business support for founders and small teams: research, admin, website support and AI-assisted content writing. €12/hour. Written updates.",
+      "title": "Virtual Business Support Freelancer | €30/hour",
+      "description": "Remote business support for founders and small teams: research, admin, documents, website updates and AI-assisted content. €30 per hour, written updates.",
       "h1": "Business Support",
       "canonical": "https://arcturusprofessional.com/services/business-support",
       "indexable": true,
@@ -119,12 +119,12 @@
       "serviceSlug": "business-support",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/services/lead-generation",
-      "title": "B2B Lead Generation Service | €0.80 per Contact",
-      "description": "Verified B2B contact research for UK and Irish markets, built with Sales Navigator and transparent data sources. €0.80 per verified contact. Sources explained.",
+      "title": "B2B Lead Generation Service | €250 per 100 Contacts",
+      "description": "Verified B2B contact research for UK, Irish and European markets using Sales Navigator, with sources explained. €250 per 100 verified contacts, delivered.",
       "h1": "Lead Generation",
       "canonical": "https://arcturusprofessional.com/services/lead-generation",
       "indexable": true,
@@ -137,12 +137,12 @@
       "serviceSlug": "lead-generation",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/services/ai-video-creation",
       "title": "AI Video Creation for Businesses | €400/month",
-      "description": "Custom AI-generated short videos with your branding, content ideas and scheduling for social media. €400/month, based on an agreed 2-video-per-day schedule.",
+      "description": "Custom AI-generated short videos and reels with your branding, logo and end cards, planned to an agreed brief for social media. €400 per month, flat fee.",
       "h1": "AI Video Creation",
       "canonical": "https://arcturusprofessional.com/services/ai-video-creation",
       "indexable": true,
@@ -155,12 +155,12 @@
       "serviceSlug": "ai-video-creation",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/services/email-setup",
-      "title": "Business Email & DNS Setup Service | €80 One-Time",
-      "description": "Professional business email and DNS setup (SPF, DKIM, DMARC) for better deliverability. One-time €80. For UK and Irish businesses needing sound foundations.",
+      "title": "Business Email & DNS Setup | €200 One-Time",
+      "description": "Professional business email and DNS setup with SPF, DKIM and DMARC so your domain is ready for outreach. One-time €200 for UK, Irish and European firms.",
       "h1": "Email Setup",
       "canonical": "https://arcturusprofessional.com/services/email-setup",
       "indexable": true,
@@ -173,7 +173,7 @@
       "serviceSlug": "email-setup",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/about",
@@ -190,7 +190,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0.8,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/how-i-work",
@@ -206,7 +206,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/contact",
@@ -223,7 +223,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0.8,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/404",
@@ -238,7 +238,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0,
-      "lastModified": "2026-02-21"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources",
@@ -254,7 +254,7 @@
       ],
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/linkedin-management-services-guide",
@@ -271,7 +271,7 @@
       "resourceSlug": "linkedin-management-services-guide",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/linkedin-profile-optimization",
@@ -288,7 +288,7 @@
       "resourceSlug": "linkedin-profile-optimization",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/linkedin-outreach-for-b2b-businesses",
@@ -305,7 +305,7 @@
       "resourceSlug": "linkedin-outreach-for-b2b-businesses",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/privacy-policy",
@@ -320,7 +320,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/terms",
@@ -335,7 +335,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/b2b-email-outreach-guide",
@@ -352,7 +352,7 @@
       "resourceSlug": "b2b-email-outreach-guide",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/b2b-lead-generation-guide",
@@ -369,7 +369,7 @@
       "resourceSlug": "b2b-lead-generation-guide",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/business-support-for-founders-guide",
@@ -386,7 +386,7 @@
       "resourceSlug": "business-support-for-founders-guide",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/ai-video-content-for-business-guide",
@@ -403,7 +403,7 @@
       "resourceSlug": "ai-video-content-for-business-guide",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/resources/business-email-dns-setup-guide",
@@ -420,7 +420,7 @@
       "resourceSlug": "business-email-dns-setup-guide",
       "changeFrequency": "monthly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     },
     {
       "path": "/reporting-compliance",
@@ -436,7 +436,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0.7,
-      "lastModified": "2026-10-07"
+      "lastModified": "2026-10-08"
     }
   ]
 }

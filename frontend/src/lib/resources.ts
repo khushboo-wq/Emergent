@@ -401,7 +401,7 @@ export const resources: Resource[] = [
         heading: "Keep the workflow simple",
         paragraphs: [
           "A simple workflow is often enough: task shared, work started, task completed, result delivered. Written updates keep dependencies visible and reduce the need for repeated meetings.",
-          "Arcturus provides this kind of task-based support directly, at €12 per hour.",
+          "Arcturus provides this kind of task-based support directly, at €30 per hour.",
         ],
       },
     ],
