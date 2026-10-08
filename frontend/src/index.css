@@ -4,30 +4,11 @@
 @import "@fontsource-variable/plus-jakarta-sans";
 @import "@fontsource-variable/sora";
 
-@font-face {
-  font-family: "Hemicube";
-  src: url("https://static.wixstatic.com/ufonts/526783_d9b7b97796e94626a5ab91e24c6a4523/woff2/file.woff2") format("woff2");
-  unicode-range: U+0000-002F, U+003A-10FFFF;
-  font-display: swap;
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Alesand";
-  src: url("https://static.wixstatic.com/ufonts/526783_043eb062bab143fb96890196cb156f1a/woff2/file.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Alesand";
-  src: url("https://static.wixstatic.com/ufonts/9db098_5576246e4cde4e00a6ad2e8ecf9b4b40/woff2/file.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 800;
-  font-style: normal;
-}
+/* Free, self-hosted brand fonts (SIL Open Font License). Old family names kept as aliases. */
+@font-face { font-family: "Hemicube"; src: url("/fonts/unbounded.woff2") format("woff2-variations"); font-weight: 200 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Unbounded"; src: url("/fonts/unbounded.woff2") format("woff2-variations"); font-weight: 200 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Alesand"; src: url("/fonts/sora.woff2") format("woff2-variations"); font-weight: 100 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Alesand Extra Bold"; src: url("/fonts/sora.woff2") format("woff2-variations"); font-weight: 100 800; font-style: normal; font-display: swap; }
 
 @custom-variant dark (&:is(.dark *));
 

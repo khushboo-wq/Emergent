@@ -1,5 +1,5 @@
 /* Brand layer: Hemicube headlines (digits fall back automatically), logo, page transitions */
-@font-face{font-family:"Hemicube Head";src:url("https://static.wixstatic.com/ufonts/526783_d9b7b97796e94626a5ab91e24c6a4523/woff2/file.woff2") format("woff2");font-display:swap;unicode-range:U+0000-002F,U+003A-10FFFF}
+@font-face{font-family:"Hemicube Head";src:url("/fonts/unbounded.woff2") format("woff2-variations");font-weight:200 900;font-display:swap}
 :root{--arc-head:"Hemicube Head","Sora Variable","Plus Jakarta Sans Variable",system-ui,sans-serif}
 main h1,main h2,main h3,.luxury-footer-cta h2,.arc-showcase-title,.arc-profile-name,.service-visual-title,.footer-info-grid strong,.luxury-footer-brand p,[data-testid^="services-overview-card"] h2{font-family:var(--arc-head) !important;letter-spacing:.01em !important;overflow-wrap:normal !important;word-break:normal !important;hyphens:none !important;text-wrap:balance}
 main h1{font-size:clamp(2.3rem,5vw,4.6rem) !important;line-height:1.06 !important}
@@ -84,3 +84,10 @@ main h1 em.arc-em-in{animation:arcEmIn .9s cubic-bezier(.2,.8,.2,1) forwards,arc
 .luxury-about-visual{background:none !important;box-shadow:none !important;min-height:0 !important;padding:0 !important;overflow:visible !important;border:0 !important}
 .luxury-about-visual::before,.luxury-about-visual::after{content:none !important}
 .luxury-about-visual .arc-showcase{margin:0 auto}
+
+/* Unbounded tuning: confident but not shouty */
+main h1,main h2,main h3,.luxury-footer-cta h2,.arc-showcase-title,.arc-profile-name,.service-visual-title,[data-testid^="services-overview-card"] h2{font-weight:700 !important;letter-spacing:-.025em !important}
+main h1{font-weight:800 !important;letter-spacing:-.035em !important}
+.luxury-nav-link,.service-tab-title,.luxury-header-cta,.luxury-mobile-nav a{font-weight:600 !important;letter-spacing:-.005em !important}
+.arc-logo-text strong{font-weight:800 !important;letter-spacing:.14em !important}
+.luxury-footer-word text{font-weight:800}
