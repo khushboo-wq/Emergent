@@ -38,6 +38,7 @@ export default function SiteFooter() {
           <Link to="/">Home</Link>
           <Link to="/about">About Khushboo</Link>
           <Link to="/services">All services</Link>
+          <Link to="/pricing">Pricing</Link>
           <Link to="/how-i-work">How I work</Link>
           <Link to="/reporting-compliance">Reporting & Compliance</Link>
           <Link to="/resources">Resources</Link>

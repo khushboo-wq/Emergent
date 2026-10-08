@@ -2,7 +2,7 @@
 
 Generated from `seo.config.json`.
 
-- Pages created: 21
+- Pages created: 22
 - Sitemap status: Generated and valid
 - Robots.txt status: Generated, important pages allowed
 - Missing SEO items: 0
@@ -17,6 +17,7 @@ Generated from `seo.config.json`.
 | /services/lead-generation | B2B Lead Generation Service | €250 per 100 Contacts | Verified B2B contact research for UK, Irish and European markets using Sales Navigator, with sources explained. €250 per 100 verified contacts, delivered. | Lead Generation | https://arcturusprofessional.com/services/lead-generation | Indexable | Service, FAQPage, BreadcrumbList | None |
 | /services/ai-video-creation | AI Video Creation for Businesses | €400/month | Custom AI-generated short videos and reels with your branding, logo and end cards, planned to an agreed brief for social media. €400 per month, flat fee. | AI Video Creation | https://arcturusprofessional.com/services/ai-video-creation | Indexable | Service, FAQPage, BreadcrumbList | None |
 | /services/email-setup | Business Email & DNS Setup | €200 One-Time | Professional business email and DNS setup with SPF, DKIM and DMARC so your domain is ready for outreach. One-time €200 for UK, Irish and European firms. | Email Setup | https://arcturusprofessional.com/services/email-setup | Indexable | Service, FAQPage, BreadcrumbList | None |
+| /pricing | Pricing | B2B Freelance Services in Euro | Arcturus | Published euro prices for LinkedIn management, email outreach, business support, lead generation, AI video and email setup. 50% advance, 50% on delivery. | Clear prices for every service. | https://arcturusprofessional.com/pricing | Indexable | WebPage, ProfessionalService | None |
 | /about | About Khushboo Tomar | B2B Outreach Freelancer | Meet Khushboo Tomar, an independent B2B outreach freelancer in New Delhi with 12 years of experience supporting UK, Irish and European businesses directly. | About Khushboo Tomar, B2B outreach freelancer | https://arcturusprofessional.com/about | Indexable | AboutPage, ProfessionalService, Person | None |
 | /how-i-work | How Arcturus Works | Freelance Business Support | See how Arcturus handles freelance LinkedIn, email outreach, lead generation and business support through clear written scopes, payment and reporting. | A clear process, kept in writing. | https://arcturusprofessional.com/how-i-work | Indexable | WebPage, ProfessionalService | None |
 | /contact | Contact Arcturus | B2B Outreach Freelancer | Contact Khushboo Tomar for LinkedIn management, email outreach, lead generation, business support, email setup or AI video content for your business today. | Tell me what you need to move forward. | https://arcturusprofessional.com/contact | Indexable | ContactPage, ProfessionalService, Person | None |

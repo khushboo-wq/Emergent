@@ -29,7 +29,8 @@
     "/business-support": "/services/business-support",
     "/lead-generation": "/services/lead-generation",
     "/ai-video-creation": "/services/ai-video-creation",
-    "/email-setup": "/services/email-setup"
+    "/email-setup": "/services/email-setup",
+    "/prices": "/pricing"
   },
   "pages": [
     {
@@ -171,6 +172,22 @@
         "BreadcrumbList"
       ],
       "serviceSlug": "email-setup",
+      "changeFrequency": "monthly",
+      "priority": 0.9,
+      "lastModified": "2026-10-08"
+    },
+    {
+      "path": "/pricing",
+      "title": "Pricing | B2B Freelance Services in Euro | Arcturus",
+      "description": "Published euro prices for LinkedIn management, email outreach, business support, lead generation, AI video and email setup. 50% advance, 50% on delivery.",
+      "h1": "Clear prices for every service.",
+      "canonical": "https://arcturusprofessional.com/pricing",
+      "indexable": true,
+      "ogType": "website",
+      "schemaTypes": [
+        "WebPage",
+        "ProfessionalService"
+      ],
       "changeFrequency": "monthly",
       "priority": 0.9,
       "lastModified": "2026-10-08"

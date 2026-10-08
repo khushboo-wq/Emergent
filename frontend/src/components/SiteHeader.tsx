@@ -33,6 +33,7 @@ export default function SiteHeader() {
           <NavLink to="/" className={navLinkClass}>Home</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
+          <NavLink to="/pricing" className={navLinkClass}>Pricing</NavLink>
           <NavLink to="/how-i-work" className={navLinkClass}>How I work</NavLink>
           <NavLink to="/reporting-compliance" className={navLinkClass}>Reporting & Compliance</NavLink>
           <NavLink to="/resources" className={navLinkClass}>Resources</NavLink>
@@ -57,6 +58,7 @@ export default function SiteHeader() {
               <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
               <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
               <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
+              <NavLink to="/pricing" onClick={() => setOpen(false)}>Pricing</NavLink>
               <NavLink to="/how-i-work" onClick={() => setOpen(false)}>How I work</NavLink>
               <NavLink to="/reporting-compliance" onClick={() => setOpen(false)}>Reporting & Compliance</NavLink>
               <NavLink to="/resources" onClick={() => setOpen(false)}>Resources</NavLink>

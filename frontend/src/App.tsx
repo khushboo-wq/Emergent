@@ -10,6 +10,7 @@ import Resources from "@/pages/Resources";
 import ResourceDetail from "@/pages/ResourceDetail";
 import ReportingCompliance from "@/pages/ReportingCompliance";
 import Terms from "@/pages/Terms";
+import Pricing from "@/pages/Pricing";
 import NotFound from "@/pages/NotFound";
 import RouteScrollManager from "@/components/RouteScrollManager";
 import ScrollButtons from "@/components/ScrollButtons";
@@ -25,6 +26,8 @@ export default function App() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/services/:slug" element={<ServiceDetail />} />
+      <Route path="/pricing" element={<Pricing />} />
+      <Route path="/prices" element={<Navigate to="/pricing" replace />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/resources/:slug" element={<ResourceDetail />} />

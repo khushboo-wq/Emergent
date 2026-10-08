@@ -1,0 +1,75 @@
+/* Service page fixes + Pricing page */
+
+/* Commercial clarity: heading on top, cards in a full-width grid (no empty left column) */
+html body .service-commercial-panel{display:block !important;padding:clamp(28px,3.5vw,48px) !important;border-radius:32px !important;margin:clamp(24px,3vw,40px) 0 !important}
+html body .service-commercial-intro{position:static !important;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:12px 40px;align-items:end;margin-bottom:26px}
+html body .service-commercial-intro .luxury-section-kicker{grid-column:1/-1}
+html body .service-commercial-intro h2{max-width:none !important;font-size:clamp(1.8rem,3vw,2.8rem) !important;line-height:1.08 !important;margin:0 !important}
+html body .service-commercial-intro>p:last-child{margin:0 !important;max-width:none !important;font-size:1.1rem !important}
+html body .service-commercial-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:16px !important}
+html body .service-commercial-card{min-height:0 !important;padding:24px 26px !important;border-radius:22px !important}
+html body .service-commercial-card strong{font-size:clamp(1.3rem,1.7vw,1.6rem) !important;line-height:1.2 !important;white-space:normal}
+html body .service-commercial-price strong{font-size:clamp(1.8rem,2.4vw,2.4rem) !important;white-space:nowrap}
+html body .service-commercial-grid>.service-commercial-wide{grid-column:1/-1 !important}
+html body .service-commercial-wide ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px}
+@media (max-width:900px){html body .service-commercial-intro{grid-template-columns:1fr}html body .service-commercial-grid{grid-template-columns:1fr !important}html body .service-commercial-wide ul{grid-template-columns:1fr}}
+
+/* How it works: padded cards, no cropped decorative arcs, even grid */
+.service-process-visual .service-process-orbit,.service-process-visual [data-testid^="service-process-step-"]::after{display:none !important}
+.service-process-visual .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) !important;gap:16px !important}
+.service-process-visual [data-testid^="service-process-step-"]{min-height:0 !important;padding:26px 24px !important;border-radius:24px !important;background:linear-gradient(160deg,#fff,#f1eeff) !important;border:1px solid rgba(106,85,200,.2) !important;border-top:5px solid #6a55c8 !important}
+.service-process-visual [data-testid^="service-process-step-"]:nth-child(2){border-top-color:#1f8f8a !important}
+.service-process-visual [data-testid^="service-process-step-"]:nth-child(3){border-top-color:#2f4f95 !important}
+.service-process-visual [data-testid^="service-process-step-"]:nth-child(4){border-top-color:#c89566 !important}
+.service-process-visual [data-testid^="service-process-title-"]{font-size:clamp(1.15rem,1.5vw,1.4rem) !important;margin-top:12px !important}
+.service-process-visual [data-testid^="service-process-step-"] span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#ece8ff;color:#4b37a8 !important;font-weight:800;font-size:.85rem !important}
+/* generic: inner cards never flush to edge */
+main [class*="rounded-"][class*="border"]:not([class*="p-"]){padding:22px}
+
+/* ===== Pricing page ===== */
+.pricing-hero-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center}
+.pricing-hero-terms{display:grid;gap:12px}
+.pricing-hero-terms>div{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:center;padding:18px 20px;border-radius:22px;background:rgba(255,255,255,.85);border:1px solid rgba(106,85,200,.22);box-shadow:0 20px 40px -28px rgba(15,41,66,.5)}
+.pricing-hero-terms svg{grid-row:span 2;width:44px;height:44px;padding:10px;border-radius:14px;background:linear-gradient(135deg,#2f4f95,#6a55c8);color:#fff}
+.pricing-hero-terms strong{font-family:var(--arc-head);font-size:1.25rem;color:#0f2942}
+.pricing-hero-terms span{font-size:.98rem;color:#2b3550;font-weight:600}
+.pricing-grid-section{padding:clamp(36px,4vw,64px) 0}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.pricing-card{position:relative;display:flex;flex-direction:column;padding:26px 26px 24px;border-radius:30px;background:linear-gradient(165deg,#ffffff,#f1eeff 70%,#e6f4f1);border:1px solid rgba(106,85,200,.22);box-shadow:0 30px 60px -36px rgba(15,41,66,.55);overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.pricing-card:hover{transform:translateY(-8px);box-shadow:0 40px 70px -34px rgba(106,85,200,.55)}
+.pricing-card:nth-child(2),.pricing-card:nth-child(4){background:linear-gradient(165deg,#0f2942,#2f4f95 70%,#6a55c8);border-color:rgba(255,255,255,.15)}
+.pricing-card:nth-child(2) *,.pricing-card:nth-child(4) *{color:#fff !important}
+.pricing-card:nth-child(2) .pricing-card-note,.pricing-card:nth-child(4) .pricing-card-note,.pricing-card:nth-child(2) li,.pricing-card:nth-child(4) li,.pricing-card:nth-child(2) .pricing-card-terms,.pricing-card:nth-child(4) .pricing-card-terms{color:#e4e8ff !important}
+.pricing-card-top{display:flex;justify-content:space-between;align-items:center}
+.pricing-card-index{font-weight:800;font-size:.9rem;color:#6a55c8}
+.pricing-card-billing{font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:999px;background:rgba(106,85,200,.12);color:#4b37a8}
+.pricing-card-iso{max-width:150px !important;margin:6px 0 -6px auto !important}
+.pricing-card h2{font-size:clamp(1.3rem,1.7vw,1.6rem) !important;margin:0 !important;line-height:1.2 !important}
+.pricing-card h2::after{content:none !important}
+.pricing-card-price{margin-top:12px !important;font-family:var(--arc-head);font-size:clamp(1.7rem,2.3vw,2.2rem) !important;font-weight:800;color:#0f2942;line-height:1.1 !important}
+.pricing-card:nth-child(2) .pricing-card-price,.pricing-card:nth-child(4) .pricing-card-price{color:#c6c2f0 !important}
+.pricing-card-note{margin-top:6px !important;font-size:.98rem !important;font-weight:600;color:#2f4f95}
+.pricing-card ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid rgba(106,85,200,.2);display:grid;gap:10px;flex:1}
+.pricing-card li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:.98rem !important;line-height:1.5 !important;color:#2b3550}
+.pricing-card li svg{margin-top:4px;color:#1f8f8a}
+.pricing-card-terms{margin-top:16px !important;padding:12px 14px;border-radius:14px;background:rgba(106,85,200,.08);font-size:.92rem !important;line-height:1.5 !important;color:#2b3550}
+.pricing-card-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;align-items:center;justify-content:space-between}
+.pricing-card-link{display:inline-flex;gap:6px;align-items:center;font-weight:800;color:#2f4f95;min-height:40px}
+.pricing-card-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:linear-gradient(120deg,#14355e,#6a55c8);color:#fff !important;font-weight:800;font-size:.95rem}
+.pricing-card:nth-child(2) .pricing-card-cta,.pricing-card:nth-child(4) .pricing-card-cta{background:#fff;color:#0f2942 !important}
+.pricing-info-section{padding:clamp(28px,3vw,48px) 0}
+.pricing-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pricing-info-card{padding:28px;border-radius:28px;background:linear-gradient(140deg,#0f2942,#2f4f95);color:#fff}
+.pricing-info-card:last-child{background:linear-gradient(140deg,#13504d,#1f8f8a)}
+.pricing-info-card *{color:#fff !important}
+.pricing-info-card p{color:#e4f0ff !important}
+.pricing-info-card svg{width:38px;height:38px;margin-bottom:10px}
+.pricing-info-card h2{font-size:clamp(1.4rem,2vw,1.9rem) !important}
+.pricing-info-card h2::after{background:#fff}
+.pricing-faq-section{padding:clamp(36px,4vw,64px) 0}
+.pricing-faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
+.pricing-faq{padding:22px 24px;border-radius:22px;background:#fff;border:1px solid rgba(106,85,200,.2);box-shadow:0 18px 36px -28px rgba(15,41,66,.45)}
+.pricing-faq h3{font-size:1.15rem !important}
+.pricing-faq p{margin-top:8px}
+@media (max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.pricing-hero-inner,.pricing-grid,.pricing-info-grid,.pricing-faq-grid{grid-template-columns:1fr}.pricing-card:nth-child(4){background:linear-gradient(165deg,#ffffff,#f1eeff 70%,#e6f4f1)}}
