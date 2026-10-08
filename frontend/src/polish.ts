@@ -195,6 +195,104 @@ function fitText() {
   new MutationObserver(run).observe(document.getElementById('root')!, { childList: true, subtree: true })
 }
 
+/* ---------- Floating 3D shapes inside section backgrounds, themed per service (move + scroll parallax) ---------- */
+const ICONS: Record<string, string> = {
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>',
+  network: '<circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7 7.5l3.5 8.5M17 7.5l-3.5 8.5M7.5 6h9"/>',
+  chat: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  send: '<path d="M3 11l18-8-7 18-2-8z"/><path d="M12 13l9-10"/>',
+  inbox: '<path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 3h6l1-3h5"/>',
+  check: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9l2 2 4-4M8 16h8"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  doc: '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+  funnel: '<path d="M3 4h18l-7 9v7l-4-2v-5z"/>',
+  table: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16"/>',
+  play: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/>',
+  film: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>',
+  spark: '<path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>',
+  shield: '<path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+  server: '<rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/>',
+  lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  euro: '<path d="M17 6a7 7 0 1 0 0 12M4 10h10M4 14h10"/>',
+}
+const THEMES: Record<string, { icons: string[]; tint: string }> = {
+  'linkedin-management': { icons: ['user', 'network', 'chat'], tint: 'cobalt' },
+  'email-outreach': { icons: ['mail', 'send', 'inbox'], tint: 'violet' },
+  'business-support': { icons: ['check', 'calendar', 'doc'], tint: 'amber' },
+  'lead-generation': { icons: ['target', 'funnel', 'table'], tint: 'teal' },
+  'ai-video-creation': { icons: ['play', 'film', 'spark'], tint: 'violet' },
+  'email-setup': { icons: ['shield', 'server', 'lock'], tint: 'blue' },
+  pricing: { icons: ['euro', 'check', 'doc'], tint: 'violet' },
+  'reporting-compliance': { icons: ['chart', 'shield', 'doc'], tint: 'teal' },
+  contact: { icons: ['chat', 'mail', 'send'], tint: 'violet' },
+  default: { icons: ['network', 'mail', 'target', 'play', 'check', 'shield'], tint: 'mix' },
+}
+function themeFor(path: string) {
+  const parts = path.split('/').filter(Boolean)
+  if (parts[0] === 'services' && parts[1] && THEMES[parts[1]]) return THEMES[parts[1]]
+  if (parts[0] && THEMES[parts[0]]) return THEMES[parts[0]]
+  return THEMES.default
+}
+function startFloatingShapes() {
+  if (reduce()) return
+  const SEL = 'main > section, main > div[data-testid="service-page-content"], .luxury-footer-cta'
+  const blobs = ['sphere-v', 'ring', 'sphere-t', 'capsule', 'sphere-c']
+  let n = 0
+  const decorate = () => {
+    const theme = themeFor(location.pathname)
+    document.querySelectorAll<HTMLElement>(SEL).forEach((sec) => {
+      if (sec.dataset.arcShapes || sec.offsetHeight < 260) return
+      sec.dataset.arcShapes = '1'
+      sec.classList.add('arc-shape-host')
+      const count = sec.offsetHeight > 700 ? 3 : 2
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement('span')
+        const iconTurn = (n + i) % 3 !== 2
+        if (iconTurn) {
+          const icon = theme.icons[(n + i) % theme.icons.length]
+          el.className = `arc-shape arc-shape-tile arc-tint-${theme.tint === 'mix' ? ['cobalt', 'violet', 'teal', 'amber'][(n + i) % 4] : theme.tint}`
+          el.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[icon]}</svg>`
+        } else {
+          el.className = `arc-shape arc-shape-${blobs[(n + i) % blobs.length]}`
+        }
+        el.setAttribute('aria-hidden', 'true')
+        // keep shapes in the side gutters so they never sit behind text
+        const side = (n + i) % 2 === 0 ? 'left' : 'right'
+        el.style[side] = side === 'left' ? `${-34 + ((n + i) % 3) * 12}px` : `${70 + ((n + i) % 3) * 30}px`
+        el.style.top = side === 'left' ? `${[14, 46, 74][i]}%` : `${[2, 86, 2][i]}%`
+        el.style.setProperty('--d', `${(n + i) % 5}s`)
+        el.style.setProperty('--speed', String(0.06 + ((n + i) % 4) * 0.035))
+        sec.appendChild(el)
+      }
+      n += count
+    })
+  }
+  decorate()
+  new MutationObserver(() => decorate()).observe(document.getElementById('root')!, { childList: true, subtree: true })
+  let ticking = false
+  window.addEventListener('scroll', () => {
+    if (ticking) return
+    ticking = true
+    requestAnimationFrame(() => {
+      document.querySelectorAll<HTMLElement>('.arc-shape').forEach((el) => {
+        const r = el.parentElement!.getBoundingClientRect()
+        if (r.bottom < 0 || r.top > window.innerHeight) return
+        const sp = parseFloat(el.style.getPropertyValue('--speed')) || 0.08
+        el.style.setProperty('--py', `${(r.top - window.innerHeight / 2) * -sp}px`)
+      })
+      document.querySelectorAll<HTMLElement>('.arc-shape-host').forEach((sec) => {
+        const r = sec.getBoundingClientRect()
+        if (r.bottom < 0 || r.top > window.innerHeight) return
+        sec.style.setProperty('--bgy', `${50 + (r.top / window.innerHeight) * -12}%`)
+      })
+      ticking = false
+    })
+  }, { passive: true })
+}
+
 export function startPolish() {
   if (typeof window === 'undefined') return
   startSmoothScroll()
@@ -204,4 +302,5 @@ export function startPolish() {
   startSpotlight()
   splitHeadlines()
   fitText()
+  startFloatingShapes()
 }
