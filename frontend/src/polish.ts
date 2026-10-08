@@ -48,7 +48,7 @@ const PATTERN = new RegExp([
   'up to 500 emails\\/day\\/account',
   'no calls',
 ].join('|'), 'gi')
-const SKIP = 'script,style,textarea,input,select,button,mark,svg,code,pre,h1,h2,h3,h4,.pricing-card-price,.pricing-card-terms,.service-pricing,.font-highlight,[data-no-hl],.arc-mark,.luxury-footer-word,.luxury-footer-bottom,title'
+const SKIP = 'script,style,textarea,input,select,button,mark,svg,code,pre,.arc-showcase,.pricing-hero-terms,h1,h2,h3,h4,.pricing-card-price,.pricing-card-terms,.service-pricing,.font-highlight,[data-no-hl],.arc-mark,.luxury-footer-word,.luxury-footer-bottom,title'
 
 function highlight(rootEl: ParentNode) {
   const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {
@@ -236,7 +236,7 @@ function themeFor(path: string) {
   if (parts[0] && THEMES[parts[0]]) return THEMES[parts[0]]
   return THEMES.default
 }
-function startFloatingShapes() {
+export function startFloatingShapes() {
   if (reduce()) return
   const SEL = 'main > section, main > div[data-testid="service-page-content"], .luxury-footer-cta'
   const blobs = ['sphere-v', 'ring', 'sphere-t', 'capsule', 'sphere-c']
@@ -261,8 +261,9 @@ function startFloatingShapes() {
         el.setAttribute('aria-hidden', 'true')
         // keep shapes in the side gutters so they never sit behind text
         const side = (n + i) % 2 === 0 ? 'left' : 'right'
-        el.style[side] = side === 'left' ? `${-34 + ((n + i) % 3) * 12}px` : `${70 + ((n + i) % 3) * 30}px`
-        el.style.top = side === 'left' ? `${[14, 46, 74][i]}%` : `${[2, 86, 2][i]}%`
+        // fully visible, never clipped: inside the section, in the side gutters / padding corners
+        el.style[side] = side === 'left' ? `${14 + ((n + i) % 3) * 10}px` : `${84 + ((n + i) % 3) * 20}px`
+        el.style.top = `${[8, 60, 30][i]}%`
         el.style.setProperty('--d', `${(n + i) % 5}s`)
         el.style.setProperty('--speed', String(0.06 + ((n + i) % 4) * 0.035))
         sec.appendChild(el)
@@ -302,5 +303,5 @@ export function startPolish() {
   startSpotlight()
   splitHeadlines()
   fitText()
-  startFloatingShapes()
+  // floating section shapes removed: they overlapped text / looked cut. Motion now comes from drifting gradients.
 }

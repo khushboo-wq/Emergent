@@ -1,5 +1,14 @@
 import type { CSSProperties } from "react";
 
+const TILE: Record<string, [string, string]> = {
+  "linkedin-management": ['<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>', '<circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7 7.5l3.5 8.5M17 7.5l-3.5 8.5M7.5 6h9"/>'],
+  "email-outreach": ['<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>', '<path d="M3 11l18-8-7 18-2-8z"/><path d="M12 13l9-10"/>'],
+  "business-support": ['<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9l2 2 4-4M8 16h8"/>', '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'],
+  "lead-generation": ['<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>', '<path d="M3 4h18l-7 9v7l-4-2v-5z"/>'],
+  "ai-video-creation": ['<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/>', '<path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>'],
+  "email-setup": ['<path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>', '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'],
+};
+
 const palette: Record<string, [string, string, string]> = {
   "linkedin-management": ["#5e7bdf", "#2f4f95", "#c6c2f0"],
   "email-outreach": ["#8b6fc9", "#6a55c8", "#e3dcf7"],
@@ -27,6 +36,11 @@ export default function IsoIllustration({ slug, className = "" }: { slug: string
   const c = palette[slug] ?? palette["linkedin-management"];
   return (
     <div className={`iso-illustration ${className}`} aria-hidden="true">
+      {(TILE[slug] ?? TILE["linkedin-management"]).map((paths, i) => (
+        <span key={i} className={`iso-tile iso-tile-${i}`} style={{ "--tile-a": c[0], "--tile-b": c[1] } as CSSProperties}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: paths }} />
+        </span>
+      ))}
       <svg viewBox="0 0 360 300" role="presentation">
         <defs>
           <linearGradient id={`iso-g-${slug}`} x1="0" y1="0" x2="1" y2="1">
