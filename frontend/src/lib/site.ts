@@ -313,7 +313,7 @@ export const supportingServices = orderedServices.slice(5);
 
 export const servicePageExtras: Record<string, ServicePageExtras> = {
   "linkedin-management": {
-    summary: "I manage LinkedIn profiles, content, targeted outreach, and nurture for UK and Irish businesses that want a consistent B2B presence. The service costs €400 per month, and you provide your own Sales Navigator subscription.",
+    summary: "I manage LinkedIn profiles, content, targeted outreach, and nurture for businesses in Ireland and the UK that want a consistent B2B presence. The service costs €400 per month, and you provide your own Sales Navigator subscription.",
     reporting: ["Connection acceptance percentage", "Engagement growth across agreed content", "Qualified conversations created through outreach"],
     relatedSlugs: ["lead-generation", "business-support"],
     lastUpdated: "7 October 2026",
@@ -329,7 +329,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     ],
   },
   "email-outreach": {
-    summary: "I set up and manage B2B cold email campaigns for UK and Irish businesses that need careful targeting, proper warm-up, and clear reporting. The managed service costs €500 per month, with lead research and email setup priced separately when required.",
+    summary: "I set up and manage B2B cold email outreach campaigns for businesses in Ireland and the UK that need careful targeting, proper warm-up, and clear reporting. The managed service costs €500 per month, with lead research and email setup priced separately when required.",
     reporting: ["Open percentage", "Reply percentage", "Click-through percentage", "Bounce rate", "Inbox placement observations"],
     relatedSlugs: ["email-setup", "lead-generation"],
     lastUpdated: "7 October 2026",
@@ -345,7 +345,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     ],
   },
   "business-support": {
-    summary: "I provide remote business support for founders and small teams that need reliable help with research, admin, websites, content, and recurring digital tasks. The service costs €30 per hour and is billed for the time spent on agreed work.",
+    summary: "I provide virtual business support for founders and small teams in Ireland and the UK that need reliable help with research, admin, websites, content, and recurring digital tasks. The service costs €30 per hour and is billed for the time spent on agreed work.",
     reporting: ["Time used against agreed tasks", "Completed work and outstanding dependencies", "Clear written notes for each delivery"],
     relatedSlugs: ["linkedin-management", "ai-video-creation"],
     lastUpdated: "7 October 2026",
@@ -377,7 +377,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     ],
   },
   "ai-video-creation": {
-    summary: "I create custom AI-generated videos and reels for businesses that need branded social content without professional video editing. The service costs €400 per month and follows the agreed brief and content direction.",
+    summary: "I create custom AI-generated videos and reels for small businesses in Ireland and the UK that need branded social content without professional video editing. The service costs €400 per month and follows the agreed brief and content direction.",
     reporting: ["Video output against the agreed content direction", "Content topics and delivery status", "Prompt revisions and approved branding elements"],
     relatedSlugs: ["business-support", "linkedin-management"],
     lastUpdated: "7 October 2026",
@@ -392,7 +392,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     ],
   },
   "email-setup": {
-    summary: "I configure professional business email and DNS authentication for businesses that need a sound technical foundation for deliverability. The one-time service costs €200 and covers SPF, DKIM, DMARC, and DNS verification.",
+    summary: "I configure business email and SPF, DKIM and DMARC authentication for businesses in Ireland and the UK that need a sound technical foundation for deliverability. The one-time service costs €200 and covers SPF, DKIM, DMARC, and DNS verification.",
     reporting: ["Records configured during setup", "DNS verification status", "Written handover and any outstanding provider actions"],
     relatedSlugs: ["email-outreach", "lead-generation"],
     lastUpdated: "7 October 2026",

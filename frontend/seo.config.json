@@ -36,8 +36,8 @@
   "pages": [
     {
       "path": "/",
-      "title": "B2B LinkedIn & Email Outreach Freelancer | Arcturus",
-      "description": "Independent freelancer for UK and Irish businesses providing LinkedIn management, email outreach, lead generation, business support, email setup and AI content.",
+      "title": "B2B Outreach Freelancer for Ireland & UK | Arcturus",
+      "description": "Independent B2B outreach freelancer for Irish and UK businesses: LinkedIn management, cold email outreach, verified lead lists, business support, email setup.",
       "h1": "B2B growth work, managed personally.",
       "canonical": "https://arcturusprofessional.com/",
       "indexable": true,
@@ -50,12 +50,12 @@
       ],
       "changeFrequency": "monthly",
       "priority": 1,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/services",
-      "title": "B2B Outreach & Business Support Services | Arcturus",
-      "description": "Explore six B2B services: LinkedIn management, email outreach, lead generation, email setup, business support and AI video creation for growing teams.",
+      "title": "B2B Outreach Services for Ireland & UK | Arcturus",
+      "description": "Six B2B services for Irish and UK businesses: LinkedIn management, cold email outreach, lead generation, email setup, business support and AI video creation.",
       "h1": "Practical B2B support, without the agency layer.",
       "canonical": "https://arcturusprofessional.com/services",
       "indexable": true,
@@ -67,12 +67,12 @@
       ],
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/services/linkedin-management",
-      "title": "LinkedIn Management Services | €400/month",
-      "description": "LinkedIn management for UK and Irish businesses: profile optimisation, content, targeted outreach, follow-ups and written reporting. €400 per month, flat.",
+      "title": "LinkedIn Management Freelancer Ireland | €400/month",
+      "description": "LinkedIn management freelancer for Irish and UK businesses: profile optimisation, content, targeted outreach, follow-ups and written reporting. €400/month.",
       "h1": "LinkedIn Management Services",
       "canonical": "https://arcturusprofessional.com/services/linkedin-management",
       "indexable": true,
@@ -85,12 +85,12 @@
       "serviceSlug": "linkedin-management",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/services/email-outreach",
-      "title": "B2B Email Outreach Service | €500/month",
-      "description": "GDPR and PECR-aware B2B cold email campaigns with one-month warm-up, follow-ups and written reporting for UK and Irish businesses. €500 per month, flat fee.",
+      "title": "B2B Cold Email Outreach Service Ireland & UK | €500",
+      "description": "B2B cold email outreach for Irish and UK businesses: one-month domain warm-up, GDPR and PECR-aware campaigns, follow-ups and written reports. €500/month.",
       "h1": "Email Outreach",
       "canonical": "https://arcturusprofessional.com/services/email-outreach",
       "indexable": true,
@@ -103,12 +103,12 @@
       "serviceSlug": "email-outreach",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/services/business-support",
-      "title": "Virtual Business Support Freelancer | €30/hour",
-      "description": "Remote business support for founders and small teams: research, admin, documents, website updates and AI-assisted content. €30 per hour, written updates.",
+      "title": "Virtual Business Support Freelancer Ireland | €30/hr",
+      "description": "Virtual business support for founders in Ireland and the UK: research, admin, documents, website updates and AI-assisted content. €30 per hour, written updates.",
       "h1": "Business Support",
       "canonical": "https://arcturusprofessional.com/services/business-support",
       "indexable": true,
@@ -121,12 +121,12 @@
       "serviceSlug": "business-support",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/services/lead-generation",
-      "title": "B2B Lead Generation Service | €250 per 100 Contacts",
-      "description": "Verified B2B contact research for UK, Irish and European markets using Sales Navigator, with sources explained. €250 per 100 verified contacts, delivered.",
+      "title": "Verified B2B Lead Lists Ireland & UK | €250 per 100",
+      "description": "Verified B2B lead lists for Ireland and the UK, researched with Sales Navigator by role, industry, size and location. €250 per 100 verified contacts delivered.",
       "h1": "Lead Generation",
       "canonical": "https://arcturusprofessional.com/services/lead-generation",
       "indexable": true,
@@ -139,12 +139,12 @@
       "serviceSlug": "lead-generation",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/services/ai-video-creation",
-      "title": "AI Video Creation for Businesses | €400/month",
-      "description": "Custom AI-generated short videos and reels with your branding, logo and end cards, planned to an agreed brief for social media. €400 per month, flat fee.",
+      "title": "AI Video Creation for Small Business | €400/month",
+      "description": "AI video creation for small businesses in Ireland and the UK: branded short videos and reels with your logo and end cards, to an agreed brief. €400 per month.",
       "h1": "AI Video Creation",
       "canonical": "https://arcturusprofessional.com/services/ai-video-creation",
       "indexable": true,
@@ -157,12 +157,12 @@
       "serviceSlug": "ai-video-creation",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/services/email-setup",
-      "title": "Business Email & DNS Setup | €200 One-Time",
-      "description": "Professional business email and DNS setup with SPF, DKIM and DMARC so your domain is ready for outreach. One-time €200 for UK, Irish and European firms.",
+      "title": "SPF, DKIM & DMARC Email Setup Service | €200",
+      "description": "Business email and DNS setup with SPF, DKIM and DMARC for Irish and UK businesses, so your domain is ready for cold email outreach. One-time fee of €200.",
       "h1": "Email Setup",
       "canonical": "https://arcturusprofessional.com/services/email-setup",
       "indexable": true,
@@ -175,11 +175,11 @@
       "serviceSlug": "email-setup",
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/pricing",
-      "title": "Pricing | B2B Freelance Services in Euro | Arcturus",
+      "title": "B2B Outreach Freelancer Pricing in Euro | Arcturus",
       "description": "Published euro prices for LinkedIn management, email outreach, business support, lead generation, AI video and email setup. 50% advance, 50% on delivery.",
       "h1": "Clear prices for every service.",
       "canonical": "https://arcturusprofessional.com/pricing",
@@ -191,12 +191,12 @@
       ],
       "changeFrequency": "monthly",
       "priority": 0.9,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/about",
       "title": "About Khushboo Tomar | B2B Outreach Freelancer",
-      "description": "Meet Khushboo Tomar, an independent B2B outreach freelancer in New Delhi with 12 years of experience supporting UK, Irish and European businesses directly.",
+      "description": "Meet Khushboo Tomar, an independent B2B outreach freelancer with 12+ years of experience supporting businesses in Ireland, the UK and Europe from New Delhi.",
       "h1": "About Khushboo Tomar, B2B outreach freelancer",
       "canonical": "https://arcturusprofessional.com/about",
       "indexable": true,
@@ -208,7 +208,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0.8,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/how-i-work",
@@ -244,8 +244,8 @@
     },
     {
       "path": "/contact",
-      "title": "Contact Arcturus | B2B Outreach Freelancer",
-      "description": "Contact Khushboo Tomar for LinkedIn management, email outreach, lead generation, business support, email setup or AI video content for your business today.",
+      "title": "Contact a B2B Outreach Freelancer | Arcturus",
+      "description": "Contact Khushboo Tomar for LinkedIn management, cold email outreach, lead generation, business support or email setup for your Irish or UK business, in writing.",
       "h1": "Tell me what you need to move forward.",
       "canonical": "https://arcturusprofessional.com/contact",
       "indexable": true,
@@ -257,7 +257,7 @@
       ],
       "changeFrequency": "yearly",
       "priority": 0.8,
-      "lastModified": "2026-10-08"
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/404",
