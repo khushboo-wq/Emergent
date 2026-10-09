@@ -30,7 +30,8 @@
     "/lead-generation": "/services/lead-generation",
     "/ai-video-creation": "/services/ai-video-creation",
     "/email-setup": "/services/email-setup",
-    "/prices": "/pricing"
+    "/prices": "/pricing",
+    "/faqs": "/faq"
   },
   "pages": [
     {
@@ -224,6 +225,22 @@
       "changeFrequency": "yearly",
       "priority": 0.7,
       "lastModified": "2026-10-08"
+    },
+    {
+      "path": "/faq",
+      "title": "FAQ | Pricing, Payment and Process | Arcturus",
+      "description": "Answers to common questions on Arcturus services: euro pricing, 50% advance payment via Wise, written communication, timelines, results and GDPR-aware data.",
+      "h1": "Quick answers before you get in touch.",
+      "canonical": "https://arcturusprofessional.com/faq",
+      "indexable": true,
+      "ogType": "website",
+      "schemaTypes": [
+        "WebPage",
+        "ProfessionalService"
+      ],
+      "changeFrequency": "monthly",
+      "priority": 0.8,
+      "lastModified": "2026-10-09"
     },
     {
       "path": "/contact",

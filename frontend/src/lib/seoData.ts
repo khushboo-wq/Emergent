@@ -1,6 +1,7 @@
 import seoConfigJson from "../../seo.config.json";
 import { CONTACT_EMAIL, getService, orderedServices, servicePageExtras } from "@/lib/site";
 import { getResource, resources } from "@/lib/resources";
+import { allFaqs } from "@/lib/faq";
 
 interface SeoPageConfig {
   path: string;
@@ -106,6 +107,7 @@ function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
   const graph: Record<string, unknown>[] = [webPage];
   if (page.schemaTypes.includes("ProfessionalService")) graph.unshift(professionalService);
   if (page.schemaTypes.includes("Person")) graph.push(person);
+  if (page.path === "/faq") graph.push({ "@type": "FAQPage", "@id": `${page.canonical}#faq`, mainEntity: allFaqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
   if (page.path === "/") graph.push({ "@type": "WebSite", "@id": `${site.baseUrl}/#website`, name: site.name, alternateName: "Arcturus", url: `${site.baseUrl}/`, publisher: { "@id": businessId }, inLanguage: site.language });
   if (page.path === "/services") graph.push({ "@type": "ItemList", name: "Arcturus Professional Services", itemListElement: orderedServices.map((entry, index) => ({ "@type": "ListItem", position: index + 1, url: `${site.baseUrl}/services/${entry.slug}`, name: entry.title })) });
   if (page.path === "/resources") graph.push({ "@type": "ItemList", name: "LinkedIn Management Resources", itemListElement: resources.map((entry, index) => ({ "@type": "ListItem", position: index + 1, url: `${site.baseUrl}/resources/${entry.slug}`, name: entry.title })) });

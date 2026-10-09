@@ -2,7 +2,7 @@
 
 Generated from `seo.config.json`.
 
-- Pages created: 22
+- Pages created: 23
 - Sitemap status: Generated and valid
 - Robots.txt status: Generated, important pages allowed
 - Missing SEO items: 0
@@ -20,6 +20,7 @@ Generated from `seo.config.json`.
 | /pricing | Pricing | B2B Freelance Services in Euro | Arcturus | Published euro prices for LinkedIn management, email outreach, business support, lead generation, AI video and email setup. 50% advance, 50% on delivery. | Clear prices for every service. | https://arcturusprofessional.com/pricing | Indexable | WebPage, ProfessionalService | None |
 | /about | About Khushboo Tomar | B2B Outreach Freelancer | Meet Khushboo Tomar, an independent B2B outreach freelancer in New Delhi with 12 years of experience supporting UK, Irish and European businesses directly. | About Khushboo Tomar, B2B outreach freelancer | https://arcturusprofessional.com/about | Indexable | AboutPage, ProfessionalService, Person | None |
 | /how-i-work | How Arcturus Works | Freelance Business Support | See how Arcturus handles freelance LinkedIn, email outreach, lead generation and business support through clear written scopes, payment and reporting. | A clear process, kept in writing. | https://arcturusprofessional.com/how-i-work | Indexable | WebPage, ProfessionalService | None |
+| /faq | FAQ | Pricing, Payment and Process | Arcturus | Answers to common questions on Arcturus services: euro pricing, 50% advance payment via Wise, written communication, timelines, results and GDPR-aware data. | Quick answers before you get in touch. | https://arcturusprofessional.com/faq | Indexable | WebPage, ProfessionalService | None |
 | /contact | Contact Arcturus | B2B Outreach Freelancer | Contact Khushboo Tomar for LinkedIn management, email outreach, lead generation, business support, email setup or AI video content for your business today. | Tell me what you need to move forward. | https://arcturusprofessional.com/contact | Indexable | ContactPage, ProfessionalService, Person | None |
 | /resources | B2B Business Resources | Arcturus Professional Services | Practical guides on LinkedIn management, email outreach, lead generation, business support, email setup and AI video content for growing B2B businesses. | Useful LinkedIn guidance for B2B businesses. | https://arcturusprofessional.com/resources | Indexable | CollectionPage, ItemList | None |
 | /resources/linkedin-management-services-guide | LinkedIn Management Services: What a Business Needs | A practical guide to LinkedIn management services for founders and small B2B businesses. Learn what good management covers, what to expect and what to review. | LinkedIn Management Services: What a Business Actually Needs | https://arcturusprofessional.com/resources/linkedin-management-services-guide | Indexable | Article, BreadcrumbList | None |

@@ -42,6 +42,7 @@ export default function SiteFooter() {
           <Link to="/how-i-work">How I work</Link>
           <Link to="/reporting-compliance">Reporting & Compliance</Link>
           <Link to="/resources">Resources</Link>
+          <Link to="/faq">FAQ</Link>
           <Link to="/contact">Contact</Link>
         </div>
 
