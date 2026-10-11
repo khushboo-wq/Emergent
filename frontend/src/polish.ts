@@ -294,11 +294,72 @@ export function startFloatingShapes() {
   }, { passive: true })
 }
 
+
+/* ---------- Mobile/touch scroll motion: cards glide in, parallax, dock hides while reading ---------- */
+const CARD_SEL = [
+  'main article', 'main .premium-panel', 'main .luxury-service-row', 'main .pricing-card', 'main .pricing-info-card',
+  'main .service-commercial-card', 'main .resource-card', 'main .resource-home-card', 'main .faq-item', 'main details',
+  'main .method-card', 'main .why-work-card', 'main .onboarding-card', 'main .reporting-detail-card', 'main .tools-platform-card',
+  'main .luxury-process-item', 'main .luxury-proof-row', 'main .arc-showcase', 'main .iso-illustration', 'main .arc-profile',
+  'main .payment-card', 'main .start-project-card', 'main img', '.luxury-footer-cta', '.footer-info-grid > div',
+].join(',')
+
+function startCardMotion() {
+  if (!('IntersectionObserver' in window)) return
+  const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (en.isIntersecting) { en.target.classList.add('arc-card-in'); io.unobserve(en.target) }
+  }), { threshold: 0.08, rootMargin: '0px 0px -6% 0px' })
+  const scan = () => {
+    const vh = window.innerHeight
+    document.querySelectorAll<HTMLElement>(CARD_SEL).forEach((el) => {
+      if (el.dataset.arcCard) return
+      el.dataset.arcCard = '1'
+      // never animate nested cards twice, nor anything already on screen
+      const parent = el.parentElement?.closest(CARD_SEL)
+      if (parent || el.closest('.arc-menu, header')) return
+      const r = el.getBoundingClientRect()
+      if (r.top < vh * 0.92 && r.bottom > 0) return
+      const sibs = [...(el.parentElement?.children || [])].filter((c) => (c as HTMLElement).matches(CARD_SEL))
+      const idx = Math.max(0, sibs.indexOf(el))
+      el.style.setProperty('--d', `${Math.min(idx % 3, 2) * 90}ms`)
+      if (window.innerWidth <= 860 && sibs.length > 1 && !el.matches('details, .faq-item')) el.classList.add(idx % 2 ? 'from-right' : 'from-left')
+      el.classList.add('arc-card-rv')
+      io.observe(el)
+    })
+  }
+  scan()
+  window.addEventListener('arc:route', () => setTimeout(scan, 80))
+  new MutationObserver(() => requestAnimationFrame(scan)).observe(document.getElementById('root')!, { childList: true, subtree: true })
+}
+
+function startReadingMode() {
+  let last = window.scrollY, ticking = false
+  const root = document.documentElement
+  window.addEventListener('scroll', () => {
+    if (ticking) return
+    ticking = true
+    requestAnimationFrame(() => {
+      const y = window.scrollY
+      if (Math.abs(y - last) > 6) document.body.classList.toggle('arc-reading', y > last && y > 240)
+      if (y < 240) document.body.classList.remove('arc-reading')
+      root.style.setProperty('--arc-sy', String(Math.min(y, 1400)))
+      last = y
+      ticking = false
+    })
+  }, { passive: true })
+  // gentle parallax on hero visuals (mobile only via CSS)
+  const tagPx = () => document.querySelectorAll('.luxury-hero .arc-showcase, .luxury-hero .iso-illustration, .service-hero-stack').forEach((el) => el.classList.add('arc-px'))
+  tagPx()
+  window.addEventListener('arc:route', () => setTimeout(tagPx, 80))
+}
+
 export function startPolish() {
   if (typeof window === 'undefined') return
   startSmoothScroll()
   startHighlighter()
   startReveal()
+  startCardMotion()
+  startReadingMode()
   liftTinyText()
   startSpotlight()
   splitHeadlines()

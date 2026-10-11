@@ -1,0 +1,84 @@
+/* ===== Mobile menu (full-screen, branded, animated) + touch scroll motion ===== */
+
+/* Overlay + panel sit above the sticky header, service rail, contact dock and scroll buttons */
+[data-slot="sheet-overlay"]{z-index:150 !important;background:rgba(8,20,36,.55) !important;backdrop-filter:blur(6px) !important}
+html body .arc-menu[data-slot="sheet-content"]{
+  z-index:160 !important;inset:0 !important;width:100% !important;max-width:none !important;height:100dvh !important;
+  padding:calc(env(safe-area-inset-top) + 18px) 22px calc(env(safe-area-inset-bottom) + 22px) !important;gap:0 !important;
+  border:0 !important;color:#fff !important;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  background:
+    radial-gradient(120% 60% at 100% 0%,rgba(127,227,216,.22),transparent 60%),
+    radial-gradient(110% 70% at 0% 100%,rgba(106,85,200,.38),transparent 60%),
+    linear-gradient(160deg,#0f2942 0%,#16336b 55%,#2f2a6e 100%) !important;
+  background-size:140% 140%,140% 140%,100% 100% !important;
+  animation:arcMenuBg 14s ease-in-out infinite alternate;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s ease !important;
+}
+html body .arc-menu[data-slot="sheet-content"][data-starting-style],
+html body .arc-menu[data-slot="sheet-content"][data-ending-style]{transform:translateY(-14px) scale(.985) !important;opacity:0 !important}
+@keyframes arcMenuBg{from{background-position:0% 0%,0% 0%,0 0}to{background-position:100% 60%,60% 100%,0 0}}
+
+/* Close button */
+.arc-menu > [data-slot="sheet-close"]{top:calc(env(safe-area-inset-top) + 20px) !important;right:18px !important;width:46px !important;height:46px !important;border-radius:14px !important;
+  color:#fff !important;background:rgba(255,255,255,.1) !important;border:1px solid rgba(255,255,255,.18) !important}
+.arc-menu > [data-slot="sheet-close"] svg{width:22px;height:22px}
+
+.arc-menu-head{padding:0 60px 18px 0 !important;margin:0 !important;border-bottom:1px solid rgba(255,255,255,.12)}
+.arc-menu-logo{display:inline-flex;text-decoration:none}
+
+/* Links */
+html body .arc-menu .arc-menu-nav{display:flex !important;flex-direction:column;gap:2px;margin:14px 0 0 !important;counter-reset:none}
+html body .arc-menu .arc-menu-nav > a{
+  display:grid !important;grid-template-columns:34px 1fr auto;align-items:center;gap:10px;
+  padding:13px 12px !important;border:0 !important;border-radius:14px;color:#fff !important;text-decoration:none;
+  font-family:"Hemicube Head","Hemicube",sans-serif !important;font-size:1.12rem !important;font-weight:600 !important;line-height:1.25 !important;letter-spacing:.01em !important;
+  opacity:0;transform:translateX(28px);animation:arcMenuIn .55s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i,0) * 45ms + 120ms);
+  transition:background .25s ease,transform .25s ease;
+}
+.arc-menu .arc-menu-nav > a:active{transform:scale(.97)}
+.arc-menu .arc-menu-num{font-family:"Alesand","Sora Variable",sans-serif;font-size:.8rem;font-weight:600;color:rgba(127,227,216,.85);letter-spacing:.06em}
+.arc-menu .arc-menu-arrow{opacity:.45;transition:transform .25s ease,opacity .25s ease}
+html body .arc-menu .arc-menu-nav > a.active{background:linear-gradient(90deg,rgba(127,227,216,.2),rgba(106,85,200,.18));box-shadow:inset 0 0 0 1px rgba(127,227,216,.35)}
+.arc-menu .arc-menu-nav > a.active .arc-menu-arrow{opacity:1;color:#7fe3d8;transform:rotate(45deg)}
+@media (hover:hover){html body .arc-menu .arc-menu-nav > a:hover{background:rgba(255,255,255,.08)}.arc-menu .arc-menu-nav > a:hover .arc-menu-arrow{opacity:1;transform:translate(2px,-2px)}}
+@keyframes arcMenuIn{to{opacity:1;transform:none}}
+
+/* Footer of menu */
+.arc-menu-foot{margin-top:auto;padding-top:22px;display:grid;gap:12px;opacity:0;animation:arcMenuIn .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i,9) * 45ms + 160ms);transform:translateY(16px)}
+html body .arc-menu .luxury-mobile-cta{margin:0 !important;width:100%;min-height:52px !important;font-size:.95rem !important;color:#0f2942 !important;
+  background:linear-gradient(90deg,#7fe3d8,#c6c2f0) !important;box-shadow:0 18px 36px -18px rgba(127,227,216,.7) !important}
+.arc-menu-quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.arc-menu-quick a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+.arc-menu-quick a:first-child svg{color:#25d366}
+.arc-menu-note{margin:2px 0 0;text-align:center;font-size:.8rem;color:rgba(255,255,255,.62)}
+
+/* While the menu is open: hide floating dock + scroll buttons so nothing overlaps */
+body:has(.arc-menu[data-open]) .luxury-contact-dock,
+body:has(.arc-menu[data-open]) .arc-scroll-buttons{opacity:0 !important;pointer-events:none !important}
+
+/* ===== Touch / mobile scroll motion ===== */
+/* Cards & blocks glide in as they enter the screen (JS adds .arc-card-rv / .arc-card-in) */
+.arc-card-rv{opacity:0;translate:0 42px;scale:.965;transition:opacity .75s cubic-bezier(.2,.8,.2,1) var(--d,0ms),translate .85s cubic-bezier(.2,.8,.2,1) var(--d,0ms),scale .85s cubic-bezier(.2,.8,.2,1) var(--d,0ms) !important}
+.arc-card-rv.from-left{translate:-36px 0}
+.arc-card-rv.from-right{translate:36px 0}
+html body .arc-card-rv.arc-card-in{opacity:1;translate:0 0;scale:1}
+
+/* Floating dock + scroll buttons slide away while reading down, come back on scroll up */
+.luxury-contact-dock,.arc-scroll-buttons{transition:opacity .35s ease,translate .45s cubic-bezier(.2,.8,.2,1) !important}
+@media (max-width:860px){
+  body.arc-reading .luxury-contact-dock{translate:0 120px;opacity:0 !important}
+  body.arc-reading .arc-scroll-buttons{translate:80px 0}
+  /* hero visuals drift gently with scroll (parallax) */
+  .arc-px{translate:0 calc(var(--arc-sy,0) * -0.08px);will-change:translate}
+  /* touch feedback */
+  main a,main button,main article,main details summary{-webkit-tap-highlight-color:transparent}
+  main article:active,main .premium-panel:active,main a.luxury-service-row:active{transform:scale(.985);transition:transform .15s ease}
+}
+
+/* Reduced motion: no movement, just a soft fade */
+@media (prefers-reduced-motion:reduce){
+  .arc-card-rv,.arc-card-rv.from-left,.arc-card-rv.from-right{translate:none !important;scale:none !important;transition:opacity .6s ease !important}
+  html body .arc-menu .arc-menu-nav > a,.arc-menu-foot{opacity:1 !important;transform:none !important;animation:none !important}
+  .arc-px{translate:none !important}
+}

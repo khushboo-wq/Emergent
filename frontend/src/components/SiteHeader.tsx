@@ -1,12 +1,18 @@
-import { Menu, MessageCircle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowUpRight, Mail, Menu, MessageCircle } from "lucide-react";
+import { useEffect, useState, type CSSProperties } from "react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { CONTACT_EMAIL } from "@/lib/site";
+import { CONTACT_EMAIL, WHATSAPP_LINK } from "@/lib/site";
 import ServiceTabs from "@/components/ServiceTabs";
 import BrandLogo from "@/components/BrandLogo";
 
+
+const mobileLinks: Array<[string, string]> = [
+  ["/", "Home"], ["/about", "About"], ["/services", "Services"], ["/pricing", "Pricing"], ["/how-i-work", "How I work"],
+  ["/reporting-compliance", "Reporting & Compliance"], ["/resources", "Resources"], ["/faq", "FAQ"], ["/contact", "Contact"],
+];
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `luxury-nav-link ${isActive ? "is-active" : ""}`;
@@ -50,23 +56,28 @@ export default function SiteHeader() {
           <SheetTrigger render={<Button variant="outline" size="icon" className="luxury-mobile-menu" />} data-testid="mobile-menu-button" aria-label="Open navigation">
             <Menu size={20} />
           </SheetTrigger>
-          <SheetContent side="right" className="luxury-mobile-sheet">
-            <SheetHeader>
-              <SheetTitle>Arcturus</SheetTitle>
-              <p>{CONTACT_EMAIL}</p>
+          <SheetContent side="right" className="luxury-mobile-sheet arc-menu" showCloseButton>
+            <SheetHeader className="arc-menu-head">
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <Link to="/" onClick={() => setOpen(false)} className="arc-menu-logo" aria-label="Arcturus home"><BrandLogo size={40} light /></Link>
             </SheetHeader>
-            <nav className="luxury-mobile-nav" aria-label="Mobile navigation" data-testid="mobile-navigation">
-              <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
-              <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
-              <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
-              <NavLink to="/pricing" onClick={() => setOpen(false)}>Pricing</NavLink>
-              <NavLink to="/how-i-work" onClick={() => setOpen(false)}>How I work</NavLink>
-              <NavLink to="/reporting-compliance" onClick={() => setOpen(false)}>Reporting & Compliance</NavLink>
-              <NavLink to="/resources" onClick={() => setOpen(false)}>Resources</NavLink>
-              <NavLink to="/faq" onClick={() => setOpen(false)}>FAQ</NavLink>
-              <NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
+            <nav className="luxury-mobile-nav arc-menu-nav" aria-label="Mobile navigation" data-testid="mobile-navigation">
+              {mobileLinks.map(([to, label], i) => (
+                <NavLink key={to} to={to} end={to === "/"} onClick={() => setOpen(false)} style={{ "--i": i } as CSSProperties}>
+                  <span className="arc-menu-num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="arc-menu-label">{label}</span>
+                  <ArrowUpRight className="arc-menu-arrow" size={18} aria-hidden="true" />
+                </NavLink>
+              ))}
             </nav>
-            <Link to="/contact" onClick={() => setOpen(false)} className="luxury-mobile-cta">Get in touch</Link>
+            <div className="arc-menu-foot" style={{ "--i": mobileLinks.length } as CSSProperties}>
+              <Link to="/contact" onClick={() => setOpen(false)} className="luxury-mobile-cta">Get in touch <MessageCircle size={16} /></Link>
+              <div className="arc-menu-quick">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer"><FaWhatsapp size={18} aria-hidden="true" /> WhatsApp</a>
+                <a href={`mailto:${CONTACT_EMAIL}`}><Mail size={18} aria-hidden="true" /> Email</a>
+              </div>
+              <p className="arc-menu-note">Independent solo freelancer<br />Written communication only</p>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
