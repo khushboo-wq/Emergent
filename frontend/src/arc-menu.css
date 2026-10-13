@@ -82,3 +82,7 @@ html body .arc-card-rv.arc-card-in{opacity:1;translate:0 0;scale:1}
   html body .arc-menu .arc-menu-nav > a,.arc-menu-foot{opacity:1 !important;transform:none !important;animation:none !important}
   .arc-px{translate:none !important}
 }
+
+/* Crisp live chat: keep clear of our floating controls */
+body:has(.arc-menu[data-open]) .crisp-client{display:none !important}
+@media (max-width:860px){html body .arc-scroll-buttons{bottom:104px !important}}
