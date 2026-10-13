@@ -15,6 +15,7 @@ import Faq from "@/pages/Faq";
 import NotFound from "@/pages/NotFound";
 import RouteScrollManager from "@/components/RouteScrollManager";
 import ScrollButtons from "@/components/ScrollButtons";
+import CrispChat from "@/components/CrispChat";
 
 // One <Route> per page in src/pages; BrowserRouter already wraps this in main.tsx.
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
     <>
     <RouteScrollManager />
     <ScrollButtons />
+    <CrispChat />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
