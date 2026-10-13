@@ -69,6 +69,11 @@ function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
       publisher: { "@id": businessId },
       articleSection: resource.category,
       keywords: resource.keywords,
+      ...(() => {
+        const urls = [...(resource.sources ?? []), ...resource.sections.flatMap((section) => section.links ?? [])]
+          .map((item) => item.url).filter((url) => /^https?:\/\//.test(url));
+        return urls.length ? { citation: [...new Set(urls)] } : {};
+      })(),
       mainEntityOfPage: { "@id": `${page.canonical}#webpage` }
     };
     return {

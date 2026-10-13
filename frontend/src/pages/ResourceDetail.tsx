@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
-import { getResource, resources } from "@/lib/resources";
+import { getResource, resources, type ResourceLink } from "@/lib/resources";
 import { getService } from "@/lib/site";
 
 export default function ResourceDetail() {
@@ -47,9 +47,25 @@ export default function ResourceDetail() {
                   <h2>{section.heading}</h2>
                   {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                   {section.bullets ? <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul> : null}
+                  {section.links?.length ? (
+                    <ul className="resource-links" aria-label={`Links for ${section.heading}`}>
+                      {section.links.map((item) => <li key={item.url}><ResourceAnchor item={item} /></li>)}
+                    </ul>
+                  ) : null}
                 </div>
               </Reveal>
             ))}
+            {resource.sources?.length ? (
+              <section className="resource-section resource-sources" aria-labelledby="resource-sources-title">
+                <p className="resource-section-number">{String(resource.sections.length + 1).padStart(2, "0")}</p>
+                <div>
+                  <h2 id="resource-sources-title">Sources</h2>
+                  <ol className="resource-links">
+                    {resource.sources.map((item) => <li key={item.url}><ResourceAnchor item={item} /></li>)}
+                  </ol>
+                </div>
+              </section>
+            ) : null}
           </main>
 
           <aside className="resource-sidebar">
@@ -84,5 +100,17 @@ export default function ResourceDetail() {
         </section>
       </article>
     </PageFrame>
+  );
+}
+
+function ResourceAnchor({ item }: { item: ResourceLink }) {
+  const internal = item.url.startsWith("/");
+  return (
+    <>
+      {internal
+        ? <Link to={item.url}>{item.label}</Link>
+        : <a href={item.url} target="_blank" rel="noopener">{item.label}<span className="sr-only"> (opens in a new tab)</span></a>}
+      {item.note ? <span className="resource-link-note"> — {item.note}</span> : null}
+    </>
   );
 }

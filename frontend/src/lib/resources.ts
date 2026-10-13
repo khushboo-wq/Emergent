@@ -1,7 +1,18 @@
+export interface ResourceLink {
+  /** Visible link text */
+  label: string;
+  /** Full https:// URL for an outside source, or a site path like /pricing */
+  url: string;
+  /** Optional one-line note shown after the link */
+  note?: string;
+}
+
 export interface ResourceSection {
   heading: string;
   paragraphs: string[];
   bullets?: string[];
+  /** Optional links shown under this section (authority sources or related pages) */
+  links?: ResourceLink[];
 }
 
 export interface Resource {
@@ -17,6 +28,8 @@ export interface Resource {
   readTime: string;
   keywords: string[];
   sections: ResourceSection[];
+  /** Optional sources listed at the end of the article and added to the Article schema as citations */
+  sources?: ResourceLink[];
 }
 
 export const resources: Resource[] = [
