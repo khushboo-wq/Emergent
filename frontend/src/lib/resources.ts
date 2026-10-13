@@ -522,6 +522,123 @@ export const resources: Resource[] = [
       },
     ],
   },
+  {
+    slug: "linkedin-company-page-vs-personal-profile-founder",
+    title: "Company Page or Personal Profile: Where a B2B Founder Should Post",
+    eyebrow: "LinkedIn Decision Guide",
+    excerpt: "A practical answer for a one person B2B business: post from the profile, keep the page complete, and split the week between them without doubling the work.",
+    description: "Where a one person B2B business in Ireland should post on LinkedIn: what prospects check on a profile, what they check on a company page, and a weekly split.",
+    category: "LinkedIn Management",
+    serviceSlug: "linkedin-management",
+    published: "2026-10-13",
+    updated: "2026-10-13",
+    readTime: "7 min read",
+    keywords: ["linkedin company page vs personal profile", "should a founder post from a company page", "linkedin for founders", "linkedin company page for sole trader"],
+    sections: [
+      {
+        heading: "Which should a founder post from, the profile or the company page?",
+        paragraphs: [
+          "Post from your personal profile, and keep the company page complete, accurate and quiet. For a one person B2B business in Ireland, the profile is where a prospect decides whether to talk to you, and the page is where the same prospect checks that the business behind you is real. Both have a job. Only one of them needs your writing time every week.",
+          "The profile. On LinkedIn a person connects with people, replies to people and remembers people. A company page cannot send a connection request or start a conversation, so anything that is meant to begin a relationship has to come from you, under your own name and face.",
+          "That does not make the page optional. When someone is considering a reply to your message, they open the company page to confirm that the business exists, that it does what you say, and that the details match. An empty or half finished page answers those questions badly, and a prospect rarely says so. They simply do not reply.",
+          "So the split is not profile or page. It is profile for conversation, page for confirmation.",
+        ],
+      },
+      {
+        heading: "What does a prospect look for on a personal profile?",
+        paragraphs: [
+          "A prospect reads a profile the way they read a letter from a stranger: quickly, looking for a reason to stop. In my experience of managing LinkedIn for B2B businesses, the things that keep them reading are the same each time.",
+          "Nothing on that list needs a team behind it. It needs a few hours once, and a short review whenever the business changes.",
+        ],
+        bullets: [
+          "A headline that says what you do and for whom, in plain words, rather than a job title.",
+          "An About section that names the problem you solve and the kind of business you solve it for.",
+          "Recent posts that sound like a person with a point of view, not a brochure.",
+          "Experience entries that describe the work, not just the role.",
+          "A photo and a banner that look like the business you are describing.",
+        ],
+        links: [
+          { label: "LinkedIn profile optimisation for B2B founders", url: "/resources/linkedin-profile-optimization" },
+        ],
+      },
+      {
+        heading: "What does a prospect look for on a company page?",
+        paragraphs: [
+          "A prospect opens the page to confirm, not to be persuaded. They check that the name, the location and the services match what they read on your profile and on your website, that the page has been touched recently, and that the logo and the description look like one business rather than two.",
+          "LinkedIn's own help centre describes three admin roles for a page, a super admin, a content admin and an analyst, and only a super admin can add or remove the others. For a sole trader that usually means your own profile holds the super admin role and nothing else needs adding.",
+        ],
+        bullets: [
+          "The business name spelled the way it appears on your website and your invoices.",
+          "A one paragraph description that matches the About section on your profile without repeating it word for word.",
+          "The website link, the location and the industry filled in.",
+          "A few posts, so the page does not look abandoned.",
+          "The admin roles set so the page is not tied to an account you might lose access to.",
+        ],
+        links: [
+          { label: "LinkedIn Page admin roles, from the LinkedIn help centre", url: "https://www.linkedin.com/help/linkedin/answer/4783" },
+        ],
+      },
+      {
+        heading: "How do the two support each other without doubling the work?",
+        paragraphs: [
+          "Write once, on the profile. Then decide, post by post, whether the page needs its own short version. Few of them will. A reflection on a client problem, a lesson from a campaign, or a question for your audience belongs to you, and reposting it on the page word for word only tells a prospect that one person runs both, which they already know.",
+          "The page earns its own post when the news belongs to the business rather than to you: a new service, a change to how you work, a published guide, or a milestone you would put on an invoice footer. Keep those short and factual, and keep the first person voice on your profile.",
+          "One habit saves most of the effort. When a profile post does well, add a one line comment from the page and move on. The page shows signs of life, you have written nothing new, and the two surfaces point at each other.",
+        ],
+      },
+      {
+        heading: "What goes on each surface in a typical week for one person?",
+        paragraphs: [
+          "This is the split I use when I manage LinkedIn for a business with one person behind it. It fits inside a working week without becoming the working week.",
+          "If the week is short, drop the page tasks first. A quiet page costs you almost nothing. A quiet profile costs you the conversations.",
+        ],
+        bullets: [
+          "On the profile: two or three posts a week, each making one point, written in the first person.",
+          "On the profile: connection requests to the agreed audience, with a short note that gives a real reason.",
+          "On the profile: follow ups for accepted connections, in writing, without a pitch in the first message.",
+          "On the profile: replies to comments on your own posts and on a few posts from the people you want to reach.",
+          "On the company page: one post every week or two, only when the business has news.",
+          "On the company page: a comment from the page on your own best performing profile post.",
+          "On the company page: a check once a month that the description, the link and the services are still correct.",
+        ],
+      },
+      {
+        heading: "When does the company page matter more than the profile?",
+        paragraphs: [
+          "Three situations move the balance.",
+          "The first is advertising. LinkedIn runs sponsored content and job posts from a page rather than from a profile, so a business that intends to pay for reach needs the page set up and the admin roles in place before the first campaign.",
+          "The second is hiring. Job posts live on the page, and a candidate checks the page before they check you.",
+          "The third is the day you step back. If you sell the business, bring in a partner, or stop being its public face, the page carries on with its followers and its history. The profile goes with you.",
+          "For a one person business none of those is urgent, but the second and the third are reasons to set the page up properly now rather than in a hurry later.",
+        ],
+      },
+      {
+        heading: "Questions founders ask",
+        paragraphs: [],
+        bullets: [
+          "Do I need a company page if I am a sole trader? Not in order to post, but yes in order to be checked. A sole trader with a tidy page looks like a business. The same sole trader with no page looks like a person with a side project.",
+          "Should I repost my profile posts on the company page? Rarely. Comment from the page instead, and give the page its own post only when the news belongs to the business.",
+          "Can a company page run ads without a personal profile? Ads are created through the page's admin roles, and those roles are assigned to member profiles, so you need a profile with the right role to set them up.",
+          "Who should hold the company page admin rights? You, as super admin, from the profile you use every day. If a freelancer manages the page, LinkedIn's help centre describes a content admin role that lets them post without being able to remove you or deactivate the page.",
+        ],
+      },
+      {
+        heading: "When managed LinkedIn makes sense",
+        paragraphs: [
+          "If you know which businesses you want to reach but the weekly work above keeps slipping, the LinkedIn Management service covers the profile, the page, the outreach and the written reporting, and I manage it myself rather than through an account manager. Send a short written brief through the contact page and I will reply in writing with the most practical next step.",
+        ],
+        links: [
+          { label: "LinkedIn Management, the service", url: "/services/linkedin-management" },
+          { label: "LinkedIn management services: what a business actually needs", url: "/resources/linkedin-management-services-guide" },
+        ],
+      },
+    ],
+    sources: [
+      { label: "LinkedIn Page admin roles, LinkedIn help centre", url: "https://www.linkedin.com/help/linkedin/answer/4783" },
+      { label: "Add admins on your LinkedIn Page, LinkedIn help centre", url: "https://www.linkedin.com/help/linkedin/answer/37594" },
+      { label: "LinkedIn Pages for small business, LinkedIn", url: "https://business.linkedin.com/advertise/linkedin-pages/for-small-business" },
+    ],
+  },
 ];
 
 export function getResource(slug: string | undefined) {

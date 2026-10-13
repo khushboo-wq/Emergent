@@ -471,6 +471,23 @@
       "changeFrequency": "yearly",
       "priority": 0.7,
       "lastModified": "2026-10-08"
+    },
+    {
+      "path": "/resources/linkedin-company-page-vs-personal-profile-founder",
+      "title": "Company Page or Personal Profile: Where Founders Post",
+      "description": "Where a one person B2B business in Ireland should post on LinkedIn: what prospects check on a profile, what they check on a company page, and a weekly split.",
+      "h1": "Company Page or Personal Profile: Where a B2B Founder Should Post",
+      "canonical": "https://arcturusprofessional.com/resources/linkedin-company-page-vs-personal-profile-founder",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "linkedin-company-page-vs-personal-profile-founder",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-13"
     }
   ]
 }
