@@ -9,7 +9,7 @@ export const faqGroups: FaqGroup[] = [
     { q: "How quickly can work start?", a: "Requirements, invoice, advance payment and access are usually confirmed in the first 1–2 days, and setup follows in days 3–5. Some services have their own timelines, for example a minimum one-month warm-up before email outreach." },
   ]},
   { id: "pricing-payment", title: "Pricing and payment", items: [
-    { q: "How much do your services cost?", a: "LinkedIn Management €400/month, B2B Email Outreach €500/month, Business Support €30/hour, Lead Generation €250 per 100 verified contacts, AI Video Creation €400/month and Email Setup €200 one-time. All prices are in euro and listed on the Pricing page." },
+    { q: "How much do your services cost?", a: "LinkedIn Management €250/month for outreach, or €450/month with a daily post (text, image or short AI video). B2B Email Outreach €450/month with sending and warm-up tools included. Business Support €16/hour. Lead Generation €0.09 per verified lead, minimum 1,000 leads. Email Setup €75 one-time per domain. All prices are in euro." },
     { q: "How does payment work?", a: "Work starts after a 50% advance. Monthly services are paid 50% at the start and 50% at the end of each month. For one-time work, Lead Generation and Business Support, the remaining 50% is paid on delivery." },
     { q: "How do I pay?", a: "Payments are made via Wise, in euro. You receive a written invoice before each payment." },
     { q: "Are there any extra costs?", a: "Paid third-party tools stay in your name and are paid by you: LinkedIn Sales Navigator, Hootsuite, domains, email accounts, hosting and similar subscriptions. Anything outside the agreed scope is quoted in writing first." },

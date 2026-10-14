@@ -414,7 +414,7 @@ export const resources: Resource[] = [
         heading: "Keep the workflow simple",
         paragraphs: [
           "A simple workflow is often enough: task shared, work started, task completed, result delivered. Written updates keep dependencies visible and reduce the need for repeated meetings.",
-          "Arcturus provides this kind of task-based support directly, at €30 per hour.",
+          "Arcturus provides this kind of task-based support directly, at €16 per hour.",
         ],
       },
     ],
@@ -426,7 +426,7 @@ export const resources: Resource[] = [
     excerpt: "How businesses can use short-form AI-generated video for consistent social content without treating it like a full video production service.",
     description: "A practical guide to AI video content for businesses, covering ideas, branding, prompts, short-form formats, scheduling and realistic scope.",
     category: "AI Video Creation",
-    serviceSlug: "ai-video-creation",
+    serviceSlug: "linkedin-management",
     published: "2026-10-07",
     updated: "2026-10-07",
     readTime: "7 min read",
@@ -457,7 +457,7 @@ export const resources: Resource[] = [
         heading: "Keep the scope realistic",
         paragraphs: [
           "AI-generated short-form content is not the same thing as filming a commercial. There is still a need for review, prompt adjustment and approval, but the workflow is intentionally lightweight.",
-          "Arcturus provides the agreed 2-short-form-videos-per-day schedule, 7 days a week, at €400 per month, with Hootsuite scheduling managed as part of the agreed workflow.",
+          "At Arcturus, short AI videos are part of the LinkedIn Management content plan: one post every day (text, image or short AI video) for €450 per month, scheduled through Hootsuite.",
         ],
       },
       {

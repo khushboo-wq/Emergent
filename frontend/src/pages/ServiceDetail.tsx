@@ -58,6 +58,7 @@ export default function ServiceDetail() {
               <span className="service-commercial-label">Price</span>
               <strong>{service.price}</strong>
               <p>{service.priceNote}</p>
+              {service.tiers ? <ul className="service-price-tiers">{service.tiers.map((tier) => <li key={tier.name}><b>{tier.price}</b> {tier.name}: {tier.detail}</li>)}</ul> : null}
             </article>
             <article className="service-commercial-card">
               <span className="service-commercial-label">Payment</span>

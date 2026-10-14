@@ -222,7 +222,7 @@ export default function HowIWork() {
               ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite"],
               ["Email Outreach", "Instantly.ai"],
               ["Lead Generation", "50% advance before research begins, remaining 50% when the verified list is delivered."],
-              ["AI Video Creation", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
+              ["AI video (LinkedIn content)", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
               ["Email Setup", "DNS provider · Email provider"],
             ].map(([title, platformList], index) => (
               <Reveal key={title} delay={index * 45}>

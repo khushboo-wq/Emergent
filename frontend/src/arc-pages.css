@@ -130,3 +130,26 @@ main [class*="bg-[#0f2942]"] p:not([class*="text-[#0"]),main [class*="bg-[#0f294
 .arc-country-name{display:flex;align-items:center;gap:8px;min-width:0}
 .arc-country-code{flex:none;display:inline-grid;place-items:center;min-width:28px;height:20px;padding:0 5px;border-radius:6px;font-size:.68rem;font-weight:800;letter-spacing:.04em;color:#0f2942;background:linear-gradient(90deg,#7fe3d8,#c6c2f0)}
 .arc-country-total{margin:14px 0 0;font-size:.8rem;color:#c6cde0}
+
+/* Service price tiers (LinkedIn) */
+.pricing-card-tiers{display:grid;gap:10px;margin:14px 0 4px}
+.pricing-card-tiers>div{padding:12px 14px;border-radius:14px;background:linear-gradient(135deg,rgba(106,85,200,.08),rgba(127,227,216,.12));border:1px solid rgba(47,79,149,.14)}
+.pricing-card-tiers strong{display:block;font-family:var(--arc-head);font-size:1.15rem;color:#0f2942}
+.pricing-card-tiers span{display:block;margin-top:2px;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#6a55c8}
+.pricing-card-tiers p{margin:6px 0 0;font-size:.92rem;line-height:1.5;color:#475569}
+.service-price-tiers{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.service-price-tiers li{line-height:1.5}
+.service-price-tiers b{font-weight:800}
+/* keep pricing card lists packed at the top; push terms + actions to the bottom */
+html body .pricing-card ul{flex:0 0 auto;align-content:start;grid-auto-rows:max-content}
+html body .pricing-card .pricing-card-terms{margin-top:auto !important}
+html body .pricing-card ul{margin-bottom:16px}
+html body .service-commercial-price .service-price-tiers li{color:inherit;opacity:.92;font-size:.95rem}
+html body .service-commercial-price .service-price-tiers b{color:inherit;opacity:1}
+html body main .service-commercial-price .service-price-tiers li:not(#_):not(#__),html body main .service-commercial-price .service-price-tiers b:not(#_):not(#__){color:#fff !important}
+@media (min-width:1025px){
+  html body .pricing-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  html body .pricing-grid>.pricing-card{grid-column:span 2}
+  html body .pricing-grid>.pricing-card:nth-child(4):nth-last-child(2){grid-column:2/4}
+  html body .pricing-grid>.pricing-card:nth-child(5):last-child{grid-column:4/6}
+}

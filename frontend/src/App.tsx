@@ -47,7 +47,8 @@ export default function App() {
       <Route path="/linkedin-management" element={<Navigate to="/services/linkedin-management" replace />} />
       <Route path="/email-outreach" element={<Navigate to="/services/email-outreach" replace />} />
       <Route path="/business-support" element={<Navigate to="/services/business-support" replace />} />
-      <Route path="/ai-video-creation" element={<Navigate to="/services/ai-video-creation" replace />} />
+      <Route path="/ai-video-creation" element={<Navigate to="/services/linkedin-management" replace />} />
+      <Route path="/services/ai-video-creation" element={<Navigate to="/services/linkedin-management" replace />} />
       <Route path="/lead-generation" element={<Navigate to="/services/lead-generation" replace />} />
       <Route path="/email-setup" element={<Navigate to="/services/email-setup" replace />} />
       <Route path="*" element={<NotFound />} />

@@ -24,7 +24,7 @@ export default function Home() {
       <Seo
         path="/"
         title="Arcturus Professional Services | Independent Business Support"
-        description="Independent LinkedIn management, email outreach, lead generation, business support, email setup and AI video creation for businesses."
+        description="Independent LinkedIn management, email outreach, lead generation, business support, and email setup for businesses in Ireland and the UK."
       />
 
       <section className="luxury-hero home-hero-rich" data-testid="home-hero">

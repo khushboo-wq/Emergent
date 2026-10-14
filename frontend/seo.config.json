@@ -28,10 +28,11 @@
     "/email-outreach": "/services/email-outreach",
     "/business-support": "/services/business-support",
     "/lead-generation": "/services/lead-generation",
-    "/ai-video-creation": "/services/ai-video-creation",
+    "/ai-video-creation": "/services/linkedin-management",
     "/email-setup": "/services/email-setup",
     "/prices": "/pricing",
-    "/faqs": "/faq"
+    "/faqs": "/faq",
+    "/services/ai-video-creation": "/services/linkedin-management"
   },
   "pages": [
     {
@@ -55,7 +56,7 @@
     {
       "path": "/services",
       "title": "B2B Outreach Services for Ireland & UK | Arcturus",
-      "description": "Six B2B services from a solo freelancer in New Delhi, India, for Irish and UK businesses: LinkedIn, cold email, lead lists, email setup, support and AI video.",
+      "description": "Five B2B services from a solo freelancer in New Delhi, India, for Irish and UK businesses: LinkedIn, cold email outreach, lead lists, email setup and support.",
       "h1": "Practical B2B support, without the agency layer.",
       "canonical": "https://arcturusprofessional.com/services",
       "indexable": true,
@@ -71,8 +72,8 @@
     },
     {
       "path": "/services/linkedin-management",
-      "title": "LinkedIn Management for Irish & UK Firms | €400/month",
-      "description": "LinkedIn management by a solo freelancer in New Delhi, India, for Irish and UK businesses: profile, content, outreach, follow-ups and reporting. €400/month.",
+      "title": "LinkedIn Management for Irish & UK Firms | From €250/mo",
+      "description": "LinkedIn management by a solo freelancer in New Delhi, India, for Irish and UK firms: outreach €250/month, or €450/month with a daily post incl. AI video.",
       "h1": "LinkedIn Management Services",
       "canonical": "https://arcturusprofessional.com/services/linkedin-management",
       "indexable": true,
@@ -89,8 +90,8 @@
     },
     {
       "path": "/services/email-outreach",
-      "title": "B2B Cold Email Outreach Service Ireland & UK | €500",
-      "description": "B2B cold email outreach run by a solo freelancer in New Delhi, India, for Irish and UK firms: domain warm-up, PECR-aware campaigns and reports. €500/month.",
+      "title": "B2B Cold Email Outreach Service Ireland & UK | €450",
+      "description": "B2B cold email outreach by a solo freelancer in New Delhi, India, for Irish and UK firms: warm-up, sending tools included, PECR-aware campaigns. €450/month.",
       "h1": "Email Outreach",
       "canonical": "https://arcturusprofessional.com/services/email-outreach",
       "indexable": true,
@@ -107,8 +108,8 @@
     },
     {
       "path": "/services/business-support",
-      "title": "Remote Business Support for Irish & UK Firms | €30/hr",
-      "description": "Remote business support from a solo freelancer in New Delhi, India, for founders in Ireland and the UK: research, admin, documents, website tasks. €30/hour.",
+      "title": "Remote Business Support for Irish & UK Firms | €16/hr",
+      "description": "Remote business support from a solo freelancer in New Delhi, India, for founders in Ireland and the UK: research, admin, documents, website tasks. €16/hour.",
       "h1": "Business Support",
       "canonical": "https://arcturusprofessional.com/services/business-support",
       "indexable": true,
@@ -125,8 +126,8 @@
     },
     {
       "path": "/services/lead-generation",
-      "title": "Verified B2B Lead Lists Ireland & UK | €250 per 100",
-      "description": "Verified B2B lead lists for Ireland and the UK, researched by a solo freelancer in New Delhi, India, by role, sector, size and location. €250 per 100 contacts.",
+      "title": "Verified B2B Leads Ireland & UK | €0.09 per lead",
+      "description": "Verified B2B leads for Ireland and the UK, researched by a solo freelancer in New Delhi, India, by role, sector and location. €0.09 per lead, minimum 1,000.",
       "h1": "Lead Generation",
       "canonical": "https://arcturusprofessional.com/services/lead-generation",
       "indexable": true,
@@ -142,27 +143,9 @@
       "lastModified": "2026-10-09"
     },
     {
-      "path": "/services/ai-video-creation",
-      "title": "AI Video Creation for Small Business | €400/month",
-      "description": "AI video creation for small businesses in Ireland and the UK by a solo freelancer in New Delhi, India: branded short videos and reels to your brief. €400/month.",
-      "h1": "AI Video Creation",
-      "canonical": "https://arcturusprofessional.com/services/ai-video-creation",
-      "indexable": true,
-      "ogType": "website",
-      "schemaTypes": [
-        "Service",
-        "FAQPage",
-        "BreadcrumbList"
-      ],
-      "serviceSlug": "ai-video-creation",
-      "changeFrequency": "monthly",
-      "priority": 0.9,
-      "lastModified": "2026-10-09"
-    },
-    {
       "path": "/services/email-setup",
-      "title": "SPF, DKIM & DMARC Email Setup Service | €200",
-      "description": "SPF, DKIM and DMARC email setup for Irish and UK businesses, done remotely by a solo freelancer in New Delhi, India, so your domain is ready to send. €200 once.",
+      "title": "SPF, DKIM & DMARC Email Setup | €75 per domain",
+      "description": "SPF, DKIM and DMARC email delivery setup on your existing domain, done remotely by a solo freelancer in New Delhi, India, for Irish and UK firms. €75/domain.",
       "h1": "Email Setup",
       "canonical": "https://arcturusprofessional.com/services/email-setup",
       "indexable": true,
@@ -180,7 +163,7 @@
     {
       "path": "/pricing",
       "title": "B2B Outreach Freelancer Pricing in Euro | Arcturus",
-      "description": "Published euro prices for LinkedIn management, email outreach, business support, lead generation, AI video and email setup. 50% advance, 50% on delivery.",
+      "description": "Published euro prices: LinkedIn from €250/month, email outreach €450/month, support €16/hour, leads €0.09 each, email setup €75. 50% advance, 50% on delivery.",
       "h1": "Clear prices for every service.",
       "canonical": "https://arcturusprofessional.com/pricing",
       "indexable": true,

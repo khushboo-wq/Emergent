@@ -26,7 +26,7 @@ const tools = [
   ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite"],
   ["Email Outreach", "Instantly.ai"],
   ["Lead Generation", "LinkedIn Sales Navigator · Apollo · UseBouncer"],
-  ["AI Video Creation", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
+  ["AI video (LinkedIn content)", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
   ["Email Setup", "DNS provider · Email provider"],
 ];
 

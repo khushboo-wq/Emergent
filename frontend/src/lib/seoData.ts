@@ -45,7 +45,7 @@ export interface SeoData extends SeoPageConfig {
 export const seoConfig = seoConfigJson as SeoConfig;
 const { site } = seoConfig;
 const sameAs = ["https://www.linkedin.com/in/khushboo-tomar", "https://www.instagram.com/arcturusprofessional"];
-const serviceTypes = ["LinkedIn Management", "Email Outreach", "Lead Generation", "Business Support", "Email Setup", "AI Video Creation"];
+const serviceTypes = ["LinkedIn Management", "Email Outreach", "Lead Generation", "Business Support", "Email Setup"];
 const personId = `${site.baseUrl}/#khushboo-tomar`;
 const businessId = `${site.baseUrl}/#professional-service`;
 const person = { "@type": "Person", "@id": personId, name: "Khushboo Tomar", jobTitle: "Independent Freelancer", email: CONTACT_EMAIL, address: { "@type": "PostalAddress", addressLocality: "New Delhi", addressCountry: "IN" }, areaServed: ["Ireland", "United Kingdom", "Europe"], sameAs, knowsAbout: ["LinkedIn management", "B2B email outreach", "B2B lead generation", "business support", "business email setup", "AI video creation"] };
@@ -97,7 +97,7 @@ function schemaForPage(page: SeoPageConfig): Record<string, unknown> {
       "@context": "https://schema.org",
       "@graph": [
         professionalService,
-        { "@type": "Service", "@id": `${page.canonical}#service`, name: service.slug === "linkedin-management" ? "LinkedIn Management Services" : service.title, description: page.description, url: page.canonical, provider: { "@id": businessId }, areaServed: ["Ireland", "United Kingdom", "Europe"], mainEntityOfPage: { "@id": `${page.canonical}#webpage` }, offers: { "@type": "Offer", price: priceValue, priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: priceValue, priceCurrency: "EUR", unitText: service.price.replace(/^€\s?[\d.,]+\s*\/?\s*/, "") || "service" }, description: service.price, url: page.canonical, availability: "https://schema.org/InStock" } },
+        { "@type": "Service", "@id": `${page.canonical}#service`, name: service.slug === "linkedin-management" ? "LinkedIn Management Services" : service.title, description: page.description, url: page.canonical, provider: { "@id": businessId }, areaServed: ["Ireland", "United Kingdom", "Europe"], mainEntityOfPage: { "@id": `${page.canonical}#webpage` }, offers: { "@type": "Offer", price: priceValue, priceCurrency: "EUR", priceSpecification: { "@type": "UnitPriceSpecification", price: priceValue, priceCurrency: "EUR", unitText: service.price.replace(/^(From\s+)?€\s?[\d.,]+\s*\/?\s*/, "") || "service" }, description: service.price, url: page.canonical, availability: "https://schema.org/InStock" } },
         { "@type": "FAQPage", "@id": `${page.canonical}#faq`, mainEntity: extras.faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) },
         { "@type": "BreadcrumbList", "@id": `${page.canonical}#breadcrumbs`, itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${site.baseUrl}/` },

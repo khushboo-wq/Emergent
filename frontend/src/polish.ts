@@ -48,7 +48,7 @@ const PATTERN = new RegExp([
   'up to 500 emails\\/day\\/account',
   'no calls',
 ].join('|'), 'gi')
-const SKIP = 'script,style,textarea,input,select,button,mark,svg,code,pre,.arc-showcase,.pricing-hero-terms,h1,h2,h3,h4,.pricing-card-price,.pricing-card-terms,.service-pricing,.font-highlight,[data-no-hl],.arc-mark,.luxury-footer-word,.luxury-footer-bottom,title'
+const SKIP = 'script,style,textarea,input,select,button,mark,svg,code,pre,.arc-showcase,.pricing-hero-terms,h1,h2,h3,h4,.pricing-card-price,.pricing-card-terms,.pricing-card-note,.pricing-card-tiers,.service-commercial-price,.service-price-panel,.luxury-service-price,.service-pricing,.font-highlight,[data-no-hl],.arc-mark,.luxury-footer-word,.luxury-footer-bottom,title'
 
 function highlight(rootEl: ParentNode) {
   const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {

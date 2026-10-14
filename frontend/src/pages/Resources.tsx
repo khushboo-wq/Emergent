@@ -17,7 +17,7 @@ export default function Resources() {
             <p className="luxury-eyebrow"><span>03</span> Practical resources · B2B</p>
             <h1 data-testid="resources-heading">Practical guidance for the work behind your business.</h1>
             <p className="luxury-hero-lead" data-testid="resources-intro">
-              Straightforward guides on LinkedIn management, email outreach, lead generation, business support, AI video content and email setup, based on the practical work behind each service.
+              Straightforward guides on LinkedIn management, email outreach, lead generation, business support, email setup and AI video content for LinkedIn, based on the practical work behind each service.
             </p>
           </Reveal>
           <Reveal className="luxury-hero-art-wrap" delay={120}>

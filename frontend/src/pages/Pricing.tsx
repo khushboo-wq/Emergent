@@ -9,8 +9,7 @@ const billing: Record<string, string> = {
   "linkedin-management": "Monthly",
   "email-outreach": "Monthly",
   "business-support": "Hourly",
-  "lead-generation": "Per list",
-  "ai-video-creation": "Monthly",
+  "lead-generation": "Per lead",
   "email-setup": "One-time",
 };
 
@@ -18,7 +17,7 @@ const faqs = [
   ["Are these prices fixed?", "Yes. Every price on this page is the published price for the agreed scope. If you need extra volume or new tasks, I quote them in writing before any work starts."],
   ["How does payment work?", "Work starts after a 50% advance. Monthly services are paid 50% at the start and 50% at the end of each month. One-time work, Lead Generation and Business Support: the remaining 50% is paid on delivery."],
   ["How do I pay?", "Payments are made via Wise, in euro. You receive a written invoice before each payment."],
-  ["What is not included in the price?", "Paid third-party tools stay with you: LinkedIn Sales Navigator, Hootsuite, domains, email accounts, hosting and similar subscriptions."],
+  ["What is not included in the price?", "Paid third-party tools stay with you: LinkedIn Sales Navigator, Hootsuite, domains, email accounts, hosting and similar subscriptions. Email Outreach is the exception: the sending and warm-up tools are included."],
   ["Is there a long contract?", "No. Monthly services run month to month. If you stop, the current billing month is completed in full."],
 ];
 
@@ -31,7 +30,7 @@ export default function Pricing() {
           <div>
             <p className="luxury-eyebrow"><span>€</span> Pricing · all prices in euro</p>
             <h1>Clear prices for every service.</h1>
-            <p className="luxury-hero-lead">Six services, one flat published price each. No packages to decode and no hidden fees. Pick what you need, send a short written brief, and I confirm the scope before any payment.</p>
+            <p className="luxury-hero-lead">Five services, each with a clear published price. No packages to decode and no hidden fees. Pick what you need, send a short written brief, and I confirm the scope before any payment.</p>
             <div className="luxury-hero-actions">
               <Link to="/contact" className="luxury-button luxury-button-dark">Send a written brief <ArrowUpRight size={16} /></Link>
               <a href={WHATSAPP_LINK + encodeURIComponent("Pricing question")} target="_blank" rel="noreferrer" className="luxury-button luxury-button-ghost">Ask on WhatsApp</a>
@@ -60,6 +59,7 @@ export default function Pricing() {
                   <h2>{service.title}</h2>
                   <p className="pricing-card-price">{service.price}</p>
                   <p className="pricing-card-note">{service.priceNote}</p>
+                  {service.tiers ? <div className="pricing-card-tiers">{service.tiers.map((tier) => <div key={tier.name}><strong>{tier.price}</strong><span>{tier.name}</span><p>{tier.detail}</p></div>)}</div> : null}
                   <ul>
                     {service.inclusions.slice(0, 4).map((item) => <li key={item}><Check size={16} />{item}</li>)}
                   </ul>
