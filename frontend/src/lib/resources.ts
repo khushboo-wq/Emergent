@@ -425,7 +425,7 @@ export const resources: Resource[] = [
     eyebrow: "AI Video Guide",
     excerpt: "How businesses can use short-form AI-generated video for consistent social content without treating it like a full video production service.",
     description: "A practical guide to AI video content for businesses, covering ideas, branding, prompts, short-form formats, scheduling and realistic scope.",
-    category: "AI Video Creation",
+    category: "LinkedIn Content",
     serviceSlug: "linkedin-management",
     published: "2026-10-07",
     updated: "2026-10-07",

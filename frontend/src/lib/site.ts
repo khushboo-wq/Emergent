@@ -303,7 +303,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     relatedSlugs: ["email-setup", "lead-generation"],
     lastUpdated: "7 October 2026",
     paymentTerms: "€450 / month. 50% advance at the start of the month, remaining 50% at the end of the month. Email Setup and lead lists are separate where required.",
-    commercialHighlights: ["Minimum one-month warm-up period before active outreach.", "Up to 10,000 unique emails per client campaign.", "Two to three follow-ups included where appropriate.", "Campaigns can send up to 500 emails per day per email account depending on account condition, platform limits and campaign readiness.", "Email Setup is €200 one-time when technical configuration is needed."],
+    commercialHighlights: ["Minimum one-month warm-up period before active outreach.", "Up to 10,000 unique emails per client campaign.", "Two to three follow-ups included where appropriate.", "Campaigns can send up to 500 emails per day per email account depending on account condition, platform limits and campaign readiness.", "Email Setup is €75 one-time per domain when technical configuration is needed."],
     workingNote: "No open, reply, meeting, sales or inbox-placement guarantee is made.",
     faqs: [
       { question: "What's included?", answer: "Campaign setup, copywriting, sending, follow-ups and monthly reporting, with the sending (Instantly) and warm-up (Mailivery) tools included." },

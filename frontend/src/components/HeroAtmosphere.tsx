@@ -20,7 +20,7 @@ export default function HeroAtmosphere() {
       </div>
       <div className="hero-capacity-card premium-panel" data-testid="home-hero-card">
         <Layers3 className="size-5 text-[#7267d8]" aria-hidden="true" />
-        <p className="mt-3 text-sm font-medium leading-5 text-[#0f2942]">Six focused ways to add capacity.</p>
+        <p className="mt-3 text-sm font-medium leading-5 text-[#0f2942]">Five focused ways to add capacity.</p>
       </div>
     </div>
   );
