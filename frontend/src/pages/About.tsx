@@ -32,16 +32,16 @@ export default function About() {
     </section>
 
     <section className="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.78fr_1.22fr] lg:gap-24 lg:px-10" data-testid="about-background-section"><div className="arc-profile" data-testid="about-profile-card">
-  <div className="arc-profile-head"><span className="arc-profile-badge">Since 2014</span><span className="arc-profile-tag">Arcturus Professional Services</span></div>
+  <div className="arc-profile-head"><span className="arc-profile-badge">Since 2020</span><span className="arc-profile-tag">Arcturus Professional Services</span></div>
   <p className="arc-profile-name">Khushboo Tomar</p>
   <p className="arc-profile-role">Independent solo B2B freelancer · New Delhi</p>
   <ol className="arc-profile-timeline">
     <li><b>2014</b><span>Started in email marketing</span></li>
-    <li><b>Growth</b><span>B2B outreach, lead research and sales support</span></li>
+    <li><b>2020</b><span>Started Arcturus Professional Services</span></li>
     <li><b>Today</b><span>Five focused services, managed personally</span></li>
   </ol>
   <div className="arc-profile-stats"><div><b>12+</b><small>years experience</small></div><div><b>05</b><small>services</small></div><div><b>01</b><small>point of contact</small></div></div>
-</div><div className="self-center"><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#765b9a]">Experience</p><h2 className="mt-4 font-serif text-4xl leading-tight text-[#0f172a] sm:text-5xl" data-testid="about-background-heading">My background</h2><p className="mt-7 text-base leading-8 text-[#475569]" data-testid="about-background-copy">I started my career in 2014 in email marketing and have spent over twelve years in B2B outreach, lead research, sales support and email deliverability. I&apos;ve worked closely with UK businesses, including recruitment firms, sales consultancies and financial services companies.</p><div className="mt-9 grid grid-cols-2 gap-3"><div className="rounded-2xl bg-[#ece8f4] p-5"><p className="font-highlight text-3xl text-[#0f2942]">12+</p><p className="mt-2 text-xs leading-5 text-[#64748b]">years of focused B2B experience</p></div><div className="rounded-2xl bg-[#dcebe8] p-5"><p className="font-highlight text-3xl text-[#0f2942]">2014</p><p className="mt-2 text-xs leading-5 text-[#64748b]">the year I started in email marketing</p></div></div></div></section>
+</div><div className="self-center"><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#765b9a]">Experience</p><h2 className="mt-4 font-serif text-4xl leading-tight text-[#0f172a] sm:text-5xl" data-testid="about-background-heading">My background</h2><p className="mt-7 text-base leading-8 text-[#475569]" data-testid="about-background-copy">I started my career in 2014 in email marketing and have spent over twelve years in B2B outreach, lead research, sales support and email deliverability. I&apos;ve worked closely with UK businesses, including recruitment firms, sales consultancies and financial services companies. In 2020 I started Arcturus Professional Services to offer this work directly as an independent freelancer.</p><div className="mt-9 grid grid-cols-2 gap-3"><div className="rounded-2xl bg-[#ece8f4] p-5"><p className="font-highlight text-3xl text-[#0f2942]">12+</p><p className="mt-2 text-xs leading-5 text-[#64748b]">years of focused B2B experience</p></div><div className="rounded-2xl bg-[#dcebe8] p-5"><p className="font-highlight text-3xl text-[#0f2942]">2014</p><p className="mt-2 text-xs leading-5 text-[#64748b]">the year I started in email marketing</p></div></div></div></section>
 
     <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10" data-testid="about-journey-section">
       <div className="grid gap-12 lg:grid-cols-[0.45fr_1fr] lg:gap-20">
