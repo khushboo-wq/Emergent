@@ -1,7 +1,7 @@
 import { ArrowUpRight, Mail, Menu, MessageCircle } from "lucide-react";
 import { useEffect, useState, type CSSProperties } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { CONTACT_EMAIL, WHATSAPP_LINK } from "@/lib/site";
@@ -22,6 +22,8 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const showServiceRail = pathname === "/services" || pathname.startsWith("/services/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -80,7 +82,7 @@ export default function SiteHeader() {
           </SheetContent>
         </Sheet>
       </div>
-      <div className="header-service-rail"><ServiceTabs /></div>
+      {showServiceRail ? <div className="header-service-rail"><ServiceTabs /></div> : null}
     </header>
   );
 }
