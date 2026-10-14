@@ -24,7 +24,7 @@ export default function Home() {
       <Seo
         path="/"
         title="Arcturus Professional Services | Independent Business Support"
-        description="Independent LinkedIn management, email outreach, lead generation, business support, and email setup for businesses in Ireland and the UK."
+        description="Independent LinkedIn management, email outreach, lead generation, business support, and email setup for businesses in the UK and Ireland."
       />
 
       <section className="luxury-hero home-hero-rich" data-testid="home-hero">
@@ -125,7 +125,7 @@ export default function Home() {
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
                   </div>
-                  <span className="luxury-service-price">{service.price}</span>
+                  <span className="luxury-service-price">{service.price}{service.priceGbp ? <small className="luxury-service-gbp"> {service.priceGbp}</small> : null}</span>
                   <span className="luxury-service-arrow"><ArrowRight size={20} /></span>
                 </Link>
               </Reveal>

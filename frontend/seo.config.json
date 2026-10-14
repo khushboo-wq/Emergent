@@ -37,8 +37,8 @@
   "pages": [
     {
       "path": "/",
-      "title": "B2B Outreach Freelancer for Ireland & UK | Arcturus",
-      "description": "Khushboo Tomar, a solo B2B freelancer in New Delhi, India, serving Irish and UK businesses: LinkedIn management, cold email outreach, lead lists and support.",
+      "title": "B2B Outreach Freelancer for UK & Ireland | Arcturus",
+      "description": "Khushboo Tomar, a solo B2B freelancer in New Delhi, India, serving UK and Irish businesses: LinkedIn management, cold email outreach, lead lists and support.",
       "h1": "B2B growth work, managed personally.",
       "canonical": "https://arcturusprofessional.com/",
       "indexable": true,
@@ -55,8 +55,8 @@
     },
     {
       "path": "/services",
-      "title": "B2B Outreach Services for Ireland & UK | Arcturus",
-      "description": "Five B2B services from a solo freelancer in New Delhi, India, for Irish and UK businesses: LinkedIn, cold email outreach, lead lists, email setup and support.",
+      "title": "B2B Outreach Services for UK & Ireland | Arcturus",
+      "description": "Five B2B services from a solo freelancer in New Delhi, India, for UK and Irish businesses: LinkedIn, cold email outreach, lead lists, email setup and support.",
       "h1": "Practical B2B support, without the agency layer.",
       "canonical": "https://arcturusprofessional.com/services",
       "indexable": true,
@@ -72,8 +72,8 @@
     },
     {
       "path": "/services/linkedin-management",
-      "title": "LinkedIn Management for Irish & UK Firms | From €250/mo",
-      "description": "LinkedIn management by a solo freelancer in New Delhi, India, for Irish and UK firms: outreach €250/month, or €450/month with a daily post incl. AI video.",
+      "title": "LinkedIn Management for UK & Irish Firms | From €250/mo",
+      "description": "LinkedIn management by a solo freelancer in New Delhi, India, for UK and Irish firms: outreach €250/month, or €450/month with a daily post incl. AI video.",
       "h1": "LinkedIn Management Services",
       "canonical": "https://arcturusprofessional.com/services/linkedin-management",
       "indexable": true,
@@ -90,8 +90,8 @@
     },
     {
       "path": "/services/email-outreach",
-      "title": "B2B Cold Email Outreach Service Ireland & UK | €450",
-      "description": "B2B cold email outreach by a solo freelancer in New Delhi, India, for Irish and UK firms: warm-up, sending tools included, PECR-aware campaigns. €450/month.",
+      "title": "B2B Cold Email Outreach Service UK & Ireland | €450",
+      "description": "B2B cold email outreach by a solo freelancer in New Delhi, India, for UK and Irish firms: warm-up, sending tools included, PECR-aware campaigns. €450/month.",
       "h1": "Email Outreach",
       "canonical": "https://arcturusprofessional.com/services/email-outreach",
       "indexable": true,
@@ -108,8 +108,8 @@
     },
     {
       "path": "/services/business-support",
-      "title": "Remote Business Support for Irish & UK Firms | €16/hr",
-      "description": "Remote business support from a solo freelancer in New Delhi, India, for founders in Ireland and the UK: research, admin, documents, website tasks. €16/hour.",
+      "title": "Remote Business Support for UK & Irish Firms | €16/hr",
+      "description": "Remote business support from a solo freelancer in New Delhi, India, for founders in the UK and Ireland: research, admin, documents, website tasks. €16/hour.",
       "h1": "Business Support",
       "canonical": "https://arcturusprofessional.com/services/business-support",
       "indexable": true,
@@ -126,8 +126,8 @@
     },
     {
       "path": "/services/lead-generation",
-      "title": "Verified B2B Leads Ireland & UK | €0.09 per lead",
-      "description": "Verified B2B leads for Ireland and the UK, researched by a solo freelancer in New Delhi, India, by role, sector and location. €0.09 per lead, minimum 1,000.",
+      "title": "Verified B2B Leads UK & Ireland | €0.09 per lead",
+      "description": "Verified B2B leads for the UK and Ireland, researched by a solo freelancer in New Delhi, India, by role, sector and location. €0.09 per lead, minimum 1,000.",
       "h1": "Lead Generation",
       "canonical": "https://arcturusprofessional.com/services/lead-generation",
       "indexable": true,
@@ -145,7 +145,7 @@
     {
       "path": "/services/email-setup",
       "title": "SPF, DKIM & DMARC Email Setup | €75 per domain",
-      "description": "SPF, DKIM and DMARC email delivery setup on your existing domain, done remotely by a solo freelancer in New Delhi, India, for Irish and UK firms. €75/domain.",
+      "description": "SPF, DKIM and DMARC email delivery setup on your existing domain, done remotely by a solo freelancer in New Delhi, India, for UK and Irish firms. €75/domain.",
       "h1": "Email Setup",
       "canonical": "https://arcturusprofessional.com/services/email-setup",
       "indexable": true,
@@ -179,7 +179,7 @@
     {
       "path": "/about",
       "title": "About Khushboo Tomar | B2B Outreach Freelancer",
-      "description": "Meet Khushboo Tomar, an independent B2B outreach freelancer with 12+ years of experience supporting businesses in Ireland, the UK and Europe from New Delhi.",
+      "description": "Meet Khushboo Tomar, an independent B2B outreach freelancer with 12+ years of experience supporting businesses in the UK, Ireland and Europe from New Delhi.",
       "h1": "About Khushboo Tomar, B2B outreach freelancer",
       "canonical": "https://arcturusprofessional.com/about",
       "indexable": true,
@@ -228,7 +228,7 @@
     {
       "path": "/contact",
       "title": "Contact a B2B Outreach Freelancer | Arcturus",
-      "description": "Contact Khushboo Tomar for LinkedIn management, cold email outreach, lead generation, business support or email setup for your Irish or UK business, in writing.",
+      "description": "Contact Khushboo Tomar for LinkedIn management, cold email outreach, lead generation, business support or email setup for your UK or Irish business, in writing.",
       "h1": "Tell me what you need to move forward.",
       "canonical": "https://arcturusprofessional.com/contact",
       "indexable": true,
@@ -327,7 +327,7 @@
     {
       "path": "/privacy-policy",
       "title": "Privacy Policy | Arcturus Professional Services",
-      "description": "Read how Arcturus Professional Services handles contact enquiries, business information and website data for visitors in Ireland, the UK and Europe.",
+      "description": "Read how Arcturus Professional Services handles contact enquiries, business information and website data for visitors in the UK, Ireland and Europe.",
       "h1": "Privacy Policy",
       "canonical": "https://arcturusprofessional.com/privacy-policy",
       "indexable": false,

@@ -8,7 +8,7 @@ const sections = [
   ["Live chat, analytics and cookies", "The live chat on this website is provided by Crisp (Crisp IM SAS, France). If you use it, Crisp processes your messages, any name or email you choose to give, and basic technical data such as browser type and approximate location, and sets cookies so the conversation continues across pages. I use Google Analytics to understand how visitors use the site, and a simple anonymous counter that records visits by country only. You can block cookies in your browser; the rest of the site keeps working."],
   ["Retention and security", "I keep enquiry and client records only as long as reasonably needed for communication, service delivery, accounting, or legal obligations. I use practical access controls and treat client business data as confidential."],
   ["Your choices", "You can ask what information I hold about you, request a correction, or ask for deletion where no legal retention requirement applies. Email khushboo@arcturusprofessional.com with a written request."],
-  ["Contact", "Privacy questions can be sent to khushboo@arcturusprofessional.com. I am based in New Delhi, India and serve businesses in Ireland, the UK, and wider Europe."],
+  ["Contact", "Privacy questions can be sent to khushboo@arcturusprofessional.com. I am based in New Delhi, India and serve businesses in the UK, Ireland, and wider Europe."],
 ];
 
 export default function PrivacyPolicy() {

@@ -28,7 +28,7 @@ export default function Pricing() {
       <section className="luxury-hero pricing-hero" data-testid="pricing-hero">
         <div className="luxury-shell pricing-hero-inner">
           <div>
-            <p className="luxury-eyebrow"><span>€</span> Pricing · all prices in euro</p>
+            <p className="luxury-eyebrow"><span>€</span> Pricing · in euro, with ≈ £ for UK clients</p>
             <h1>Clear prices for every service.</h1>
             <p className="luxury-hero-lead">Five services, each with a clear published price. No packages to decode and no hidden fees. Pick what you need, send a short written brief, and I confirm the scope before any payment.</p>
             <div className="luxury-hero-actions">
@@ -58,8 +58,9 @@ export default function Pricing() {
                   <IsoIllustration slug={service.slug} className="pricing-card-iso" />
                   <h2>{service.title}</h2>
                   <p className="pricing-card-price">{service.price}</p>
+                  {service.priceGbp ? <p className="pricing-card-gbp">{service.priceGbp} · invoiced in euro</p> : null}
                   <p className="pricing-card-note">{service.priceNote}</p>
-                  {service.tiers ? <div className="pricing-card-tiers">{service.tiers.map((tier) => <div key={tier.name}><strong>{tier.price}</strong><span>{tier.name}</span><p>{tier.detail}</p></div>)}</div> : null}
+                  {service.tiers ? <div className="pricing-card-tiers">{service.tiers.map((tier) => <div key={tier.name}><strong>{tier.price}{tier.priceGbp ? <em> {tier.priceGbp}</em> : null}</strong><span>{tier.name}</span><p>{tier.detail}</p></div>)}</div> : null}
                   <ul>
                     {service.inclusions.slice(0, 4).map((item) => <li key={item}><Check size={16} />{item}</li>)}
                   </ul>
