@@ -127,3 +127,6 @@ main [class*="bg-[#0f2942]"] p:not([class*="text-[#0"]),main [class*="bg-[#0f294
 .resource-links a{color:#2f4f95;font-weight:600;text-decoration:underline;text-decoration-color:rgba(47,79,149,.35);text-underline-offset:3px;overflow-wrap:anywhere}
 .resource-links a:hover{color:#6a55c8;text-decoration-color:currentColor}
 .resource-link-note{color:#475569}
+.arc-country-name{display:flex;align-items:center;gap:8px;min-width:0}
+.arc-country-code{flex:none;display:inline-grid;place-items:center;min-width:28px;height:20px;padding:0 5px;border-radius:6px;font-size:.68rem;font-weight:800;letter-spacing:.04em;color:#0f2942;background:linear-gradient(90deg,#7fe3d8,#c6c2f0)}
+.arc-country-total{margin:14px 0 0;font-size:.8rem;color:#c6cde0}
