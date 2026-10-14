@@ -301,7 +301,7 @@ const CARD_SEL = [
   'main .service-commercial-card', 'main .resource-card', 'main .resource-home-card', 'main .faq-item', 'main details',
   'main .method-card', 'main .why-work-card', 'main .onboarding-card', 'main .reporting-detail-card', 'main .tools-platform-card',
   'main .luxury-process-item', 'main .luxury-proof-row', 'main .arc-showcase', 'main .iso-illustration', 'main .arc-profile',
-  'main .payment-card', 'main .start-project-card', 'main img', '.luxury-footer-cta', '.footer-info-grid > div',
+  'main .payment-card', 'main .start-project-card', 'main img', '.luxury-footer-cta', '.footer-info-grid > div', '.luxury-footer-brand', '.luxury-footer-column',
 ].join(',')
 
 function startCardMotion() {

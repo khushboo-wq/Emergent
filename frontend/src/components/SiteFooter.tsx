@@ -39,11 +39,12 @@ export default function SiteFooter() {
           <Link to="/about">About Khushboo</Link>
           <Link to="/services">All services</Link>
           <Link to="/pricing">Pricing</Link>
+          <Link to="/contact">Contact</Link>
+          <p className="luxury-footer-label footer-label-gap">Learn more</p>
           <Link to="/how-i-work">How I work</Link>
           <Link to="/reporting-compliance">Reporting & Compliance</Link>
-          <Link to="/resources">Resources</Link>
+          <Link to="/resources">Resources & guides</Link>
           <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
         </div>
 
         <div className="luxury-footer-column footer-services-column">
@@ -88,7 +89,7 @@ export default function SiteFooter() {
 
       <div className="luxury-shell footer-top-row"><a href="#main-content" className="footer-to-top">Back to top <ArrowUpRight size={13} /></a></div>
 
-      <div className="luxury-footer-word" aria-hidden="true"><svg viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet"><text x="500" y="128" textAnchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs">ARCTURUS</text></svg></div>
+      <div className="luxury-footer-word" aria-hidden="true"><svg viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="arcFooterSheen" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="rgba(198,194,240,.10)" /><stop offset=".45" stopColor="rgba(198,194,240,.12)" /><stop offset=".5" stopColor="rgba(127,227,216,.55)" /><stop offset=".55" stopColor="rgba(198,194,240,.12)" /><stop offset="1" stopColor="rgba(198,194,240,.10)" /><animate attributeName="x1" values="-1;1" dur="7s" repeatCount="indefinite" /><animate attributeName="x2" values="0;2" dur="7s" repeatCount="indefinite" /></linearGradient></defs><text className="arc-footer-sheen" x="500" y="128" textAnchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs">ARCTURUS</text></svg></div>
 
       <div className="luxury-footer-bottom">
         <div className="luxury-shell luxury-footer-bottom-inner">

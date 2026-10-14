@@ -86,3 +86,37 @@ html body .arc-card-rv.arc-card-in{opacity:1;translate:0 0;scale:1}
 /* Crisp live chat: keep clear of our floating controls */
 body:has(.arc-menu[data-open]) .crisp-client{display:none !important}
 @media (max-width:860px){html body .arc-scroll-buttons{bottom:104px !important}}
+
+/* ===== Lighter header: service rail folds away once you scroll ===== */
+.header-service-rail{transition:max-height .45s cubic-bezier(.2,.8,.2,1),opacity .35s ease;max-height:120px;overflow:hidden}
+.luxury-site-header.is-scrolled .header-service-rail{max-height:0;opacity:0;pointer-events:none}
+html body .luxury-desktop-nav{gap:clamp(18px,2.4vw,40px) !important}
+html body .luxury-nav-link{font-size:1rem !important}
+
+/* mobile menu: secondary links */
+.arc-menu-more{display:flex;flex-wrap:wrap;gap:8px;margin:16px 4px 0;opacity:0;animation:arcMenuIn .55s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i,5) * 45ms + 140ms)}
+.arc-menu-more a{padding:9px 14px;border-radius:999px;font-size:.9rem;font-weight:600;color:#e4e8ff;text-decoration:none;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)}
+.arc-menu-more a.active{background:rgba(127,227,216,.2);border-color:rgba(127,227,216,.45)}
+@media (prefers-reduced-motion:reduce){.arc-menu-more{opacity:1 !important;animation:none !important}}
+
+/* ===== Animated footer ===== */
+html body .luxury-footer{background-size:160% 160%,160% 160%,100% 100% !important;animation:arcFooterDrift 18s ease-in-out infinite alternate}
+@keyframes arcFooterDrift{from{background-position:0% 0%,100% 0%,0 0}to{background-position:60% 40%,40% 60%,0 0}}
+.luxury-footer::before{content:"";position:absolute;inset:-40% -10% auto;height:70%;pointer-events:none;background:radial-gradient(closest-side,rgba(127,227,216,.14),transparent);filter:blur(10px);animation:arcFooterOrb 14s ease-in-out infinite alternate;z-index:0}
+@keyframes arcFooterOrb{from{transform:translateX(-25%)}to{transform:translateX(25%)}}
+.luxury-footer>*{position:relative;z-index:1}
+.luxury-footer-word text.arc-footer-sheen{fill:url(#arcFooterSheen) !important}
+.footer-label-gap{margin-top:18px !important}
+html body .luxury-footer-column a{position:relative;width:fit-content}
+html body .luxury-footer-column a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;border-radius:2px;background:linear-gradient(90deg,#7fe3d8,#c6c2f0);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+html body .luxury-footer-column a:hover::after,html body .luxury-footer-column a:focus-visible::after{transform:scaleX(1)}
+.luxury-footer-socials a{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.luxury-footer-socials a:hover{transform:translateY(-4px) rotate(-6deg);box-shadow:0 12px 24px -10px rgba(127,227,216,.6)}
+.luxury-footer-socials a:nth-child(1){animation:arcBob 4s ease-in-out infinite}
+.luxury-footer-socials a:nth-child(2){animation:arcBob 4s ease-in-out .5s infinite}
+.luxury-footer-socials a:nth-child(3){animation:arcBob 4s ease-in-out 1s infinite}
+@keyframes arcBob{0%,100%{translate:0 0}50%{translate:0 -4px}}
+.luxury-footer-cta-button{position:relative;overflow:hidden}
+.luxury-footer-cta-button::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:arcBtnSheen 4.5s ease-in-out infinite}
+@keyframes arcBtnSheen{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@media (prefers-reduced-motion:reduce){html body .luxury-footer,.luxury-footer::before,.luxury-footer-socials a,.luxury-footer-cta-button::after{animation:none !important}}

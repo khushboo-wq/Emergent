@@ -10,8 +10,10 @@ import BrandLogo from "@/components/BrandLogo";
 
 
 const mobileLinks: Array<[string, string]> = [
-  ["/", "Home"], ["/about", "About"], ["/services", "Services"], ["/pricing", "Pricing"], ["/how-i-work", "How I work"],
-  ["/reporting-compliance", "Reporting & Compliance"], ["/resources", "Resources"], ["/faq", "FAQ"], ["/contact", "Contact"],
+  ["/", "Home"], ["/about", "About"], ["/services", "Services"], ["/pricing", "Pricing"], ["/contact", "Contact"],
+];
+const mobileMore: Array<[string, string]> = [
+  ["/how-i-work", "How I work"], ["/reporting-compliance", "Reporting & Compliance"], ["/resources", "Resources"], ["/faq", "FAQ"],
 ];
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -36,20 +38,14 @@ export default function SiteHeader() {
         </Link>
 
         <nav className="luxury-desktop-nav" aria-label="Primary navigation" data-testid="desktop-navigation">
-          <NavLink to="/" className={navLinkClass}>Home</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/services" className={navLinkClass}>Services</NavLink>
           <NavLink to="/pricing" className={navLinkClass}>Pricing</NavLink>
-          <NavLink to="/how-i-work" className={navLinkClass}>How I work</NavLink>
-          <NavLink to="/reporting-compliance" className={navLinkClass}>Reporting & Compliance</NavLink>
-          <NavLink to="/resources" className={navLinkClass}>Resources</NavLink>
-          <NavLink to="/faq" className={navLinkClass}>FAQ</NavLink>
-          <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
         </nav>
 
         <div className="luxury-header-actions">
           <a className="luxury-header-email" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-          <Link to="/contact" className="luxury-header-cta">Get in touch <MessageCircle size={15} /></Link>
+          <Link to="/contact" className="luxury-header-cta">Contact <MessageCircle size={15} /></Link>
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
@@ -70,7 +66,10 @@ export default function SiteHeader() {
                 </NavLink>
               ))}
             </nav>
-            <div className="arc-menu-foot" style={{ "--i": mobileLinks.length } as CSSProperties}>
+            <div className="arc-menu-more" style={{ "--i": mobileLinks.length } as CSSProperties}>
+              {mobileMore.map(([to, label]) => <NavLink key={to} to={to} onClick={() => setOpen(false)}>{label}</NavLink>)}
+            </div>
+            <div className="arc-menu-foot" style={{ "--i": mobileLinks.length + 1 } as CSSProperties}>
               <Link to="/contact" onClick={() => setOpen(false)} className="luxury-mobile-cta">Get in touch <MessageCircle size={16} /></Link>
               <div className="arc-menu-quick">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer"><FaWhatsapp size={18} aria-hidden="true" /> WhatsApp</a>
