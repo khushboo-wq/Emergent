@@ -30,7 +30,7 @@ export interface ServiceContent {
   requirements: string[];
   price: string;
   priceNote: string;
-  /** Approximate pound sterling equivalent for UK visitors (invoices stay in euro) */
+  /** Fixed pound sterling price for UK clients (invoices can be issued in euro or pounds) */
   priceGbp?: string;
   tiers?: { name: string; price: string; priceGbp?: string; detail: string }[];
   tools?: string[];
@@ -54,9 +54,6 @@ export interface ServicePageExtras {
   commercialHighlights: string[];
   workingNote?: string;
 }
-
-/** Pound figures use 1 GBP ≈ 1.18 EUR (October 2026). Invoices are issued in euro. */
-export const GBP_NOTE = "≈ £ shown for UK clients; invoiced in euro";
 
 export const services: ServiceContent[] = [
   {
@@ -100,11 +97,11 @@ export const services: ServiceContent[] = [
       "Access and clear business information, audience, and content context",
     ],
     price: "From €250 / month",
-    priceGbp: "≈ £211 / month",
-    priceNote: "€250 outreach only · €450 with a daily post (text, image or AI video).",
+    priceGbp: "From £200 / month",
+    priceNote: "€250 / £200 outreach only · €450 / £375 with a daily post (text, image or AI video).",
     tiers: [
-      { name: "Outreach", price: "€250 / month", priceGbp: "≈ £211", detail: "Profile optimisation, around 200 targeted connection requests a week, follow-ups and reporting." },
-      { name: "Outreach + daily content", price: "€450 / month", priceGbp: "≈ £380", detail: "Everything in Outreach, plus one post every day: text, image or short AI video." },
+      { name: "Outreach", price: "€250 / month", priceGbp: "£200 / month", detail: "Profile optimisation, around 200 targeted connection requests a week, follow-ups and reporting." },
+      { name: "Outreach + daily content", price: "€450 / month", priceGbp: "£375 / month", detail: "Everything in Outreach, plus one post every day: text, image or short AI video." },
     ],
     tools: ["LinkedIn", "LinkedIn Sales Navigator", "Hootsuite"],
     featured: true,
@@ -129,7 +126,7 @@ export const services: ServiceContent[] = [
     ],
     exclusions: [
       "Lead lists are not included and are sourced separately according to your requirement",
-      "Email Setup, where required, is priced separately (€75 one-time per domain)",
+      "Email Setup, where required, is priced separately (€75 / £65 one-time per domain)",
       "A faster start with pre-warmed inboxes is charged separately",
       "Legal, privacy, or regulatory advice is not included",
       "No open, reply, meeting, sales, or inbox-placement guarantee is made",
@@ -150,12 +147,12 @@ export const services: ServiceContent[] = [
       "Approval of email content and any target list before sending",
     ],
     price: "€450 / month",
-    priceGbp: "≈ £380 / month",
+    priceGbp: "£375 / month",
     priceNote: "Sending and warm-up tools included; lead lists and Email Setup are separate.",
     tools: ["Instantly.ai", "Mailivery"],
     relatedServices: [
-      { slug: "lead-generation", title: "Lead Generation", description: "Finding & verifying the right contacts for a focused campaign.", price: "€0.09 / verified lead" },
-      { slug: "email-setup", title: "Email Setup", description: "Professional email and DNS configuration before outreach begins.", price: "€75 one-time per domain" },
+      { slug: "lead-generation", title: "Lead Generation", description: "Finding & verifying the right contacts for a focused campaign.", price: "€0.09 / £0.08 per verified lead" },
+      { slug: "email-setup", title: "Email Setup", description: "Professional email and DNS configuration before outreach begins.", price: "€75 / £65 one-time per domain" },
     ],
     featured: true,
   },
@@ -199,7 +196,7 @@ export const services: ServiceContent[] = [
       "Access to the tools or platforms needed",
     ],
     price: "€16 / hour",
-    priceGbp: "≈ £13.50 / hour",
+    priceGbp: "£14 / hour",
     priceNote: "Billed according to actual time spent on agreed work.",
     sourceNote: "Tasks requiring significant additional research or extended time are discussed and agreed before work continues.",
     featured: true,
@@ -242,8 +239,8 @@ export const services: ServiceContent[] = [
       "Any specific targeting requirements",
     ],
     price: "€0.09 / verified lead",
-    priceGbp: "≈ £0.08 / lead",
-    priceNote: "Minimum order 1,000 leads (€90). 50% in advance, 50% on delivery.",
+    priceGbp: "£0.08 / verified lead",
+    priceNote: "Minimum order 1,000 leads (€90 / £80). 50% in advance, 50% on delivery.",
     tools: ["LinkedIn Sales Navigator", "Apollo", "UseBouncer"],
   },
   {
@@ -278,7 +275,7 @@ export const services: ServiceContent[] = [
       "The account details required to verify the configuration",
     ],
     price: "€75 one-time / domain",
-    priceGbp: "≈ £63 per domain",
+    priceGbp: "£65 one-time / domain",
     priceNote: "Per domain, billed once. Your own domain and mailbox.",
     tools: ["DNS provider", "Email provider"],
     sourceNote: "Required before Email Outreach campaigns can begin if this setup is not already in place.",
@@ -296,7 +293,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Connection acceptance percentage", "Engagement growth across agreed content", "Qualified conversations created through outreach"],
     relatedSlugs: ["lead-generation", "business-support"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€250 / month (outreach) or €450 / month (with daily content). 50% advance at the start of the month, remaining 50% at the end of the month. The current billing month is completed in full.",
+    paymentTerms: "€250 / £200 a month (outreach) or €450 / £375 a month (with daily content). 50% advance at the start of the month, remaining 50% at the end of the month. The current billing month is completed in full.",
     commercialHighlights: ["Initial setup: 2–3 working days once access, verification and business information are available.", "Outreach is approximately 200 connection invitations per week, depending on account activity, audience targeting and LinkedIn limits.", "LinkedIn Sales Navigator and Hootsuite are separate subscriptions paid directly by the client.", "Weekly LinkedIn newsletter support and regular reporting are included where relevant to the agreed brief."],
     workingNote: "LinkedIn platform limits and account activity can affect outreach volume. No revenue or outcome guarantee is made.",
     faqs: [
@@ -312,7 +309,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Open percentage", "Reply percentage", "Click-through percentage", "Bounce rate", "Inbox placement observations"],
     relatedSlugs: ["email-setup", "lead-generation"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€450 / month. 50% advance at the start of the month, remaining 50% at the end of the month. Email Setup and lead lists are separate where required.",
+    paymentTerms: "€450 / £375 a month. 50% advance at the start of the month, remaining 50% at the end of the month. Email Setup and lead lists are separate where required.",
     commercialHighlights: ["Minimum one-month warm-up period before active outreach.", "Up to 10,000 unique emails per client campaign.", "Two to three follow-ups included where appropriate.", "Campaigns can send up to 500 emails per day per email account depending on account condition, platform limits and campaign readiness.", "Email Setup is €75 one-time per domain when technical configuration is needed."],
     workingNote: "No open, reply, meeting, sales or inbox-placement guarantee is made.",
     faqs: [
@@ -328,7 +325,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Time used against agreed tasks", "Completed work and outstanding dependencies", "Clear written notes for each delivery"],
     relatedSlugs: ["linkedin-management", "lead-generation"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€16 / hour. Hours and scope are agreed in writing first. 50% of the agreed hours is paid in advance; the balance is paid on delivery, based on actual time spent.",
+    paymentTerms: "€16 / £14 an hour. Hours and scope are agreed in writing first. 50% of the agreed hours is paid in advance; the balance is paid on delivery, based on actual time spent.",
     commercialHighlights: ["Task-based support covering administration, research, data entry, documents, back-office tasks and agreed website/digital support.", "Tasks requiring significant additional research or extended time are discussed before work continues.", "Work is billed according to actual time spent on agreed tasks."],
     workingNote: "Business Support is practical task-based support, not a substitute for legal, financial, HR or other specialist advice.",
     faqs: [
@@ -344,7 +341,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Source fields included with delivered records", "Verification status and cleaned contact data", "Delivery count against the agreed target profile"],
     relatedSlugs: ["email-outreach", "linkedin-management", "email-setup"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€0.09 per verified lead, minimum 1,000 leads (€90). 50% in advance, remaining 50% when the completed list is delivered.",
+    paymentTerms: "€0.09 / £0.08 per verified lead, minimum 1,000 leads (€90 / £80). 50% in advance, remaining 50% when the completed list is delivered.",
     commercialHighlights: ["First list normally delivered within 5–7 working days once target criteria are confirmed.", "Targeting can include industry, location, company size, job titles, exclusions and specific requirements.", "Research workflow uses LinkedIn Sales Navigator, Apollo and UseBouncer as shown in the service materials."],
     workingNote: "Delivery timing depends on the confirmed target criteria and list size.",
     faqs: [
@@ -360,7 +357,7 @@ export const servicePageExtras: Record<string, ServicePageExtras> = {
     reporting: ["Records configured during setup", "DNS verification status", "Written handover and any outstanding provider actions"],
     relatedSlugs: ["email-outreach", "lead-generation"],
     lastUpdated: "7 October 2026",
-    paymentTerms: "€75 one-time per domain. 50% in advance before setup begins, remaining 50% on completion.",
+    paymentTerms: "€75 / £65 one-time per domain. 50% in advance before setup begins, remaining 50% on completion.",
     commercialHighlights: ["Email delivery setup on your existing domain: SPF, DKIM and DMARC.", "DNS records are configured and verified against the agreed email provider.", "This setup is separate from the ongoing €450/month Email Outreach service.", "Third-party domains, hosting, email accounts and software are paid separately by the client unless expressly included in writing."],
     workingNote: "A setup schedule is confirmed after the required domain, email and DNS access are available.",
     faqs: [

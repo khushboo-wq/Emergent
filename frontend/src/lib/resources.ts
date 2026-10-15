@@ -656,12 +656,12 @@ export const resources: Resource[] = [
         heading: "What does LinkedIn management cost per month?",
         paragraphs: [
           "LinkedIn management from Arcturus Professional Services costs €250 a month for outreach only, or €450 a month with one post every day (the prices published on the pricing page), paid half at the start of the month and half at the end, with no minimum term. Both cover the organic work on one LinkedIn presence: the profile, targeted outreach, follow-ups and written reporting, all done by me; the €450 plan adds the daily content. It does not cover the Sales Navigator and Hootsuite subscriptions, which stay in your name, and it does not promise a number of leads. The rest of this page sets out what sits inside that price, what sits outside it, and how to tell whether it is worth paying.",
-          "There are two published prices, in euro (the pricing page): €250 a month for outreach only, and €450 a month for outreach plus one post every day, as text, an image or a short AI video. There are no other packages. If you need more volume or a new kind of task, I quote it in writing before any work starts, so the number you agreed is the number you pay.",
+          "There are two published prices (the pricing page): €250 / £200 a month for outreach only, and €450 / £375 a month for outreach plus one post every day, as text, an image or a short AI video. There are no other packages. If you need more volume or a new kind of task, I quote it in writing before any work starts, so the number you agreed is the number you pay.",
           "A monthly price on its own tells you very little. The same words, LinkedIn management, are used for three different jobs: running paid advertising campaigns, writing and scheduling posts, and doing the outreach and follow-up work that starts conversations. A price for advertising management is usually set as an hourly rate or as a share of the advertising budget, and the budget itself is paid to LinkedIn on top. A price for the organic work is only comparable when it comes with a list of what is managed.",
           "So the useful question is not what it costs. It is what the price buys, what you still pay for yourself, and what nobody is promising you.",
         ],
         links: [
-          { label: "Pricing, every published price in euro", url: "/pricing" },
+          { label: "Pricing, every published price in euro and pounds", url: "/pricing" },
         ],
       },
       {

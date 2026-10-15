@@ -57,9 +57,9 @@ export default function ServiceDetail() {
             <article className="service-commercial-card service-commercial-price">
               <span className="service-commercial-label">Price</span>
               <strong>{service.price}</strong>
-              {service.priceGbp ? <p className="service-price-gbp">{service.priceGbp} · invoiced in euro</p> : null}
+              {service.priceGbp ? <p className="service-price-gbp">or {service.priceGbp.replace(/^From /, "from ")}</p> : null}
               <p>{service.priceNote}</p>
-              {service.tiers ? <ul className="service-price-tiers">{service.tiers.map((tier) => <li key={tier.name}><b>{tier.price}{tier.priceGbp ? ` (${tier.priceGbp})` : ""}</b> {tier.name}: {tier.detail}</li>)}</ul> : null}
+              {service.tiers ? <ul className="service-price-tiers">{service.tiers.map((tier) => <li key={tier.name}><b>{tier.price}{tier.priceGbp ? ` / ${tier.priceGbp.replace(" / month", "")}` : ""}</b> {tier.name}: {tier.detail}</li>)}</ul> : null}
             </article>
             <article className="service-commercial-card">
               <span className="service-commercial-label">Payment</span>

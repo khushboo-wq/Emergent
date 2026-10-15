@@ -125,7 +125,7 @@ export default function Home() {
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
                   </div>
-                  <span className="luxury-service-price">{service.price}{service.priceGbp ? <small className="luxury-service-gbp"> {service.priceGbp}</small> : null}</span>
+                  <span className="luxury-service-price">{service.price}{service.priceGbp ? <small className="luxury-service-gbp">or {service.priceGbp.replace(/^From /, "from ")}</small> : null}</span>
                   <span className="luxury-service-arrow"><ArrowRight size={20} /></span>
                 </Link>
               </Reveal>

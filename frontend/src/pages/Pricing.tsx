@@ -16,7 +16,7 @@ const billing: Record<string, string> = {
 const faqs = [
   ["Are these prices fixed?", "Yes. Every price on this page is the published price for the agreed scope. If you need extra volume or new tasks, I quote them in writing before any work starts."],
   ["How does payment work?", "Work starts after a 50% advance. Monthly services are paid 50% at the start and 50% at the end of each month. One-time work, Lead Generation and Business Support: the remaining 50% is paid on delivery."],
-  ["How do I pay?", "Payments are made via Wise, in euro. You receive a written invoice before each payment."],
+  ["How do I pay?", "Payments are made via Wise, in euro or pound sterling, whichever suits you. You receive a written invoice in that currency before each payment."],
   ["What is not included in the price?", "Paid third-party tools stay with you: LinkedIn Sales Navigator, Hootsuite, domains, email accounts, hosting and similar subscriptions. Email Outreach is the exception: the sending and warm-up tools are included."],
   ["Is there a long contract?", "No. Monthly services run month to month. If you stop, the current billing month is completed in full."],
 ];
@@ -28,7 +28,7 @@ export default function Pricing() {
       <section className="luxury-hero pricing-hero" data-testid="pricing-hero">
         <div className="luxury-shell pricing-hero-inner">
           <div>
-            <p className="luxury-eyebrow"><span>€</span> Pricing · in euro, with ≈ £ for UK clients</p>
+            <p className="luxury-eyebrow"><span>€</span> Pricing · in euro or pound sterling</p>
             <h1>Clear prices for every service.</h1>
             <p className="luxury-hero-lead">Five services, each with a clear published price. No packages to decode and no hidden fees. Pick what you need, send a short written brief, and I confirm the scope before any payment.</p>
             <div className="luxury-hero-actions">
@@ -39,7 +39,7 @@ export default function Pricing() {
           <div className="pricing-hero-terms" aria-label="Payment terms summary">
             <div><Wallet /><strong>50% advance</strong><span>Work starts after the advance</span></div>
             <div><Receipt /><strong>50% on delivery</strong><span>Monthly: 50% at the end of the month</span></div>
-            <div><CreditCard /><strong>Paid via Wise</strong><span>Written invoice, in euro</span></div>
+            <div><CreditCard /><strong>Paid via Wise</strong><span>Invoice in euro or pounds</span></div>
           </div>
         </div>
       </section>
@@ -58,9 +58,9 @@ export default function Pricing() {
                   <IsoIllustration slug={service.slug} className="pricing-card-iso" />
                   <h2>{service.title}</h2>
                   <p className="pricing-card-price">{service.price}</p>
-                  {service.priceGbp ? <p className="pricing-card-gbp">{service.priceGbp} · invoiced in euro</p> : null}
+                  {service.priceGbp ? <p className="pricing-card-gbp">or {service.priceGbp.replace(/^From /, "from ")}</p> : null}
                   <p className="pricing-card-note">{service.priceNote}</p>
-                  {service.tiers ? <div className="pricing-card-tiers">{service.tiers.map((tier) => <div key={tier.name}><strong>{tier.price}{tier.priceGbp ? <em> {tier.priceGbp}</em> : null}</strong><span>{tier.name}</span><p>{tier.detail}</p></div>)}</div> : null}
+                  {service.tiers ? <div className="pricing-card-tiers">{service.tiers.map((tier) => <div key={tier.name}><strong>{tier.price}{tier.priceGbp ? <em> / {tier.priceGbp.replace(" / month", "")}</em> : null}</strong><span>{tier.name}</span><p>{tier.detail}</p></div>)}</div> : null}
                   <ul>
                     {service.inclusions.slice(0, 4).map((item) => <li key={item}><Check size={16} />{item}</li>)}
                   </ul>

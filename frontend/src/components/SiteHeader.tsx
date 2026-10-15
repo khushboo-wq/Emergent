@@ -47,7 +47,7 @@ export default function SiteHeader() {
 
         <div className="luxury-header-actions">
           <a className="luxury-header-email" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-          <Link to="/contact" className="luxury-header-cta">Contact <MessageCircle size={15} /></Link>
+          <Link to="/contact" className="luxury-header-cta">Get in touch <MessageCircle size={15} /></Link>
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
