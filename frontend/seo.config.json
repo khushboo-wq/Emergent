@@ -471,6 +471,23 @@
       "changeFrequency": "monthly",
       "priority": 0.7,
       "lastModified": "2026-10-13"
+    },
+    {
+      "path": "/resources/linkedin-management-cost-per-month",
+      "title": "What LinkedIn Management Costs per Month",
+      "description": "What LinkedIn management costs per month in Ireland: the published euro price, what it includes, the subscriptions you still pay for, and what is not promised.",
+      "h1": "What LinkedIn management costs per month, and what the price buys",
+      "canonical": "https://arcturusprofessional.com/resources/linkedin-management-cost-per-month",
+      "indexable": true,
+      "ogType": "article",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "resourceSlug": "linkedin-management-cost-per-month",
+      "changeFrequency": "monthly",
+      "priority": 0.7,
+      "lastModified": "2026-10-15"
     }
   ]
 }

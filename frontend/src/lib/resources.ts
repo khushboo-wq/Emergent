@@ -639,6 +639,128 @@ export const resources: Resource[] = [
       { label: "LinkedIn Pages for small business, LinkedIn", url: "https://business.linkedin.com/advertise/linkedin-pages/for-small-business" },
     ],
   },
+  {
+    slug: "linkedin-management-cost-per-month",
+    title: "What LinkedIn management costs per month, and what the price buys",
+    eyebrow: "LinkedIn Pricing Guide",
+    excerpt: "A direct answer for a small B2B business: one published monthly price, the list of what is managed, the two subscriptions you keep in your name, and what no supplier should promise.",
+    description: "What LinkedIn management costs per month in Ireland: the published euro price, what it includes, the subscriptions you still pay for, and what is not promised.",
+    category: "LinkedIn Management",
+    serviceSlug: "linkedin-management",
+    published: "2026-10-15",
+    updated: "2026-10-15",
+    readTime: "7 min read",
+    keywords: ["how much does linkedin management cost", "linkedin management pricing", "linkedin management cost per month ireland", "managed linkedin service price"],
+    sections: [
+      {
+        heading: "What does LinkedIn management cost per month?",
+        paragraphs: [
+          "LinkedIn management from Arcturus Professional Services costs €250 a month for outreach only, or €450 a month with one post every day (the prices published on the pricing page), paid half at the start of the month and half at the end, with no minimum term. Both cover the organic work on one LinkedIn presence: the profile, targeted outreach, follow-ups and written reporting, all done by me; the €450 plan adds the daily content. It does not cover the Sales Navigator and Hootsuite subscriptions, which stay in your name, and it does not promise a number of leads. The rest of this page sets out what sits inside that price, what sits outside it, and how to tell whether it is worth paying.",
+          "There are two published prices, in euro (the pricing page): €250 a month for outreach only, and €450 a month for outreach plus one post every day, as text, an image or a short AI video. There are no other packages. If you need more volume or a new kind of task, I quote it in writing before any work starts, so the number you agreed is the number you pay.",
+          "A monthly price on its own tells you very little. The same words, LinkedIn management, are used for three different jobs: running paid advertising campaigns, writing and scheduling posts, and doing the outreach and follow-up work that starts conversations. A price for advertising management is usually set as an hourly rate or as a share of the advertising budget, and the budget itself is paid to LinkedIn on top. A price for the organic work is only comparable when it comes with a list of what is managed.",
+          "So the useful question is not what it costs. It is what the price buys, what you still pay for yourself, and what nobody is promising you.",
+        ],
+        links: [
+          { label: "Pricing, every published price in euro", url: "/pricing" },
+        ],
+      },
+      {
+        heading: "What should a monthly price include?",
+        paragraphs: [
+          "This is the scope behind the two prices, grouped the way an invoice should be read (the LinkedIn Management service page).",
+          "If a quote you are comparing cannot be sorted into those four groups, ask for it to be. A price that cannot be itemised is a price you cannot judge.",
+        ],
+        bullets: [
+          "Included in both plans, from €250 a month (the pricing page): A review and optimisation of your personal profile.",
+          "Included in both plans, from €250 a month (the pricing page): Company page creation and setup if your business does not already have one.",
+          "Included in both plans, from €250 a month (the pricing page): Research of relevant businesses and decision-makers in Sales Navigator, against an audience agreed with you in writing.",
+          "Included in both plans, from €250 a month (the pricing page): Structured connection requests to that audience, approximately two hundred invitations a week depending on account activity, targeting and LinkedIn limits (the figure on the service page).",
+          "Included in both plans, from €250 a month (the pricing page): Follow-ups for accepted connections, without aggressive sales messaging.",
+          "Included in both plans, from €250 a month (the pricing page): Relevant InMails, engagement and group participation where suitable.",
+          "Included in both plans, from €250 a month (the pricing page): Regular written reporting on outreach activity, connections, replies and engagement.",
+          "Added in the €450 plan (the pricing page): One LinkedIn post every day, as text, an image or a short AI video.",
+          "Added in the €450 plan (the pricing page): Authority-led posts and nurture content built around your offer.",
+          "Added in the €450 plan (the pricing page): Posts scheduled for 9:00 AM UK and Irish time through Hootsuite.",
+          "Paid separately by you, in your own name: LinkedIn Sales Navigator.",
+          "Paid separately by you, in your own name: Hootsuite, for scheduling, on the €450 plan (the service page).",
+          "Paid separately by you, in your own name: Any advertising budget, paid to LinkedIn, if you decide to run ads at all.",
+          "Not offered inside this service: Graphic design.",
+          "Not offered inside this service: CRM management.",
+          "Not offered inside this service: Project or calendar management.",
+          "Not offered inside this service: Calls or meetings. Everything is agreed and reported in writing.",
+          "Not promised: A number of leads, meetings or sales.",
+          "Not promised: A fixed outreach volume, because LinkedIn limits and your own account activity can change it from week to week.",
+        ],
+        links: [
+          { label: "LinkedIn Management, the service", url: "/services/linkedin-management" },
+          { label: "LinkedIn management services: what a business actually needs", url: "/resources/linkedin-management-services-guide" },
+        ],
+      },
+      {
+        heading: "Which subscriptions does the business still pay for itself?",
+        paragraphs: [
+          "Two, and both stay in your name.",
+          "The first is LinkedIn Sales Navigator. LinkedIn sells it per licence, and its own plan comparison describes Core as the plan for individual sellers and Advanced and Advanced Plus as plans for sales teams. For one business with one person doing the prospecting, Core is the plan the research is done in. It stays in your name because the licence is tied to your profile, the invitations go out from your account, and if you stop the service you keep the account, the connections and the decision about whether to keep paying.",
+          "The second, on the €450 plan (the service page), is Hootsuite, used to schedule the daily posts. The same reasoning applies: the content is yours, the schedule is yours, and the subscription should outlive any supplier.",
+          "Neither subscription is marked up or resold. You pay the platform directly and I use the access you grant. That is also why you keep ownership and control of your LinkedIn account and its settings throughout.",
+        ],
+        links: [
+          { label: "Sales Navigator plans compared, from LinkedIn", url: "https://business.linkedin.com/sales-solutions/compare-plans" },
+          { label: "LinkedIn Page admin roles, from the LinkedIn help centre", url: "https://www.linkedin.com/help/linkedin/answer/4783" },
+        ],
+      },
+      {
+        heading: "What does a managed service not promise?",
+        paragraphs: [
+          "It does not promise an outcome. No number of leads, meetings or sales is guaranteed, and no honest supplier can guarantee one, because the result depends on your offer, your market and limits that LinkedIn sets and changes. What is guaranteed is that the agreed work is done properly and reported clearly.",
+          "Reporting covers three things: the connection acceptance percentage, engagement growth across the agreed content, and the qualified conversations created through outreach. Those are the figures that tell you whether to keep going, change the audience, or stop. They are reported in writing, so you can read them in your own time rather than sit through a call about them.",
+          "It also does not promise a fixed volume. Outreach runs at approximately two hundred invitations a week (the service page), but LinkedIn limits and the state of your account can lower that in a given week, and a supplier who promises to beat those limits is promising to put your account at risk.",
+        ],
+      },
+      {
+        heading: "How is the month billed, and what happens if you stop?",
+        paragraphs: [
+          "The month is billed in two halves: half in advance at the start of the month and half at the end (the pricing page). You receive a written invoice before each payment, in euro, and payment is made through Wise. Work on a new month starts once the advance is in.",
+          "There is no long contract and no minimum term. The service runs month to month. If you decide to stop, the current billing month is completed in full and nothing carries over. Because the subscriptions and the account are yours, stopping means removing my access and nothing else: the profile, the page, the connections and the content stay exactly where they are.",
+          "How VAT applies to a service bought from a supplier outside Ireland or the UK is a question for your accountant, and nothing on this page is tax advice.",
+        ],
+      },
+      {
+        heading: "When is a managed service worth the money?",
+        paragraphs: [
+          "It is worth paying for when four things are true. You know which businesses and which decision-makers you want to reach, or can agree them in writing in the first week. You can provide access, business context and feedback without a weekly meeting. You would not otherwise do the daily and weekly work yourself, because it keeps slipping behind client work. And you are prepared to judge the result over months rather than weeks, because connections and conversations compound slowly.",
+          "It is not worth paying for when what you actually want is advertising, when you need a guaranteed number of leads to justify the spend, or when the audience is still undecided. In the first case the budget belongs with LinkedIn and an advertising specialist. In the second, nobody honest can sell you that. In the third, a month of outreach to the wrong people costs the same as a month to the right ones.",
+          "The comparison that matters is not against the price of another supplier. It is against the value of the hours you would spend doing the profile, the research, the invitations, the follow-ups, the posts and the reporting yourself, every week, and against what happens when those hours are not spent at all.",
+        ],
+      },
+      {
+        heading: "Questions founders ask",
+        paragraphs: [],
+        bullets: [
+          "Does the monthly price include LinkedIn Sales Navigator? No. Sales Navigator is a separate subscription, paid by you directly to LinkedIn and kept in your name. I use it for the targeting and the research.",
+          "Is there a contract or a minimum term? No. The service runs month to month, with half paid at the start and half at the end of each month. If you stop, the current billing month is completed in full.",
+          "What is the difference between LinkedIn management and LinkedIn ads management? LinkedIn management as described here is organic work: the profile, the page, outreach, follow-ups, content and reporting. Ads management is the running of paid campaigns, where you set a budget that LinkedIn charges you for and a specialist manages the targeting and the creative. Paid campaigns are not part of this monthly price, and any advertising budget would be paid by you to LinkedIn.",
+          "Can you pay per post instead of per month? There is no per post price. Daily posting comes with the €450 plan. If occasional posting and scheduling is all you need, that work sits under Business Support at €16 an hour (the pricing page), billed on the actual time spent on agreed tasks, with the hours and scope agreed in writing first.",
+        ],
+        links: [
+          { label: "LinkedIn Ads, how paid campaigns are budgeted, from LinkedIn", url: "https://business.linkedin.com/marketing-solutions/ads" },
+          { label: "Business Support, billed by the hour", url: "/services/business-support" },
+          { label: "Company page or personal profile: where a B2B founder should post", url: "/resources/linkedin-company-page-vs-personal-profile-founder" },
+        ],
+      },
+      {
+        heading: "When managed LinkedIn makes sense",
+        paragraphs: [
+          "If you know which businesses you want to reach and the weekly work above is the part that never gets done, the LinkedIn Management service covers the profile, the outreach and the written reporting from €250 a month, with daily content at €450 (the pricing page), and I manage it myself from New Delhi, India, in UK and Irish working hours. Send a short written brief through the contact page and I will reply in writing with the scope, the price and the most practical starting point.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Compare plans and pricing, LinkedIn Sales Navigator", url: "https://business.linkedin.com/sales-solutions/compare-plans" },
+      { label: "LinkedIn Page admin roles, LinkedIn help centre", url: "https://www.linkedin.com/help/linkedin/answer/4783" },
+      { label: "LinkedIn Ads, LinkedIn Marketing Solutions", url: "https://business.linkedin.com/marketing-solutions/ads" },
+    ],
+  },
 ];
 
 export function getResource(slug: string | undefined) {
