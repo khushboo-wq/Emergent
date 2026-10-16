@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { FaWhatsapp } from "react-icons/fa6";
-import { CONTACT_EMAIL, getService, servicePageExtras, WHATSAPP_LINK } from "@/lib/site";
+import { getService, servicePageExtras, WHATSAPP_LINK } from "@/lib/site";
 import IsoIllustration from "@/components/IsoIllustration";
 import AmbientScene from "@/components/AmbientScene";
 import { resources } from "@/lib/resources";
@@ -36,7 +36,7 @@ export default function ServiceDetail() {
             </div>
             <p className="sd-updated" data-testid="service-last-updated">Last updated: {extras.lastUpdated}</p>
           </div>
-          <div className="service-hero-stack"><IsoIllustration slug={service.slug} /><div className="premium-panel service-price-panel rounded-[2rem] bg-[#0f2942] p-7 text-white sm:p-9" data-testid="service-price-hero"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Price</p><p className="font-highlight mt-4 break-words text-4xl tracking-tight text-white" data-testid="service-pricing">{service.price}</p>{service.priceGbp ? <p className="service-price-gbp sd-hero-gbp">or {service.priceGbp.replace(/^From /, "from ")}</p> : null}<p className="mt-3 text-sm leading-6 text-[#cbd5e1]" data-testid="service-pricing-note">{service.priceNote}</p></div></div>
+          <div className="service-hero-stack"><IsoIllustration slug={service.slug} /><div className="premium-panel service-price-panel rounded-[2rem] bg-[#0f2942] p-7 text-white sm:p-9" data-testid="service-price-hero"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Price</p>{service.tiers ? <ul className="sd-hero-tiers" data-testid="service-pricing">{service.tiers.map((tier) => <li key={tier.name}><strong>{tier.price}</strong><span className="service-price-gbp">or {tier.priceGbp}</span><small>{tier.name}: {tier.detail}</small></li>)}</ul> : <><p className="font-highlight mt-4 break-words text-4xl tracking-tight text-white" data-testid="service-pricing">{service.price}</p>{service.priceGbp ? <p className="service-price-gbp sd-hero-gbp">or {service.priceGbp}</p> : null}</>}</div></div>
         </div>
       </section>
 
@@ -62,23 +62,16 @@ export default function ServiceDetail() {
           <p className="sd-kicker">Step by step</p>
           <h2 className="sd-h2" data-testid="service-process-heading">How it works</h2>
           <ol className="sd-steps">{service.process.map((step, index) => <li key={step.label} data-testid={`service-process-step-${index + 1}`}><span className="sd-step-num">{index + 1}</span><div><h3>{step.label}</h3><p>{step.detail}</p></div></li>)}</ol>
-          <p className="sd-note" data-testid="service-timeline-copy"><strong>Timing:</strong> {service.timeline}</p>
+          {service.timeline ? <p className="sd-note" data-testid="service-timeline-copy"><strong>Timing:</strong> {service.timeline}</p> : null}
         </section>
 
         <section className="sd-section" data-testid="service-commercial-section">
-          <p className="sd-kicker">No surprises</p>
-          <h2 className="sd-h2">Price and payment</h2>
-          <div className="sd-price-grid">
-            <article className="sd-card sd-card-dark service-commercial-price">
-              <span className="sd-card-label">Price</span>
-              <strong className="sd-price">{service.price}</strong>
-              {service.priceGbp ? <p className="service-price-gbp">or {service.priceGbp.replace(/^From /, "from ")}</p> : null}
-              {service.tiers ? <ul className="sd-tiers">{service.tiers.map((tier) => <li key={tier.name}><b>{tier.name}: {tier.price}{tier.priceGbp ? ` / ${tier.priceGbp.replace(" / month", "")}` : ""}</b><span>{tier.detail}</span></li>)}</ul> : <p className="sd-card-text">{service.priceNote}</p>}
-            </article>
+          <p className="sd-kicker">Before we start</p>
+          <h2 className="sd-h2">Payment and what you need</h2>
+          <div className="sd-price-grid sd-grid-3">
             <article className="sd-card">
               <span className="sd-card-label">How payment works</span>
               <p className="sd-card-text">{extras.paymentTerms}</p>
-              <p className="sd-card-text sd-muted">Paid via Wise, invoiced in euro or pounds.</p>
             </article>
             <article className="sd-card">
               <span className="sd-card-label">What I need from you</span>
@@ -89,7 +82,6 @@ export default function ServiceDetail() {
               <ul className="sd-dash">{service.exclusions.map((item, index) => <li key={item} data-testid={`service-exclusion-${index + 1}`}>{item}</li>)}</ul>
             </article>
           </div>
-          {extras.workingNote ? <p className="sd-note">{extras.workingNote}</p> : null}
         </section>
 
         <section className="sd-section sd-two" data-testid="service-updates-section">
@@ -97,7 +89,6 @@ export default function ServiceDetail() {
             <p className="sd-kicker">Written updates</p>
             <h2 className="sd-h2" data-testid="service-reporting-heading">What you&apos;ll see in your updates</h2>
             <ul className="sd-checklist sd-checklist-one">{extras.reporting.map((item, index) => <li key={item} data-testid={`service-reporting-item-${index + 1}`}><Check className="size-4" aria-hidden="true" />{item}</li>)}</ul>
-            {service.tools ? <p className="sd-note" data-testid="service-tools-copy"><strong>Tools:</strong> {service.tools.join(" · ")}</p> : null}
           </div>
           <div>
             <p className="sd-kicker">Jargon-free</p>
@@ -106,11 +97,11 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-        <section className="sd-section" data-testid="service-faq-section">
+        {extras.faqs.length ? <section className="sd-section" data-testid="service-faq-section">
           <p className="sd-kicker">Quick answers</p>
           <h2 className="sd-h2" data-testid="service-faq-heading">Frequently asked questions</h2>
           <div className="sd-faq">{extras.faqs.map((faq, index) => <details key={faq.question} data-testid={`service-faq-${index + 1}`} open={index === 0}><summary data-testid={`service-faq-question-${index + 1}`}><h3>{faq.question}</h3><ChevronRight className="size-5" aria-hidden="true" /></summary><p data-testid={`service-faq-answer-${index + 1}`}>{faq.answer}</p></details>)}</div>
-        </section>
+        </section> : null}
 
         <section className="sd-section sd-related" data-testid="service-related-section">
           <h2 className="sd-h3" data-testid="service-related-heading">Often paired with</h2>
@@ -120,7 +111,7 @@ export default function ServiceDetail() {
         </section>
       </div>
 
-      <section className="mx-5 mb-20 rounded-[2rem] bg-[#0f2942] px-6 py-12 text-white sm:mx-8 sm:mb-28 sm:px-10 lg:mx-auto lg:max-w-7xl lg:px-14" data-testid="service-bottom-cta" data-own-cta=""><MessageSquareText className="size-6 text-[#9bc8c0]" /><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Written enquiries only</p><div className="mt-4 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><h2 className="max-w-2xl font-serif text-4xl leading-tight text-white sm:text-5xl" data-testid="service-bottom-cta-heading">Tell me what you need to move forward.</h2><div className="flex flex-wrap gap-3"><Link to="/contact" className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-5 text-sm font-semibold text-[#0f2942] hover:bg-[#dce6ff]" data-testid="service-contact-form-link">Use the contact form <ArrowUpRight className="size-4" /></Link><a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-email-link">Email</a><a href={WHATSAPP_LINK + encodeURIComponent(service.title)} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center rounded-md border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10" data-testid="service-whatsapp-link">WhatsApp</a></div></div></section>
+      <section className="mx-5 mb-20 rounded-[2rem] bg-[#0f2942] px-6 py-12 text-white sm:mx-8 sm:mb-28 sm:px-10 lg:mx-auto lg:max-w-7xl lg:px-14" data-testid="service-bottom-cta" data-own-cta=""><MessageSquareText className="size-6 text-[#9bc8c0]" /><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#9bc8c0]">Written enquiries only</p><div className="mt-4 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><h2 className="max-w-2xl font-serif text-4xl leading-tight text-white sm:text-5xl" data-testid="service-bottom-cta-heading">Ready to start {service.title}?</h2><div className="flex flex-wrap gap-3"><Link to="/contact" className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-5 text-sm font-semibold text-[#0f2942] hover:bg-[#dce6ff]" data-testid="service-contact-form-link">Use the contact form <ArrowUpRight className="size-4" /></Link></div></div></section>
     </PageFrame>
   );
 }

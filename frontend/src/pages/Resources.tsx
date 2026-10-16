@@ -56,7 +56,7 @@ export default function Resources() {
             <h2>Use the guidance, then get back to the business.</h2>
           </Reveal>
           <Reveal delay={120}>
-            <p>Arcturus provides direct LinkedIn management, email outreach, lead generation, business support, email setup and AI content.</p>
+            
             <Link to="/services" className="luxury-button luxury-button-light">Explore all services <ArrowRight size={16} /></Link>
           </Reveal>
         </div>

@@ -1,9 +1,9 @@
-import { ArrowUpRight, Check, CreditCard, Receipt, ShieldCheck, Wallet } from "lucide-react";
+import { ArrowUpRight, CreditCard, Receipt, ShieldCheck, Wallet } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import IsoIllustration from "@/components/IsoIllustration";
-import { orderedServices, servicePageExtras, WHATSAPP_LINK } from "@/lib/site";
+import { orderedServices, WHATSAPP_LINK } from "@/lib/site";
 
 const billing: Record<string, string> = {
   "linkedin-management": "Monthly",
@@ -15,10 +15,6 @@ const billing: Record<string, string> = {
 
 const faqs = [
   ["Are these prices fixed?", "Yes. Every price on this page is the published price for the agreed scope. If you need extra volume or new tasks, I quote them in writing before any work starts."],
-  ["How does payment work?", "Work starts after a 50% advance. Monthly services are paid 50% at the start and 50% at the end of each month. One-time work, Lead Generation and Business Support: the remaining 50% is paid on delivery."],
-  ["How do I pay?", "Payments are made via Wise, in euro or pound sterling, whichever suits you. You receive a written invoice in that currency before each payment."],
-  ["What is not included in the price?", "Paid third-party tools stay with you: LinkedIn Sales Navigator, Hootsuite, domains, email accounts, hosting and similar subscriptions. Email Outreach is the exception: the sending and warm-up tools are included."],
-  ["Is there a long contract?", "No. Monthly services run month to month. If you stop, the current billing month is completed in full."],
 ];
 
 export default function Pricing() {
@@ -48,8 +44,7 @@ export default function Pricing() {
         <div className="luxury-shell">
           <div className="pricing-grid">
             {orderedServices.map((service, index) => {
-              const extras = servicePageExtras[service.slug];
-              return (
+                            return (
                 <article key={service.slug} className="pricing-card" data-service-slug={service.slug} data-testid={`pricing-card-${service.slug}`}>
                   <div className="pricing-card-top">
                     <span className="pricing-card-index">0{index + 1}</span>
@@ -57,14 +52,10 @@ export default function Pricing() {
                   </div>
                   <IsoIllustration slug={service.slug} className="pricing-card-iso" />
                   <h2>{service.title}</h2>
+                  {service.tiers ? <div className="pricing-card-tiers">{service.tiers.map((tier) => <div key={tier.name}><strong>{tier.price}{tier.priceGbp ? <em> / {tier.priceGbp.replace(" / month", "")}</em> : null}</strong><span>{tier.name}</span><p>{tier.detail}</p></div>)}</div> : <>
                   <p className="pricing-card-price">{service.price}</p>
-                  {service.priceGbp ? <p className="pricing-card-gbp">or {service.priceGbp.replace(/^From /, "from ")}</p> : null}
-                  <p className="pricing-card-note">{service.priceNote}</p>
-                  {service.tiers ? <div className="pricing-card-tiers">{service.tiers.map((tier) => <div key={tier.name}><strong>{tier.price}{tier.priceGbp ? <em> / {tier.priceGbp.replace(" / month", "")}</em> : null}</strong><span>{tier.name}</span><p>{tier.detail}</p></div>)}</div> : null}
-                  <ul>
-                    {service.inclusions.slice(0, 4).map((item) => <li key={item}><Check size={16} />{item}</li>)}
-                  </ul>
-                  <p className="pricing-card-terms">{extras.paymentTerms}</p>
+                  {service.priceGbp ? <p className="pricing-card-gbp">or {service.priceGbp}</p> : null}
+                  <p className="pricing-card-note">{service.priceNote}</p></>}
                   <div className="pricing-card-actions">
                     <Link to={`/services/${service.slug}`} className="pricing-card-link">Full details <ArrowUpRight size={15} /></Link>
                     <Link to={`/contact?service=${service.slug}`} className="pricing-card-cta">Start this service</Link>

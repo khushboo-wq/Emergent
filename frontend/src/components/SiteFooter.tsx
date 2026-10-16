@@ -1,4 +1,4 @@
-import { ArrowUpRight, Clock3, MapPin, MessageCircle, Mail, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, MessageCircle, Mail } from "lucide-react";
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { CONTACT_EMAIL, orderedServices, WHATSAPP_LINK } from "@/lib/site";
@@ -25,7 +25,6 @@ export default function SiteFooter() {
             <BrandLogo size={60} light />
           </Link>
           <p>Independent B2B support, managed personally.</p>
-          <span>Based in New Delhi, working directly with businesses across the UK, Ireland and Europe.</span><span className="footer-experience-line">12+ years across email marketing, B2B outreach, lead research and sales support.</span>
           <div className="luxury-footer-socials footer-socials-large">
             <a href="https://www.linkedin.com/in/khushboo-tomar" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
             <a href="https://www.instagram.com/arcturusprofessional" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
@@ -60,10 +59,6 @@ export default function SiteFooter() {
           <p className="luxury-footer-label">Contact</p>
           <a href={"mailto:" + CONTACT_EMAIL}><Mail size={14} />{CONTACT_EMAIL}</a>
           <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer"><MessageCircle size={14} />+91 99112 84362</a>
-          <span><MapPin size={14} />New Delhi, India</span>
-          <span><Clock3 size={14} />UK & Irish working hours · Monday–Friday</span>
-          <span><ShieldCheck size={14} />B2B · Confidential · Written</span>
-          <span><ArrowUpRight size={14} />Direct freelancer support · no agency hand-offs</span>
         </div>
       </div>
 

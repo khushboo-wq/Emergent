@@ -12,7 +12,7 @@ export default function Contact() {
   return (
     <PageFrame>
       <Seo path="/contact" />
-      <section className="luxury-hero contact-hero-rich" data-testid="contact-hero">
+      <section className="luxury-hero contact-hero-rich" data-testid="contact-hero" data-own-cta="">
         <AmbientScene type="contact" className="contact-ambient-scene" />
         <div className="luxury-shell luxury-hero-inner">
           <Reveal className="luxury-hero-copy">
@@ -23,7 +23,6 @@ export default function Contact() {
             </p>
             <div className="luxury-hero-actions">
               <Link to="/services" className="luxury-button luxury-button-dark">See services <ArrowRight size={16} /></Link>
-              <a href={"mailto:" + CONTACT_EMAIL} className="luxury-button luxury-button-ghost">Email directly</a>
             </div>
           </Reveal>
           <Reveal className="luxury-hero-art-wrap" delay={120}>
@@ -32,14 +31,6 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="contact-facts-strip">
-        <div className="luxury-shell contact-facts-grid">
-          <div><strong>Advance</strong><span>Payment before work begins</span></div>
-          <div><strong>Written</strong><span>Email, LinkedIn and WhatsApp</span></div>
-          <div><strong>UK · IE</strong><span>Working hours aligned to UK & Irish time</span></div>
-          <div><strong>Direct</strong><span>One freelancer from brief to delivery</span></div>
-        </div>
-      </section>
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.72fr_1.28fr] lg:px-10" data-testid="contact-main">
         <aside className="space-y-6">
@@ -56,10 +47,7 @@ export default function Contact() {
           <Reveal className="premium-panel rounded-[2rem] bg-[#ece8f4] p-7" delay={80}>
             <h2 className="font-serif text-2xl text-[#0f2942]">Before you start</h2>
             <div className="mt-5 space-y-3 text-sm leading-7 text-[#475569]">
-              <p><strong>Payment:</strong> 50% advance before work begins, remaining 50% on delivery (monthly services: 50% at the start, 50% at the end of the month). Payments via Wise.</p>
               <p><strong>Communication:</strong> work stays documented in writing. No phone calls or call-booking appointments.</p>
-              <p><strong>Scope:</strong> send the service you have in mind, what you want done, target audience and timeline.</p>
-              <p><strong>Third-party costs:</strong> paid subscriptions and platforms stay with the client unless specifically included.</p>
             </div>
           </Reveal>
 
@@ -74,7 +62,7 @@ export default function Contact() {
 
         <Reveal className="self-start" delay={90}>
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#2c7a73]">Secure enquiry form</p>
-          <h2 className="mt-4 mb-7 break-words font-serif text-4xl text-[#0f172a]">Send the brief in writing</h2>
+          <h2 className="mt-4 mb-7 break-words font-serif text-4xl text-[#0f172a]">Your message</h2>
           <ContactForm />
         </Reveal>
       </section>
