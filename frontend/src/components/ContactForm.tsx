@@ -4,7 +4,7 @@ import { CheckCircle2, Send } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { ApiError } from "@/lib/api";
 import { CONTACT_EMAIL } from "@/lib/site";
-import { orderedServices } from "@/lib/site";
+import { ALL_IN_PLAN, orderedServices } from "@/lib/site";
 import { pushDataLayer } from "@/lib/tracking";
 
 interface ContactSubmission {
@@ -66,7 +66,8 @@ export default function ContactForm() {
   };
 
   useEffect(() => {
-    const requestedService = orderedServices.find((service) => service.slug === searchParams.get("service"));
+    const requested = searchParams.get("service");
+    const requestedService = requested === ALL_IN_PLAN.slug ? ALL_IN_PLAN : orderedServices.find((service) => service.slug === requested);
     if (requestedService) {
       setValues((current) => current.service ? current : { ...current, service: requestedService.title });
     }
@@ -95,7 +96,7 @@ export default function ContactForm() {
         <div><label htmlFor="contact-name" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-name-label">Name</label><input id="contact-name" value={values.name} onChange={(event) => update("name", event.target.value)} required minLength={2} maxLength={100} autoComplete="name" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-name-input" /></div>
         <div><label htmlFor="contact-email" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-email-label">Email</label><input id="contact-email" type="email" value={values.email} onChange={(event) => update("email", event.target.value)} required autoComplete="email" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-email-input" /></div>
         <div><label htmlFor="contact-company" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-company-label">Company</label><input id="contact-company" value={values.company} onChange={(event) => update("company", event.target.value)} required maxLength={160} autoComplete="organization" className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-company-input" /></div>
-        <div><label htmlFor="contact-service" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-service-label">Service</label><select id="contact-service" value={values.service} onChange={(event) => update("service", event.target.value)} required className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-service-select"><option value="">Select a service</option>{orderedServices.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}</select></div>
+        <div><label htmlFor="contact-service" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-service-label">Service</label><select id="contact-service" value={values.service} onChange={(event) => update("service", event.target.value)} required className="mt-2 h-12 w-full rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 text-sm text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-service-select"><option value="">Select a service</option>{orderedServices.map((service) => <option key={service.slug} value={service.title}>{service.title}</option>)}<option value={ALL_IN_PLAN.title}>{ALL_IN_PLAN.title}</option></select></div>
         <div className="sm:col-span-2"><label htmlFor="contact-message" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748b]" data-testid="contact-message-label">Message</label><textarea id="contact-message" value={values.message} onChange={(event) => update("message", event.target.value)} required minLength={10} maxLength={5000} rows={6} className="mt-2 w-full resize-y rounded-md border border-[#cbd5e1] bg-[#faf9f6] px-4 py-3 text-sm leading-6 text-[#0f2942] outline-none transition-colors duration-200 focus:border-[#6a55c8] focus:ring-2 focus:ring-[#6a55c8]/20" data-testid="contact-message-input" /></div>
       </div>
       {mutation.isError ? <p className="mt-5 rounded-md bg-[#fff2f0] px-4 py-3 text-sm leading-6 text-[#a13b2d]" role="alert" data-testid="contact-form-error">{mutation.error.message || "I could not send your enquiry. Please try again."}</p> : null}

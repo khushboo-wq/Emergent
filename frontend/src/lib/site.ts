@@ -410,3 +410,19 @@ export function getContactHref(service?: ServiceContent) {
     : "Hi Khushboo,\n\nI would like to discuss services for my business.\n\nCompany:\nService of Interest:\nTimeline:\n\nRegards,";
   return `mailto:${CONTACT_EMAIL}?${new URLSearchParams({ subject, body }).toString()}`;
 }
+
+/** One monthly plan with every service. Shown only on the Pricing page, so nothing here is repeated elsewhere. */
+export const ALL_IN_PLAN = {
+  slug: "all-in",
+  title: "All-in Plan",
+  price: "€1,000 / month",
+  priceGbp: "£850 / month",
+  saving: "You save €150 / £120 every month compared with buying these separately, and Email Setup is free.",
+  items: [
+    { label: "LinkedIn Management, with a daily post", slug: "linkedin-management" },
+    { label: "B2B Email Outreach", slug: "email-outreach" },
+    { label: "1,000 verified leads every month", slug: "lead-generation" },
+    { label: "Up to 10 hours of Business Support a month", slug: "business-support" },
+    { label: "Email Setup for one domain, included once", slug: "email-setup" },
+  ],
+};
