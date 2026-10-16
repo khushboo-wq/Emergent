@@ -51,7 +51,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="luxury-hero-art-wrap" delay={150}>
-            <HeroShowcase kicker="Arcturus" index="01 / 06" title="Arcturus Professional Services" subtitle="B2B growth work, managed personally by Khushboo Tomar." slug="linkedin-management" chips={["LinkedIn","Email outreach","Lead generation","Business support","AI video","Email setup"]} note="A direct, considered way to keep the work behind your business moving." />
+            <HeroShowcase kicker="Arcturus" index="01 / 05" title="Arcturus Professional Services" subtitle="B2B growth work, managed personally by Khushboo Tomar." slug="linkedin-management" chips={["LinkedIn","Email outreach","Lead generation","Business support","Email setup"]} note="A direct, considered way to keep the work behind your business moving." />
           </Reveal>
         </div>
       </section>

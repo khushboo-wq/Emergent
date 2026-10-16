@@ -71,10 +71,10 @@ export const services: ServiceContent[] = [
       "Structured connection requests sent to the agreed target audience",
       "Relevant InMails, engagement, and group participation where suitable",
       "Professional follow-ups for accepted connections, without aggressive sales messaging",
-      "€450 plan: authority-led posts and nurture content built around your offer",
+      "Daily-post plan: authority-led posts and nurture content built around your offer",
       "A practical funnel from first connection to qualified conversation",
-      "€450 plan: one LinkedIn post every day: text, image or short AI video",
-      "€450 plan: posts scheduled for 9:00 AM UK/Irish time using Hootsuite",
+      "Daily-post plan: one LinkedIn post every day: text, image or short AI video",
+      "Daily-post plan: posts scheduled for 9:00 AM UK/Irish time using Hootsuite",
       "Regular reporting on outreach activity, connections, replies, and engagement",
     ],
     exclusions: [
