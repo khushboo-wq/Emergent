@@ -32,12 +32,12 @@ export default function Home() {
             </p>
             <div className="luxury-hero-actions">
               <Link to="/services" className="luxury-button luxury-button-dark">Explore services <ArrowRight size={16} /></Link>
-              <Link to="/contact" className="luxury-button luxury-button-ghost">Talk to Khushboo</Link>
+              <Link to="/contact" className="luxury-button luxury-button-ghost">Talk to me</Link>
             </div>
           </Reveal>
 
           <Reveal className="luxury-hero-art-wrap" delay={150}>
-            <HeroShowcase kicker="Arcturus" index="01 / 05" title="Arcturus Professional Services" subtitle="B2B growth work, managed personally by Khushboo Tomar." slug="linkedin-management" chips={["LinkedIn","Email outreach","Lead generation","Business support","Email setup"]} note="A direct, considered way to keep the work behind your business moving." />
+            <HeroShowcase kicker="Arcturus" index="01 / 05" title="Arcturus Professional Services" subtitle="" slug="linkedin-management" chips={["LinkedIn","Email outreach","Lead generation","Business support","Email setup"]} note="A direct, considered way to keep the work behind your business moving." />
           </Reveal>
         </div>
       </section>
@@ -142,11 +142,11 @@ export default function Home() {
           </Reveal>
           <Reveal delay={110}>
             <p className="luxury-section-kicker">About me</p>
-            <h2>Meet Khushboo.</h2>
+            <h2>Hi, I'm Khushboo.</h2>
             <p className="luxury-about-copy">
               My working style is simple: understand the brief, do the agreed work properly, and keep you updated without you having to chase.
             </p>
-            <Link to="/about" className="luxury-button luxury-button-dark">More about Khushboo <ArrowRight size={16} /></Link>
+            <Link to="/about" className="luxury-button luxury-button-dark">More about me <ArrowRight size={16} /></Link>
           </Reveal>
         </div>
       </section>

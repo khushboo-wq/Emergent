@@ -13,7 +13,7 @@ export default function SiteFooter() {
           <div>
             <p className="luxury-footer-kicker">ARCTURUS / DIRECT SUPPORT</p>
             <h2>Need practical work taken off your plate?</h2>
-            <p>Send a written brief. Khushboo will review it and come back with the most practical starting point.</p>
+            <p>Send me a written brief. I'll review it and come back with the most practical starting point.</p>
           </div>
           <Link to="/contact" className="luxury-footer-cta-button">Start a written enquiry <ArrowUpRight size={17} /></Link>
         </div>
@@ -35,7 +35,7 @@ export default function SiteFooter() {
         <div className="luxury-footer-column">
           <p className="luxury-footer-label">Explore</p>
           <Link to="/">Home</Link>
-          <Link to="/about">About Khushboo</Link>
+          <Link to="/about">About me</Link>
           <Link to="/services">All services</Link>
           <Link to="/pricing">Pricing</Link>
           <Link to="/contact">Contact</Link>

@@ -94,7 +94,7 @@ export const resources: Resource[] = [
         heading: "What to expect from a managed service",
         paragraphs: [
           "LinkedIn is a relationship channel, so a sensible service should be measured over time rather than as a one-week sales promise. Good management creates a consistent presence, improves the quality of targeting and keeps follow-up from being forgotten.",
-          "At Arcturus, the LinkedIn management service is managed directly by Khushboo. The work includes profile management, professional content, targeted outreach, follow-ups, group engagement, company page setup where needed, Hootsuite scheduling and written performance reporting.",
+          "At Arcturus, I manage this LinkedIn work myself. The work includes profile management, professional content, targeted outreach, follow-ups, group engagement, company page setup where needed, Hootsuite scheduling and written performance reporting.",
         ],
       },
       {
