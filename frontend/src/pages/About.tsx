@@ -1,9 +1,7 @@
 import { ArrowUpRight, Sparkles, X } from "lucide-react";
 import HeroShowcase from "@/components/HeroShowcase";
-import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
-import { orderedServices } from "@/lib/site";
 import AmbientScene from "@/components/AmbientScene";
 
 export default function About() {
@@ -44,7 +42,6 @@ export default function About() {
       </div>
     </section>
 
-    <section className="bg-[#f1eee6]" data-testid="about-services-section"><div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10"><div className="grid gap-10 lg:grid-cols-[0.58fr_1fr] lg:gap-20"><div><p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#4263aa]">Specialist support</p><h2 className="mt-4 font-serif text-4xl text-[#0f172a] sm:text-5xl" data-testid="about-services-heading">What I do</h2><p className="mt-6 max-w-sm text-base leading-7 text-[#64748b]">Five clearly priced services, each managed directly and documented in writing.</p></div><div className="grid gap-3 sm:grid-cols-2">{orderedServices.map((service, index) => <Link key={service.slug} to={`/services/${service.slug}`} className="premium-panel premium-lift rounded-2xl border border-[#ddd8cd] bg-[#fbf8f1] p-5" data-testid={`about-service-${service.slug}`}><div className="flex items-center justify-between gap-4"><span className="font-mono text-[9px] text-[#4263aa]">0{index + 1}</span><ArrowUpRight className="size-4 text-[#64748b]" /></div><h3 className="mt-5 font-serif text-xl text-[#0f2942]">{service.title}</h3><p className="mt-2 text-sm leading-6 text-[#64748b]">{["Profile, posting, outreach and nurture", "Setup, warm-up, campaigns and reporting", "Research, content, website support and admin", "Verified B2B contacts for your target market", "Domain and DNS setup for better deliverability"][index]}</p></Link>)}</div></div></div></section>
 
     <section className="recommendations-section" data-testid="about-recommendations">
       <div className="luxury-shell recommendations-grid">

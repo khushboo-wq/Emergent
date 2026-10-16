@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
 import Seo from "@/components/Seo";
-import { orderedServices } from "@/lib/site";
 import { resources } from "@/lib/resources";
 import AmbientScene from "@/components/AmbientScene";
 
@@ -83,33 +82,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="luxury-services-section">
-        <div className="luxury-shell">
-          <Reveal className="luxury-section-heading">
-            <div>
-              <p className="luxury-section-kicker">Services</p>
-              <h2>Services that fit the work you actually need done.</h2>
-            </div>
-            <Link to="/services" className="luxury-inline-link">View all services <ArrowRight size={16} /></Link>
-          </Reveal>
-
-          <div className="luxury-service-list">
-            {orderedServices.map((service, index) => (
-              <Reveal key={service.slug} delay={index * 45}>
-                <Link to={`/services/${service.slug}`} className="luxury-service-row" data-service-slug={service.slug} data-service-name={service.title}>
-                  <span className="luxury-service-number">0{index + 1}</span>
-                  <div className="luxury-service-main">
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                  <span className="luxury-service-price">{service.price}{service.priceGbp ? <small className="luxury-service-gbp">or {service.priceGbp.replace(/^From /, "from ")}</small> : null}</span>
-                  <span className="luxury-service-arrow"><ArrowRight size={20} /></span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
 
       <section className="luxury-resources-section">
