@@ -415,14 +415,15 @@ export function getContactHref(service?: ServiceContent) {
 export const ALL_IN_PLAN = {
   slug: "all-in",
   title: "All-in Plan",
-  price: "€1,000 / month",
-  priceGbp: "£850 / month",
-  saving: "You save €150 / £120 every month compared with buying these separately, and Email Setup is free.",
+  tagline: "Your own B2B growth person, working on your business every working day.",
+  price: "€2,500 / month",
+  priceGbp: "£2,100 / month",
+  saving: "One invoice for everything, and your work comes first, Monday to Friday.",
   items: [
     { label: "LinkedIn Management, with a daily post", slug: "linkedin-management" },
     { label: "B2B Email Outreach", slug: "email-outreach" },
-    { label: "1,000 verified leads every month", slug: "lead-generation" },
-    { label: "Up to 10 hours of Business Support a month", slug: "business-support" },
-    { label: "Email Setup for one domain, included once", slug: "email-setup" },
+    { label: "Up to 3,000 verified leads a month", slug: "lead-generation" },
+    { label: "Business Support for everything else on your list", slug: "business-support" },
+    { label: "Email Setup for up to 3 domains, included", slug: "email-setup" },
   ],
 };

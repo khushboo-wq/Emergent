@@ -73,7 +73,7 @@ export default function Pricing() {
             <div className="allin-head">
               <span className="allin-badge">Everything together</span>
               <h2>{ALL_IN_PLAN.title}</h2>
-              <p className="allin-sub">One monthly price for every service, run by one person.</p>
+              <p className="allin-sub">{ALL_IN_PLAN.tagline}</p>
               <p className="allin-price">{ALL_IN_PLAN.price}</p>
               <p className="allin-gbp">or {ALL_IN_PLAN.priceGbp}</p>
               <p className="allin-saving">{ALL_IN_PLAN.saving}</p>
