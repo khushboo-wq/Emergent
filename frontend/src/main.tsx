@@ -31,7 +31,11 @@ const app = (
   </StrictMode>
 )
 
-if (root.hasChildNodes()) hydrateRoot(root, app)
-else createRoot(root).render(app)
+// Hydrate only when the pre-built HTML belongs to this URL (unknown URLs get the home HTML, which must not be hydrated).
+const norm = (p: string) => p.replace(/\/+$/, '') || '/'
+const canonical = document.querySelector<HTMLLinkElement>('link[rel=canonical]')?.href
+const matches = canonical ? norm(new URL(canonical).pathname) === norm(location.pathname) : false
+if (root.hasChildNodes() && matches) hydrateRoot(root, app)
+else { root.innerHTML = ''; createRoot(root).render(app) }
 
 if (typeof window !== 'undefined') window.addEventListener('load', () => setTimeout(() => { startMotion(); startPolish() }, 600))

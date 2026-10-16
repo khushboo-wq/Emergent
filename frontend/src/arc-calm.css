@@ -203,3 +203,121 @@ html body main .allin-card .allin-saving:not(#_){font-size:.98rem !important}
   html body:not(#_){padding-bottom:0 !important}
   html body .luxury-footer .luxury-footer-bottom:not(#_){padding-bottom:calc(96px + env(safe-area-inset-bottom)) !important}
 }
+
+/* Service rail: five services, five equal columns on wide screens */
+@media (min-width:1101px){
+  html body .service-tabs-inner{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+
+/* Guide sidebar: never wider than its column */
+html body .resource-sidebar{grid-template-columns:minmax(0,1fr);min-width:0}
+html body .resource-sidebar-card{min-width:0}
+html body .resource-sidebar-card h2{font-size:clamp(22px,2vw,28px);overflow-wrap:break-word}
+html body .resource-sidebar-card p{font-size:14px;color:rgba(15,31,51,.72)}
+
+/* Readable minimum text sizes */
+html body .work-section-tabs a{font-size:12px;letter-spacing:.06em}
+html body .resource-meta span{font-size:12px}
+html body .luxury-footer-bottom-inner,html body .luxury-footer-bottom-inner a,html body .luxury-footer-bottom-inner span{font-size:12.5px}
+html body main .fine-print:not(#_){font-size:13px !important;line-height:1.6}
+@media (max-width:1100px){html body .header-service-rail .service-tab-title,html body .service-tab-title{font-size:12.5px}}
+
+/* ===== Site-wide QA fixes (Oct 2026) ===== */
+/* Page container gets focus after navigation for screen readers; never draw a box around the whole page */
+html body main:focus,html body main:focus-visible,html body main[tabindex]:focus{outline:none !important}
+
+/* Header email was cut off; the dock and footer already show it */
+html body .luxury-header-email{display:none !important}
+
+/* Footer: numbers sit on the same line as the service names; email wraps only after the @ */
+html body .luxury-footer a:has(.footer-service-number){align-items:baseline}
+html body .luxury-footer a[href^="mailto:"]{overflow-wrap:normal;word-break:normal;align-items:center}
+html body .contact-email-text{word-break:normal;overflow-wrap:normal}
+
+/* Closing banner heading never touches itself on phones */
+@media (max-width:760px){html body .luxury-footer-cta h2{line-height:1.08 !important}}
+
+/* Odd card left alone at the end of a two-column grid: let it use the full row */
+html body .luxury-service-list>*:last-child:nth-child(odd),
+html body [data-testid="services-catalog"]>div>*:last-child:nth-child(odd),
+html body [data-testid="about-services-section"] .grid>*:last-child:nth-child(odd){grid-column:1/-1 !important}
+@media (min-width:1025px){html body .resource-grid>*:last-child:nth-child(3n+1){grid-column:2 !important}}
+@media (min-width:761px) and (max-width:1024px){
+  html body .pricing-grid>*:last-child:nth-child(odd){grid-column:1/-1 !important;justify-self:center;width:calc(50% - 8px)}
+  html body .start-project-grid>*:last-child:nth-child(odd){grid-column:1/-1 !important}
+}
+@media (min-width:600px){html body .luxury-facts-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}}
+
+/* Services page hero: text left, picture right (no empty half) */
+html body .services-hero-inner{display:grid;gap:40px;align-items:center}
+@media (min-width:1025px){html body .services-hero-inner{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+@media (max-width:1024px){html body .services-hero-art{display:none}}
+html body main [data-testid="services-intro"]:not(#_){font-size:1.2rem !important;line-height:1.7 !important;color:#3a4558 !important}
+html body [data-testid="services-eyebrow"]{font-size:12px !important}
+
+/* Pricing: buttons line up at the bottom of every card; single FAQ uses the full width */
+html body .pricing-card{display:flex !important;flex-direction:column}
+html body .pricing-card .pricing-card-actions{margin-top:auto !important;padding-top:18px}
+html body .pricing-faq-grid{grid-template-columns:1fr !important;max-width:860px}
+
+/* How I work: rows use the full width */
+@media (min-width:1025px){
+  html body .start-project-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;max-width:none !important}
+  html body .why-work-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;max-width:none !important}
+}
+html body .why-work-grid>*{height:100%}
+@media (max-width:760px){html body .work-section-tabs:not(#_){display:grid !important;grid-template-columns:1fr 1fr;gap:4px;border-radius:20px !important;overflow:visible;padding:8px !important}html body .work-section-tabs a{justify-content:center;text-align:center;white-space:normal}}
+
+/* Reporting page: compliance card full width, four tool cards in one row, light labels on dark */
+html body .reporting-compliance-only .communication-grid{grid-template-columns:1fr !important}
+html body .reporting-compliance-only .communication-light ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 28px}@media (max-width:760px){html body .reporting-compliance-only .communication-light ul{grid-template-columns:1fr}}
+@media (min-width:1025px){html body .reporting-tools-grid{grid-template-columns:repeat(4,minmax(0,1fr)) !important}}
+@media (min-width:761px) and (max-width:1024px){html body .reporting-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+html body .reporting-tools-grid>*,html body .reporting-tools-grid .tools-platform-card{height:100%}
+html body .reporting-section .luxury-section-kicker,html body .communication-dark .luxury-section-kicker,html body .luxury-kicker-light{color:#b9c8ff !important}
+
+/* Guides: readable dark card, real bullets, matching card heights */
+html body main .resource-sidebar-dark p:not(#_){color:#fff !important;font-size:17px;line-height:1.5;hyphens:none}
+html body .resource-article ul{list-style:disc;padding-left:1.4em}
+html body .resource-article ul li{display:list-item}
+html body .resource-article ul li::marker{color:#6a55c8}
+html body .resource-grid>*{height:100%}
+html body .resource-grid .resource-card{height:100%;display:flex;flex-direction:column}
+html body .resource-grid .resource-card-bottom{margin-top:auto}
+@media (min-width:1025px){html body [data-testid="resources-heading"]{max-width:14ch}}
+
+/* Service pages: breadcrumb sits left like the rest; labels readable on navy */
+html body main [data-testid="service-breadcrumbs"]{margin-left:max(20px,calc((100% - 80rem)/2 + 40px)) !important;margin-right:auto !important;padding:8px 16px !important}
+@media (max-width:1023px){html body main [data-testid="service-breadcrumbs"]{margin-left:20px !important}}
+html body main .sd-price-label:not(#_),html body main .sd-cta-label:not(#_){font-size:12px !important;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#a8e0d6 !important}
+html body main .sd-cta-label{margin-top:20px}
+
+/* FAQ page spacing */
+html body .faq-hero h1+p,html body [data-testid="faq-hero"] h1+p{margin-top:18px !important}
+html body main .faq-cta .faq-cta-inner:not(#_){padding:36px 40px !important;align-items:center}
+@media (max-width:760px){html body main .faq-cta .faq-cta-inner:not(#_){padding:28px 22px !important}}
+
+/* About: LinkedIn button keeps its label on one line */
+html body .recommendations-grid .luxury-button{white-space:nowrap;border-radius:999px !important;padding:14px 26px !important;width:auto !important;height:auto !important;aspect-ratio:auto !important}
+
+/* 404: buttons stack neatly on phones */
+@media (max-width:760px){html body .not-found-actions,html body [data-testid="not-found-actions"]{flex-direction:column;align-items:stretch}}
+
+/* Phones: no picture on top of the service card labels */
+@media (max-width:760px){html body main [data-testid^="services-overview-card-"] .iso-card:not(#_),html body main [data-testid^="services-overview-card-"] svg.iso-card{display:none !important}}
+/* Form fields: text never clipped */
+html body main select{height:auto !important;min-height:52px;line-height:1.4 !important;padding-top:.75rem !important;padding-bottom:.75rem !important}
+html body main textarea{line-height:1.5 !important}
+/* About on tablet: one profile card is enough */
+@media (max-width:1024px){html body [data-testid="about-hero"] .arc-showcase{display:none !important}}
+
+html body main .communication-dark .luxury-section-kicker:not(#_),html body main .reporting-section .luxury-section-kicker:not(#_),html body main [data-testid="about-services-section"] p.font-mono:not(#_){color:#b9c8ff !important}
+html body main .communication-dark svg+.luxury-section-kicker,html body main .reporting-section svg+.luxury-section-kicker{margin-top:12px}
+/* Guide sections: breathing room on the right edge too */
+html body main .resource-section:not(#_){padding-right:clamp(16px,3vw,36px) !important}
+html body main .communication-dark .luxury-section-kicker:not(#_),html body main .reporting-section .luxury-section-kicker:not(#_),html body main [data-testid="about-services-section"] p.font-mono:not(#_),html body main .luxury-kicker-light:not(#_){background:none !important;-webkit-text-fill-color:#b9c8ff !important;color:#b9c8ff !important;font-size:12px !important}
+html body main [data-testid="about-services-section"] .grid>a:not(#_){border:1px solid rgba(255,255,255,.22) !important}
+/* Highlights: no gap before punctuation; a price never splits across lines */
+html body mark.arc-mark:not(.arc-price){padding:0 !important}
+html body mark.arc-price{white-space:nowrap}
+html body .allin-price,html body .pricing-card-price{text-wrap:balance}

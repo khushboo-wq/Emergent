@@ -37,7 +37,7 @@ export default function Contact() {
           <Reveal className="premium-panel rounded-t-[7rem] rounded-b-[2rem] bg-[#0f2942] p-7 pt-16 text-white sm:p-10 sm:pt-20">
             <h2 className="break-words font-serif text-3xl text-white">Contact details</h2>
             <div className="mt-7 space-y-5 text-sm">
-              <a href={"mailto:" + CONTACT_EMAIL} className="flex gap-3 text-[#dce6ff] transition-colors duration-200 hover:text-white" data-testid="contact-email-link"><Mail className="size-5 shrink-0" /><span className="break-all">{CONTACT_EMAIL}</span></a>
+              <a href={"mailto:" + CONTACT_EMAIL} className="flex gap-3 text-[#dce6ff] transition-colors duration-200 hover:text-white" data-testid="contact-email-link"><Mail className="size-5 shrink-0" /><span className="contact-email-text">{CONTACT_EMAIL.split("@")[0]}@<wbr />{CONTACT_EMAIL.split("@")[1]}</span></a>
               <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex gap-3 text-[#dce6ff] transition-colors duration-200 hover:text-white" data-testid="contact-whatsapp-link"><MessageCircle className="size-5 shrink-0" />+91 99112 84362</a>
               <p className="flex gap-3 text-[#dce6ff]" data-testid="contact-location"><MapPin className="size-5 shrink-0" />New Delhi, India</p>
             </div>

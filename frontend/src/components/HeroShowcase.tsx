@@ -13,13 +13,12 @@ interface Props {
 }
 
 // Hero visual: a short label and a 3D isometric scene. Facts live in the page copy only, never repeated here.
-export default function HeroShowcase({ kicker, title, slug = "linkedin-management", index }: Props) {
+export default function HeroShowcase({ kicker, title, slug = "linkedin-management" }: Props) {
   return (
     <div className="arc-showcase" data-slug={slug} aria-hidden="true">
       <div className="arc-showcase-card">
         <div className="arc-showcase-top">
           <span>{kicker}</span>
-          {index ? <span>{index}</span> : null}
         </div>
         <p className="arc-showcase-title">{title}</p>
         <IsoIllustration slug={slug} className="arc-showcase-iso" />

@@ -3,7 +3,7 @@ export interface FaqGroup { id: string; title: string; items: { q: string; a: st
 export const faqGroups: FaqGroup[] = [
   { id: "getting-started", title: "Getting started", items: [
     { q: "Who is behind Arcturus Professional Services?", a: "Arcturus is my independent solo freelance practice. I'm Khushboo Tomar, based in New Delhi, India. I work directly with businesses in the UK, Ireland and wider Europe. You always deal with the person doing the work." },
-    { q: "Are you an UK or Irish agency?", a: "No. Arcturus is not an agency and is not based in the UK or Ireland. I am Khushboo Tomar, an independent solo freelancer based in New Delhi, India, and I do the work myself for businesses in the UK, Ireland and wider Europe, working in writing and aligned with UK and Irish hours." },
+    { q: "Are you a UK or Irish agency?", a: "No. Arcturus is not an agency and is not based in the UK or Ireland. I am Khushboo Tomar, an independent solo freelancer based in New Delhi, India, and I do the work myself for businesses in the UK, Ireland and wider Europe, working in writing and aligned with UK and Irish hours." },
     { q: "How do I start working with you?", a: "Send a short written brief by email, WhatsApp, LinkedIn or the contact form. I reply in writing with the scope, price and timing. Once the 50% advance and the required access are in place, work begins." },
     { q: "Which service should I choose?", a: "If you want conversations on LinkedIn, start with LinkedIn Management. For cold email, you need B2B Email Outreach, usually with Email Setup and Lead Generation. For admin and research, choose Business Support. If you are unsure, send a brief and I will tell you where I would start." },
     { q: "How quickly can work start?", a: "Requirements, invoice, advance payment and access are usually confirmed in the first 1–2 days, and setup follows in days 3–5. Some services have their own timelines, for example a minimum one-month warm-up before email outreach." },
@@ -30,7 +30,7 @@ export const faqGroups: FaqGroup[] = [
   ]},
   { id: "data-compliance", title: "Data and compliance", items: [
     { q: "Is cold email outreach GDPR compliant?", a: "I use a B2B-only, GDPR and PECR-aware approach: business-professional data only, proper unsubscribe handling and confidential handling of your data. This is not legal advice; each client remains responsible for confirming the lawful basis that applies to their activity." },
-    { q: "How do you handle my business information?", a: "Client information is treated as confidential and used only for the agreed work." },
+    { q: "How do you look after my business information?", a: "I keep your information confidential and use it only for the agreed work." },
   ]},
 ];
 

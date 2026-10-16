@@ -57,7 +57,7 @@ export default function HowIWork() {
             {[
               ["01", "Tell me what you need", "Share the task, goal, audience, business context or problem in writing."],
               ["02", "Share the information", "Send the files, access, examples, instructions or source material needed for the agreed work."],
-              ["03", "Agree the scope", "I confirm what I will handle, what I need from you, the payment arrangement and any relevant timing."],
+              ["03", "Agree the scope", "I confirm what I will do, what I need from you, the payment arrangement and any relevant timing."],
             ].map(([number, title, copy], index) => (
               <Reveal key={number} delay={index * 60}>
                 <article className="start-project-card">

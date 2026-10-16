@@ -57,7 +57,7 @@ export default function SiteFooter() {
 
         <div className="luxury-footer-column footer-contact-column">
           <p className="luxury-footer-label">Contact</p>
-          <a href={"mailto:" + CONTACT_EMAIL}><Mail size={14} />{CONTACT_EMAIL}</a>
+          <a href={"mailto:" + CONTACT_EMAIL}><Mail size={14} />{CONTACT_EMAIL.split("@")[0]}@<wbr />{CONTACT_EMAIL.split("@")[1]}</a>
           <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer"><MessageCircle size={14} />+91 99112 84362</a>
         </div>
       </div>

@@ -48,19 +48,6 @@ export default function Resources() {
           </div>
         </div>
       </section>
-
-      <section className="luxury-contact-section">
-        <div className="luxury-shell luxury-contact-inner">
-          <Reveal>
-            <div className="luxury-contact-overline">Need the work managed?</div>
-            <h2>Use the guidance, then get back to the business.</h2>
-          </Reveal>
-          <Reveal delay={120}>
-            
-            <Link to="/services" className="luxury-button luxury-button-light">Explore all services <ArrowRight size={16} /></Link>
-          </Reveal>
-        </div>
-      </section>
     </PageFrame>
   );
 }

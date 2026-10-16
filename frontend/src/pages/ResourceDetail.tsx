@@ -77,7 +77,7 @@ export default function ResourceDetail() {
             </div>
             <div className="resource-sidebar-card resource-sidebar-dark">
               <MessageCircle size={19} />
-              <p>Need this work managed instead of added to your to-do list?</p>
+              <p>Want me to take this work off your list?</p>
               <Link to="/contact" className="luxury-button luxury-button-light">Start a written enquiry</Link>
             </div>
           </aside>

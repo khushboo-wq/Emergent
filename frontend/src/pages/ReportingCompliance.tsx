@@ -7,10 +7,10 @@ import Seo from "@/components/Seo";
 import AmbientScene from "@/components/AmbientScene";
 
 const reporting = [
-  ["B2B Email Outreach", "/services/email-outreach"],
   ["LinkedIn Management", "/services/linkedin-management"],
-  ["Lead Generation", "/services/lead-generation"],
+  ["B2B Email Outreach", "/services/email-outreach"],
   ["Business Support", "/services/business-support"],
+  ["Lead Generation", "/services/lead-generation"],
   ["Email Setup", "/services/email-setup"],
 ];
 
@@ -18,16 +18,15 @@ const compliance = [
   "B2B communication only",
   "GDPR and PECR-aware approach",
   "Business-professional data",
-  "Unsubscribe and opt-out handling",
+  "Every unsubscribe and opt-out respected",
   "Client data treated as confidential",
   "Client retains control of account access and settings",
 ];
 
 const tools = [
-  ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite"],
-  ["Email Outreach", "Instantly.ai · Mailivery"],
+  ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite · Google Gemini, Flow and Veo 3 for short videos"],
+  ["B2B Email Outreach", "Instantly.ai · Mailivery"],
   ["Lead Generation", "LinkedIn Sales Navigator · Apollo · UseBouncer"],
-  ["AI video (LinkedIn content)", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
   ["Email Setup", "DNS provider · Email provider"],
 ];
 
@@ -42,7 +41,7 @@ export default function ReportingCompliance() {
             <p className="luxury-eyebrow"><span>05</span> Reporting · compliance · tools</p>
             <h1>Work you can <em>see, understand and review.</em></h1>
             <p className="luxury-hero-lead">
-              What you will see from the work, how your data is handled, and the tools each service uses.
+              What you will see from the work, how your data is kept safe, and the tools each service uses.
             </p>
             <div className="luxury-hero-actions">
               <Link to="/how-i-work" className="luxury-button luxury-button-dark">How I work <ArrowRight size={16} /></Link>
@@ -82,7 +81,7 @@ export default function ReportingCompliance() {
           <Reveal className="communication-light" delay={100}>
             <ShieldCheck />
             <p className="luxury-section-kicker">Compliance</p>
-            <h2>Responsible B2B handling.</h2>
+            <h2>Responsible B2B work.</h2>
             <ul>
               {compliance.map((item) => <li key={item}><Check /> {item}</li>)}
             </ul>

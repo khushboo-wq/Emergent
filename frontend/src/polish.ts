@@ -38,7 +38,7 @@ function startSmoothScroll() {
 
 /* ---------- Highlighter: prices and key terms ---------- */
 const PATTERN = new RegExp([
-  '[€£]\\s?\\d[\\d,]*(?:\\.\\d+)?(?:\\s?\\/\\s?(?:month|hour))?',
+  '[€£]\\s?\\d(?:[\\d,]*\\d)?(?:\\.\\d+)?(?:\\s?\\/\\s?(?:month|hour))?',
   '50% (?:advance|in advance|on delivery)',
   '50% at the (?:start|end)(?: of the month)?',
   '\\bWise\\b',

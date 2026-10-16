@@ -24,7 +24,7 @@ export default function Pricing() {
       <section className="luxury-hero pricing-hero" data-testid="pricing-hero">
         <div className="luxury-shell pricing-hero-inner">
           <div>
-            <p className="luxury-eyebrow"><span>€</span> Pricing · in euro or pound sterling</p>
+            <p className="luxury-eyebrow"><span>€</span> Pricing in euro or pounds</p>
             <h1>Clear prices for every service.</h1>
             <p className="luxury-hero-lead">Five services, each with a clear published price, or all five together in one plan. No hidden fees. Pick what you need, send a short written brief, and I confirm the scope before any payment.</p>
             <div className="luxury-hero-actions">
