@@ -72,7 +72,7 @@ main [class*="rounded-"][class*="border"]:not([class*="p-"]){padding:22px}
 .pricing-faq h3{font-size:1.15rem !important}
 .pricing-faq p{margin-top:8px}
 @media (max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:760px){.pricing-hero-inner,.pricing-grid,.pricing-info-grid,.pricing-faq-grid{grid-template-columns:1fr}.pricing-card:nth-child(4){background:linear-gradient(165deg,#ffffff,#f1eeff 70%,#e6f4f1)}}
+@media (max-width:760px){.pricing-hero-inner,.pricing-grid,.pricing-info-grid,.pricing-faq-grid{grid-template-columns:1fr}}
 
 /* About: dark "What I don't do / Built with modern tools" text was dark-on-dark */
 .arcturus-luxury [data-testid="about-boundaries-tools"] p,

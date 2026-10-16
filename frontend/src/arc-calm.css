@@ -197,3 +197,9 @@ html body main .allin-card h2:not(#_){margin:.9rem 0 .3rem;color:#fff !important
 html body main .allin-card .allin-price:not(#_){font-size:clamp(2.4rem,4.2vw,3.4rem) !important;line-height:1.05 !important;font-weight:800 !important;color:#fff !important;margin-top:1.1rem !important}
 html body main .allin-card .allin-gbp:not(#_){font-size:1.15rem !important;color:#c6c2f0 !important}
 html body main .allin-card .allin-saving:not(#_){font-size:.98rem !important}
+
+/* Phones: the dark footer reaches the bottom; room for the floating buttons sits inside the footer, not as a pale strip below it */
+@media (max-width:860px){
+  html body:not(#_){padding-bottom:0 !important}
+  html body .luxury-footer .luxury-footer-bottom:not(#_){padding-bottom:calc(96px + env(safe-area-inset-bottom)) !important}
+}

@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import { FaWhatsapp } from "react-icons/fa6";
-import { getService, servicePageExtras, WHATSAPP_LINK } from "@/lib/site";
+import { getService, servicePageExtras, whatsappAbout } from "@/lib/site";
 import IsoIllustration from "@/components/IsoIllustration";
 import AmbientScene from "@/components/AmbientScene";
 import { resources } from "@/lib/resources";
@@ -32,7 +32,7 @@ export default function ServiceDetail() {
             <p className="sd-lead" data-testid="service-summary">{extras.summary}</p>
             <div className="sd-hero-actions">
               <Link to="/contact" className="sd-btn sd-btn-primary" data-testid="service-start-link">Start this service <ArrowUpRight className="size-4" /></Link>
-              <a href={WHATSAPP_LINK + encodeURIComponent(service.title)} target="_blank" rel="noreferrer" className="sd-btn sd-btn-ghost" data-testid="service-hero-whatsapp"><FaWhatsapp /> Ask on WhatsApp</a>
+              <a href={whatsappAbout(service.title)} target="_blank" rel="noreferrer" className="sd-btn sd-btn-ghost" data-testid="service-hero-whatsapp"><FaWhatsapp /> Ask on WhatsApp</a>
             </div>
             <p className="sd-updated" data-testid="service-last-updated">Last updated: {extras.lastUpdated}</p>
           </div>
@@ -66,7 +66,7 @@ export default function ServiceDetail() {
         </section>
 
         <section className="sd-section" data-testid="service-commercial-section">
-          <p className="sd-kicker">Before we start</p>
+          <p className="sd-kicker">No surprises</p>
           <h2 className="sd-h2">Payment and what you need</h2>
           <div className="sd-price-grid sd-grid-3">
             <article className="sd-card">
@@ -74,7 +74,7 @@ export default function ServiceDetail() {
               <p className="sd-card-text">{extras.paymentTerms}</p>
             </article>
             <article className="sd-card">
-              <span className="sd-card-label">What I need from you</span>
+              <span className="sd-card-label">Needed before we start</span>
               <ul className="sd-dash">{service.requirements.map((item, index) => <li key={item} data-testid={`service-requirement-${index + 1}`}>{item}</li>)}</ul>
             </article>
             <article className="sd-card">

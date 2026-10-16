@@ -1,7 +1,12 @@
 export const SITE_NAME = "Arcturus Professional Services";
 export const CONTACT_EMAIL = "khushboo@arcturusprofessional.com";
-export const WHATSAPP_MESSAGE = "Hi Khushboo, I found Arcturus Professional Services on your website and I'd like to discuss support for my business. Service I'm interested in: ";
-export const WHATSAPP_LINK = `https://wa.me/919911284362?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const WHATSAPP_BASE = "https://wa.me/919911284362?text=";
+/** General WhatsApp link (dock, header, footer, contact page). */
+export const WHATSAPP_LINK = WHATSAPP_BASE + encodeURIComponent("Hi Khushboo, I found your website and I'd like to talk about some help for my business.");
+/** WhatsApp link with a ready message for one topic, e.g. a service name. */
+export function whatsappAbout(topic: string) {
+  return WHATSAPP_BASE + encodeURIComponent(`Hi Khushboo, I found your website and I'm interested in ${topic}. Could you tell me more?`);
+}
 
 export interface ServiceProcessStep {
   label: string;
@@ -90,9 +95,9 @@ export const services: ServiceContent[] = [
     ],
     timeline: "",
     requirements: [
-      "A LinkedIn Sales Navigator subscription (you pay LinkedIn directly)",
+      "LinkedIn Sales Navigator Core, paid to LinkedIn (about $90–$120 a month)",
+      "Hootsuite Standard, only for the daily-post plan (about $99 a month)",
       "Your LinkedIn profile verified, if LinkedIn asks for it",
-      "A Hootsuite subscription, only for the daily-post plan",
       "A short brief: what you sell, who you want to reach, and any do's and don'ts",
     ],
     price: "From €250 / month",
@@ -123,7 +128,6 @@ export const services: ServiceContent[] = [
       "I keep checking results and adjust the emails when needed",
     ],
     exclusions: [
-      "Contact lists (who to email): ordered separately through Lead Generation",
       "Email Setup, if your domain isn't ready yet: €75 / £65 one-time per domain",
       "A faster start with ready-warmed inboxes costs extra",
       "Legal advice, for example on GDPR",
@@ -138,8 +142,9 @@ export const services: ServiceContent[] = [
     ],
     timeline: "Exact dates are agreed with you in writing.",
     requirements: [
-      "An email account and domain to send from",
-      "Login access to that email account",
+      "Your own domain and a business mailbox to send from, for example Google Workspace (about £6–£7 a month per mailbox)",
+      "Login access to that mailbox",
+      "A contact list: your own, or ordered through Lead Generation",
       "A short description of your business and offer",
     ],
     price: "€450 / month",
@@ -178,12 +183,13 @@ export const services: ServiceContent[] = [
       "Big extra research or extra hours without checking with you first",
     ],
     process: [
-      { label: "You share access", detail: "To the accounts listed under 'What I need from you'." },
+      { label: "You share access", detail: "To the accounts listed under 'Needed before we start'." },
       { label: "Setup", detail: "I make the changes on your domain." },
       { label: "Testing", detail: "I check that every record works." },
     ],
     timeline: "",
     requirements: [
+      "No paid tools needed from you",
       "A clear description of the task",
       "Any files or information I need",
       "Instructions or examples, if you have them",
@@ -222,6 +228,7 @@ export const services: ServiceContent[] = [
     ],
     timeline: "Your first list usually arrives within 5–7 working days after we confirm who to target.",
     requirements: [
+      "LinkedIn Sales Navigator Core, paid to LinkedIn (about $90–$120 a month)",
       "Industries you want to target",
       "Locations",
       "Company size you prefer",
@@ -260,7 +267,7 @@ export const services: ServiceContent[] = [
     ],
     timeline: "We agree the date once I have access to your domain and email account.",
     requirements: [
-      "The domain and email account to set up",
+      "Your own domain and business mailbox (you buy and keep them)",
       "Access to your domain settings (DNS) and email provider",
       "Any login details needed to check the setup",
     ],

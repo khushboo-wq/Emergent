@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Seo from "@/components/Seo";
 import IsoIllustration from "@/components/IsoIllustration";
-import { ALL_IN_PLAN, orderedServices, WHATSAPP_LINK } from "@/lib/site";
+import { ALL_IN_PLAN, orderedServices, whatsappAbout } from "@/lib/site";
 
 const billing: Record<string, string> = {
   "linkedin-management": "Monthly",
@@ -29,7 +29,7 @@ export default function Pricing() {
             <p className="luxury-hero-lead">Five services, each with a clear published price, or all five together in one plan. No hidden fees. Pick what you need, send a short written brief, and I confirm the scope before any payment.</p>
             <div className="luxury-hero-actions">
               <Link to="/contact" className="luxury-button luxury-button-dark">Send a written brief <ArrowUpRight size={16} /></Link>
-              <a href={WHATSAPP_LINK + encodeURIComponent("Pricing question")} target="_blank" rel="noreferrer" className="luxury-button luxury-button-ghost">Ask on WhatsApp</a>
+              <a href={whatsappAbout("your pricing")} target="_blank" rel="noreferrer" className="luxury-button luxury-button-ghost">Ask on WhatsApp</a>
             </div>
           </div>
           <div className="pricing-hero-terms" aria-label="Payment terms summary">
@@ -100,7 +100,7 @@ export default function Pricing() {
           <div className="pricing-info-card">
             <Receipt />
             <h2>Paid separately by you</h2>
-            <p>Third-party subscriptions stay in your name and under your control: Sales Navigator, Hootsuite, domains, email accounts, hosting and similar tools.</p>
+            <p>Some services need a tool in your own name, such as Sales Navigator or a business mailbox. Each service page lists exactly what is needed before we start, with the usual cost.</p>
           </div>
         </div>
       </section>

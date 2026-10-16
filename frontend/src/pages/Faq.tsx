@@ -42,7 +42,7 @@ export default function Faq() {
         <div className="luxury-shell faq-cta-inner">
           <div><h2>Still have a question?</h2><p>Send it in writing. I reply by email or WhatsApp.</p></div>
           <div className="faq-cta-actions">
-            <a href={WHATSAPP_LINK + encodeURIComponent("Question from the FAQ page")} target="_blank" rel="noreferrer" className="luxury-button luxury-button-light"><MessageCircle size={16} /> Ask on WhatsApp</a>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="luxury-button luxury-button-light"><MessageCircle size={16} /> Ask on WhatsApp</a>
             <Link to="/contact" className="luxury-button luxury-button-ghost">Contact form <ArrowUpRight size={16} /></Link>
           </div>
         </div>
