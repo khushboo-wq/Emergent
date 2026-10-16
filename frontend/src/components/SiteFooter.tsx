@@ -67,26 +67,6 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="luxury-footer-information">
-        <div className="luxury-shell footer-info-grid">
-          <div>
-            <p className="luxury-footer-label">Payment</p>
-            <strong>50% advance, 50% on delivery.</strong>
-            <span>Work starts after the 50% advance. Monthly services: 50% at the start and 50% at the end of the month. One-time work, Lead Generation and Business Support: the remaining 50% is paid on delivery. Payments via Wise.</span>
-          </div>
-          <div>
-            <p className="luxury-footer-label">Third-party costs</p>
-            <strong>Subscriptions stay with the client.</strong>
-            <span>Sales Navigator, Hootsuite, domains, email accounts, hosting and other paid platforms are separate unless specifically stated otherwise.</span>
-          </div>
-          <div>
-            <p className="luxury-footer-label">Communication</p>
-            <strong>Written, direct, documented.</strong>
-            <span>Email, LinkedIn and WhatsApp are used to keep requirements, approvals, updates and deliveries easy to reference.</span>
-          </div>
-        </div>
-      </div>
-
       <div className="luxury-shell footer-top-row"><a href="#main-content" className="footer-to-top">Back to top <ArrowUpRight size={13} /></a></div>
 
       <div className="luxury-footer-word" aria-hidden="true"><svg viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="arcFooterSheen" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="rgba(198,194,240,.10)" /><stop offset=".45" stopColor="rgba(198,194,240,.12)" /><stop offset=".5" stopColor="rgba(127,227,216,.55)" /><stop offset=".55" stopColor="rgba(198,194,240,.12)" /><stop offset="1" stopColor="rgba(198,194,240,.10)" /><animate attributeName="x1" values="-1;1" dur="7s" repeatCount="indefinite" /><animate attributeName="x2" values="0;2" dur="7s" repeatCount="indefinite" /></linearGradient></defs><text className="arc-footer-sheen" x="500" y="128" textAnchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs">ARCTURUS</text></svg></div>

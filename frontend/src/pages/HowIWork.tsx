@@ -12,13 +12,6 @@ const onboarding = [
   ["03", "Week 2 onward", "Regular work begins with written updates and reporting. Services with warm-up periods follow their own timelines."],
 ];
 
-const process = [
-  ["01", "Understand", "Share your requirements, goals, target audience and agreed scope."],
-  ["02", "Plan", "I review the brief and create the practical approach for the work."],
-  ["03", "Execute", "I carry out the agreed tasks, using the required tools and processes."],
-  ["04", "Review", "Progress and results are reviewed, with updates where required."],
-  ["05", "Deliver", "Completed work, content, data, reporting or handover is delivered in an organised format."],
-];
 
 const payments = [
   ["Monthly services", "50% advance at the start of the month, remaining 50% at the end of the month."],
@@ -62,12 +55,11 @@ export default function HowIWork() {
       <nav className="work-section-tabs" aria-label="How I work sections">
         <a href="#starting-project">01 Starting a project</a>
         <a href="#onboarding-timeline">02 Onboarding</a>
-        <a href="#working-method">03 Process</a>
-        <a href="#payment">04 Payment</a>
-        <a href="#communication">05 Communication</a>
-        <a href="#reporting">06 Reporting</a>
-        <a href="#tools">07 Tools</a>
-        <a href="#why-me">08 Why work with me</a>
+        <a href="#payment">03 Payment</a>
+        <a href="#communication">04 Communication</a>
+        <a href="#reporting">05 Reporting</a>
+        <a href="#tools">06 Tools</a>
+        <a href="#why-me">07 Why work with me</a>
       </nav>
 
       <section className="process-start-section" id="starting-project" data-testid="starting-project">
@@ -115,28 +107,6 @@ export default function HowIWork() {
                 <Clock3 size={18} />
                 <h3>{title}</h3>
                 <p>{copy}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="process-method-section" id="working-method">
-        <div className="luxury-shell">
-          <Reveal className="luxury-section-heading">
-            <div>
-              <p className="luxury-section-kicker">How the work runs</p>
-              <h2>A simple five-step working method.</h2>
-            </div>
-          </Reveal>
-          <div className="method-grid">
-            {process.map(([number, title, copy], index) => (
-              <Reveal key={number} delay={index * 55}>
-                <article className="method-card">
-                  <span>{number}</span>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                </article>
               </Reveal>
             ))}
           </div>
@@ -220,8 +190,8 @@ export default function HowIWork() {
           <div className="tools-platforms-grid">
             {[
               ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite"],
-              ["Email Outreach", "Instantly.ai"],
-              ["Lead Generation", "50% advance before research begins, remaining 50% when the verified list is delivered."],
+              ["Email Outreach", "Instantly.ai · Mailivery"],
+              ["Lead Generation", "LinkedIn Sales Navigator · Apollo · UseBouncer"],
               ["AI video (LinkedIn content)", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
               ["Email Setup", "DNS provider · Email provider"],
             ].map(([title, platformList], index) => (
@@ -258,7 +228,7 @@ export default function HowIWork() {
         </div>
       </section>
 
-      <section className="luxury-contact-section">
+      <section className="luxury-contact-section" data-own-cta="">
         <div className="luxury-shell luxury-contact-inner">
           <Reveal>
             <div className="luxury-contact-overline"><MessageSquareText size={16} /> Ready to start?</div>

@@ -24,7 +24,7 @@ const compliance = [
 
 const tools = [
   ["LinkedIn Management", "LinkedIn · LinkedIn Sales Navigator · Hootsuite"],
-  ["Email Outreach", "Instantly.ai"],
+  ["Email Outreach", "Instantly.ai · Mailivery"],
   ["Lead Generation", "LinkedIn Sales Navigator · Apollo · UseBouncer"],
   ["AI video (LinkedIn content)", "Google Gemini · Google Flow · Google Veo 3 · Hootsuite"],
   ["Email Setup", "DNS provider · Email provider"],

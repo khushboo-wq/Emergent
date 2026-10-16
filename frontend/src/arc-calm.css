@@ -1,0 +1,139 @@
+/* ===== Calm, easy-reading layout (service pages + shared trims) ===== */
+:root{--sd-ink:#16233a;--sd-text:#3c4658;--sd-muted:#5b6577;--sd-line:#e3dfd6;--sd-navy:#0f2942;--sd-teal:#2c7a73;--sd-violet:#5a4aa8;--sd-soft:#f4f1ea}
+
+/* Hero */
+html body main .sd-lead{margin-top:1.4rem;max-width:40rem;font-size:1.13rem;line-height:1.75;color:var(--sd-text)}
+.sd-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.6rem}
+.sd-btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 22px;border-radius:999px;font-weight:700;font-size:.98rem;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.sd-btn:hover{transform:translateY(-2px)}
+.sd-btn-primary{background:linear-gradient(90deg,#16336b,#5a4aa8);color:#fff;box-shadow:0 14px 28px -16px rgba(22,51,107,.8)}
+.sd-btn-ghost{background:#fff;color:var(--sd-navy);border:1.5px solid #cfd6e4}
+.sd-btn-ghost svg{color:#1faa55}
+.sd-updated{margin-top:1.1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sd-muted)}
+.sd-hero-gbp{margin-top:.35rem;color:#c6c2f0;font-weight:600}
+
+/* Body rhythm */
+html body main .sd-body:not(#_){max-width:72rem;margin:0 auto;padding:clamp(8px,2vw,24px) 20px clamp(24px,3vw,40px) !important}
+html body main .sd-section:not(#_){padding-block:clamp(28px,3.4vw,48px) !important;border-bottom:1px solid var(--sd-line)}
+html body main .sd-section:last-child{border-bottom:0}
+.sd-kicker{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sd-violet);margin:0 0 .5rem}
+html body main .sd-h2:not(#_){margin:0 0 1.2rem;color:var(--sd-ink);max-width:40rem}
+html body main .sd-h3:not(#_){font-size:1.25rem !important;line-height:1.3 !important;margin:0 0 .8rem;color:var(--sd-ink)}
+.sd-gap{margin-top:1.6rem !important}
+.sd-note{margin-top:1rem;max-width:44rem;font-size:.98rem;line-height:1.7;color:var(--sd-text)}
+.sd-note strong{color:var(--sd-ink)}
+.sd-fit{margin-top:1.1rem;max-width:44rem;font-size:1rem;line-height:1.7;color:var(--sd-text)}
+.sd-fit strong{color:var(--sd-ink)}
+
+/* In plain words */
+.sd-plain-grid{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.sd-plain-grid article{background:#fff;border:1px solid var(--sd-line);border-radius:20px;padding:20px 20px 22px;border-top:4px solid var(--sd-teal)}
+.sd-plain-grid article:nth-child(2){border-top-color:var(--sd-violet)}
+.sd-plain-grid article:nth-child(3){border-top-color:#16336b}
+.sd-plain-grid span{display:block;font-weight:800;font-size:.95rem;color:var(--sd-ink);margin-bottom:.4rem}
+.sd-plain-grid p{margin:0;font-size:1rem;line-height:1.65;color:var(--sd-text)}
+
+/* Checklists */
+.sd-checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 32px}
+.sd-checklist-one{grid-template-columns:1fr}
+.sd-checklist li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:1.02rem;line-height:1.6;color:var(--sd-text);border-bottom:1px dashed #e8e4dc}
+.sd-checklist li svg{flex:none;margin-top:5px;width:20px;height:20px;padding:3px;border-radius:999px;background:#e3f3f0;color:var(--sd-teal)}
+
+/* Steps */
+.sd-steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.sd-steps li{display:flex;gap:14px;align-items:flex-start;background:var(--sd-soft);border-radius:18px;padding:16px 16px 18px}
+.sd-step-num{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--sd-navy);color:#fff;font-weight:800;font-size:.95rem}
+html body main .sd-steps h3:not(#_){font-size:1.05rem !important;line-height:1.3 !important;margin:4px 0 .3rem;color:var(--sd-ink)}
+.sd-steps p{margin:0;font-size:.97rem;line-height:1.6;color:var(--sd-text)}
+
+/* Price & payment */
+.sd-price-grid{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.sd-card{background:#fff;border:1px solid var(--sd-line);border-radius:20px;padding:20px 22px}
+.sd-card-dark{background:var(--sd-navy);border-color:var(--sd-navy);color:#fff}
+.sd-card-label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sd-violet);margin-bottom:.55rem}
+.sd-card-dark .sd-card-label{color:#9bc8c0}
+.sd-price{display:block;font-family:var(--arc-head),sans-serif;font-size:1.9rem;line-height:1.15;color:#fff}
+.sd-card-dark .service-price-gbp{margin:.3rem 0 0;color:#c6c2f0;font-weight:600}
+.sd-card-text{margin:0;font-size:1rem;line-height:1.65;color:var(--sd-text)}
+.sd-card-dark .sd-card-text{color:#d5dcea;margin-top:.7rem}
+.sd-muted{margin-top:.6rem !important;color:var(--sd-muted) !important;font-size:.92rem !important}
+.sd-tiers{list-style:none;margin:.9rem 0 0;padding:0;display:grid;gap:10px}
+.sd-tiers li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 14px}
+.sd-tiers b{display:block;color:#fff;font-size:.98rem}
+.sd-tiers span{display:block;margin-top:.25rem;color:#d5dcea;font-size:.93rem;line-height:1.55}
+.sd-dash{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.sd-dash li{position:relative;padding-left:18px;font-size:.98rem;line-height:1.6;color:var(--sd-text)}
+.sd-dash li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:2px;border-radius:2px;background:var(--sd-violet)}
+
+/* Updates + glossary */
+.sd-two{display:grid;gap:32px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.sd-glossary{margin:0;display:grid;gap:8px}
+.sd-glossary div{background:#fff;border:1px solid var(--sd-line);border-radius:14px;padding:12px 16px}
+.sd-glossary dt{font-weight:800;color:var(--sd-ink);font-size:.98rem}
+.sd-glossary dd{margin:.2rem 0 0;color:var(--sd-text);font-size:.96rem;line-height:1.6}
+
+/* FAQ accordion */
+.sd-faq{display:grid;gap:10px;max-width:52rem}
+.sd-faq details{background:#fff;border:1px solid var(--sd-line);border-radius:16px;overflow:hidden}
+.sd-faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;min-height:56px}
+.sd-faq summary::-webkit-details-marker{display:none}
+html body main .sd-faq summary h3:not(#_){margin:0;font-size:1.05rem !important;line-height:1.4 !important;color:var(--sd-ink)}
+.sd-faq summary svg{flex:none;color:var(--sd-violet);transition:transform .25s ease}
+.sd-faq details[open] summary svg{transform:rotate(90deg)}
+.sd-faq details p{margin:0;padding:0 18px 18px;font-size:1rem;line-height:1.7;color:var(--sd-text)}
+
+/* Related + guides */
+.sd-chips{display:flex;flex-wrap:wrap;gap:10px}
+.sd-chips a{display:inline-flex;align-items:center;gap:6px;min-height:46px;padding:0 18px;border-radius:999px;background:#fff;border:1.5px solid #cfd6e4;color:var(--sd-navy);font-weight:700;text-decoration:none}
+.sd-guides{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.sd-guides a{display:flex;flex-direction:column;gap:4px;height:100%;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid var(--sd-line);text-decoration:none}
+.sd-guides strong{color:var(--sd-ink);font-size:.98rem;line-height:1.4}
+.sd-guides small{color:var(--sd-muted);font-size:.85rem}
+
+@media (max-width:860px){
+  .sd-plain-grid,.sd-checklist,.sd-price-grid,.sd-two,.sd-guides{grid-template-columns:1fr}
+  .sd-two{gap:28px}
+  html body main .sd-lead{font-size:1.06rem}
+  .sd-hero-actions .sd-btn{flex:1 1 100%;justify-content:center}
+  .sd-steps{grid-template-columns:1fr}
+}
+
+/* Only one closing call-to-action per page: hide the footer one when the page has its own */
+body:has(main [data-own-cta]) .luxury-footer-cta{display:none !important}
+@media (max-width:640px){html body main [data-testid="service-detail-hero"] .service-hero-stack .iso-illustration{display:none !important}}
+
+/* Lighter footer on phones: services and the long contact list stay in the menu and on the contact page */
+@media (max-width:760px){
+  html body .luxury-footer .footer-services-column,
+  html body .luxury-footer .footer-contact-column span{display:none !important}
+  html body .luxury-footer .luxury-footer-top{gap:22px !important}
+}
+
+/* Home on phones: fewer decorative blocks, shorter scroll */
+@media (max-width:640px){
+  html body main .luxury-hero-art-wrap,
+  html body main .luxury-about-visual{display:none !important}
+  html body main .arcturus-pillars-grid:not(#_){display:grid !important;grid-template-columns:1fr 1fr !important;gap:18px 16px !important}
+  html body main .arcturus-pillar h2:not(#_){font-size:1.08rem !important;margin:.3rem 0 .35rem !important}
+  html body main .arcturus-pillar p:not(#_){font-size:.95rem !important;line-height:1.55 !important}
+  html body main .luxury-process-item p:not(#_){font-size:1rem !important}
+}
+
+/* About + Pricing on phones: drop decorative art so the facts come first */
+@media (max-width:640px){
+  html body main [data-testid="about-personal-panel"],
+  html body main .pricing-card-iso{display:none !important}
+}
+
+/* How I work on phones: compact cards, numbers beside titles, two-up metrics */
+@media (max-width:640px){
+  html body main :is(.start-project-card,.onboarding-card,.payment-card,.tools-platform-card,.why-work-card):not(#_){padding:16px 18px !important;min-height:0 !important}
+  html body main :is(.start-project-card,.onboarding-card,.payment-card,.tools-platform-card,.why-work-card) h3:not(#_){margin-top:.35rem !important;font-size:1.1rem !important}
+  html body main :is(.start-project-card,.onboarding-card,.payment-card,.tools-platform-card,.why-work-card) p:not(#_){font-size:.98rem !important;line-height:1.6 !important;margin-top:.35rem !important}
+  html body main :is(.start-project-card,.onboarding-card,.payment-card,.tools-platform-card,.why-work-card) > span:first-child{display:inline-block;margin:0 !important}
+}
+@media (max-width:640px){
+  html body main .reporting-matrix:not(#_){display:grid !important;grid-template-columns:1fr 1fr !important;gap:8px !important}
+  html body main .reporting-matrix span:not(#_){min-height:0 !important;padding:12px !important;font-size:.9rem !important}
+}
+@media (min-width:861px){html body main .resource-home-grid:not(#_){grid-template-columns:repeat(2,minmax(0,1fr)) !important}}

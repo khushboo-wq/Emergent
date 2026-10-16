@@ -1,6 +1,5 @@
 import { ArrowRight, Check, Mail } from "lucide-react";
 import HeroShowcase from "@/components/HeroShowcase";
-import IsoIllustration from "@/components/IsoIllustration";
 import { Link } from "react-router-dom";
 import PageFrame from "@/components/PageFrame";
 import Reveal from "@/components/Reveal";
@@ -134,25 +133,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="luxury-statement-section">
-        <div className="luxury-shell luxury-statement-grid">
-          <Reveal>
-            <p className="luxury-section-kicker luxury-kicker-light">Why Arcturus</p>
-            <IsoIllustration slug="lead-generation" className="iso-big" />
-            <p className="luxury-statement-index">02 / 04</p>
-          </Reveal>
-          <Reveal delay={120}>
-            <h2>The best support is <em>clear.</em></h2>
-            <div className="luxury-statement-points">
-              <p><b>01</b> One point of contact from brief to delivery.</p>
-              <p><b>02</b> Written communication that keeps the work clear.</p>
-              <p><b>03</b> A practical scope agreed before work begins.</p>
-              <p><b>04</b> No agency layers, hand-offs or unnecessary meetings.</p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="luxury-process-section">
         <div className="luxury-shell">
           <Reveal className="luxury-section-heading">
@@ -185,7 +165,7 @@ export default function Home() {
             <Link to="/resources" className="luxury-inline-link">View all resources <ArrowRight size={16} /></Link>
           </Reveal>
           <div className="resource-home-grid">
-            {resources.filter((resource) => ["linkedin-management-services-guide", "b2b-email-outreach-guide", "b2b-lead-generation-guide"].includes(resource.slug)).map((resource, index) => (
+            {resources.filter((resource) => ["linkedin-management-services-guide", "b2b-email-outreach-guide"].includes(resource.slug)).map((resource, index) => (
               <Reveal key={resource.slug} delay={index * 55}>
                 <Link to={`/resources/${resource.slug}`} className="resource-home-card">
                   <span>{resource.category}</span>
@@ -215,7 +195,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="luxury-contact-section">
+      <section className="luxury-contact-section" data-own-cta="">
         <div className="luxury-shell luxury-contact-inner">
           <Reveal>
             <div className="luxury-contact-overline"><Mail size={16} /> Start a conversation</div>
