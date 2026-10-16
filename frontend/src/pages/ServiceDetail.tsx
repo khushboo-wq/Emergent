@@ -67,7 +67,7 @@ export default function ServiceDetail() {
 
         <section className="sd-section" data-testid="service-commercial-section">
           <p className="sd-kicker">No surprises</p>
-          <h2 className="sd-h2">Payment and what you need</h2>
+          <h2 className="sd-h2">Payment and what I need from you</h2>
           <div className="sd-price-grid sd-grid-3">
             <article className="sd-card">
               <span className="sd-card-label">How payment works</span>

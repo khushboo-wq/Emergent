@@ -178,14 +178,15 @@ export const services: ServiceContent[] = [
     ],
     exclusions: [
       "Financial, legal or HR advice",
-      "Being on call around the clock or replying within minutes",
+      "No calling work of any kind: no phone calls, video calls or cold calls",
+      "Being available around the clock or replying within minutes",
       "Tasks where I don't have the access or information needed",
       "Big extra research or extra hours without checking with you first",
     ],
     process: [
-      { label: "You share access", detail: "To the accounts listed under 'Needed before we start'." },
-      { label: "Setup", detail: "I make the changes on your domain." },
-      { label: "Testing", detail: "I check that every record works." },
+      { label: "You send the task", detail: "In writing, with any files or examples." },
+      { label: "We agree the hours", detail: "You say yes before I start." },
+      { label: "I send it back finished", detail: "Ready to use, or I tell you what's still missing." },
     ],
     timeline: "",
     requirements: [
