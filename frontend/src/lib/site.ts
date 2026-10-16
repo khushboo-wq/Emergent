@@ -131,7 +131,7 @@ export const services: ServiceContent[] = [
       "Email Setup, if your domain isn't ready yet: €75 / £65 one-time per domain",
       "A faster start with ready-warmed inboxes costs extra",
       "Legal advice, for example on GDPR",
-      "A promise of opens, replies, meetings or sales",
+      "A promise of sales or results: spam filters, inbox settings and how each person reacts can change how many people open and reply",
     ],
     process: [
       { label: "You share a brief", detail: "Your offer, your ideal client and the email account to send from." },
